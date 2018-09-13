@@ -12,4 +12,8 @@ class ModelProduto extends CI_Model{
         }
         return;
     }
+    public function excluirProduto($id) {
+        return $this->db->delete('produto', array('idProduto' => $id));
+    }
+
 }

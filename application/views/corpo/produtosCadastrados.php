@@ -34,8 +34,7 @@
                             }
                             ?></td>
                         <td><a href=""><img src="<?php echo base_url('images/edit-Icon.png') ?>"></a></td>
-                        <td><a href="javascript: if(confirm('Tem certeza que deseja deletar <?php echo $produto->nomeProduto; ?>?'))
-                               location.href='index.php?p=ProdutosCadastrados&produto=<?php echo $produto->idProduto; ?>';"><img src="<?php echo base_url('images/close_1.png') ?>"></a></td>
+                        <td><a href="javascript:func()" onclick="excluirProduto(<?php echo $produto->idProduto; ?>,'<?php echo $produto->nomeProduto; ?>')"><img src="<?php echo base_url('images/close_1.png') ?>"></a></td>
                     </tr>
                 <?php } 
                 

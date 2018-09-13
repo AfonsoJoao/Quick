@@ -43,5 +43,10 @@ class ControllerProduto extends CI_Controller {
         $this->load->view('corpo/produtosCadastrados', $dados);
         $this->load->view('estrutura/rodape');
     }
+    function excluirProduto(){
+        $this->load->Model('modelProduto', '', TRUE);
+        $this->modelProduto->excluirProduto($this->uri->segment(3));
+        $this->listadeProdutos();
+    }
 
 }
