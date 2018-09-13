@@ -77,7 +77,8 @@ and open the template in the editor.
                             <div class="w3ls_vegetables">
                                 <ul class="dropdown-menu drp-mnu">
                                     <li><a href="<?php echo base_url('login.php');?>">Entrar</a></li> 
-                                    <li><a href="<?php echo base_url('cadastroclientes.php');?>">Cadastrar</a></li>
+                                    <li><a href="<?php echo base_url('ControllerCliente/cadcliente/');?>">Cadastrar</a></li>
+                                    <li><a href="<?php echo base_url('ControllerCliente/listaClientes/');?>">Lista de Clientes</a></li>
                                 </ul>
                             </div>                  
                         </div>	
@@ -95,7 +96,7 @@ and open the template in the editor.
                                         <a href="<?php echo base_url('ControllerProduto/cadproduto/')?>">Cadastrar produtos</a>
                                     </li>
                                     <li>
-                                        <a href="<?php echo base_url('ControllerProduto/listadeProdutos');?>">Produtos cadastrados</a>
+                                        <a href="<?php echo base_url('ControllerProduto/listadeProdutos/');?>">Produtos cadastrados</a>
                                     </li>
                                 </ul>
                             </div>                  
