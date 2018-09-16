@@ -52,3 +52,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'Controller';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+//Rota da página principal do sistema
+$route ['index'] = 'Controller/index';
+
+//Rotas do cadastro, alteração, lista e exclusão de clientes
+$route ['cadastroclientes'] = 'ControllerCliente/cadcliente';
+$route ['listacliente'] = 'ControllerCliente/listaClientes';
+
+//Rota do cadastro, alteração, lista e exclusão de produtos
+$route ['cadastroprodutos'] = 'ControllerProduto/cadproduto';
+$route ['listaproduto'] = 'ControllerProduto/listadeProdutos';
+
+

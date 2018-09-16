@@ -13,6 +13,7 @@ and open the template in the editor.
 
         <div class="container-fluid">  
             <div class="bs-docs-example">
+                <center><h1>Lista de Clientes</h1></center><br><br>
                 <table class="table">
                     <thead>
                         <tr>
@@ -35,16 +36,16 @@ and open the template in the editor.
                             foreach ($clientes as $cliente) {
                                 ?>
                                 <tr>
-                                    <td><?php echo $cliente->idCliente; ?></td>
-                                    <td><?php echo $cliente->nome; ?></td>
+                                    <td><?php echo $cliente->idCliente;?></td>
+                                    <td><?php echo $cliente->nome;?></td>
                                     <td><?php echo $cliente->dataNascimento; ?></td>
-                                    <td><?php echo $cliente->sexo; ?></td>
-                                    <td><?php echo $cliente->email; ?></td>
-                                    <td><?php echo $cliente->senhaCliente; ?></td>
-                                    <td><?php echo $cliente->cpf; ?></td>
-                                    <td><?php echo $cliente->rg; ?></td>
-                                    <td><?php echo $cliente->telefone; ?></td>
-                                    <td><a href="<?php echo base_url("ControllerCliente/listaUnicoCliente/$cliente->idCliente"); ?>"><img src=" <?php echo base_url('images/edit-Icon.png');?>"> </a></td>
+                                    <td><?php echo $cliente->sexo;?></td>
+                                    <td><?php echo $cliente->email;?></td>
+                                    <td><?php echo $cliente->senhaCliente;?></td>
+                                    <td><?php echo $cliente->cpf;?></td>
+                                    <td><?php echo $cliente->rg;?></td>
+                                    <td><?php echo $cliente->telefone;?></td>
+                                    <td><a href="<?php echo base_url("ControllerCliente/listaUnicoCliente/$cliente->idCliente"); ?>"><img src="<?php echo base_url('images/edit-Icon.png');?>"></a></td>
                                     <td><a href="javascript:func()" onclick="excluirCliente(<?php echo $cliente->idCliente; ?>, '<?php echo $cliente->nome; ?>')"> <img src=" <?php echo base_url('images/close_1.png');?>"> </a></td>
                                 </tr>   
                             <?php }

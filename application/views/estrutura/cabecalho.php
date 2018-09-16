@@ -7,7 +7,7 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-         <title>Quick - Inicio</title>
+        <title>Quick - Inicio</title>
         <!-- for-mobile-apps -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -16,26 +16,26 @@ and open the template in the editor.
         <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
             function hideURLbar(){ window.scrollTo(0,1); } </script>
         <!-- //for-mobile-apps -->
-        
+
         <!-- Obs: Caso não der certo configurar adicionar a pasta application as referencias do css -->
-        
-        <link href="<?php echo base_url('css/bootstrap.css');?>" rel="stylesheet" type="text/css" media="all"/>
-        
-        <link href="<?php echo base_url('css/style.css');?>" rel="stylesheet" type="text/css" media="all" />
-        
+
+        <link href="<?php echo base_url('css/bootstrap.css'); ?>" rel="stylesheet" type="text/css" media="all"/>
+
+        <link href="<?php echo base_url('css/style.css'); ?>" rel="stylesheet" type="text/css" media="all" />
+
         <!-- font-awesome icons -->
-        <link href="<?php echo base_url('css/font-awesome.css');?>" rel="stylesheet" type="text/css" media="all" /> 
-        
+        <link href="<?php echo base_url('css/font-awesome.css'); ?>" rel="stylesheet" type="text/css" media="all" /> 
+
         <!-- //font-awesome icons -->
         <!-- js -->
-        <script src="<?php echo base_url('js/jquery-1.11.1.min.js');?>"></script>
-        
+        <script src="<?php echo base_url('js/jquery-1.11.1.min.js'); ?>"></script>
+
         <!-- //js -->
-        <link href='<?php echo base_url('//fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,500,500italic,700,700italic');?> rel='stylesheet' type='text/css'>
-        <link href='<?php echo base_url('//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic');?> rel='stylesheet' type='text/css'>
-        <!-- start-smoth-scrolling -->
-        <script type="text/javascript" src="<?php echo base_url('js/move-top.js');?>"></script>
-        <script type="text/javascript" src="<?php echo base_url('js/easing.js');?>"></script>
+        <link href="<?php echo base_url('//fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,500,500italic,700,700italic'); ?>" rel='stylesheet' type='text/css'>
+        <link href="<?php echo base_url('//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic'); ?>" rel='stylesheet' type='text/css'>
+              <!-- start-smoth-scrolling -->
+        <script type="text/javascript" src="<?php echo base_url('js/move-top.js'); ?>"></script>
+        <script type="text/javascript" src="<?php echo base_url('js/easing.js'); ?>"></script>
         <script type="text/javascript">
             jQuery(document).ready(function ($) {
                 $(".scroll").click(function (event) {
@@ -45,6 +45,16 @@ and open the template in the editor.
             });
         </script>
         <!-- start-smoth-scrolling -->
+
+        <script>
+            
+            function excluirCliente(id, nome) {
+                if (confirm('Deseja excluir o cliente ' + nome)) {
+                    location.href = "<?php echo base_url('ControllerCliente/excluirCliente'); ?>" + "/" + id;
+                }
+            }
+        </script>
+
     </head>
     <body>
         <!-- header -->
@@ -76,9 +86,9 @@ and open the template in the editor.
                         <div class="mega-dropdown-menu">
                             <div class="w3ls_vegetables">
                                 <ul class="dropdown-menu drp-mnu">
-                                    <li><a href="<?php echo base_url('login.php');?>">Entrar</a></li> 
-                                    <li><a href="<?php echo base_url('ControllerCliente/cadcliente/');?>">Cadastrar</a></li>
-                                    <li><a href="<?php echo base_url('ControllerCliente/listaClientes/');?>">Lista de Clientes</a></li>
+                                    <li><a href="<?php echo base_url('login.php'); ?>">Entrar</a></li> 
+                                    <li><a href="<?php echo base_url('cadastroclientes/'); ?>">Cadastrar</a></li>
+                                    <li><a href="<?php echo base_url('listacliente/'); ?>">Lista de Clientes</a></li>
                                 </ul>
                             </div>                  
                         </div>	
@@ -88,15 +98,15 @@ and open the template in the editor.
             <div class="w3l_header_right">
                 <ul>
                     <li class="dropdown profile_details_drop">
-                        <a><img src="<?php echo base_url('images/icone-branco.png');?>"/></a>
+                        <a><img src="<?php echo base_url('images/icone-branco.png'); ?>"/></a>
                         <div class="mega-dropdown-menu">
                             <div class="w3ls_vegetables">
                                 <ul class="dropdown-menu drp-mnu">
                                     <li>
-                                        <a href="<?php echo base_url('ControllerProduto/cadproduto/')?>">Cadastrar produtos</a>
+                                        <a href="<?php echo base_url('cadastroprodutos/') ?>">Cadastrar produtos</a>
                                     </li>
                                     <li>
-                                        <a href="<?php echo base_url('ControllerProduto/listadeProdutos/');?>">Produtos cadastrados</a>
+                                        <a href="<?php echo base_url('listaproduto/'); ?>">Produtos cadastrados</a>
                                     </li>
                                 </ul>
                             </div>                  
@@ -125,7 +135,7 @@ and open the template in the editor.
         <div class="logo_products">
             <div class="container">
                 <div class="w3ls_logo_products_left">
-                    <h1><a href="<?php echo base_url('Controller/index/')?>"><img src="<?php echo base_url('images/Logo-Quick2.jpg');?>" width="130" height="100"></a></h1>
+                    <h1><a href="<?php echo base_url('index/') ?>"><img src="<?php echo base_url('images/Logo-Quick2.jpg'); ?>" width="130" height="100"></a></h1>
                 </div>
                 <div class="w3ls_logo_products_left1">
                     <ul class="special_items">
@@ -141,7 +151,7 @@ and open the template in the editor.
         <div class="products-breadcrumb">
             <div class="container">
                 <ul>
-                    <li><img src="<?php echo base_url('Images/home.png');?>" width="25" height="20"><a href="<?php echo base_url('Controller/index/')?>">Inicio</a><span>|</span></li>
+                    <li><img src="<?php echo base_url('Images/home.png'); ?>" width="25" height="20"><a href="<?php echo base_url('index/') ?>">Inicio</a><span>|</span></li>
                     <li>**<span>|</span></li>
                     <li>**</li>
                 </ul>

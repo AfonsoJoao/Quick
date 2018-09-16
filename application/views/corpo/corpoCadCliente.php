@@ -10,11 +10,16 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
-        <?php if (isset($situacao)) {
-            $st = $situacao; ?>
-            <script> alert ('<?php echo $st; ?>'); </script>
-<?php unset($situacao); } ?>
-        
+        <?php
+        if (isset($situacao)) {
+            $st = $situacao;
+            ?>
+            <script> alert('<?php echo $st; ?>');</script>
+            <?php
+            unset($situacao);
+        }
+        ?>
+
         <div class="w3l_banner_nav_right">
 
             <div class="w3_login">
@@ -28,24 +33,75 @@ and open the template in the editor.
                         <div class="form">
                             <h2>Criar uma conta</h2>
                             <?php echo form_open('ControllerCliente/gravarCliente'); ?>
-                            <input type="text" name="nome" placeholder="Nome completo" required=" ">
-                            <input class="form-control" type="date" name="dataNascimento" required=" "><br>
+                            <input type="hidden" name="acao" value="<?php
+                            if (isset($cliente))
+                                echo "alterar";
+                            else
+                                echo "inserir";
+                            ?>">
+                            <input type="hidden" name="idCliente" value="<?php
+                            if (isset($cliente))
+                                foreach ($cliente as $cli) {
+                                    echo $cli->idCliente;
+                                }
+                            ?>">
+                            <input type="text" name="nome" placeholder="Nome completo" required=" " value="<?php
+                            if (isset($cliente))
+                                foreach ($cliente as $cli) {
+                                    echo $cli->nome;
+                                }
+                            ?>">
+
+                            <input class="form-control" type="date" name="dataNascimento" required=" " value="<?php
+                            if (isset($cliente))
+                                foreach ($cliente as $cli) {
+                                    echo $cli->dataNascimento;
+                                }
+                            ?>"><br>
+
                             <select class="form-control" id="sexo" name="sexo" required placeholder="sexo">
                                 <option value="">Sexo</option>
-                                <option value="masc">Masculino</option>
-                                <option value="femi">Feminino</option>
-                                <option value="femi">Outros</option>
+                                <option value="masculino">Masculino</option>
+                                <option value="feminino">Feminino</option>
+                                <option value="feminino">Outros</option>
                             </select><br>
 
-                            <input type="email" name="email" placeholder="Email" required=" ">
-                            <input type="password" name="senhaCliente" placeholder="Senha" required=" ">
-                            <input type="text" name="cpf" placeholder="CPF" required="">
+                            <input type="email" name="email" placeholder="Email" required=" " value="<?php
+                            if (isset($cliente))
+                                foreach ($cliente as $cli) {
+                                    echo $cli->email;
+                                }
+                            ?>">
+                            
+                            <input type="password" name="senhaCliente" placeholder="Senha" required=" " value="<?php
+                            if (isset($cliente))
+                                foreach ($cliente as $cli) {
+                                    echo $cli->senhaCliente;
+                                }
+                            ?>">
+                            
+                            <input type="text" name="cpf" placeholder="CPF" required="" value="<?php
+                            if (isset($cliente))
+                                foreach ($cliente as $cli) {
+                                    echo $cli->cpf;
+                                }
+                            ?>">
 
+                            <input type="text" name="rg" placeholder="RG" required=" " value="<?php
+                            if (isset($cliente))
+                                foreach ($cliente as $cli) {
+                                    echo $cli->rg;
+                                }
+                            ?>">
+                            
+                            <input type="text" name="telefone" placeholder="Telefone" required=" " value="<?php
+                            if (isset($cliente))
+                                foreach ($cliente as $cli) {
+                                    echo $cli->telefone;
+                                }
+                            ?>"><br><br>
 
-                            <input type="text" name="rg" placeholder="RG" required=" ">
-                            <input type="text" name="telefone" placeholder="Telefone" required=" "><br><br>
-
-                            <input type="submit" value="Cadastrar">
+                            <input type="submit" value="Salvar">
                             <?php echo form_close(); ?>
                         </div>
                         <div class="form">
@@ -81,7 +137,7 @@ and open the template in the editor.
         <div class="clearfix"></div>
 
         <?php
-        // put your code here
+// put your code here
         ?>
     </body>
 </html>
