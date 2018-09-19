@@ -1,4 +1,4 @@
-<div class="container-fluid">  
+ <div class="container-fluid">  
     <div class="bs-docs-example">
         <table class="table">
             <thead>
@@ -33,8 +33,8 @@
                                 echo $produto->peso . " KG";
                             }
                             ?></td>
-                        <td><a href=""><img src="<?php echo base_url('images/edit-Icon.png') ?>"></a></td>
-                        <td><a href="javascript:func()" onclick="excluirProduto(<?php echo $produto->idProduto; ?>,'<?php echo $produto->nomeProduto; ?>')"><img src="<?php echo base_url('images/close_1.png') ?>"></a></td>
+                        <td><a href="<?php echo base_url("ControllerProduto/listaUnicoProduto/$produto->idProduto"); ?>"><img src="<?php echo base_url('application/images/edit-Icon.png') ?>"></a></td>
+                        <td><a href="javascript:func()" onclick="excluirProduto(<?php echo $produto->idProduto; ?>,'<?php echo $produto->nomeProduto; ?>')"><img src="<?php echo base_url('application/images/close_1.png') ?>"></a></td>
                     </tr>
                 <?php } 
                 

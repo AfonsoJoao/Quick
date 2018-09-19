@@ -1,7 +1,4 @@
-<html>
-    <body>
-        <!-- //products-breadcrumb -->
-        <!-- banner -->
+<!-- banner -->
         <div class="banner">
             <div class="w3l_banner_nav_left">
                 <nav class="navbar nav_bottom">
@@ -70,12 +67,12 @@
                             </li>
                             <li><a href="<?php echo base_url('#'); ?>">Produtos de limpeza</a></li>
                             <li><a href="<?php echo base_url('#'); ?>">Higiene</a></li>
-                            <li><a href="<?php echo base_url('#'); ?>">Pet</a></li>
+                            <li><a href="<?php echo base_url('ControllerCategorias/listaCate'); ?>">Pet</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </nav>
             </div>
-            <div class="w3l_banner_nav_right">
+<div class="w3l_banner_nav_right">
                 <section class="slider">
                     <div class="flexslider">
                         <ul class="slides">
@@ -105,8 +102,19 @@
                             </li>
                         </ul>
                     </div>
-                </section>
-                </body>
-                </html>
-                <?php
-
+                                    </section>
+    <link rel="stylesheet" href="<?php echo base_url('css/flexslider.css');?>" type="text/css" media="screen" property="" />
+                <script defer src="<?php echo base_url('js/jquery.flexslider.js');?>"></script>
+                <script type="text/javascript">
+            $(window).load(function () {
+                $('.flexslider').flexslider({
+                    animation: "slide",
+                    start: function (slider) {
+                        $('body').removeClass('loading');
+                    }
+                });
+            });
+                </script>
+                </div>
+            <div class="clearfix"></div>
+        </div>

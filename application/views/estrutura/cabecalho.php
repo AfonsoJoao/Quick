@@ -7,7 +7,7 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Quick - Inicio</title>
+        <title>Quick</title>
         <!-- for-mobile-apps -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -51,6 +51,14 @@ and open the template in the editor.
             function excluirCliente(id, nome) {
                 if (confirm('Deseja excluir o cliente ' + nome)) {
                     location.href = "<?php echo base_url('ControllerCliente/excluirCliente'); ?>" + "/" + id;
+                }
+            }
+        </script>
+        <script>
+            
+            function excluirProduto(id, nome) {
+                if (confirm('Deseja excluir o produto ' + nome)) {
+                    location.href = "<?php echo base_url('ControllerProduto/excluirProduto'); ?>" + "/" + id;
                 }
             }
         </script>
@@ -157,9 +165,8 @@ and open the template in the editor.
                 </ul>
             </div>
         </div>
+        <!-- //products-breadcrumb -->
 
-        <?php
-        // put your code here
-        ?>
-    </body>
-</html>
+                </body>
+                </html>
+                <?php

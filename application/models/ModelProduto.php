@@ -12,6 +12,17 @@ class ModelProduto extends CI_Model{
         }
         return;
     }
+    public function listaProduto($id) {
+        $resultado = $this->db->get_where('produto', array('idProduto' => $id));
+        if ($resultado->num_rows() > 0) {
+            return $resultado->result();
+        }
+        return;
+    }
+    
+    public function alterarProduto($id, $produto) {
+        return $this->db->update('produto', $produto, array('idProduto' => $id));
+    }
     public function excluirProduto($id) {
         return $this->db->delete('produto', array('idProduto' => $id));
     }

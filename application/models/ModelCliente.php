@@ -6,7 +6,7 @@ class ModelCliente extends CI_Model {
         return $this->db->insert('cliente', $cliente);
     }
     
-    public function listarClientes() { // Está função apenas exibe a lista de registros armazenados em uma entidade do banco
+    public function listarCliente() { // Está função apenas exibe a lista de registros armazenados em uma entidade do banco
         $resultado = $this->db->get('cliente');
         if ($resultado->num_rows() > 0) {
             return $resultado->result();

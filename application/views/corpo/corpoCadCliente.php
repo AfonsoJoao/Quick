@@ -1,16 +1,4 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title></title>
-    </head>
-    <body>
-        <?php
+<?php
         if (isset($situacao)) {
             $st = $situacao;
             ?>
@@ -19,9 +7,6 @@ and open the template in the editor.
             unset($situacao);
         }
         ?>
-
-        <div class="w3l_banner_nav_right">
-
             <div class="w3_login">
                 <h3>Entre ou Cadastre-se</h3>
                 <div class="w3_login_module">
@@ -39,6 +24,9 @@ and open the template in the editor.
                             else
                                 echo "inserir";
                             ?>">
+                            <input type="hidden" name="idProduto" value="<?php if (isset($produto)) foreach ($produto as $pro) {
+                        echo $pro->idProduto;
+                    } ?>">
                             <input type="hidden" name="idCliente" value="<?php
                             if (isset($cliente))
                                 foreach ($cliente as $cli) {
@@ -133,11 +121,8 @@ and open the template in the editor.
                 </script>
             </div>
             <!-- //login -->
-        </div>
         <div class="clearfix"></div>
 
         <?php
 // put your code here
         ?>
-    </body>
-</html>

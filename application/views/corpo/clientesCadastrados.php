@@ -45,8 +45,8 @@ and open the template in the editor.
                                     <td><?php echo $cliente->cpf;?></td>
                                     <td><?php echo $cliente->rg;?></td>
                                     <td><?php echo $cliente->telefone;?></td>
-                                    <td><a href="<?php echo base_url("ControllerCliente/listaUnicoCliente/$cliente->idCliente"); ?>"><img src="<?php echo base_url('images/edit-Icon.png');?>"></a></td>
-                                    <td><a href="javascript:func()" onclick="excluirCliente(<?php echo $cliente->idCliente; ?>, '<?php echo $cliente->nome; ?>')"> <img src=" <?php echo base_url('images/close_1.png');?>"> </a></td>
+                                    <td><a href="<?php echo base_url("ControllerCliente/listaUnicoCliente/$cliente->idCliente"); ?>"><img src="<?php echo base_url('application/images/edit-Icon.png');?>"></a></td>
+                                    <td><a href="javascript:func()" onclick="excluirCliente(<?php echo $cliente->idCliente; ?>, '<?php echo $cliente->nome; ?>')"> <img src=" <?php echo base_url('application/images/close_1.png');?>"> </a></td>
                                 </tr>   
                             <?php }
                         }

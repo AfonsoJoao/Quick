@@ -1,32 +1,4 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <meta charset="UTF-8">
-      <title>Quick - Inicio</title>
-        
-    </head>
-    <body>
-        <?php
-        
-        ?>
-                <!-- flexSlider -->
-                <link rel="stylesheet" href="<?php echo base_url('css/flexslider.css');?>" type="text/css" media="screen" property="" />
-                <script defer src="<?php echo base_url('js/jquery.flexslider.js');?>"></script>
-                <script type="text/javascript">
-            $(window).load(function () {
-                $('.flexslider').flexslider({
-                    animation: "slide",
-                    start: function (slider) {
-                        $('body').removeClass('loading');
-                    }
-                });
-            });
-                </script>
+
                 <!-- //flexSlider -->
             </div>
             <div class="clearfix"></div>

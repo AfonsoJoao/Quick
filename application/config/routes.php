@@ -58,10 +58,10 @@ $route ['index'] = 'Controller/index';
 
 //Rotas do cadastro, alteração, lista e exclusão de clientes
 $route ['cadastroclientes'] = 'ControllerCliente/cadcliente';
-$route ['listacliente'] = 'ControllerCliente/listaClientes';
+$route ['listacliente'] = 'ControllerCliente/listaCliente';
 
 //Rota do cadastro, alteração, lista e exclusão de produtos
 $route ['cadastroprodutos'] = 'ControllerProduto/cadproduto';
-$route ['listaproduto'] = 'ControllerProduto/listadeProdutos';
+$route ['listaproduto'] = 'ControllerProduto/listaProduto';
 
 
