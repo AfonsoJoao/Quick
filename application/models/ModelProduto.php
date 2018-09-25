@@ -26,5 +26,9 @@ class ModelProduto extends CI_Model{
     public function excluirProduto($id) {
         return $this->db->delete('produto', array('idProduto' => $id));
     }
-
+    public function getProdutoCategoria($categoria) {
+               $this->output->enable_profiler(TRUE);
+        return $this->db->get_where('produto', array('categoria' => $categoria))->result_array();
+        
+    }
 }

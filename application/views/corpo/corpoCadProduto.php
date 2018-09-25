@@ -20,47 +20,17 @@ if (isset($situacao)) {
                     else
                         echo "inserir";
                     ?>">
-                    <input class="form-control" type="text" name="nomeProduto" placeholder="Nome do produto" required="" value="<?php
-                    if (isset($produto))
-                        foreach ($produto as $pro) {
-                            echo $pro->nomeProduto;
-                        }
-                    ?>">
-                    <input class="form-control" type="number" pattern="[0-9]+([,\.][0-9]+)?" min="0" step="any" name="valorUnitario" placeholder="Valor unitario do produto" required="" value="<?php
-                    if (isset($produto))
-                        foreach ($produto as $pro) {
-                            echo $pro->valorUnitario;
-                        }
-                    ?>">
+                    <input class="form-control" type="text" name="nomeProduto" placeholder="Nome do produto" required="" value="">
+                    <input class="form-control" type="number" pattern="[0-9]+([,\.][0-9]+)?" min="0" step="any" name="valorUnitario" placeholder="Valor unitario do produto" required="" value="">
                     <br>
                     <div class="form-group">
-                        <textarea class="form-control" rows="5" name="descricaoProduto" placeholder="Descrição do produto" ><?php
-                        if (isset($produto))
-                            foreach ($produto as $pro) {
-                                echo $pro->descricaoProduto;
-                            }
-                        ?></textarea>
+                        <textarea class="form-control" rows="5" name="descricaoProduto" placeholder="Descrição do produto" ></textarea>
                     </div>
-                    <input class="form-control" type="number" pattern="[0-9]+([,\.][0-9]+)?" min="0" step="any" name="peso" placeholder="Peso do produto em kg ou litro" required="" value="<?php
-                    if (isset($produto))
-                        foreach ($produto as $pro) {
-                            echo $pro->peso;
-                        }
-                    ?>">
+                    <input class="form-control" type="number" pattern="[0-9]+([,\.][0-9]+)?" min="0" step="any" name="peso" placeholder="Peso do produto em kg ou litro" required="" value="">
                     <br>
-                    <input class="form-control" type="text" name="marca" placeholder="Marca" required="" value="<?php
-                    if (isset($produto))
-                        foreach ($produto as $pro) {
-                            echo $pro->marca;
-                        }
-                    ?>">
+                    <input class="form-control" type="text" name="marca" placeholder="Marca" required="" value="">
                     <select class="form-control" id="categoria" name="categoria" value="">
-                        <option value="#"><?php
-                    if (isset($produto))
-                        foreach ($produto as $pro) {
-                            echo $pro->categoria;
-                        }
-                    ?></option>
+                        <option value="#"></option>
                         <optgroup label="Alimentação">
                             <option value="arroz">Arroz</option>
                             <option value="feijao">Feijão</option>
@@ -86,12 +56,7 @@ if (isset($situacao)) {
                             <option value="pet">Pet</option>
                     </select>
                     <br>
-                    <input class="form-control" type="file" required name="imagem" value="<?php
-                           if (isset($produto))
-                               foreach ($produto as $pro) {
-                                   echo $pro->imagem;
-                               }
-                           ?>">
+                    <input class="form-control" type="file" required name="imagem" value="">
                     <br>
                     <input type="submit" value="Cadastrar">
                 </div>

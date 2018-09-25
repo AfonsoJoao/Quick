@@ -12,7 +12,6 @@ class ControllerProduto extends CI_Controller {
         if (isset($_FILES['imagem'])) {
             $extensao = strtolower(substr($_FILES['imagem']['name'], -4));
             $novo_nome = md5(time()) . $extensao;
-
             move_uploaded_file($_FILES['imagem']['tmp_name'],$novo_nome);
         }
         $this->load->Model('modelProduto', '', TRUE);
@@ -38,6 +37,8 @@ class ControllerProduto extends CI_Controller {
                 $msn['situacao'] = "Erro na Alteração dos Dados";
             }
         }
+        
+        
 
         $this->load->view('estrutura/cabecalho');
         $this->load->view('corpo/corpoCadProduto', $msn);
@@ -55,7 +56,7 @@ class ControllerProduto extends CI_Controller {
         $this->load->Model('modelProduto', '', TRUE);
         $dados['produto'] = $this->modelProduto->listaProduto($this->uri->segment(3));
         $this->load->view('estrutura/cabecalho');
-        $this->load->view('corpo/corpoCadProduto', $dados);
+        $this->load->view('corpo/corpoEditarProduto', $dados);
         $this->load->view('estrutura/rodape');
     }
 
@@ -64,5 +65,8 @@ class ControllerProduto extends CI_Controller {
         $this->modelProduto->excluirProduto($this->uri->segment(3));
         $this->listaProduto();
     }
-
+    function getCategoria($categoria){
+          $this->load->Model('modelProduto', '', TRUE);
+        print_r($this->modelProduto->getProdutoCategoria($categoria));
+    }
 }

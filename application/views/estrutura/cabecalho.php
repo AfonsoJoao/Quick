@@ -106,7 +106,7 @@ and open the template in the editor.
             <div class="w3l_header_right">
                 <ul>
                     <li class="dropdown profile_details_drop">
-                        <a><img src="<?php echo base_url('images/icone-branco.png'); ?>"/></a>
+                        <a><img src="<?php echo base_url('application/images/icone-branco.png'); ?>"/></a>
                         <div class="mega-dropdown-menu">
                             <div class="w3ls_vegetables">
                                 <ul class="dropdown-menu drp-mnu">
@@ -143,7 +143,7 @@ and open the template in the editor.
         <div class="logo_products">
             <div class="container">
                 <div class="w3ls_logo_products_left">
-                    <h1><a href="<?php echo base_url('index/') ?>"><img src="<?php echo base_url('images/Logo-Quick2.jpg'); ?>" width="130" height="100"></a></h1>
+                    <h1><a href="<?php echo base_url('index/') ?>"><img src="<?php echo base_url('application/images/Logo-Quick2.jpg'); ?>" width="130" height="100"></a></h1>
                 </div>
                 <div class="w3ls_logo_products_left1">
                     <ul class="special_items">
@@ -159,7 +159,7 @@ and open the template in the editor.
         <div class="products-breadcrumb">
             <div class="container">
                 <ul>
-                    <li><img src="<?php echo base_url('Images/home.png'); ?>" width="25" height="20"><a href="<?php echo base_url('index/') ?>">Inicio</a><span>|</span></li>
+                    <li><img src="<?php echo base_url('application/images/home.png'); ?>" width="25" height="20"><a href="<?php echo base_url('index/') ?>">Inicio</a><span>|</span></li>
                     <li>**<span>|</span></li>
                     <li>**</li>
                 </ul>

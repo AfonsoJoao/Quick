@@ -12,12 +12,12 @@
                     <div class="col-md-3 top_brand_left">
                         <div class="hover14 column">
                             <div class="agile_top_brand_left_grid">
-                                <div class="tag"><img src="<?php echo base_url('images/tag.png');?>" alt=" " class="img-responsive" /></div>
+                                <div class="tag"><img src="<?php echo base_url('application/images/tag.png');?>" alt=" " class="img-responsive" /></div>
                                 <div class="agile_top_brand_left_grid1">
                                     <figure>
                                         <div class="snipcart-item block" >
                                             <div class="snipcart-thumb">
-                                                <a href="<?php echo base_url('single.html');?>"><img title=" " alt=" " src="<?php echo base_url('images/1.png');?>" /></a>		
+                                                <a href="<?php echo base_url('single.html');?>"><img title=" " alt=" " src="<?php echo base_url('application/images/1.png');?>" /></a>		
                                                 <p>fortune sunflower oil</p>
                                                 <h4>$7.99 <span>$10.00</span></h4>
                                             </div>
@@ -52,7 +52,7 @@
                                     <figure>
                                         <div class="snipcart-item block" >
                                             <div class="snipcart-thumb">
-                                                <a href="<?php echo base_url('single.html');?>"><img title=" " alt=" " src="<?php echo base_url('images/3.png');?>" /></a>		
+                                                <a href="<?php echo base_url('single.html');?>"><img title=" " alt=" " src="<?php echo base_url('application/images/3.png');?>" /></a>		
                                                 <p>basmati rise (5 Kg)</p>
                                                 <h4>$11.99 <span>$15.00</span></h4>
                                             </div>
@@ -82,13 +82,13 @@
                         <div class="hover14 column">
                             <div class="agile_top_brand_left_grid">
                                 <div class="agile_top_brand_left_grid_pos">
-                                    <img src="<?php echo base_url('images/offer.png');?>" alt=" " class="img-responsive" />
+                                    <img src="<?php echo base_url('application/images/offer.png');?>" alt=" " class="img-responsive" />
                                 </div>
                                 <div class="agile_top_brand_left_grid1">
                                     <figure>
                                         <div class="snipcart-item block">
                                             <div class="snipcart-thumb">
-                                                <a href="<?php echo base_url('single.html');?>"><img src="<?php echo base_url('images/2.png');?>" alt=" " class="img-responsive" /></a>
+                                                <a href="<?php echo base_url('single.html');?>"><img src="<?php echo base_url('application/images/2.png');?>" alt=" " class="img-responsive" /></a>
                                                 <p>Pepsi soft drink (2 Ltr)</p>
                                                 <h4>$8.00 <span>$10.00</span></h4>
                                             </div>
@@ -118,13 +118,13 @@
                         <div class="hover14 column">
                             <div class="agile_top_brand_left_grid">
                                 <div class="agile_top_brand_left_grid_pos">
-                                    <img src="<?php echo base_url('images/offer.png');?>" alt=" " class="img-responsive" />
+                                    <img src="<?php echo base_url('application/images/offer.png');?>" alt=" " class="img-responsive" />
                                 </div>
                                 <div class="agile_top_brand_left_grid1">
                                     <figure>
                                         <div class="snipcart-item block">
                                             <div class="snipcart-thumb">
-                                                <a href="<?php echo base_url('single.html');?>"><img src="<?php echo base_url('images/4.png');?>" alt=" " class="img-responsive" /></a>
+                                                <a href="<?php echo base_url('single.html');?>"><img src="<?php echo base_url('application/images/4.png');?>" alt=" " class="img-responsive" /></a>
                                                 <p>dogs food (4 Kg)</p>
                                                 <h4>$9.00 <span>$11.00</span></h4>
                                             </div>

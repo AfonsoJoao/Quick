@@ -63,5 +63,6 @@ $route ['listacliente'] = 'ControllerCliente/listaCliente';
 //Rota do cadastro, alteração, lista e exclusão de produtos
 $route ['cadastroprodutos'] = 'ControllerProduto/cadproduto';
 $route ['listaproduto'] = 'ControllerProduto/listaProduto';
+$route ['getcat'] = 'ControllerProduto/getCategoria/';
 
 
