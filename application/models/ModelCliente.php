@@ -6,6 +6,14 @@ class ModelCliente extends CI_Model {
         return $this->db->insert('cliente', $cliente);
     }
     
+     public function buscaPorEmailSenha($email, $senha){
+        $usuario = $this->db->get_where('cliente', array('email' => $email, 'senhaCliente' => $senha));
+        if($usuario -> num_rows() > 0){
+            return $usuario->result();
+        }
+        return;
+    }
+    
     public function listarCliente() { // Está função apenas exibe a lista de registros armazenados em uma entidade do banco
         $resultado = $this->db->get('cliente');
         if ($resultado->num_rows() > 0) {

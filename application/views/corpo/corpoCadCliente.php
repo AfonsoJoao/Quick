@@ -8,6 +8,16 @@
         }
         ?>
             <div class="w3_login">
+            <?php if($this->session->flashdata("success")) :   ?>
+            <p class="alert alert-success"><?= $this->session->flashdata("success")?></p>
+            
+            <?php endif ?>
+            
+            <?php if($this->session->flashdata("danger")) :   ?>
+            
+            <center><p class="alert alert-danger"><?= $this->session->flashdata("danger")?></p></center>
+            <?php endif ?>
+           
                 <h3>Entre ou Cadastre-se</h3>
                 <div class="w3_login_module">
                     <div class="module form-module">
@@ -93,12 +103,14 @@
                             <?php echo form_close(); ?>
                         </div>
                         <div class="form">
+                            <?php if(!$this->session->userdata("usuario_logado")); ?>
                             <h2>Faça login em sua conta</h2>
-                            <form action="#" method="post">
+                            <?php echo form_open('ControllerLogin/autenticar'); ?>
                                 <input type="text" name="email" placeholder="Email" required=" ">
-                                <input type="password" name="senha" placeholder="Senha" required=" ">
+                                <input type="password" name="senhaCliente" placeholder="Senha" required=" ">
                                 <input type="submit" value="Entrar">
-                            </form>
+                                
+                            <?php echo form_close(); ?>
                         </div>
                         <div class="cta"><a href="#">Esqueceu sua senha?</a></div>
 

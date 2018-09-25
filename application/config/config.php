@@ -54,6 +54,8 @@ $config['index_page'] = '';
 */
 $config['uri_protocol']	= 'REQUEST_URI';
 
+//Deve ser mudificado o nome caso não venha o nome REQUEST_URI
+
 /*
 |--------------------------------------------------------------------------
 | URL suffix

@@ -7,7 +7,8 @@ class ControllerCliente extends CI_Controller {
         $this->load->view('corpo/corpoCadCliente');
         $this->load->view('estrutura/rodape');
     }
-
+    
+    
     public function gravarCliente() {
         $this->load->Model('modelCliente', '', TRUE);
         $cliente = array(
