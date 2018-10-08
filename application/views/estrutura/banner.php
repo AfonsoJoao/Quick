@@ -60,14 +60,14 @@
                                     <div class="w3ls_vegetables">
                                         <ul>
                                             <li><a href="<?php echo base_url('#'); ?>">Alcoólicas</a></li>
-                                            <li><a href="<?php echo base_url('#'); ?>">Não alcoólicas</a></li>
+                                            <li><a href="<?php echo base_url('ControllerCategorias/listaCate/naoalcoolicas'); ?>">Não alcoólicas</a></li>
                                         </ul>
                                     </div>                  
                                 </div>	
                             </li>
                             <li><a href="<?php echo base_url('#'); ?>">Produtos de limpeza</a></li>
                             <li><a href="<?php echo base_url('#'); ?>">Higiene</a></li>
-                            <li><a href="<?php echo base_url('ControllerCategorias/listaCate'); ?>">Pet</a></li>
+                            <li><a href="<?php echo base_url('ControllerCategorias/listaCate/pet'); ?>">Pet</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </nav>

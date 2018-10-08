@@ -79,11 +79,11 @@ and open the template in the editor.
                 </form>
             </div>
             <div class="product_list_header">  
-                <form action="#" method="post" class="last">
+                <form action="#" method="post" class="last" >
                     <fieldset>
                         <input type="hidden" name="cmd" value="_cart" />
                         <input type="hidden" name="display" value="1" />
-                        <input type="submit" name="submit" value="Seu carrinho  " class="button" />
+                        <input type="submit" name="submit" value="Seu carrinho " class="button" />
                     </fieldset>
                 </form>
             </div>
@@ -106,7 +106,7 @@ and open the template in the editor.
             <div class="w3l_header_right">
                 <ul>
                     <li class="dropdown profile_details_drop">
-                        <a><img src="<?php echo base_url('application/images/icone-branco.png'); ?>"/></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-th-list" aria-hidden="true"></i><span class="caret"></span></a>
                         <div class="mega-dropdown-menu">
                             <div class="w3ls_vegetables">
                                 <ul class="dropdown-menu drp-mnu">

@@ -4814,7 +4814,7 @@ input.checkbox:checked:after {
     }
     .product_list_header input.button {
         padding: .3em 2.5em .3em 0.8em;
-        background: url(application/images/cart.png) no-repeat 105px 5px;
+        background: url(../application/images/cart.png) no-repeat 105px 5px;
         font-size: 13px;
     }
     #apDiv1 {
