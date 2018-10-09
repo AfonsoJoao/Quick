@@ -1,12 +1,18 @@
-<?php
+ <?php
 
 class ControllerLogin extends CI_Controller {
     
-    public function autenticar(){
+    public function login(){
+       $this->load->view('estrutura/cabecalho');  
+       $this->load->view('corpo/corpoLogin');  
+       $this->load->view('estrutura/rodape'); 
+    }
+
+        public function autenticar(){
  
         $this->load->model('modelCliente', '', TRUE);// chama o modelo usuarios_model
         $email = $this->input->post('email');// pega via post o email que venho do formulario
-        $senha = $this->input->post('senhaCliente'); // pega via post a senha que venho do formulario
+        $senha = base64_encode($this->input->post('senhaCliente')); // pega via post a senha que venho do formulario
         $usuario = $this->modelCliente->buscaPorEmailSenha($email, $senha);
  
         //if($this->modelCliente->buscaPorEmailSenha($email, $senha)){ // acessa a função buscaPorEmailSenha do modelo
@@ -25,7 +31,7 @@ class ControllerLogin extends CI_Controller {
         }
         
         $this->load->view('estrutura/cabecalho');
-        $this->load->view('corpo/corpoCadCliente');
+        $this->load->view('corpo/corpoLogin');
         $this->load->view('estrutura/rodape');
     }
     

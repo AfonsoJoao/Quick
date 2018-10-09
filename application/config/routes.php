@@ -65,4 +65,7 @@ $route ['cadastroprodutos'] = 'ControllerProduto/cadproduto';
 $route ['listaproduto'] = 'ControllerProduto/listaProduto';
 $route ['getcat'] = 'ControllerProduto/getCategoria/';
 
+//rota do login
+$route ['login'] = 'ControllerLogin/login';
+
 

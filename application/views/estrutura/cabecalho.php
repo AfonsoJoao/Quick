@@ -94,7 +94,7 @@ and open the template in the editor.
                         <div class="mega-dropdown-menu">
                             <div class="w3ls_vegetables">
                                 <ul class="dropdown-menu drp-mnu">
-                                    <li><a href="<?php echo base_url('login.php'); ?>">Entrar</a></li> 
+                                    <li><a href="<?php echo base_url('login/'); ?>">Entrar</a></li> 
                                     <li><a href="<?php echo base_url('cadastroclientes/'); ?>">Cadastrar</a></li>
                                     <li><a href="<?php echo base_url('listacliente/'); ?>">Lista de Clientes</a></li>
                                 </ul>
