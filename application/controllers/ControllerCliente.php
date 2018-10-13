@@ -72,7 +72,7 @@ class ControllerCliente extends CI_Controller {
         $this->load->view('estrutura/rodape');
     }
     
-     function excluirCliente(){ /** Nesta função eu consigo acessar os dados do cliente atavés da model e manipular esses dados através da url utilizando o segment e neste caso irá excluir os dados   */
+    public function excluirCliente(){ /** Nesta função eu consigo acessar os dados do cliente atavés da model e manipular esses dados através da url utilizando o segment e neste caso irá excluir os dados   */
         $this->load->Model('modelCliente', '', TRUE);
         $this->modelCliente->excluirCliente($this->uri->segment(3));
         $this->listaCliente();

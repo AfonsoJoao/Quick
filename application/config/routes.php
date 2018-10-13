@@ -68,4 +68,11 @@ $route ['getcat'] = 'ControllerProduto/getCategoria/';
 //rota do login
 $route ['login'] = 'ControllerLogin/login';
 
+//Rota do logout
+$route ['logout'] = 'ControllerLogin/logout';
+
+//Rota do cadastro, alteração, listagem e exclusão de operador
+$route ['cadastrooperador'] = 'ControllerOperador/cadoperador';
+$route ['listaoperador'] = 'ControllerOperador/listaOperador';
+
 

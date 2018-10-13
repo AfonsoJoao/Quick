@@ -34,9 +34,7 @@
                             else
                                 echo "inserir";
                             ?>">
-                            <input type="hidden" name="idProduto" value="<?php if (isset($produto)) foreach ($produto as $pro) {
-                        echo $pro->idProduto;
-                    } ?>">
+                           
                             <input type="hidden" name="idCliente" value="<?php
                             if (isset($cliente))
                                 foreach ($cliente as $cli) {

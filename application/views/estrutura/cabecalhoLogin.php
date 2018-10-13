@@ -62,15 +62,6 @@ and open the template in the editor.
                 }
             }
         </script>
-        
-        <script>
-            
-            function excluirOperador(id, nome) {
-                if (confirm('Deseja excluir o operador ' + nome)) {
-                    location.href = "<?php echo base_url('ControllerOperador/excluirOperador'); ?>" + "/" + id;
-                }
-            }
-        </script>
 
     </head>
     <body>
@@ -103,8 +94,8 @@ and open the template in the editor.
                         <div class="mega-dropdown-menu">
                             <div class="w3ls_vegetables">
                                 <ul class="dropdown-menu drp-mnu">
-                                    <li><a href="<?php echo base_url('login/'); ?>">Entrar</a></li> 
-                                    <li><a href="<?php echo base_url('cadastroclientes/'); ?>">Cadastrar</a></li>
+                                    <li><a href="<?php echo base_url('login/'); ?>">Perfil</a></li> 
+                                    <li><a href="<?php echo base_url('logout/'); ?>">Sair</a></li>
                                     <li><a href="<?php echo base_url('listacliente/'); ?>">Lista de Clientes</a></li>
                                 </ul>
                             </div>                  
@@ -112,31 +103,7 @@ and open the template in the editor.
                     </li>
                 </ul>
             </div>
-            <div class="w3l_header_right">
-                <ul>
-                    <li class="dropdown profile_details_drop">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-th-list" aria-hidden="true"></i><span class="caret"></span></a>
-                        <div class="mega-dropdown-menu">
-                            <div class="w3ls_vegetables">
-                                <ul class="dropdown-menu drp-mnu">
-                                    <li>
-                                        <a href="<?php echo base_url('cadastroprodutos/') ?>">Cadastrar produtos</a>
-                                    </li>
-                                    <li>
-                                        <a href="<?php echo base_url('listaproduto/'); ?>">Produtos cadastrados</a>
-                                    </li>
-                                    <li>
-                                        <a href="<?php echo base_url('cadastrooperador/'); ?>">Cadastro Operador</a>
-                                    </li>
-                                    <li>
-                                        <a href="<?php echo base_url('listaoperador/'); ?>">Lista Operador</a>
-                                    </li>
-                                </ul>
-                            </div>                  
-                        </div>	
-                    </li>
-                </ul>
-            </div>
+            
             <div class="clearfix"> </div>
         </div>
         <!-- script-for sticky-nav -->
