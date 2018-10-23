@@ -80,15 +80,13 @@ and open the template in the editor.
                 <a>-------------------</a>
             </div>
             <div class="w3l_search">
-                <form action="#" method="post">
-                    <input type="text" name="Product" value="Buscar produtos..." onfocus="this.value = '';" onblur="if (this.value == '') {
-                                this.value = 'Search a product...';
-                            }" required="">
-                    <input type="submit" value=" ">
+                <form action="<?php echo base_url('ControllerProduto/buscarProduto/') ?>" method="post">
+                    <input type="text" name="busca" placeholder="Buscar produtos...">
+                    <input type="submit" value="">
                 </form>
             </div>
             <div class="product_list_header">  
-                <form action="#" method="post" class="last" >
+                <form action="<?php echo base_url('ControllerCarrinho/carrinho'); ?>" method="post" class="last" >
                     <fieldset>
                         <input type="hidden" name="cmd" value="_cart" />
                         <input type="hidden" name="display" value="1" />

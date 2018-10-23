@@ -18,7 +18,7 @@ and open the template in the editor.
                     <h3>Informações</h3>
                     <ul class="w3_footer_grid_list">
                         <li><a href="faqs.html">FAQ</a></li>
-                        <li><a href="privacy.html">Políticas de provacidade</a></li>
+                        <li><a href="privacy.html">Políticas de privacidade</a></li>
                         <li><a href="privacy.html">Termos de uso</a></li>
                     </ul>
                 </div>

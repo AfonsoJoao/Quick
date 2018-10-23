@@ -30,7 +30,7 @@ if (isset($situacao)) {
                     <br>
                     <input class="form-control" type="text" name="marca" placeholder="Marca" required="" value="">
                     <select class="form-control" id="categoria" name="categoria" value="">
-                        <option value="#"></option>
+                        <option value=""></option>
                         <optgroup label="Alimentação">
                             <option value="arroz">Arroz</option>
                             <option value="feijao">Feijão</option>

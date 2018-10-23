@@ -69,4 +69,12 @@ class ControllerProduto extends CI_Controller {
           $this->load->Model('modelProduto', '', TRUE);
         print_r($this->modelProduto->getProdutoCategoria($categoria));
     }
+    
+    public function buscarProduto(){
+        $this->load->Model('modelProduto', '', TRUE);
+        $dados['listagem'] = $this->modelProduto->buscar($_POST);
+        $this->load->view('estrutura/cabecalho');
+        $this->load->view('corpo/corpoResultadosProdutos', $dados);
+        $this->load->view('estrutura/rodape');
+    }
 }

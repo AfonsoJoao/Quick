@@ -19,14 +19,14 @@
                                 <div class="dropdown-menu mega-dropdown-menu w3ls_vegetables_menu">
                                     <div class="w3ls_vegetables">
                                         <ul>	
-                                            <li><a href="<?php echo base_url('#'); ?>">Arroz</a></li>
-                                            <li><a href="<?php echo base_url('#'); ?>">Feijão</a></li>
-                                            <li><a href="<?php echo base_url('#'); ?>">Sal</a></li>
-                                            <li><a href="<?php echo base_url('#'); ?>">Açucar</a></li>
-                                            <li><a href="<?php echo base_url('#'); ?>">Massas</a></li>
-                                            <li><a href="<?php echo base_url('#'); ?>">Oléos</a></li>
-                                            <li><a href="<?php echo base_url('#'); ?>">Laticíneos</a></li>
-                                            <li><a href="<?php echo base_url('#'); ?>">Pães</a></li>
+                                            <li><a href="<?php echo base_url('ControllerCategorias/listaCate/arroz'); ?>">Arroz</a></li>
+                                            <li><a href="<?php echo base_url('ControllerCategorias/listaCate/feijao'); ?>">Feijão</a></li>
+                                            <li><a href="<?php echo base_url('ControllerCategorias/listaCate/sal'); ?>">Sal</a></li>
+                                            <li><a href="<?php echo base_url('ControllerCategorias/listaCate/acucar'); ?>">Açucar</a></li>
+                                            <li><a href="<?php echo base_url('ControllerCategorias/listaCate/massas'); ?>">Massas</a></li>
+                                            <li><a href="<?php echo base_url('ControllerCategorias/listaCate/oleos'); ?>">Oléos</a></li>
+                                            <li><a href="<?php echo base_url('ControllerCategorias/listaCate/laticineos'); ?>">Laticíneos</a></li>
+                                            <li><a href="<?php echo base_url('ControllerCategorias/listaCate/paes'); ?>">Pães</a></li>
                                         </ul>
                                     </div>                  
                                 </div>
@@ -36,9 +36,9 @@
                                 <div class="dropdown-menu mega-dropdown-menu w3ls_vegetables_menu">
                                     <div class="w3ls_vegetables">
                                         <ul>
-                                            <li><a href="<?php echo base_url('#'); ?>">Carnes</a></li>
-                                            <li><a href="<?php echo base_url('#'); ?>">Aves</a></li>
-                                            <li><a href="<?php echo base_url('#'); ?>">Peixes</a></li>
+                                            <li><a href="<?php echo base_url('ControllerCategorias/listaCate/carnes'); ?>">Carnes</a></li>
+                                            <li><a href="<?php echo base_url('ControllerCategorias/listaCate/aves'); ?>">Aves</a></li>
+                                            <li><a href="<?php echo base_url('ControllerCategorias/listaCate/peixes'); ?>">Peixes</a></li>
                                         </ul>
                                     </div>                  
                                 </div>	
@@ -48,8 +48,8 @@
                                 <div class="dropdown-menu mega-dropdown-menu w3ls_vegetables_menu">
                                     <div class="w3ls_vegetables">
                                         <ul>	
-                                            <li><a href="<?php echo base_url('#'); ?>">Vegetais</a></li>
-                                            <li><a href="<?php echo base_url('#'); ?>">Frutas</a></li>
+                                            <li><a href="<?php echo base_url('ControllerCategorias/listaCate/vegetais'); ?>">Vegetais</a></li>
+                                            <li><a href="<?php echo base_url('ControllerCategorias/listaCate/frutas'); ?>">Frutas</a></li>
                                         </ul>
                                     </div>                  
                                 </div>				
@@ -59,14 +59,14 @@
                                 <div class="dropdown-menu mega-dropdown-menu w3ls_vegetables_menu">
                                     <div class="w3ls_vegetables">
                                         <ul>
-                                            <li><a href="<?php echo base_url('#'); ?>">Alcoólicas</a></li>
+                                            <li><a href="<?php echo base_url('ControllerCategorias/listaCate/alcoolicas'); ?>">Alcoólicas</a></li>
                                             <li><a href="<?php echo base_url('ControllerCategorias/listaCate/naoalcoolicas'); ?>">Não alcoólicas</a></li>
                                         </ul>
                                     </div>                  
                                 </div>	
                             </li>
-                            <li><a href="<?php echo base_url('#'); ?>">Produtos de limpeza</a></li>
-                            <li><a href="<?php echo base_url('#'); ?>">Higiene</a></li>
+                            <li><a href="<?php echo base_url('ControllerCategorias/listaCate/limpeza'); ?>">Produtos de limpeza</a></li>
+                            <li><a href="<?php echo base_url('ControllerCategorias/listaCate/higiene'); ?>">Higiene</a></li>
                             <li><a href="<?php echo base_url('ControllerCategorias/listaCate/pet'); ?>">Pet</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
