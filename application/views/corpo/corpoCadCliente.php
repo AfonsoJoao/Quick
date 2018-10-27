@@ -56,7 +56,7 @@
                             ?>"><br>
 
                             <select class="form-control" id="sexo" name="sexo" required placeholder="sexo">
-                                <option value="">Sexo</option>
+                                <option>Sexo</option>
                                 <option value="masculino">Masculino</option>
                                 <option value="feminino">Feminino</option>
                                 <option value="feminino">Outros</option>
@@ -95,8 +95,7 @@
                                 foreach ($cliente as $cli) {
                                     echo $cli->telefone;
                                 }
-                            ?>"><br><br>
-
+                            ?>"><br>
                             <input type="submit" value="Salvar">
                             <?php echo form_close(); ?>
                         </div>
@@ -110,7 +109,7 @@
                                 
                             <?php echo form_close(); ?>
                         </div>
-                        <div class="cta"><a href="#">Esqueceu sua senha?</a></div>
+                        
 
                     </div>
                 </div>

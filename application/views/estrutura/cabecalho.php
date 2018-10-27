@@ -71,6 +71,8 @@ and open the template in the editor.
                 }
             }
         </script>
+        
+         
 
     </head>
     <body>
@@ -104,6 +106,7 @@ and open the template in the editor.
                                     <li><a href="<?php echo base_url('login/'); ?>">Entrar</a></li> 
                                     <li><a href="<?php echo base_url('cadastroclientes/'); ?>">Cadastrar</a></li>
                                     <li><a href="<?php echo base_url('listacliente/'); ?>">Lista de Clientes</a></li>
+                                    <li><a href="<?php echo base_url('cadastroadministrador/'); ?>">Cadastro Administrador</a></li>
                                 </ul>
                             </div>                  
                         </div>	

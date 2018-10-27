@@ -75,4 +75,7 @@ $route ['logout'] = 'ControllerLogin/logout';
 $route ['cadastrooperador'] = 'ControllerOperador/cadoperador';
 $route ['listaoperador'] = 'ControllerOperador/listaOperador';
 
+//Rota do cadastro, alteração, listagem e exclusão do administrador.
+$route ['cadastroadministrador'] = 'ControllerAdministrador/cadadministrador';
+
 

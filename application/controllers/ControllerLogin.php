@@ -23,10 +23,10 @@ class ControllerLogin extends CI_Controller {
     }
 
     public function autenticar() {
-        $this->load->model('modelCliente', '', TRUE); // chama o modelo usuarios_model
+        $this->load->model('modelLogin', '', TRUE); // chama o modelo usuarios_model
         $email = $this->input->post('email'); // pega via post o email que venho do formulario
         $senha = base64_encode($this->input->post('senhaCliente')); // pega via post a senha que venho do formulario
-        $usuario = $this->modelCliente->buscaPorEmailSenha($email, $senha);
+        $usuario = $this->modelLogin->buscaPorEmailSenhaCliente($email, $senha);
         
         if ($usuario) {
             $this->session->set_userdata("usuario_logado", $usuario);

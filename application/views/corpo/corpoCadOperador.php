@@ -59,7 +59,7 @@ and open the template in the editor.
                         ?>"><br>
 
                         <select class="form-control" id="sexo" name="sexo" required placeholder="sexo">
-                            <option value="">Sexo</option>
+                            <option>Sexo</option>
                             <option value="masculino">Masculino</option>
                             <option value="feminino">Feminino</option>
                             <option value="outros">Outros</option>
