@@ -1,5 +1,9 @@
 <?php
-
+session_start();
+if(!isset($_SESSION['carrinho'])){
+        
+        $_SESSION['carrinho'] = array();
+    }
 class ControllerCarrinho extends CI_Controller {
 
     public function carrinho() {
@@ -10,21 +14,12 @@ class ControllerCarrinho extends CI_Controller {
     }
 
     public function addItem() {
-        $this->load->Model('modelCarrinho', '', TRUE);
-        $carrinho = array(
-            'data' => $this->input->post('data'),
-            'idCliente' => $this->input->post('idCliente'));
-        $dados['cliente'] = $this->modelCarrinho->abrirCarrinho($carrinho);
-
-        $produto = array(
-            'idCarrinho' => $this->input->post('idVenda'),
-            'idProduto' => $this->input->post('idProduto'),
-            'nomeProduto' => $this->input->post('nomeProduto'),
-            'quantidade' => $this->input->post('quantidade'),
-            'valorUnitario' => $this->input->post('valorUnitario'),
-            'valorTotal' => $this->input->post('quantidade') * $this->input->post('valorUnitario'));
-        $dados['produto'] = $this->modelCarrinho->insereItem($produto, $this->input->post('idProduto'));
-        $dados['carrinho'] = $this->modelCarrinho->pegarUV($this->input->post('idCarrinho'));
+        $this->load->Model('ModelProduto', '', TRUE);
+       $idProduto = $_GET['idProduto'];
+    if(!isset($_SESSION['carrinho'][$idProduto])){
+        $_SESSION['carrinho'][$idProduto] = 1;
+}else{$_SESSION['carrinho'][$idProduto] +=1;}
     }
 
 }
+

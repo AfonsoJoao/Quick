@@ -132,6 +132,12 @@ and open the template in the editor.
                                     <li>
                                         <a href="<?php echo base_url('listaoperador/'); ?>">Lista Operador</a>
                                     </li>
+                                     <li>
+                                        <a href="<?php echo base_url('cadbanner/'); ?>">Cadastrar Banners</a>
+                                    </li>
+                                    <li>
+                                        <a href="<?php echo base_url('listabanner/'); ?>">Lista Banners</a>
+                                    </li>
                                 </ul>
                             </div>                  
                         </div>	

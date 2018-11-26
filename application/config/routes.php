@@ -78,4 +78,8 @@ $route ['listaoperador'] = 'ControllerOperador/listaOperador';
 //Rota do cadastro, alteração, listagem e exclusão do administrador.
 $route ['cadastroadministrador'] = 'ControllerAdministrador/cadadministrador';
 
+//Rota do cadastro, alteração, listaggem e exclusão dos banners
+$route ['cadbanner'] = 'ControllerBanner/cadBanner';
+$route ['listabanner'] = 'ControllerBanner/listaBanner';
+
 

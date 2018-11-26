@@ -58,6 +58,23 @@ and open the template in the editor.
                 );
             });
         </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/docs/3.3/assets/js/vendor/jquery.min.js"><\/script>')</script>
+
+
+  <script src="/docs/3.3/dist/js/bootstrap.js"></script>
+
+
+
+
+  <script src="/docs/3.3/assets/js/vendor/holder.min.js"></script>
+
+  <script src="/docs/3.3/assets/js/vendor/ZeroClipboard.min.js"></script>
+
+  <script src="/docs/3.3/assets/js/vendor/anchor.min.js"></script>
+
+  <script src="/docs/3.3/assets/js/src/application.js"></script>
+
         <!-- here stars scrolling icon -->
         <script type="text/javascript">
             $(document).ready(function () {

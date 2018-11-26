@@ -9,19 +9,16 @@ class ControllerProduto extends CI_Controller {
     }
 
     public function gravarProduto() {
-        if (isset($_FILES['imagem'])) {
-            $extensao = strtolower(substr($_FILES['imagem']['name'], -4));
-            $novo_nome = md5(time()) . $extensao;
-            move_uploaded_file($_FILES['imagem']['tmp_name'],$novo_nome);
-        }
         $this->load->Model('modelProduto', '', TRUE);
         $produto = array(
             'nomeProduto' => $this->input->post('nomeProduto'),
+            'data' => $this->input->post('data'),
             'valorUnitario' => $this->input->post('valorUnitario'),
             'descricaoProduto' => $this->input->post('descricaoProduto'),
             'peso' => $this->input->post('peso'),
             'marca' => $this->input->post('marca'),
             'categoria' => $this->input->post('categoria'),
+            'disponibilidade' => $this->input->post('disponibilidade'),
             'imagem' => $this->input->post('imagem')
         );
         if ($this->input->post('acao') == "inserir") {
@@ -56,7 +53,7 @@ class ControllerProduto extends CI_Controller {
         $this->load->Model('modelProduto', '', TRUE);
         $dados['produto'] = $this->modelProduto->listaProduto($this->uri->segment(3));
         $this->load->view('estrutura/cabecalho');
-        $this->load->view('corpo/corpoEditarProduto', $dados);
+        $this->load->view('corpo/corpoCadProduto', $dados);
         $this->load->view('estrutura/rodape');
     }
 
