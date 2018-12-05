@@ -28,10 +28,11 @@ class ControllerCliente extends CI_Controller {
         $this->load->Model('modelCliente', '', TRUE);
         $cliente = array(
             'nome' => $this->input->post('nome'),
+            'tipo' => $this->input->post('tipo'),
             'dataNascimento' => $this->input->post('dataNascimento'),
             'sexo' => $this->input->post('sexo'),
             'email' => $this->input->post('email'),
-            'senhaCliente' => base64_encode($this->input->post('senhaCliente')),
+            'senha' => base64_encode($this->input->post('senha')),
             'cpf' => $this->input->post('cpf'),
             'rg' => $this->input->post('rg'),
             'telefone' => $this->input->post('telefone')

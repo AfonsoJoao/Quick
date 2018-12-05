@@ -33,7 +33,14 @@ and open the template in the editor.
                         <h2>Faça login em sua conta</h2>
                         <?php echo form_open('ControllerLogin/autenticar'); ?>
                         <input type="text" name="email" placeholder="Email" required=" ">
-                        <input type="password" name="senhaCliente" placeholder="Senha" required=" ">
+                        <input type="password" name="senha" placeholder="Senha" required=" ">
+                       <!-- <input type="radio" name="tipo" value="usuario"/>Cliente <br>
+                        <input type="radio" name="tipo" value="operador"/>Operador <br>
+                        <input type="radio" name="tipo" value="administrador"/>Administrador <br> -->
+                        
+                      <!--   <input type="hidden" name="tipo" value="usuario">
+                        <input type="hidden" name="tipo" value="operador">
+                        <input type="hidden" name="tipo" value="administrador"> -->
                         <input type="submit" value="Entrar">
 
                         <?php echo form_close(); ?>

@@ -65,11 +65,12 @@ $route ['cadastroprodutos'] = 'ControllerProduto/cadproduto';
 $route ['listaproduto'] = 'ControllerProduto/listaProduto';
 $route ['getcat'] = 'ControllerProduto/getCategoria/';
 
-//rota do login
+//rota do login e logout cliente
 $route ['login'] = 'ControllerLogin/login';
+$route ['logout'] = 'ControllerLogin/logoutCliente';
+$route ['logout'] = 'ControllerLogin/logoutOperador';
+$route ['logout'] = 'ControllerLogin/logoutAdministrador';
 
-//Rota do logout
-$route ['logout'] = 'ControllerLogin/logout';
 
 //Rota do cadastro, alteração, listagem e exclusão de operador
 $route ['cadastrooperador'] = 'ControllerOperador/cadoperador';

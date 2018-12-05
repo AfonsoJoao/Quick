@@ -12,12 +12,52 @@
  * @author Mateus
  */
 class ModelLogin extends CI_Model {
-    
-    public function buscaPorEmailSenhaCliente($email, $senha){
-        $usuario = $this->db->get_where('cliente', array('email' => $email, 'senhaCliente' => $senha));
-        if($usuario -> num_rows() > 0){
-            return $usuario->result();
+
+    public function buscaPorEmailSenhaCliente($email, $senha) {
+        $query = $this->db->get_where('cliente', array('email' => $email, 'senha' => $senha));
+        if ($query->num_rows() > 0) {
+            return $query->result();
+        } else {
+            
+            $query = $this->db->get_where('operador',(array('email' => $email, 'senha' => $senha)));
+            if ($query->num_rows() > 0) {
+                return $query->result();
+            } else {
+                $query = $this->db->get_where('administrador', array('email' => $email, 'senha' => $senha));
+                if ($query->num_rows() > 0) {
+                    return $query->result();
+                }
+            }
+
+
+            return;
         }
-        return;
+
+        // public function buscaPorEmailSenhaOperador($email, $senha, $tipo) {
+        //     $query = $this->db->select('tipo')->from('operador')->where(array('email' => $email, 'senha' => $senha, $tipo = 'tipo'));
+        //     $query->num_rows();
+        //     return $query->result();
     }
+
+    public function buscaPorEmailSenhaAdministrador($email, $senha, $tipo) {
+        $query = $this->db->select('tipo')->from('administrador')->where(array('email' => $email, 'senha' => $senha, $tipo = 'tipo'));
+        $query->num_rows();
+        return $query->result();
+    }
+
+    /*  public function buscaPorEmailSenhaOperador($email, $senha, $tipo){
+      $usuario = $this->db->get_where('operador', array('email' => $email, 'senha' => $senha, 'tipo' => $tipo));
+      if($usuario -> num_rows() > 0){
+      return $usuario->result();
+      }
+      return;
+      }
+
+      public function buscaPorEmailSenhaAdministrador($email, $senha, $tipo){
+      $usuario = $this->db->get_where('administrador', array('email' => $email, 'senha' => $senha, 'tipo' => $tipo));
+      if($usuario -> num_rows() > 0){
+      return $usuario->result();
+      }
+      return;
+      } */
 }

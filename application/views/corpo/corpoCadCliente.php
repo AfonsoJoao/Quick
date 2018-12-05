@@ -35,12 +35,16 @@
                                 echo "inserir";
                             ?>">
                            
+                            
                             <input type="hidden" name="idCliente" value="<?php
                             if (isset($cliente))
                                 foreach ($cliente as $cli) {
                                     echo $cli->idCliente;
                                 }
                             ?>">
+                            
+                            <input type="hidden" name="tipo" value="usuario">
+                            
                             <input type="text" name="nome" placeholder="Nome completo" required=" " value="<?php
                             if (isset($cliente))
                                 foreach ($cliente as $cli) {
@@ -69,10 +73,10 @@
                                 }
                             ?>">
                             
-                            <input type="password" name="senhaCliente" placeholder="Senha" required=" " value="<?php
+                            <input type="password" name="senha" placeholder="Senha" required=" " value="<?php
                             if (isset($cliente))
                                 foreach ($cliente as $cli) {
-                                    echo $cli->senhaCliente;
+                                    echo $cli->senha;
                                 }
                             ?>">
                             

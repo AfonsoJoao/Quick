@@ -44,6 +44,9 @@ and open the template in the editor.
                                 echo $ope->idOperador;
                             }
                         ?>">
+                        
+                        <input type="hidden" name="tipo" value="operador">
+                        
                         <input type="text" name="nome" placeholder="Nome completo" required=" " value="<?php
                         if (isset($operador))
                             foreach ($operador as $ope) {
@@ -58,7 +61,12 @@ and open the template in the editor.
                             }
                         ?>"><br>
 
-                        <select class="form-control" id="sexo" name="sexo" required placeholder="sexo">
+                        <select class="form-control" id="sexo" name="sexo" required placeholder="sexo" value="<?php
+                        if (isset($operador))
+                            foreach ($operador as $ope) {
+                                echo $ope->sexo;
+                            }
+                        ?>">
                             <option>Sexo</option>
                             <option value="masculino">Masculino</option>
                             <option value="feminino">Feminino</option>
@@ -72,10 +80,10 @@ and open the template in the editor.
                             }
                         ?>">
 
-                        <input type="password" name="senhaOperador" placeholder="Senha" required=" " value="<?php
+                        <input type="password" name="senha" placeholder="Senha" required=" " value="<?php
                         if (isset($operador))
                             foreach ($operador as $ope) {
-                                echo $ope->senhaOperador;
+                                echo $ope->senha;
                             }
                         ?>">
 

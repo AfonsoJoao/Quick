@@ -23,10 +23,11 @@ class ControllerOperador extends CI_Controller {
         $this->load->Model('modelOperador', '', TRUE);
         $operador = array(
             'nome' => $this->input->post('nome'),
+            'tipo' => $this->input->post('tipo'),
             'dataNascimento' => $this->input->post('dataNascimento'),
             'sexo' => $this->input->post('sexo'),
             'email' => $this->input->post('email'),
-            'senhaOperador' => base64_encode($this->input->post('senhaOperador')),
+            'senha' => base64_encode($this->input->post('senha')),
             'cpf' => $this->input->post('cpf'),
             'rg' => $this->input->post('rg'),
             'telefone' => $this->input->post('telefone')

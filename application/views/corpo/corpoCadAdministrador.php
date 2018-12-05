@@ -9,43 +9,10 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <title></title>
 
-        <?php
-        if (isset($situacao)) {
-            $st = $situacao;
-            ?>
-            <script> alert('<?php echo $st; ?>');</script>
-            <?php
-            unset($situacao);
-        }
-        ?>
-
+      
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-        <!-- Função do jquery que diz quando todos os objetos forem carregados  na pagina
-        será executado as funções que forem digitadas.  -->
-       <!-- <script type="text/javascript">
 
-            var base_url = "<?php // echo base_url()    ?>";
-
-            $(function () {
-                $('#estado').change(function () {
-                    var idestado = $('#estado').val();
-
-                    $.post(base_url + 'ajax/cidade/getCidades', {
-                        // Colocar esse caminho acima dentro do echo base_url php.
-                        idestado: idestado
-
-                                //Função do calback que será executada logo após o post 
-                                //acima ser executado passando os parametros.
-                    }, function(data) {
-                        $('#cidade').html(data);
-                        $('#cidade').removeAttr('disabled');
-                    });
-
-                });
-            });
-
-        </script> -->  
 
         <!-- Adicionando JQuery -->
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"
@@ -82,10 +49,10 @@ and open the template in the editor.
                         if (validacep.test(cep)) {
 
                             //Preenche os campos com "..." enquanto consulta webservice.
-                            $("#uf").val("...");
-                            $("#cidade").val("...");
-                            $("#bairro").val("...");
-                            $("#rua").val("...");
+                            $("#uf").val("Carregando ...");
+                            $("#cidade").val("Carregando ...");
+                            $("#bairro").val("Carregando ...");
+                            $("#rua").val("Carregando ...");
                             $("#numero").focus();
 
                             //Consulta o webservice viacep.com.br/
@@ -121,6 +88,17 @@ and open the template in the editor.
             });
 
         </script>
+        
+          <?php
+        if (isset($situacao)) {
+            $st = $situacao;
+            ?>
+            <script> alert('<?php echo $st; ?>');</script>
+            <?php
+            unset($situacao);
+        }
+        ?>
+
 
 
 
@@ -135,35 +113,49 @@ and open the template in the editor.
                     </div>
 
                     <div class="form">
-                        <?php echo form_open('ControllerOperador/gravarOperador'); ?>
+                        <?php echo form_open('ControllerAdministrador/gravarAdministrador'); ?>
+
+                        <!-- o tipo hidden serve para armazenar dados que serão utilizados ou seja 
+                        serão manipulados durante a execução do formulario mas as informações não
+                        são exibidas para os usuários-->
+
+
                         <input type="hidden" name="acao" value="<?php
-                        if (isset($operador))
+                        if (isset($administrador))
                             echo "alterar";
                         else
                             echo "inserir";
                         ?>">
 
-                        <input type="hidden" name="idOperador" value="<?php
-                        if (isset($operador))
-                            foreach ($operador as $ope) {
-                                echo $ope->idOperador;
-                            }
-                        ?>">
-                        <input type="text" name="nome" placeholder="Nome completo" required=" " value="<?php
-                        if (isset($operador))
-                            foreach ($operador as $ope) {
-                                echo $ope->nome;
+                        <input type="hidden" name="idAdministrador" value="<?php
+                        if (isset($administrador))
+                            foreach ($administrador as $admin) {
+                                echo $admin->idAdministrador;
                             }
                         ?>">
 
-                        <input class="form-control" type="date" name="dataNascimento" required=" " value="<?php
-                        if (isset($operador))
-                            foreach ($operador as $ope) {
-                                echo $ope->dataNascimento;
+                        <input type="hidden" name="tipo" value="administrador">
+                        
+                        <input type="text" name="nome" placeholder="Nome completo" required=" " value="<?php
+                        if (isset($administrador))
+                            foreach ($administrador as $admin) {
+                                echo $admin->nome;
+                            }
+                        ?>">
+
+                        <input class="form-control" type="date" name="dataNascimento" required placeholder="Data Nascimento" value="<?php
+                        if (isset($administrador))
+                            foreach ($administrador as $admin) {
+                                echo $admin->dataNascimento;
                             }
                         ?>"><br>
 
-                        <select class="form-control" id="sexo" name="sexo" required placeholder="sexo">
+                        <select class="form-control" id="sexo" name="sexo" required placeholder="sexo" value="<?php
+                        if (isset($administrador))
+                            foreach ($administrador as $admin) {
+                                echo $admin->sexo;
+                            }
+                        ?>">
                             <option value="">Sexo</option>
                             <option value="masculino">Masculino</option>
                             <option value="feminino">Feminino</option>
@@ -171,72 +163,81 @@ and open the template in the editor.
                         </select><br>
 
                         <input type="email" name="email" placeholder="Email" required=" " value="<?php
-                        if (isset($operador))
-                            foreach ($operador as $ope) {
-                                echo $ope->email;
+                        if (isset($administrador))
+                            foreach ($administrador as $admin) {
+                                echo $admin->email;
                             }
                         ?>">
 
-                        <input type="password" name="senhaOperador" placeholder="Senha" required=" " value="<?php
-                        if (isset($operador))
-                            foreach ($operador as $ope) {
-                                echo $ope->senhaOperador;
+                        <input type="password" name="senha" placeholder="Senha" required=" " value="<?php
+                        if (isset($administrador))
+                            foreach ($administrador as $admin) {
+                                echo $admin->senha;
                             }
                         ?>">
 
                         <input type="text" name="cpf" placeholder="CPF" required="" value="<?php
-                        if (isset($operador))
-                            foreach ($operador as $ope) {
-                                echo $ope->cpf;
+                        if (isset($administrador))
+                            foreach ($administrador as $admin) {
+                                echo $admin->cpf;
                             }
                         ?>">
 
                         <input type="text" name="rg" placeholder="RG" required=" " value="<?php
-                        if (isset($operador))
-                            foreach ($operador as $ope) {
-                                echo $ope->rg;
+                        if (isset($administrador))
+                            foreach ($administrador as $admin) {
+                                echo $admin->rg;
                             }
                         ?>">
 
                         <input type="text" name="telefone" placeholder="Telefone" required=" " value="<?php
-                        if (isset($operador))
-                            foreach ($operador as $ope) {
-                                echo $ope->telefone;
+                        if (isset($administrador))
+                            foreach ($administrador as $admin) {
+                                echo $admin->telefone;
                             }
                         ?>">
 
-                        <input type="text" name="cep" id="cep" placeholder="Cep" required=" " value="<?php
-                        if (isset($operador))
-                            foreach ($operador as $ope) {
-                                echo $ope->cep;
-                            }
+                       <!-- <input type="text" name="cep" id="cep" placeholder="Cep" required=" " value="<?php
+                       // if (isset($administrador))
+                       //     foreach ($administrador as $admin) {
+                       //         echo $admin->cep;
+                       //     }
                         ?>">
 
-                        <input type="text" id="uf"  name="nomeEstado" required placeholder="Estado">
+                        <input type="text" id="uf"  name="nomeEstado" required placeholder="Estado" value="<?php
+                      //  if (isset($administrador))
+                      //      foreach ($administrador as $admin) {
+                      //          echo $admin->nomeEstado;
+                      //      }
+                        ?>">
 
-                        <input type="text" id="cidade" name="nomeCidade" required placeholder="Cidade">
+                        <input type="text" id="cidade" name="nomeCidade" required placeholder="Cidade" value="<?php
+                      //  if (isset($administrador))
+                      //      foreach ($administrador as $admin) {
+                      //          echo $admin->nomeCidade;
+                      //      }
+                        ?>">
 
                         <input type="text" name="nomeBairro" id="bairro" placeholder="Bairro" required=" " value="<?php
-                        if (isset($operador))
-                            foreach ($operador as $ope) {
-                                echo $ope->nomeBairro;
-                            }
+                     //   if (isset($administrador))
+                     //       foreach ($administrador as $admin) {
+                     //           echo $admin->nomeBairro;
+                     //       }
                         ?>">
 
                         <input type="text" name="nomeRua" id="rua" placeholder="Rua" required=" " value="<?php
-                        if (isset($operador))
-                            foreach ($operador as $ope) {
-                                echo $ope->nomeRua;
-                            }
+                     //    if (isset($administrador))
+                     //       foreach ($administrador as $admin) {
+                     //           echo $admin->nomeRua;
+                     //       }
                         ?>">
 
                         <input type="text" name="numeroResidencia" id="numero" placeholder="Número Resisdência" required=" " value="<?php
-                               if (isset($operador))
-                                   foreach ($operador as $ope) {
-                                       echo $ope->numeroResidencia;
-                                   }
-                               ?>">
-
+                     //          if (isset($administrador))
+                     //              foreach ($administrador as $admin) {
+                     //                  echo $admin->numeroResidencia;
+                     //              }
+                     //          ?>"> -->
 
 
                         <input type="submit" value="Salvar">

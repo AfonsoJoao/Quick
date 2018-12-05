@@ -41,7 +41,7 @@ and open the template in the editor.
                                     <td><?php echo $cliente->dataNascimento; ?></td>
                                     <td><?php echo $cliente->sexo;?></td>
                                     <td><?php echo $cliente->email;?></td>
-                                    <td><?php echo $cliente->senhaCliente;?></td>
+                                    <td><?php echo $cliente->senha;?></td>
                                     <td><?php echo $cliente->cpf;?></td>
                                     <td><?php echo $cliente->rg;?></td>
                                     <td><?php echo $cliente->telefone;?></td>
