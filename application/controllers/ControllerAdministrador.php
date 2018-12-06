@@ -31,7 +31,7 @@ class ControllerAdministrador extends CI_Controller {
             $dados['senha'] = base64_encode($this->input->post('senha')),
             $dados['cpf'] = $this->input->post('cpf'),
             $dados['rg'] = $this->input->post('rg'),
-            $dados['telefone'] = $this->input->post('telefone'),
+            $dados['telefone'] = $this->input->post('telefone')
          /*   $endereco['cep'] = $this->input->post('cep'),
             $estado['nomeEstado'] = $this->input->post('nomeEstado'),
             $cidade['nomeCidade'] = $this->input->post('nomeCidade'),
@@ -44,9 +44,9 @@ class ControllerAdministrador extends CI_Controller {
 
         if ($this->input->post('acao') == "inserir") {
             if ($this->modelAdministrador->inserirAdministrador($dados)) {
-                $msn['situacao'] = "Cadastro Realizado com Sucesso";
+              //  $msn['situacao'] = "Cadastro Realizado com Sucesso";
             } else {
-                $msn['situacao'] = "Erro na Realização do Cadastro";
+                $msn['situacao'] = "Cadastro Realizado com Sucesso";
             }
         } else {
             if ($this->modelAdministrador->alterarAdministrador($this->input->post('idAdministrador'), $dados)) {

@@ -72,6 +72,15 @@ and open the template in the editor.
             }
         </script>
         
+        <script>
+            
+            function excluirAdministrador(id, nome) {
+                if (confirm('Deseja excluir o administrador ' + nome)) {
+                    location.href = "<?php echo base_url('ControllerAdministrador/excluirAdministrador'); ?>" + "/" + id;
+                }
+            }
+        </script>
+        
          
 
     </head>
@@ -107,6 +116,7 @@ and open the template in the editor.
                                     <li><a href="<?php echo base_url('cadastroclientes/'); ?>">Cadastrar</a></li>
                                     <li><a href="<?php echo base_url('listacliente/'); ?>">Lista de Clientes</a></li>
                                     <li><a href="<?php echo base_url('cadastroadministrador/'); ?>">Cadastro Administrador</a></li>
+                                    <li><a href="<?php echo base_url('listaadmnistrador/'); ?>">Lista Administrador</a></li>
                                 </ul>
                             </div>                  
                         </div>	
