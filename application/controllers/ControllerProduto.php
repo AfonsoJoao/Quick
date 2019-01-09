@@ -4,7 +4,8 @@ class ControllerProduto extends CI_Controller {
 
     public function cadproduto() {
         $this->load->view('estrutura/cabecalho');
-        $this->load->view('corpo/corpoCadProduto');
+        $this->load->view('estrutura/barraMenu');
+        $this->load->view('corpo/Produto/corpoCadProduto');
         $this->load->view('estrutura/rodape');
     }
 
@@ -34,11 +35,11 @@ class ControllerProduto extends CI_Controller {
                 $msn['situacao'] = "Erro na Alteração dos Dados";
             }
         }
-        
-        
+
+
 
         $this->load->view('estrutura/cabecalho');
-        $this->load->view('corpo/corpoCadProduto', $msn);
+        $this->load->view('corpo/Produto/corpoCadProduto', $msn);
         $this->load->view('estrutura/rodape');
     }
 
@@ -46,14 +47,16 @@ class ControllerProduto extends CI_Controller {
         $this->load->model("modelProduto", '', TRUE);
         $dados['produto'] = $this->modelProduto->listarProduto();
         $this->load->view('estrutura/cabecalho');
-        $this->load->view('corpo/produtosCadastrados', $dados);
+        $this->load->view('estrutura/barraMenu');
+        $this->load->view('corpo/Produto/produtosCadastrados', $dados);
         $this->load->view('estrutura/rodape');
     }
+
     public function listaUnicoProduto() {
         $this->load->Model('modelProduto', '', TRUE);
         $dados['produto'] = $this->modelProduto->listaProduto($this->uri->segment(3));
         $this->load->view('estrutura/cabecalho');
-        $this->load->view('corpo/corpoCadProduto', $dados);
+        $this->load->view('corpo/Produto/corpoCadProduto', $dados);
         $this->load->view('estrutura/rodape');
     }
 
@@ -62,16 +65,33 @@ class ControllerProduto extends CI_Controller {
         $this->modelProduto->excluirProduto($this->uri->segment(3));
         $this->listaProduto();
     }
-    function getCategoria($categoria){
-          $this->load->Model('modelProduto', '', TRUE);
+
+    function getCategoria($categoria) {
+        $this->load->Model('modelProduto', '', TRUE);
         print_r($this->modelProduto->getProdutoCategoria($categoria));
     }
-    
-    public function buscarProduto(){
+
+    public function buscarProduto() {
+        $this->load->Model('modelProduto', '', TRUE);
+        $dados['produto'] = $this->modelProduto->listaProduto($this->uri->segment(3));
         $this->load->Model('modelProduto', '', TRUE);
         $dados['listagem'] = $this->modelProduto->buscar($_POST);
         $this->load->view('estrutura/cabecalho');
-        $this->load->view('corpo/corpoResultadosProdutos', $dados);
+        $this->load->view('estrutura/barraMenu');
+        $this->load->view('corpo/Produto/corpoResultadosProdutos', $dados);
         $this->load->view('estrutura/rodape');
     }
+
+    public function unicoProduto() {
+        $this->load->Model('modelProduto', '', TRUE);
+        $dados['produto'] = $this->modelProduto->listaProduto($this->uri->segment(3));
+        $this->load->model("modelBanner", '', TRUE);
+        $Z['banner'] = $this->modelBanner->listarBanner();
+        $this->load->view('estrutura/cabecalho');
+        $this->load->view('estrutura/barraMenu');
+        $this->load->view('estrutura/banner', $Z);
+        $this->load->view('corpo/Produto/corpoUnicoProduto', $dados);
+        $this->load->view('estrutura/rodape');
+    }
+
 }

@@ -118,5 +118,8 @@ and open the template in the editor.
         <?php
         // put your code here
         ?>
+        <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <script src="js/index.js"></script>
     </body>
 </html>

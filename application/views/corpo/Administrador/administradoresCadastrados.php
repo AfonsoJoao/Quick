@@ -13,7 +13,7 @@ and open the template in the editor.
         <div class="container-fluid">  
             <div class="bs-docs-example">
                 <center><h1>Lista de Administradores</h1></center><br><br>
-                <table class="table">
+                <table class="table table-striped">
                     <thead>
                         <tr>
                             <th>Id</th>

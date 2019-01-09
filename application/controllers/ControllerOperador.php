@@ -15,7 +15,8 @@ class ControllerOperador extends CI_Controller {
 
     public function cadoperador() {
         $this->load->view('estrutura/cabecalho');
-        $this->load->view('corpo/corpoCadOperador');
+        $this->load->view('estrutura/barraMenu');
+        $this->load->view('corpo/Operador/corpoCadOperador');
         $this->load->view('estrutura/rodape');
     }
 
@@ -56,7 +57,8 @@ class ControllerOperador extends CI_Controller {
         $this->load->Model('modelOperador', '', TRUE);
         $dados['operadores'] = $this->modelOperador->listarOperador();
         $this->load->view('estrutura/cabecalho');
-        $this->load->view('corpo/OperadoresCadastrados', $dados);
+        $this->load->view('estrutura/barraMenu');
+        $this->load->view('corpo/Operador/OperadoresCadastrados', $dados);
         $this->load->view('estrutura/rodape');
     }
     
@@ -64,7 +66,7 @@ class ControllerOperador extends CI_Controller {
         $this->load->Model('modelOperador', '', TRUE);
         $dados['operador'] = $this->modelOperador->listaOperador($this->uri->segment(3));/** O segment é um parametro ou seja são dados de uma entidade que irão ser manipulados a partir da url */
         $this->load->view('estrutura/cabecalho');
-        $this->load->view('corpo/corpoCadOperador', $dados);
+        $this->load->view('corpo/Operador/corpoCadOperador', $dados);
         $this->load->view('estrutura/rodape');
     }
     

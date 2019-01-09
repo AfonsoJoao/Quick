@@ -16,7 +16,8 @@ class ControllerAdministrador extends CI_Controller {
     public function cadadministrador() {
 
         $this->load->view('estrutura/cabecalho');
-        $this->load->view('corpo/corpoCadAdministrador');
+        $this->load->view('estrutura/barraMenu');
+        $this->load->view('corpo/Administrador/corpoCadAdministrador');
         $this->load->view('estrutura/rodape');
     }
 
@@ -66,7 +67,8 @@ class ControllerAdministrador extends CI_Controller {
         $dados['administradores'] = $this->modelAdministrador->listarAdministrador();
        // $cid['cidades'] = $this->modelAdministrador->listarCidade();
         $this->load->view('estrutura/cabecalho');
-        $this->load->view('corpo/administradoresCadastrados', $dados);
+        $this->load->view('estrutura/barraMenu');
+        $this->load->view('corpo/Administrador/administradoresCadastrados', $dados);
         $this->load->view('estrutura/rodape');
     }
     
@@ -74,7 +76,7 @@ class ControllerAdministrador extends CI_Controller {
         $this->load->Model('modelAdministrador', '', TRUE);
         $dados['administrador'] = $this->modelAdministrador->listaAdministrador($this->uri->segment(3));/** O segment é um parametro ou seja são dados de uma entidade que irão ser manipulados a partir da url */
         $this->load->view('estrutura/cabecalho');
-        $this->load->view('corpo/corpoCadAdministrador', $dados);
+        $this->load->view('corpo/Administrador/corpoCadAdministrador', $dados);
         $this->load->view('estrutura/rodape');
     }
     
@@ -88,7 +90,7 @@ class ControllerAdministrador extends CI_Controller {
         $this->load->Model('modelAdministrador', '', TRUE);
         $end['enderecos'] = $this->modelAdministrador->listarEndereco();
         $this->load->view('estrutura/cabecalho');
-        $this->load->view('corpo/administradoresCadastrados', $end);
+        $this->load->view('corpo/Administrador/administradoresCadastrados', $end);
         $this->load->view('estrutura/rodape');
     }
     
@@ -96,7 +98,7 @@ class ControllerAdministrador extends CI_Controller {
         $this->load->Model('modelAdministrador', '', TRUE);
         $est['estados'] = $this->modelAdministrador->listarEstado();
         $this->load->view('estrutura/cabecalho');
-        $this->load->view('corpo/administradoresCadastrados', $est);
+        $this->load->view('corpo/Administrador/administradoresCadastrados', $est);
         $this->load->view('estrutura/rodape');
     }
 
@@ -104,7 +106,7 @@ class ControllerAdministrador extends CI_Controller {
         $this->load->Model('modelAdministrador', '', TRUE);
         $cid['cidades'] = $this->modelAdministrador->listarCidade();
         $this->load->view('estrutura/cabecalho');
-        $this->load->view('corpo/administradoresCadastrados', $cid);
+        $this->load->view('corpo/Administrador/administradoresCadastrados', $cid);
         $this->load->view('estrutura/rodape');
     }
     
@@ -112,8 +114,14 @@ class ControllerAdministrador extends CI_Controller {
         $this->load->Model('modelAdministrador', '', TRUE);
         $bai['bairros'] = $this->modelAdministrador->listarBairro();
         $this->load->view('estrutura/cabecalho');
-        $this->load->view('corpo/administradoresCadastrados', $bai);
+        $this->load->view('corpo/Administrador/administradoresCadastrados', $bai);
         $this->load->view('estrutura/rodape');
     }
-
+    
+    public function painel() {
+        $this->load->view('estrutura/cabecalho');
+        $this->load->view('estrutura/barraMenu');
+        $this->load->view('corpo/corpoPainel');
+        $this->load->view('estrutura/rodape');
+    }
 }

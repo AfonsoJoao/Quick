@@ -20,7 +20,7 @@
                                             <div class="snipcart-item block">
                                                 <div class="snipcart-thumb">
                                                     <div class="snipcart-details">
-                                                        <a href="#"><img src=<?php echo base_url('application/images/' . $listagem['imagem']) ?>  width="140px" height="140px"></a>
+                                                        <a href="<?php echo base_url("controllerProduto/unicoProduto/") . $listagem['idProduto']; ?>"><img src=<?php echo base_url('application/images/' . $listagem['imagem']) ?>  width="140px" height="140px"></a>
                                                         <p><?php echo $listagem['nomeProduto']; ?></p>
                                                         <h4><?php echo "R$ " . $listagem['valorUnitario']; ?></h4>
                                                         <br>

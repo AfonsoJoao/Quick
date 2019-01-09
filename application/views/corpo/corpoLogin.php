@@ -128,7 +128,7 @@ and open the template in the editor.
                     <input type="submit" value="Salvar">
                     <?php echo form_close(); ?>
                 </div>
-                <div class="cta"><a href="#">Esqueceu sua senha?</a></div>
+                <div class="cta"><a href="ControllerCliente/recuperarSenha">Esqueceu sua senha?</a></div>
             </div>
         </div>
 

@@ -1,6 +1,6 @@
  <div class="container-fluid">  
     <div class="bs-docs-example">
-        <table class="table">
+        <table class="table table-striped">
             <thead>
                 <tr>
                     <th>Id</th>
@@ -14,7 +14,6 @@
                 </tr>
             </thead>
             <tbody>
-
                 <?php
                 if (isset($produto)) {
                     foreach ($produto as $produto) {

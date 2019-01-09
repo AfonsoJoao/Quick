@@ -4,13 +4,16 @@ class ControllerLogin extends CI_Controller {
 
     public function login() {
         $this->load->view('estrutura/cabecalho');
+                $this->load->view('estrutura/barraMenu');
         $this->load->view('corpo/corpoLogin');
         $this->load->view('estrutura/rodape');
     }
 
     public function loginfeitoCliente() {
+        $this->load->model("modelBanner", '', TRUE);
+        $dados['banner'] = $this->modelBanner->listarBanner();
         $this->load->view('estrutura/cabecalhoLoginCliente');
-        $this->load->view('estrutura/banner');
+        $this->load->view('estrutura/banner', $dados);
         $this->load->view('corpo/corpoCategorias');
         $this->load->view('estrutura/rodape');
     }
@@ -23,8 +26,10 @@ class ControllerLogin extends CI_Controller {
     }
 
     public function loginfeitoOperador() {
+        $this->load->model("modelBanner", '', TRUE);
+        $dados['banner'] = $this->modelBanner->listarBanner();
         $this->load->view('estrutura/cabecalhoLoginOperador');
-        $this->load->view('estrutura/banner');
+        $this->load->view('estrutura/banner', $dados);
         $this->load->view('corpo/corpo');
         $this->load->view('estrutura/rodape');
     }
@@ -37,8 +42,10 @@ class ControllerLogin extends CI_Controller {
     }
 
     public function loginfeitoAdministrador() {
+        $this->load->model("modelBanner", '', TRUE);
+        $dados['banner'] = $this->modelBanner->listarBanner();
         $this->load->view('estrutura/cabecalhoLoginAdministrador');
-        $this->load->view('estrutura/banner');
+        $this->load->view('estrutura/banner', $dados);
         $this->load->view('corpo/corpo');
         $this->load->view('estrutura/rodape');
     }

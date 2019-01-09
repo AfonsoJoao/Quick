@@ -23,6 +23,8 @@ and open the template in the editor.
 
         <link href="<?php echo base_url('css/style.css'); ?>" rel="stylesheet" type="text/css" media="all" />
 
+
+        <link rel="stylesheet" href="<?php echo base_url('css/style2.css'); ?>">
         <!-- font-awesome icons -->
         <link href="<?php echo base_url('css/font-awesome.css'); ?>" rel="stylesheet" type="text/css" media="all" /> 
 
@@ -33,7 +35,7 @@ and open the template in the editor.
         <!-- //js -->
         <link href="<?php echo base_url('//fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,500,500italic,700,700italic'); ?>" rel='stylesheet' type='text/css'>
         <link href="<?php echo base_url('//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic'); ?>" rel='stylesheet' type='text/css'>
-              <!-- start-smoth-scrolling -->
+        <!-- start-smoth-scrolling -->
         <script type="text/javascript" src="<?php echo base_url('js/move-top.js'); ?>"></script>
         <script type="text/javascript" src="<?php echo base_url('js/easing.js'); ?>"></script>
         <script type="text/javascript">
@@ -47,7 +49,7 @@ and open the template in the editor.
         <!-- start-smoth-scrolling -->
 
         <script>
-            
+
             function excluirCliente(id, nome) {
                 if (confirm('Deseja excluir o cliente ' + nome)) {
                     location.href = "<?php echo base_url('ControllerCliente/excluirCliente'); ?>" + "/" + id;
@@ -55,33 +57,42 @@ and open the template in the editor.
             }
         </script>
         <script>
-            
+
             function excluirProduto(id, nome) {
                 if (confirm('Deseja excluir o produto ' + nome)) {
                     location.href = "<?php echo base_url('ControllerProduto/excluirProduto'); ?>" + "/" + id;
                 }
             }
         </script>
-        
+
         <script>
-            
+
             function excluirOperador(id, nome) {
                 if (confirm('Deseja excluir o operador ' + nome)) {
                     location.href = "<?php echo base_url('ControllerOperador/excluirOperador'); ?>" + "/" + id;
                 }
             }
         </script>
-        
+
         <script>
-            
+
             function excluirAdministrador(id, nome) {
                 if (confirm('Deseja excluir o administrador ' + nome)) {
                     location.href = "<?php echo base_url('ControllerAdministrador/excluirAdministrador'); ?>" + "/" + id;
                 }
             }
         </script>
-        
-         
+
+        <script>
+
+            function excluirBanner(id, nome) {
+                if (confirm('Deseja excluir o Banner ' + nome)) {
+                    location.href = "<?php echo base_url('ControllerBanner/excluirBanner'); ?>" + "/" + id;
+                }
+            }
+        </script>
+
+
 
     </head>
     <body>
@@ -91,7 +102,7 @@ and open the template in the editor.
                 <a>-------------------</a>
             </div>
             <div class="w3l_search">
-                <form action="<?php echo base_url('ControllerProduto/buscarProduto/') ?>" method="post">
+                <form action="<?php echo base_url('resultadodabusca/') ?>" method="post">
                     <input type="text" name="busca" placeholder="Buscar produtos...">
                     <input type="submit" value="">
                 </form>
@@ -99,9 +110,7 @@ and open the template in the editor.
             <div class="product_list_header">  
                 <form action="<?php echo base_url('ControllerCarrinho/carrinho'); ?>" method="post" class="last" >
                     <fieldset>
-                        <input type="hidden" name="cmd" value="_cart" />
-                        <input type="hidden" name="display" value="1" />
-                        <input type="submit" name="submit" value="Seu carrinho " class="button" />
+                        <input type="submit" name="submit" value="Meu Carrinho   " class="button" />
                     </fieldset>
                 </form>
             </div>
@@ -113,10 +122,7 @@ and open the template in the editor.
                             <div class="w3ls_vegetables">
                                 <ul class="dropdown-menu drp-mnu">
                                     <li><a href="<?php echo base_url('login/'); ?>">Entrar</a></li> 
-                                    <li><a href="<?php echo base_url('cadastroclientes/'); ?>">Cadastrar</a></li>
-                                    <li><a href="<?php echo base_url('listacliente/'); ?>">Lista de Clientes</a></li>
-                                    <li><a href="<?php echo base_url('cadastroadministrador/'); ?>">Cadastro Administrador</a></li>
-                                    <li><a href="<?php echo base_url('listaadmnistrador/'); ?>">Lista Administrador</a></li>
+                                    <li><a href="<?php echo base_url('cadastroclientes/'); ?>">Cadastre-se</a></li>
                                 </ul>
                             </div>                  
                         </div>	
@@ -125,32 +131,8 @@ and open the template in the editor.
             </div>
             <div class="w3l_header_right">
                 <ul>
-                    <li class="dropdown profile_details_drop">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-th-list" aria-hidden="true"></i><span class="caret"></span></a>
-                        <div class="mega-dropdown-menu">
-                            <div class="w3ls_vegetables">
-                                <ul class="dropdown-menu drp-mnu">
-                                    <li>
-                                        <a href="<?php echo base_url('cadastroprodutos/') ?>">Cadastrar produtos</a>
-                                    </li>
-                                    <li>
-                                        <a href="<?php echo base_url('listaproduto/'); ?>">Produtos cadastrados</a>
-                                    </li>
-                                    <li>
-                                        <a href="<?php echo base_url('cadastrooperador/'); ?>">Cadastro Operador</a>
-                                    </li>
-                                    <li>
-                                        <a href="<?php echo base_url('listaoperador/'); ?>">Lista Operador</a>
-                                    </li>
-                                     <li>
-                                        <a href="<?php echo base_url('cadbanner/'); ?>">Cadastrar Banners</a>
-                                    </li>
-                                    <li>
-                                        <a href="<?php echo base_url('listabanner/'); ?>">Lista Banners</a>
-                                    </li>
-                                </ul>
-                            </div>                  
-                        </div>	
+                   <li class="dropdown profile_details_drop">
+                        <a href="<?php echo base_url('paineladministrativo/'); ?>" ><i class="fa fa-th-list"></i><span></span></a>                
                     </li>
                 </ul>
             </div>
@@ -175,7 +157,7 @@ and open the template in the editor.
         <div class="logo_products">
             <div class="container">
                 <div class="w3ls_logo_products_left">
-                    <h1><a href="<?php echo base_url('index/') ?>"><img src="<?php echo base_url('application/images/Logo-Quick2.jpg'); ?>" width="130" height="100"></a></h1>
+                    <h1><a href="<?php echo base_url('index') ?>"><img src="<?php echo base_url('application/images/Logo-Quick2.jpg'); ?>" width="130" height="100"></a></h1>
                 </div>
                 <div class="w3ls_logo_products_left1">
                     <ul class="special_items">
@@ -186,19 +168,6 @@ and open the template in the editor.
                 <div class="clearfix"> </div>
             </div>
         </div>
-        <!-- //header -->
-        <!-- products-breadcrumb -->
-        <div class="products-breadcrumb">
-            <div class="container">
-                <ul>
-                    <li><img src="<?php echo base_url('application/images/home.png'); ?>" width="25" height="20"><a href="<?php echo base_url('index/') ?>">Inicio</a><span>|</span></li>
-                    <li>**<span>|</span></li>
-                    <li>**</li>
-                </ul>
-            </div>
-        </div>
-        <!-- //products-breadcrumb -->
-
-                </body>
-                </html>
+    </body>
+</html>
                 <?php

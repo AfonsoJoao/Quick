@@ -4,7 +4,8 @@ class ControllerBanner extends CI_Controller {
 
     public function cadbanner() {
         $this->load->view('estrutura/cabecalho');
-        $this->load->view('corpo/corpoCadBanner');
+        $this->load->view('estrutura/barraMenu');
+        $this->load->view('corpo/Banners/corpoCadBanner');
         $this->load->view('estrutura/rodape');
     }
 
@@ -33,7 +34,7 @@ class ControllerBanner extends CI_Controller {
         
 
         $this->load->view('estrutura/cabecalho');
-        $this->load->view('corpo/corpoCadBanner', $msn);
+        $this->load->view('corpo/Banners/corpoCadBanner', $msn);
         $this->load->view('estrutura/rodape');
     }
 
@@ -41,14 +42,15 @@ class ControllerBanner extends CI_Controller {
         $this->load->model("modelBanner", '', TRUE);
         $dados['banner'] = $this->modelBanner->listarBanner();
        $this->load->view('estrutura/cabecalho');
-        $this->load->view('corpo/bannersCadastrados', $dados);
+       $this->load->view('estrutura/barraMenu');
+        $this->load->view('corpo/Banners/bannersCadastrados', $dados);
         $this->load->view('estrutura/rodape');
     }
     public function listaUnicoBanner() {
         $this->load->Model('modelBanner', '', TRUE);
         $dados['banner'] = $this->modelBanner->listaBanner($this->uri->segment(3));
         $this->load->view('estrutura/cabecalho');
-        $this->load->view('corpo/corpoCadBanner', $dados);
+        $this->load->view('corpo/Banners/corpoCadBanner', $dados);
         $this->load->view('estrutura/rodape');
     }
 

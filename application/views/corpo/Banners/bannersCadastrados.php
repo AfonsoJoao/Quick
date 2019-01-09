@@ -1,6 +1,6 @@
  <div class="container-fluid">  
     <div class="bs-docs-example">
-        <table class="table">
+        <table class="table table-striped">
             <thead>
                 <tr>
                     <th>Id</th>
