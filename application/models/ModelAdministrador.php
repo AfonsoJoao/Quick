@@ -13,8 +13,12 @@
  */
 class ModelAdministrador extends CI_Model {
 
-    public function inserirAdministrador($dados) {
+    public function inserirAdministrador($dados, $endereco, $estado, $cidade, $bairro) {
         $this->db->insert('administrador', $dados);
+        $this->db->insert('endereco', $endereco);
+        $this->db->insert('estado', $estado);
+        $this->db->insert('cidade', $cidade);
+        $this->db->insert('bairro', $bairro);
       /*$this->db->insert('endereco', $endereco);
         $this->db->insert('estado', $estado);
         $this->db->insert('cidade', $cidade);
@@ -33,7 +37,6 @@ class ModelAdministrador extends CI_Model {
         }
         return;
     }
-    
     
      public function listaAdministrador($id) { // Está função captura lista de registros armazenados no banco para que possam ser manipulados.
         $resultado = $this->db->get_where('administrador', array('idAdministrador' => $id));
