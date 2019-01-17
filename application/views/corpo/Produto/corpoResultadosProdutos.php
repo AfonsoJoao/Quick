@@ -3,7 +3,7 @@
 <!-- top-brands -->
 <div class="top-brands">
     <div class="container">
-        <h3>Produtos encontrados</h3>
+        <h3>Resultado da busca por  <?php echo "'" . $this->input->post('busca') . "'";?></h3>
         <table class="table">
             <tbody>
                 <?php echo form_open('ControllerProduto/buscarProduto'); ?>

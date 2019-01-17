@@ -93,6 +93,9 @@ if (isset($situacao)) {
                         <option value="pet">Pet</option>
                 </select>
                 <br>
+                
+                <!-- <div id="imagemupload">upload</div>-->
+                
                 <input class="form-control" type="file" required name="imagem" value="<?php
                 if (isset($produto))
                     foreach ($produto as $pro) {

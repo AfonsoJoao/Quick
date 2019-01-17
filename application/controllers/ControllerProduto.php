@@ -72,14 +72,20 @@ class ControllerProduto extends CI_Controller {
     }
 
     public function buscarProduto() {
+        $this->form_validation->set_rules('busca', 'buscar', 'trim|required');
+        
+        if($this->form_validation->run() == TRUE){    
         $this->load->Model('modelProduto', '', TRUE);
         $dados['produto'] = $this->modelProduto->listaProduto($this->uri->segment(3));
         $this->load->Model('modelProduto', '', TRUE);
-        $dados['listagem'] = $this->modelProduto->buscar($_POST);
+        $dados['listagem'] = $this->modelProduto->buscar($this->input->post('busca'));
         $this->load->view('estrutura/cabecalho');
         $this->load->view('estrutura/barraMenu');
         $this->load->view('corpo/Produto/corpoResultadosProdutos', $dados);
         $this->load->view('estrutura/rodape');
+        }else{
+            redirect('/', 'refresh');
+        }
     }
 
     public function unicoProduto() {
@@ -93,5 +99,27 @@ class ControllerProduto extends CI_Controller {
         $this->load->view('corpo/Produto/corpoUnicoProduto', $dados);
         $this->load->view('estrutura/rodape');
     }
-
+  
+      /** FUNÇÃO DE UPLOAD DE IMAGEM NÃO FINALIZADA
+        public function uploadImagem(){
+        $pasta = 'C:/xampp/www/ProjetoQuick/application/images/imagens_produtos/';
+        
+        $config['upload_path'] = $pasta;
+        $config['allowed_types'] = 'jpg|png|gif';
+        $config['max_size'] = 2048;
+        
+        $this->load->library('upload', $config);
+        
+        if($this->upload->do_upload('imagem')){
+            $retorno['file_name'] = $this->upload->data('file_name');
+            $retorno['msg'] = 'Foto enviada com sucesso';
+            $retorno['erro'] = 0;
+        }else{
+            $retorno['msg'] = $this->upload->displayerrors();
+            $retorno['erro'] = 25;
+        }
+        
+        echo json_encode($retorno);
+    }
+    */
 }
