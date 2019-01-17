@@ -20,6 +20,7 @@ class ControllerProduto extends CI_Controller {
             'marca' => $this->input->post('marca'),
             'categoria' => $this->input->post('categoria'),
             'disponibilidade' => $this->input->post('disponibilidade'),
+            'tipoDestaque' => $this->input->post('tipoDestaque'),
             'imagem' => $this->input->post('imagem')
         );
         if ($this->input->post('acao') == "inserir") {

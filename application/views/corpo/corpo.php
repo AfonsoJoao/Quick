@@ -1,162 +1,106 @@
 
-                <!-- //flexSlider -->
-            </div>
-            <div class="clearfix"></div>
-        </div>
-        <!-- banner -->
-        <!-- top-brands -->
-        <div class="top-brands">
-            <div class="container">
-                <h3>Destaques</h3>
-                <div class="agile_top_brands_grids">
-                    <div class="col-md-3 top_brand_left">
-                        <div class="hover14 column">
-                            <div class="agile_top_brand_left_grid">
-                                <div class="tag"><img src="<?php echo base_url('application/images/tag.png');?>" alt=" " class="img-responsive" /></div>
-                                <div class="agile_top_brand_left_grid1">
-                                    <figure>
-                                        <div class="snipcart-item block" >
-                                            <div class="snipcart-thumb">
-                                                <a href="<?php echo base_url('single.html');?>"><img title=" " alt=" " src="<?php echo base_url('application/images/1.png');?>" /></a>		
-                                                <p>fortune sunflower oil</p>
-                                                <h4>$7.99 <span>$10.00</span></h4>
+<!-- //flexSlider -->
+</div>
+<div class="clearfix"></div>
+</div>
+<!-- banner -->
+<!-- top-brands -->
+<div class="top-brands">
+    <div class="container">
+        <h3>Destaques</h3>
+        <?php
+        if (isset($produto)) {
+            foreach ($produto as $produto) {
+                ?>
+                <?php if ($produto->disponibilidade == "true") { ?>
+                    <?php if ($produto->tipoDestaque == "1" || $produto->tipoDestaque == "2") { ?>
+                        <?php if ($produto->tipoDestaque == "1") { ?>
+                            <div class="w3ls_w3l_banner_nav_right_grid1 w3ls_w3l_banner_nav_right_grid1_veg">
+                                <div class="col-md-3 w3ls_w3l_banner_left w3ls_w3l_banner_left_asdfdfd">
+                                    <div class="hover14 column">
+                                        <div class="agile_top_brand_left_grid w3l_agile_top_brand_left_grid">
+                                            <div class="agile_top_brand_left_grid_pos">
+                                                <img src="<?php echo base_url('application/images/offer.png'); ?>" alt=" " class="img-responsive" />
                                             </div>
-                                            <div class="snipcart-details top_brand_home_details">
-                                                <form action="checkout.html" method="post">
-                                                    <fieldset>
-                                                        <input type="hidden" name="cmd" value="_cart" />
-                                                        <input type="hidden" name="add" value="1" />
-                                                        <input type="hidden" name="business" value=" " />
-                                                        <input type="hidden" name="item_name" value="Fortune Sunflower Oil" />
-                                                        <input type="hidden" name="amount" value="7.99" />
-                                                        <input type="hidden" name="discount_amount" value="1.00" />
-                                                        <input type="hidden" name="currency_code" value="USD" />
-                                                        <input type="hidden" name="return" value=" " />
-                                                        <input type="hidden" name="cancel_return" value=" " />
-                                                        <input type="submit" name="submit" value="Add to cart" class="button" />
-                                                    </fieldset>
+                                            <div class="agile_top_brand_left_grid1">
+                                                <figure>
+                                                    <div class="snipcart-item block">
+                                                        <div class="snipcart-thumb">
+                                                            <div class="snipcart-details">
+                                                                <a href="<?php echo base_url("controllerProduto/unicoProduto/$produto->idProduto") ?>"><img src="<?php echo base_url('application/images/' . $produto->imagem) ?>" width="140px" height="140px"></a>
+                                                                <p><?php echo $produto->nomeProduto; ?></p>
+                                                                <h4><?php echo "R$ " . $produto->valorUnitario; ?></h4>
+                                                                <br>
+                                                                <div class="quantity"> 
+                                                                    <div class="quantity-select">                           
+                                                                        <div class="entry value-minus">&nbsp;</div>
+                                                                        <div class="entry value"><span>1</span></div>
+                                                                        <div class="entry value-plus active">&nbsp;</div>
+                                                                    </div>
+                                                                </div>
+                                                                <br> 
+                                                                <fieldset>
+                                                                    <input type="hidden" name="idProduto" value="<?php echo $produto->idProduto; ?>" />
+                                                                    <input type="submit" name="submit" value="Adicionar ao carrinho" class="button" />
+                                                                </fieldset>
+                                                            </div>
+                                                        </div>
+                                                </figure>
+                                            </div>  
+                                        </div>
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php
+                        } else if ($produto->tipoDestaque == "2") {
+                            ?>
+                            <div class="w3ls_w3l_banner_nav_right_grid1 w3ls_w3l_banner_nav_right_grid1_veg">
+                                <div class="col-md-3 w3ls_w3l_banner_left w3ls_w3l_banner_left_asdfdfd">
+                                    <div class="hover14 column">
+                                        <div class="agile_top_brand_left_grid w3l_agile_top_brand_left_grid">
+                                            <div class="agile_top_brand_left_grid1">
+                                                <figure>
+                                                    <div class="snipcart-item block">
+                                                        <div class="snipcart-thumb">
+                                                            <div class="snipcart-details">
+                                                                <a href="<?php echo base_url("controllerProduto/unicoProduto/$produto->idProduto") ?>"><img src="<?php echo base_url('application/images/' . $produto->imagem) ?>" width="140px" height="140px"></a>
+                                                                <p><?php echo $produto->nomeProduto; ?></p>
+                                                                <h4><?php echo "R$ " . $produto->valorUnitario; ?></h4>
+                                                                <br>
+                                                                <div class="quantity"> 
+                                                                    <div class="quantity-select">                           
+                                                                        <div class="entry value-minus">&nbsp;</div>
+                                                                        <div class="entry value"><span>1</span></div>
+                                                                        <div class="entry value-plus active">&nbsp;</div>
+                                                                    </div>
+                                                                </div>
+                                                                <br> 
+                                                                <fieldset>
+                                                                    <input type="hidden" name="idProduto" value="<?php echo $produto->idProduto; ?>" />
+                                                                    <input type="submit" name="submit" value="Adicionar ao carrinho" class="button" />
+                                                                </fieldset>
+                                                            </div>
+                                                        </div>
+                                                </figure>
+                                            </div>  
+                                        </div>
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php
+                        }
+                    }
+                }
+            }
+            ?>
+        <?php } ?>
 
-                                                </form>
+    </div>
 
-                                            </div>
-                                        </div>
-                                    </figure>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 top_brand_left">
-                        <div class="hover14 column">
-                            <div class="agile_top_brand_left_grid">
-                                <div class="agile_top_brand_left_grid1">
-                                    <figure>
-                                        <div class="snipcart-item block" >
-                                            <div class="snipcart-thumb">
-                                                <a href="<?php echo base_url('single.html');?>"><img title=" " alt=" " src="<?php echo base_url('application/images/3.png');?>" /></a>		
-                                                <p>basmati rise (5 Kg)</p>
-                                                <h4>$11.99 <span>$15.00</span></h4>
-                                            </div>
-                                            <div class="snipcart-details top_brand_home_details">
-                                                <form action="#" method="post">
-                                                    <fieldset>
-                                                        <input type="hidden" name="cmd" value="_cart" />
-                                                        <input type="hidden" name="add" value="1" />
-                                                        <input type="hidden" name="business" value=" " />
-                                                        <input type="hidden" name="item_name" value="basmati rise" />
-                                                        <input type="hidden" name="amount" value="11.99" />
-                                                        <input type="hidden" name="discount_amount" value="1.00" />
-                                                        <input type="hidden" name="currency_code" value="USD" />
-                                                        <input type="hidden" name="return" value=" " />
-                                                        <input type="hidden" name="cancel_return" value=" " />
-                                                        <input type="submit" name="submit" value="Add to cart" class="button" />
-                                                    </fieldset>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </figure>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 top_brand_left">
-                        <div class="hover14 column">
-                            <div class="agile_top_brand_left_grid">
-                                <div class="agile_top_brand_left_grid_pos">
-                                    <img src="<?php echo base_url('application/images/offer.png');?>" alt=" " class="img-responsive" />
-                                </div>
-                                <div class="agile_top_brand_left_grid1">
-                                    <figure>
-                                        <div class="snipcart-item block">
-                                            <div class="snipcart-thumb">
-                                                <a href="<?php echo base_url('single.html');?>"><img src="<?php echo base_url('application/images/2.png');?>" alt=" " class="img-responsive" /></a>
-                                                <p>Pepsi soft drink (2 Ltr)</p>
-                                                <h4>$8.00 <span>$10.00</span></h4>
-                                            </div>
-                                            <div class="snipcart-details top_brand_home_details">
-                                                <form action="#" method="post">
-                                                    <fieldset>
-                                                        <input type="hidden" name="cmd" value="_cart" />
-                                                        <input type="hidden" name="add" value="1" />
-                                                        <input type="hidden" name="business" value=" " />
-                                                        <input type="hidden" name="item_name" value="Pepsi soft drink" />
-                                                        <input type="hidden" name="amount" value="8.00" />
-                                                        <input type="hidden" name="discount_amount" value="1.00" />
-                                                        <input type="hidden" name="currency_code" value="USD" />
-                                                        <input type="hidden" name="return" value=" " />
-                                                        <input type="hidden" name="cancel_return" value=" " />
-                                                        <input type="submit" name="submit" value="Add to cart" class="button" />
-                                                    </fieldset>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </figure>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 top_brand_left">
-                        <div class="hover14 column">
-                            <div class="agile_top_brand_left_grid">
-                                <div class="agile_top_brand_left_grid_pos">
-                                    <img src="<?php echo base_url('application/images/offer.png');?>" alt=" " class="img-responsive" />
-                                </div>
-                                <div class="agile_top_brand_left_grid1">
-                                    <figure>
-                                        <div class="snipcart-item block">
-                                            <div class="snipcart-thumb">
-                                                <a href="<?php echo base_url('single.html');?>"><img src="<?php echo base_url('application/images/4.png');?>" alt=" " class="img-responsive" /></a>
-                                                <p>dogs food (4 Kg)</p>
-                                                <h4>$9.00 <span>$11.00</span></h4>
-                                            </div>
-                                            <div class="snipcart-details top_brand_home_details">
-                                                <form action="#" method="post">
-                                                    <fieldset>
-                                                        <input type="hidden" name="cmd" value="_cart" />
-                                                        <input type="hidden" name="add" value="1" />
-                                                        <input type="hidden" name="business" value=" " />
-                                                        <input type="hidden" name="item_name" value="dogs food" />
-                                                        <input type="hidden" name="amount" value="9.00" />
-                                                        <input type="hidden" name="discount_amount" value="1.00" />
-                                                        <input type="hidden" name="currency_code" value="USD" />
-                                                        <input type="hidden" name="return" value=" " />
-                                                        <input type="hidden" name="cancel_return" value=" " />
-                                                        <input type="submit" name="submit" value="Add to cart" class="button" />
-                                                    </fieldset>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </figure>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="clearfix"> </div>
-                </div>
-            </div>
-        </div>
-        <!-- //top-brands -->
+</div>
+<!-- //top-brands -->
 
-        
-        
-    </body>
+</body>
 </html>

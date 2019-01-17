@@ -105,6 +105,12 @@ if (isset($situacao)) {
                 <br>
                 <input type="hidden" class="form-control" name="data" value="<?php echo date_format(new DateTime(), 'Y/m/d'); ?>" >
                 <input type="hidden" name="disponibilidade" value="true">
+                <div>
+                    Promoção: 
+                    <input type="radio" name="tipoDestaque" value="1"><br>
+                    Apenas destacar: 
+                    <input type="radio" name="tipoDestaque" value="2"><br><br>
+                </div>
                 <input type="submit" value="Cadastrar">
             </div>
             <?php echo form_close(); ?>
