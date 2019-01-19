@@ -1,39 +1,41 @@
 <!-- about --><br>
 <div class="col-md-6">
-<h3>Carrinho Compras <?= '(total de item ' . $this->carrinhocompras->totalItem() . ')' ?> </h3>
-</div>
-<hr />
+    <h3>Carrinho Compras <?= '(total de item ' . $this->carrinhocompras->totalItem() . ')' ?> </h3>
+    <hr/>
+    <br>
+    
+</div> 
 <div class="col-md-12">
-        <table class="table table-bordered">
-            <thead>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Descrição</th>
+                <th class="text-right">Valor</th>
+                <th class="text-center">Quantidade</th>
+                <th class="text-right">Subtotal</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <?php foreach ($carrinho as $indice => $linha) { ?> <!-- exibe a lista de produtos do carrinho através do foreach -->
                 <tr>
-                    <th>Descrição</th>
-                    <th class="text-right">Valor</th>
-                    <th class="text-center">Quantidade</th>
-                    <th class="text-right">Subtotal</th>
+                    <td><?= $linha['nome'] ?></td>
+                    <td class="text-right"><?= $linha['valor'] ?></td>
+                    <td class="text-center"><?= $linha['qtd'] ?></td>
+                    <td class="text-right"><?= $linha['subtotal'] ?></td> <!-- OBS: Depois colocar no formato moeda real -->
                 </tr>
-            </thead>
+            <?php } // Fim da lista produtos carrinho ?>
 
-            <tbody>
-                <?php foreach ($carrinho as $indice => $linha) { ?> <!-- exibe a lista de produtos do carrinho através do foreach -->
-                    <tr>
-                        <td><?= $linha['nome'] ?></td>
-                        <td class="text-right"><?= $linha['valor'] ?></td>
-                        <td class="text-center"><?= $linha['qtd'] ?></td>
-                        <td class="text-right"><?= $linha['subtotal'] ?></td> <!-- OBS: Depois colocar no formato moeda real -->
-                    </tr>
-                <?php } // Fim da lista produtos carrinho ?>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3" class="text-right">Total Carrinho</td>
+                <td class="text-right total-carrinho"><?= $this->carrinhocompras->total() ?></td>
 
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td colspan="3" class="text-right">Total Carrinho</td>
-                    <td class="text-right total-carrinho"><?= $this->carrinhocompras->total() ?></td>
+            </tr>
 
-                </tr>
-
-                <!-- A funcão peso não é necessaria ser exibida carrinho foi usada no curso só
-                para questão de aprendizagem -->
+            <!-- A funcão peso não é necessaria ser exibida carrinho foi usada no curso só
+            para questão de aprendizagem -->
 
 <!-- <tr>
     <td colspan="3" class="text-right">Total Peso</td>
@@ -41,24 +43,25 @@
     
 </tr> -->
 
-            </tfoot>
+        </tfoot>
+    </table>
+    <br>
+</div>
 
-        </table>
-    </div>
-    
-<hr />
+
 <div class="row">
     <div class="col-md-6">
         <a href="<?= base_url() ?>" title="Continuar Comprando" class="btn btn-default btn-lg">
-            <i class="fa fa-reply-all"></i>Continuar Comprando
+            <i class="fa fa-reply-all"></i> Continuar Comprando
         </a>
+        <a href="#" class="btn btn-default btn-lg btn-limpar-carrinho">Limpar Carrinho</a>
     </div>
     <div class="col-md-6 text-right">
         <a href="<?= base_url('checkout') ?>" title="Finalizar compra" class="btn btn-success btn-lg">
-            <i class="fa fa-check"></i>Finalizar Compra
+            <i class="fa fa-check"></i> Finalizar Compra
         </a>
     </div>
-    
+
 
 </div>
 

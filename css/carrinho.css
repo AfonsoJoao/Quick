@@ -9,7 +9,22 @@ and open the template in the editor.
 */
 
 
+.margin-top-40{
+    margin-top: 40px;
+}
+
+.margin-top-20{
+    margin-top: 20px;
+}
+
 .carrinho-compra{
     width: 300px;
 }
 
+.carrinho-top-total-item{
+    font-weight: bold;
+}
+
+.carrinho-top-total-valor{
+   font-weight: bold; 
+}

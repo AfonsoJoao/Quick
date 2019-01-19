@@ -22,8 +22,9 @@ and open the template in the editor.
         <link href="<?php echo base_url('css/bootstrap.css'); ?>" rel="stylesheet" type="text/css" media="all"/>
 
         <link href="<?php echo base_url('css/style.css'); ?>" rel="stylesheet" type="text/css" media="all" />
-
-
+        
+        <link href="<?php echo base_url('css/carrinho.css'); ?>" rel="stylesheet" type="text/css" media="all" />
+        
         <link rel="stylesheet" href="<?php echo base_url('css/style2.css'); ?>">
         <!-- font-awesome icons -->
         <link href="<?php echo base_url('css/font-awesome.css'); ?>" rel="stylesheet" type="text/css" media="all" /> 
@@ -109,13 +110,39 @@ and open the template in the editor.
                     <input type="submit" value="">
                 </form>
             </div>
-            <div class="product_list_header">  
-                <form action="<?php echo base_url('ControllerCarrinho/carrinho'); ?>" method="post" class="last" >
-                    <fieldset>
-                        <input type="submit" name="submit" value="Meu Carrinho   " class="button" />
-                    </fieldset>
-                </form>
+            <div class="dropdown">
+                <div class="w3l_header_right">
+                    <ul>
+                        <li class="dropdown profile_details_drop">
+                            <a href="#" class="dropdown" data-toggle="dropdown" role="button" data-hover="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-shopping-cart"></i> Carrinho Compra <span class="caret"></span> <!-- A class caret serve para mostrar a setinha em um campo dropdown -->
+                            </a>
+                            <ul class="dropdown-menu carrinho-compra">
+                                <li class="margin-top-20">
+                                    <div class="col-xs-4 text-center" >
+                                        Itens: <span class="carrinho-top-total-item">2</span>
+                                    </div>
+                                    <div class="col-xs-8 text-center" >
+                                        Total: <span class="carrinho-top-total-valor">R$ 5.000,00</span>
+                                    </div>
+                                </li>
+                                <li role="separator" class="divider"></li> <!-- Separador de submenus  -->
+                                <li class="margin-top-40">
+                                    
+                                    <div class="col-xs-6">
+                                        <a href="<?= base_url('ControllerCarrinho/carrinho') ?>" title="Exibir Carrinho" class="btn btn-success btn-block">Exibir Carrinho</a>
+                                    </div>
+                                    <div class="col-xs-6"> <!-- O col-xs-6 coloca botões um ao lado do outro  -->
+                                        <a href="#" class="btn btn-danger btn-block">Limpar</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
             </div>
+
+
             <div class="w3l_header_right">
                 <ul>
                     <li class="dropdown profile_details_drop">
@@ -133,7 +160,7 @@ and open the template in the editor.
             </div>
             <div class="w3l_header_right">
                 <ul>
-                   <li class="dropdown profile_details_drop">
+                    <li class="dropdown profile_details_drop">
                         <a href="<?php echo base_url('paineladministrativo/'); ?>" ><i class="fa fa-th-list"></i><span></span></a>                
                     </li>
                 </ul>
