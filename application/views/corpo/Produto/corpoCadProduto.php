@@ -75,7 +75,7 @@ if (isset($situacao)) {
                         <option value="acucar">Açucar</option>
                         <option value="massas">Massas</option>
                         <option value="oleo">Oléo</option>
-                        <option value="laticinios">Laticínios</option>
+                        <option value="laticineos">Laticínios</option>
                         <option value="paes">Pães</option>
                     <optgroup label="Frios">
                         <option value="carnes">Carnes</option>

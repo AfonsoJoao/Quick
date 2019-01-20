@@ -53,6 +53,11 @@
                         <div class="col-md-3 w3ls_w3l_banner_left w3ls_w3l_banner_left_asdfdfd">
                             <div class="hover14 column">
                                 <div class="agile_top_brand_left_grid w3l_agile_top_brand_left_grid">
+                                    <?php if ($produto->tipoDestaque == "1") { ?>
+                                        <div class="agile_top_brand_left_grid_pos">
+                                            <img src="<?php echo base_url('application/images/offer.png'); ?>" alt=" " class="img-responsive" />
+                                        </div>
+                                    <?php } ?>
                                     <div class="agile_top_brand_left_grid1">
                                         <figure>
                                             <div class="snipcart-item block">
