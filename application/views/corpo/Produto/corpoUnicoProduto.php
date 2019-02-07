@@ -4,7 +4,7 @@
         if (isset($produto)) {
             foreach ($produto as $produto) {
                 ?>
-                <?php if ($produto->disponibilidade == "true") { ?>
+                <?php if ($produto->disponibilidade == 1) { ?>
 				<h5><?php echo $produto->nomeProduto; ?></h5>
 				<div class="col-md-4 agileinfo_single_left">
 					<img id="example" src="<?php echo base_url('application/images/' . $produto->imagem) ?>" alt=" " class="img-responsive" />

@@ -75,7 +75,7 @@ if (isset($situacao)) {
                         <option value="acucar">Açucar</option>
                         <option value="massas">Massas</option>
                         <option value="oleo">Oléo</option>
-                        <option value="laticineos">Laticínios</option>
+                        <option value="laticinios">Laticínios</option>
                         <option value="paes">Pães</option>
                     <optgroup label="Frios">
                         <option value="carnes">Carnes</option>
@@ -93,9 +93,6 @@ if (isset($situacao)) {
                         <option value="pet">Pet</option>
                 </select>
                 <br>
-                
-                <!-- <div id="imagemupload">upload</div>-->
-                
                 <input class="form-control" type="file" required name="imagem" value="<?php
                 if (isset($produto))
                     foreach ($produto as $pro) {
@@ -104,13 +101,21 @@ if (isset($situacao)) {
                 ?>">
                 <br>
                 <input type="hidden" class="form-control" name="data" value="<?php echo date_format(new DateTime(), 'Y/m/d'); ?>" >
-                <input type="hidden" name="disponibilidade" value="true">
-                <div>
-                    Promoção: 
-                    <input type="radio" name="tipoDestaque" value="1"><br>
-                    Apenas destacar: 
-                    <input type="radio" name="tipoDestaque" value="2"><br><br>
-                </div>
+                
+                <input type="hidden" name="disponibilidade" value="1">
+                
+                <select class="form-control" id="tipoDestaque" name="tipoDestaque" value="">
+                    <option><?php
+                        if (isset($produto))
+                            foreach ($produto as $pro) {
+                                echo $pro->tipoDestaque;
+                            }
+                            ?>Destacar produto como</option>
+                        <option value="2">Destacar como promoção</option>
+                        <option value="3">Apenas destacar</option>
+                        <option value="NULL">Não destacar</option>
+                </select>
+                <br>
                 <input type="submit" value="Cadastrar">
             </div>
             <?php echo form_close(); ?>

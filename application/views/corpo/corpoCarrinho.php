@@ -3,8 +3,8 @@
     <h3>Carrinho Compras <?= '(total de item ' . $this->carrinhocompras->totalItem() . ')' ?> </h3>
     <hr/>
     <br>
-    
-</div> 
+</div>
+
 <div class="col-md-12">
     <table class="table table-bordered">
         <thead>
@@ -44,17 +44,17 @@
 </tr> -->
 
         </tfoot>
+
     </table>
     <br>
 </div>
-
 
 <div class="row">
     <div class="col-md-6">
         <a href="<?= base_url() ?>" title="Continuar Comprando" class="btn btn-default btn-lg">
             <i class="fa fa-reply-all"></i> Continuar Comprando
         </a>
-        <a href="#" class="btn btn-default btn-lg btn-limpar-carrinho">Limpar Carrinho</a>
+        <a href="#" class="btn btn-default btn-lg btn-limpar-carrinho"> Limpar Carrinho</a>
     </div>
     <div class="col-md-6 text-right">
         <a href="<?= base_url('checkout') ?>" title="Finalizar compra" class="btn btn-success btn-lg">

@@ -19,8 +19,14 @@ class ControllerCarrinho extends CI_Controller {
     }
 
     public function add() {
-        $this->carrinhocompras->add(9, 3);
-        $this->carrinhocompras->add(10, 2);
+       // $this->carrinhocompras->add(1, 3);
+       if ($this->input->post('id')) {
+           $id     = $this->input->post('id');
+           $qtd    = 1; //Colocar a quantidade via post pra ver se dá certo também.
+           $this->carrinhocompras->add($id, $qtd);
+           $json = ['erro' =>0, 'msg' => 'Produto adicionado com Sucesso!'];
+           echo json_encode($json);
+       }
     }
 
     public function limpa() {
@@ -28,11 +34,11 @@ class ControllerCarrinho extends CI_Controller {
     }
 
     public function altera() {
-        $this->carrinhocompras->altera(9, 6);
+        $this->carrinhocompras->altera(2, 6);
     }
     
     public function apagar_item(){
-        $this->carrinhocompras->apaga(9);
+        $this->carrinhocompras->apaga(3);
     }
 
 }

@@ -35,13 +35,13 @@ class ModelProduto extends CI_Model {
         return $this->db->get_where('produto', array('categoria' => $categoria))->result_array();
     }
 
-    public function buscar($palavra_chave = NULL) {
-        if ($palavra_chave){
+    public function buscar($busca) {
+        if (empty($busca)) 
+            return array();
+        
         $busca = $this->input->post('busca');
-        if($this->db->like('nomeProduto', $palavra_chave, $busca)){
+        $this->db->like('nomeProduto', $busca);
         $query = $this->db->get('produto');
         return $query->result_array();
-        }
-        }
     }
 }

@@ -3,6 +3,7 @@
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
+
 -->
 <html>
     <head>
@@ -21,10 +22,11 @@ and open the template in the editor.
 
         <link href="<?php echo base_url('css/bootstrap.css'); ?>" rel="stylesheet" type="text/css" media="all"/>
 
+        <link href="<?php echo base_url('css/carrinho.css'); ?>" rel="stylesheet" type="text/css" media="all"/>
+
         <link href="<?php echo base_url('css/style.css'); ?>" rel="stylesheet" type="text/css" media="all" />
-        
-        <link href="<?php echo base_url('css/carrinho.css'); ?>" rel="stylesheet" type="text/css" media="all" />
-        
+
+
         <link rel="stylesheet" href="<?php echo base_url('css/style2.css'); ?>">
         <!-- font-awesome icons -->
         <link href="<?php echo base_url('css/font-awesome.css'); ?>" rel="stylesheet" type="text/css" media="all" /> 
@@ -36,8 +38,6 @@ and open the template in the editor.
         <!-- //js -->
         <link href="<?php echo base_url('//fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,500,500italic,700,700italic'); ?>" rel='stylesheet' type='text/css'>
         <link href="<?php echo base_url('//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic'); ?>" rel='stylesheet' type='text/css'>
-        <!-- //jquerry upload -->
-        <link rel="stylesheet" href="<?php echo base_url('jquery.uploadfile/css/uploadfile.css'); ?>">
         <!-- start-smoth-scrolling -->
         <script type="text/javascript" src="<?php echo base_url('js/move-top.js'); ?>"></script>
         <script type="text/javascript" src="<?php echo base_url('js/easing.js'); ?>"></script>
@@ -110,6 +110,7 @@ and open the template in the editor.
                     <input type="submit" value="">
                 </form>
             </div>
+            
             <div class="dropdown">
                 <div class="w3l_header_right">
                     <ul>
@@ -119,10 +120,10 @@ and open the template in the editor.
                             </a>
                             <ul class="dropdown-menu carrinho-compra">
                                 <li class="margin-top-20">
-                                    <div class="col-xs-4 text-center" >
+                                    <div class="col-xs-4 text-left" >
                                         Itens: <span class="carrinho-top-total-item">2</span>
                                     </div>
-                                    <div class="col-xs-8 text-center" >
+                                    <div class="col-xs-8 text-right" >
                                         Total: <span class="carrinho-top-total-valor">R$ 5.000,00</span>
                                     </div>
                                 </li>
@@ -142,6 +143,7 @@ and open the template in the editor.
                 </div>
             </div>
 
+<!-- Codigo do icone do carrinho de compras <i class="fa fa-shopping-cart"></i> -->
 
             <div class="w3l_header_right">
                 <ul>

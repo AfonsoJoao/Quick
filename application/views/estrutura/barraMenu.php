@@ -198,7 +198,7 @@
         <div class="container">
             <ul>
                 <i class="fa fa-home" aria-hidden="true"></i><li><a href=<?php echo base_url('index') ?>>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Início</a><span>|</span></li>
-                <li><?php echo "Resultado da busca " . "[" . $this->input->post('busca') . "]"; ?></li>
+                <li><?php echo "Resultado da busca"; ?></li>
             </ul>
         </div>
     </div>

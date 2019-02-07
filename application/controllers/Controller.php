@@ -14,5 +14,4 @@ class Controller extends CI_Controller {
         $this->load->view('corpo/corpo', $dados);
         $this->load->view('estrutura/rodape');
     }
-
 }

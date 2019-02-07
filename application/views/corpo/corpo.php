@@ -1,5 +1,11 @@
-
-<!-- //flexSlider -->
+<html>
+    <body>
+    <script src="<?php echo base_url('js/carrinho.js'); ?>"></script>
+    
+    <script type="text/javascript">
+        var url_quick = "<?= base_url() ?>";
+    </script>
+    <!-- //flexSlider -->
 </div>
 <div class="clearfix"></div>
 </div>
@@ -12,14 +18,14 @@
         if (isset($produto)) {
             foreach ($produto as $produto) {
                 ?>
-                <?php if ($produto->disponibilidade == "true") { ?>
-                    <?php if ($produto->tipoDestaque == "1" || $produto->tipoDestaque == "2") { ?>
+                <?php if ($produto->disponibilidade == 1) { ?>
+                    <?php if ($produto->tipoDestaque == 2 || $produto->tipoDestaque == 3) { ?>
 
                         <div class="w3ls_w3l_banner_nav_right_grid1 w3ls_w3l_banner_nav_right_grid1_veg">
                             <div class="col-md-3 w3ls_w3l_banner_left w3ls_w3l_banner_left_asdfdfd">
                                 <div class="hover14 column">
                                     <div class="agile_top_brand_left_grid w3l_agile_top_brand_left_grid">
-                                        <?php if ($produto->tipoDestaque == "1") { ?>
+                                        <?php if ($produto->tipoDestaque == "2") { ?>
                                             <div class="agile_top_brand_left_grid_pos">
                                                 <img src="<?php echo base_url('application/images/offer.png'); ?>" alt=" " class="img-responsive" />
                                             </div>
@@ -60,11 +66,9 @@
             }
         }
         ?>
-
     </div>
-
 </div>
-<!-- //top-brands -->
 
 </body>
+
 </html>
