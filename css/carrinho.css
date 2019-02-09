@@ -18,7 +18,8 @@ and open the template in the editor.
 }
 
 .carrinho-compra{
-    width: 300px;
+    width: 350px;
+    padding: 20px;
 }
 
 .carrinho-top-total-item{

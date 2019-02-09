@@ -6,10 +6,19 @@
             var url_quick = "<?= base_url() ?>";
         </script>
 
+
+
         <div class="clearfix"></div>
         <!-- banner -->
         <!-- top-brands -->
         <div class="top-brands">
+
+            <div class="row msg-add-carrinho hide"> <!-- o Hide serve para deixar a classe invisivel -->
+                <div class="col-md-12 msg-carrinho-alert text-center">
+                    
+                </div>  
+            </div><br><br>
+
             <div class="container">
                 <!-- texto de apresentação por categoria -->
                 <?php if ($this->uri->segment(3) == 'arroz') { ?>
@@ -50,6 +59,9 @@
                     <h3><?php echo "Pet"; ?></h3>
                 <?php } ?>
                 <!-- //texto de apresentação por categoria -->
+
+
+
                 <?php
                 if (isset($produto)) {
                     foreach ($produto as $produto) {
