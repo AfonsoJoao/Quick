@@ -116,27 +116,35 @@ and open the template in the editor.
                     <ul>
                         <li class="dropdown profile_details_drop">
                             <a href="#" class="dropdown" data-toggle="dropdown" role="button" data-hover="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fa fa-shopping-cart"></i> Carrinho Compra <span class="caret"></span> <!-- A class caret serve para mostrar a setinha em um campo dropdown -->
+                                <i class="fa fa-shopping-cart"></i> Carrinho Compra  (Itens <span class="carrinho-top-total-item">0</span>
+                                ) <span class="caret"></span> <!-- A class caret serve para mostrar a setinha em um campo dropdown -->
                             </a>
                             <ul class="dropdown-menu carrinho-compra">
-                                <li class="margin-top-20">
-                                    <div class="col-xs-4 text-left" >
-                                        Itens: <span class="carrinho-top-total-item">2</span>
+                                
+                                <div class="row body-carrinho-vazio">
+                                    <div class="col-xs-12 col-md-12 text-center">
+                                        Carrinho está vazio
+                                    </div>  
+                                </div>
+                                
+                                <div class="row body-carrinho-top hide">
+                                    <div class="col-xs-12 col-md-4" >
+                                        Itens: <span class="carrinho-top-total-item"></span>
                                     </div>
-                                    <div class="col-xs-8 text-right" >
-                                        Total: <span class="carrinho-top-total-valor">R$ 5.000,00</span>
+                                    <div class="col-xs-12 col-md-8 text-right" >
+                                        Total: <span class="carrinho-top-total-valor"></span>
                                     </div>
-                                </li>
-                                <li role="separator" class="divider"></li> <!-- Separador de submenus  -->
-                                <li class="margin-top-40">
+                                </div>
+                                <!-- Separador de submenus  -->
+                                <div class="row margin-top-20 btns-carrinho-topo">
                                     
-                                    <div class="col-xs-6">
+                                    <div class="col-xs-12 col-md-6">
                                         <a href="<?= base_url('ControllerCarrinho/carrinho') ?>" title="Exibir Carrinho" class="btn btn-success btn-block">Exibir Carrinho</a>
                                     </div>
-                                    <div class="col-xs-6"> <!-- O col-xs-6 coloca botões um ao lado do outro  -->
+                                    <div class="col-xs-12 col-md-6"> <!-- O col-xs-6 coloca botões um ao lado do outro  -->
                                         <a href="#" class="btn btn-danger btn-block">Limpar</a>
                                     </div>
-                                </li>
+                                </div>
                             </ul>
                         </li>
                     </ul>

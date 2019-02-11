@@ -1,5 +1,22 @@
 var App = function () {
 
+   var verificaCarrinhoCompra = function (){ // Função responsável por verificar se o carrinho está ativo
+                                                     // para que não limpe as informações referentes a quantidade de itens e o total ao atualizar a página.
+       $.getJSON(url_quick+'ControllerCarrinho/carrinho_topo', function (res){
+          
+            if (res.erro == 0){
+                $('.carrinho-top-total-item').html(res.itens);
+                $('.carrinho-top-total-valor').html(res.total);
+                $('.body-carrinho-top').removeClass('hide');
+                $('.body-carrinho-vazio').addClass('hide');
+                
+                
+            }
+           
+       });
+   
+   }        
+
     var addProdutoCarrinho = function () {
         $('.btn-add-produto-carrinho').on('click', function () {
 
@@ -14,14 +31,18 @@ var App = function () {
 
                 if (res.erro == 0) {
 
-                    var msg = '<div class="alert alert-success" role="alert">'+
-                            '<button type="button" class="close" data-dismiss="alert" aria-label="Close">'+
-                            '<span aria-hidden="true">&times;</span>'+
-                            '</button>'+ res.msg +' <a href="'+ url_quick +'ControllerCarrinho/carrinho" title="" class="btn btn-success">Finalizar Compra</a></div>';
+                    var msg = '<div class="alert alert-success" role="alert">' +
+                            '<button type="button" class="close" data-dismiss="alert" aria-label="Close">' +
+                            '<span aria-hidden="true">&times;</span>' +
+                            '</button>' + res.msg + ' <a href="' + url_quick + 'ControllerCarrinho/carrinho" title="" class="btn btn-success">Finalizar Compra</a></div>';
 
                     $('.msg-carrinho-alert').html(msg);
                     $('.msg-add-carrinho').removeClass('hide');
-                    
+
+                    $('.carrinho-top-total-item').html(res.itens);
+                    $('.carrinho-top-total-valor').html(res.total);
+
+
                 } else {
                     alert(res.msg);
                 }
@@ -37,6 +58,7 @@ var App = function () {
     return {
         init: function () {
             addProdutoCarrinho();
+            verificaCarrinhoCompra();
         }
     }
 
