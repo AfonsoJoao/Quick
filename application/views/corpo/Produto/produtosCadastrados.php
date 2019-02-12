@@ -1,5 +1,12 @@
  <div class="container-fluid">  
     <div class="bs-docs-example">
+        <div>
+                <form action="<?php echo base_url('resultadodabuscaProdutosCadastrados/') ?>" method="post">
+                    <input type="text" name="busca" placeholder="Buscar produtos..." style="position: absolute; left: 1075px; right: 0px;">
+                    <input type="submit" value="Buscar" style="position: absolute; left: 1275px; right: 0px;">
+                </form>
+            </div>
+        <br>
         <table class="table table-striped">
             <thead>
                 <tr>
