@@ -136,13 +136,13 @@ and open the template in the editor.
                                     </div>
                                 </div>
                                 <!-- Separador de submenus  -->
-                                <div class="row margin-top-20 btns-carrinho-topo">
+                                <div class="row margin-top-20 btns-carrinho-topo hide">
                                     
                                     <div class="col-xs-12 col-md-6">
                                         <a href="<?= base_url('ControllerCarrinho/carrinho') ?>" title="Exibir Carrinho" class="btn btn-success btn-block">Exibir Carrinho</a>
                                     </div>
                                     <div class="col-xs-12 col-md-6"> <!-- O col-xs-6 coloca botões um ao lado do outro  -->
-                                        <a href="#" class="btn btn-danger btn-block">Limpar</a>
+                                        <a href="#" class="btn btn-danger btn-block btn-limpar-carrinho">Limpar</a>
                                     </div>
                                 </div>
                             </ul>

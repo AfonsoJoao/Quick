@@ -25,16 +25,24 @@ class ControllerCarrinho extends CI_Controller {
             $qtd = 1; //Colocar a quantidade via post pra ver se dá certo também.
             $this->carrinhocompras->add($id, $qtd);
             $json = ['erro' => 0,
-                        'msg' => 'Produto adicionado com Sucesso!',
-                        'itens' => $this->carrinhocompras->totalItem(),
-                        'total' => $this->carrinhocompras->total()
+                'msg' => 'Produto adicionado com Sucesso!',
+                'itens' => $this->carrinhocompras->totalItem(),
+                'total' => $this->carrinhocompras->total()
             ];
             echo json_encode($json);
         }
     }
 
     public function limpa() {
-        $this->carrinhocompras->limpa();
+
+        if ($this->input->post('limpar') == 'true') {
+            $this->carrinhocompras->limpa();
+
+            $json = ['erro' => 0,
+                'msg' => 'Carrinho Limpo!'
+            ];
+            echo json_encode($json);
+        }
     }
 
     public function altera() {
@@ -47,12 +55,20 @@ class ControllerCarrinho extends CI_Controller {
 
     public function carrinho_topo() {
 
-        $json = [
-            'erro' => 0,
-            'itens' => $this->carrinhocompras->totalItem(),
-            'total' => $this->carrinhocompras->total()
-        ];
-        echo json_encode($json);
+        if ($this->carrinhocompras->totalItem() != 0) {
+
+            $json = [
+                'erro' => 0,
+                'itens' => $this->carrinhocompras->totalItem(),
+                'total' => $this->carrinhocompras->total()
+            ];
+            echo json_encode($json);
+        }
+    }
+
+    public function limpa_carrinho() {
+        $this->carrinhocompras->limpa();
+        redirect('ControllerCarrinho/carrinho', 'refresh');
     }
 
 }

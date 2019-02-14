@@ -1,17 +1,24 @@
 <html>
     <body>
-    <script src="<?php echo base_url('js/carrinho.js'); ?>"></script>
-    
-    <script type="text/javascript">
-        var url_quick = "<?= base_url() ?>";
-    </script>
-    <!-- //flexSlider -->
-</div>
-<div class="clearfix"></div>
+        <script src="<?php echo base_url('js/carrinho.js'); ?>"></script>
+
+        <script type="text/javascript">
+            var url_quick = "<?= base_url() ?>";
+        </script>
+        <!-- //flexSlider -->
+    </div>
+    <div class="clearfix"></div>
 </div>
 <!-- banner -->
 <!-- top-brands -->
 <div class="top-brands">
+
+    <div class="row msg-add-carrinho hide"> <!-- o Hide serve para deixar a classe invisivel -->
+        <div class="col-md-12 msg-carrinho-alert text-center">
+
+        </div>  
+    </div><br><br>
+
     <div class="container">
         <h3>Destaques</h3>
         <?php
@@ -48,8 +55,10 @@
                                                             </div>
                                                             <br> 
                                                             <fieldset>
-                                                                <input type="hidden" name="idProduto" value="<?php echo $produto->idProduto; ?>" />
-                                                                <input type="submit" name="submit" value="Adicionar ao carrinho" class="button" />
+                                                                <input type="hidden" name="idProduto" value="<?php echo $produto->idProduto; ?>"/>
+                                                                <a href="#" title="Adicionar produtos carrinho" 
+                                                                   class="btn btn-success btn-lg btn-block btn-add-produto-carrinho"
+                                                                   data-id="<?= $produto->idProduto ?>"><i class="fa fa-shopping-cart"></i> Adicionar ao Carrinho </a>
                                                             </fieldset>
                                                         </div>
                                                     </div>
