@@ -82,6 +82,17 @@ class ControllerProduto extends CI_Controller {
         $this->load->view('corpo/Produto/corpoResultadosProdutos', $dados);
         $this->load->view('estrutura/rodape');
     }
+    
+    public function buscarProdutosCadastrados() {
+        $this->load->Model('modelProduto', '', TRUE);
+        $dados['produto'] = $this->modelProduto->listaProduto($this->uri->segment(3));
+        $this->load->Model('modelProduto', '', TRUE);
+        $dados['listagem'] = $this->modelProduto->buscar($_POST);
+        $this->load->view('estrutura/cabecalho');
+        $this->load->view('estrutura/barraMenu');
+        $this->load->view('corpo/Produto/corpoResultadoProdutosCadastrados', $dados);
+        $this->load->view('estrutura/rodape');
+    }
 
     public function unicoProduto() {
         $this->load->Model('modelProduto', '', TRUE);

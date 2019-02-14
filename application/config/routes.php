@@ -87,6 +87,7 @@ $route ['listabanner'] = 'ControllerBanner/listaBanner';
 
 //Rota para tela de resultados dos produtos procurados
 $route ['resultadodabusca'] = 'ControllerProduto/buscarProduto';
+$route ['resultadodabuscaProdutosCadastrados'] = 'ControllerProduto/buscarProdutosCadastrados';
 //Rota para tela de administrador
 $route ['paineladministrativo'] = 'ControllerAdministrador/painel';
 
