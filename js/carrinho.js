@@ -1,9 +1,36 @@
 var App = function () {
 
+    var apagaProdutoCarrinho = function () { // Função responsável por apagar o produto do carrinho.
+
+        $('.btn-apagar-produto-carrinho').on('click', function () {
+
+            var id_produto = $(this).attr('data-id');
+            
+            $.ajax({//Funcão ajax responsavel por enviar o id do produto para o controller.
+                type: 'POST',
+                url: url_quick + 'ControllerCarrinho/apagar_item',
+                data: {id:id_produto},
+                dataType: "JSON"
+            }).then(function (res) { // o res é a minha resposta quanndo a função for executada.
+
+                if (res.erro == 0) {
+                    $(location).attr('href', url_quick +'ControllerCarrinho/carrinho');
+
+                }
+
+            }, function () {
+                alert('Erro ao limpar o carrinho');
+
+            });
+
+        });
+
+    }
+
     var limpaCarrinhoCompra = function () { // Função responsável por limpar o carrinho.
         $('.btn-limpar-carrinho').on('click', function () { // Ao clicar no botão executa a função desejada que irá ser limpar o carrinho.
 
-            $.ajax({           //Funcão ajax responsavel por enviar o id do produto para o controller.
+            $.ajax({//Funcão ajax responsavel por enviar o id do produto para o controller.
                 type: 'POST',
                 url: url_quick + 'ControllerCarrinho/limpa',
                 data: {limpar: true},
@@ -70,7 +97,7 @@ var App = function () {
 
                     $('.carrinho-top-total-item').html(res.itens);
                     $('.carrinho-top-total-valor').html(res.total);
-                    
+
                     $('.body-carrinho-top').removeClass('hide');
                     $('.btns-carrinho-topo').removeClass('hide');
                     $('.body-carrinho-vazio').addClass('hide');
@@ -93,6 +120,7 @@ var App = function () {
             addProdutoCarrinho();
             verificaCarrinhoCompra();
             limpaCarrinhoCompra();
+            apagaProdutoCarrinho();
         }
     }
 

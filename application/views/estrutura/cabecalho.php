@@ -26,7 +26,6 @@ and open the template in the editor.
 
         <link href="<?php echo base_url('css/style.css'); ?>" rel="stylesheet" type="text/css" media="all" />
 
-
         <link rel="stylesheet" href="<?php echo base_url('css/style2.css'); ?>">
         <!-- font-awesome icons -->
         <link href="<?php echo base_url('css/font-awesome.css'); ?>" rel="stylesheet" type="text/css" media="all" /> 

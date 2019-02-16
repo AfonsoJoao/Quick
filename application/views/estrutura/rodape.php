@@ -59,67 +59,35 @@ and open the template in the editor.
             });
         </script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="/docs/3.3/assets/js/vendor/jquery.min.js"><\/script>')</script>
+        <script>window.jQuery || document.write('<script src="/docs/3.3/assets/js/vendor/jquery.min.js"><\/script>')</script>
 
 
-  <script src="/docs/3.3/dist/js/bootstrap.js"></script>
+        <script src="/docs/3.3/dist/js/bootstrap.js"></script>
 
 
 
 
-  <script src="/docs/3.3/assets/js/vendor/holder.min.js"></script>
+        <script src="/docs/3.3/assets/js/vendor/holder.min.js"></script>
 
-  <script src="/docs/3.3/assets/js/vendor/ZeroClipboard.min.js"></script>
+        <script src="/docs/3.3/assets/js/vendor/ZeroClipboard.min.js"></script>
 
-  <script src="/docs/3.3/assets/js/vendor/anchor.min.js"></script>
+        <script src="/docs/3.3/assets/js/vendor/anchor.min.js"></script>
 
-  <script src="/docs/3.3/assets/js/src/application.js"></script>
+        <script src="/docs/3.3/assets/js/src/application.js"></script>
 
         <!-- here stars scrolling icon -->
         <script type="text/javascript">
-            $(document).ready(function () {
-                /*
-                 var defaults = {
-                 containerID: 'toTop', // fading element id
-                 containerHoverID: 'toTopHover', // fading element hover id
-                 scrollSpeed: 1200,
-                 easingType: 'linear' 
-                 };
-                 */
 
-                $().UItoTop({easingType: 'easeOutQuart'});
-
-            });
         </script>
         <!-- //here ends scrolling icon -->
         <script src="js/minicart.js"></script>
-        <script>
-            paypal.minicart.render();
 
-            paypal.minicart.cart.on('checkout', function (evt) {
-                var items = this.items(),
-                        len = items.length,
-                        total = 0,
-                        i;
 
-                // Count the number of each item in the cart
-                for (i = 0; i < len; i++) {
-                    total += items[i].get('quantity');
-                }
-
-                if (total < 3) {
-                    alert('The minimum order quantity is 3. Please add more to your shopping cart before checking out');
-                    evt.preventDefault();
-                }
-            });
-
-        </script>
-        
         <?php
         // put your code here
         ?>
         <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
-    <script src="js/index.js"></script>
+        <script src="js/index.js"></script>
     </body>
 </html>

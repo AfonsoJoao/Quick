@@ -50,7 +50,16 @@ class ControllerCarrinho extends CI_Controller {
     }
 
     public function apagar_item() {
-        $this->carrinhocompras->apaga(3);
+        
+        if ($this->input->post('id')) {
+            $id = $this->input->post('id');
+            $this->carrinhocompras->apaga($id);
+            
+            $json = ['erro' => 0,
+                'msg' => 'Produto apagado com sucesso!'
+            ];
+            echo json_encode($json);
+        }
     }
 
     public function carrinho_topo() {

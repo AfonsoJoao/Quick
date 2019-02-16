@@ -1,15 +1,22 @@
-<!-- about --><br>
+<!-- about -->
+
+<script src="<?php echo base_url('js/carrinho.js'); ?>"></script>
+
+<script type="text/javascript">
+    var url_quick = "<?= base_url() ?>";
+</script>
+
+<br>
 <br><br>
 
 <?php if ($this->carrinhocompras->totalItem() == 0) { ?>
 
-    <center><i class="fa fa-shopping-cart text-center fa-5x"></i></center><br>
+    <center><i class="fa fa-shopping-cart fa-5x"></i></center><br>
 
     <div class="text-center"><h3>Seu Carrinho de Compras está vazio</h3></div><br>
 
     <center> <a href="<?= base_url() ?>" title="Pagina Principal" class="btn btn-default btn-lg">
-        <i class="fa fa-reply-all"></i> Página Principal
-        
+            <i class="fa fa-reply-all"></i> Página Principal
         </a></center>
 
     <br>
@@ -28,6 +35,7 @@
                     <th class="text-right">Valor</th>
                     <th class="text-center">Quantidade</th>
                     <th class="text-right">Subtotal</th>
+                    <th></th>
                 </tr>
             </thead>
 
@@ -38,6 +46,9 @@
                         <td class="text-right"><?= $linha['valor'] ?></td>
                         <td class="text-center"><?= $linha['qtd'] ?></td>
                         <td class="text-right"><?= $linha['subtotal'] ?></td> <!-- OBS: Depois colocar no formato moeda real -->
+                        <td class="text-center"><a href="#" title="Apagar Produto" class="btn-apagar-produto-carrinho" 
+                        data-id="<?= $linha['id'] ?>"><i class="fa fa-trash-o fa-2x"></i></a></td>
+
                     </tr>
                 <?php } // Fim da lista produtos carrinho ?>
 
@@ -52,11 +63,11 @@
                 <!-- A funcão peso não é necessaria ser exibida carrinho foi usada no curso só
                 para questão de aprendizagem -->
 
-                        <!-- <tr>
-                            <td colspan="3" class="text-right">Total Peso</td>
-                            <td class="text-right total-carrinho"><? //= $this->carrinhocompras->totalPeso() ?></td>
-                            
-                        </tr> -->
+                            <!-- <tr>
+                                <td colspan="3" class="text-right">Total Peso</td>
+                                <td class="text-right total-carrinho"><? //= $this->carrinhocompras->totalPeso() ?></td>
+                                
+                            </tr> -->
 
             </tfoot>
 
