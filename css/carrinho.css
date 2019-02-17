@@ -29,3 +29,8 @@ and open the template in the editor.
 .carrinho-top-total-valor{
    font-weight: bold; 
 }
+
+.input-carrinho-qtd{
+    width: 50px;
+    text-align: center;
+}

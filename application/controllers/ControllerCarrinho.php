@@ -46,7 +46,19 @@ class ControllerCarrinho extends CI_Controller {
     }
 
     public function altera() {
-        $this->carrinhocompras->altera(2, 6);
+        
+        if ($this->input->post('id') && $this->input->post('qtd')) {
+            
+            $id = $this->input->post('id');
+            $qtd = $this->input->post('qtd');
+            $this->carrinhocompras->altera($id, $qtd);
+            
+            $json = ['erro' => 0,
+                'msg' => 'Quantidade Alterada com Sucesso!'
+            ];
+            echo json_encode($json);
+        }
+         
     }
 
     public function apagar_item() {

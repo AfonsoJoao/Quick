@@ -21,6 +21,7 @@
 
     <br>
 <?php } else { ?>
+
     <div class="col-md-6">
         <h2>Carrinho Compras <?= '(total de item ' . $this->carrinhocompras->totalItem() . ')' ?> </h2>
     </div><br><br>
@@ -44,10 +45,17 @@
                     <tr>
                         <td><?= $linha['nome'] ?></td>
                         <td class="text-right"><?= $linha['valor'] ?></td>
-                        <td class="text-center"><?= $linha['qtd'] ?></td>
+                        <td class="text-center">
+                            <input type="tel" name="carrinho_qtd" class="input-carrinho-qtd" value="<?= $linha['qtd'] ?>"
+                                   id="produto_<?= $linha['id'] ?>">
+                            <a href="#" title="Atualizar quantidade" class="btn-qtd-produto-carrinho" 
+                               data-id="<?= $linha['id'] ?>">
+                                <i class="fa fa-undo"></i>
+                            </a>
+                        </td>
                         <td class="text-right"><?= $linha['subtotal'] ?></td> <!-- OBS: Depois colocar no formato moeda real -->
                         <td class="text-center"><a href="#" title="Apagar Produto" class="btn-apagar-produto-carrinho" 
-                        data-id="<?= $linha['id'] ?>"><i class="fa fa-trash-o fa-2x"></i></a></td>
+                                                   data-id="<?= $linha['id'] ?>"><i class="fa fa-trash-o fa-2x"></i></a></td>
 
                     </tr>
                 <?php } // Fim da lista produtos carrinho ?>
@@ -63,16 +71,16 @@
                 <!-- A funcão peso não é necessaria ser exibida carrinho foi usada no curso só
                 para questão de aprendizagem -->
 
-                            <!-- <tr>
-                                <td colspan="3" class="text-right">Total Peso</td>
-                                <td class="text-right total-carrinho"><? //= $this->carrinhocompras->totalPeso() ?></td>
-                                
-                            </tr> -->
+                                    <!-- <tr>
+                                        <td colspan="3" class="text-right">Total Peso</td>
+                                        <td class="text-right total-carrinho"><? //= $this->carrinhocompras->totalPeso() ?></td>
+                                        
+                                    </tr> -->
 
             </tfoot>
 
         </table>
-        <br>
+        <br><br>
     </div>
 
     <div class="row">
@@ -81,7 +89,7 @@
                 <a href="<?= base_url() ?>" title="Continuar Comprando" class="btn btn-default btn-lg">
                     <i class="fa fa-reply-all"></i> Continuar Comprando
                 </a>
-                <a href="<?= base_url('ControllerCarrinho/limpa_carrinho') ?>" class="btn btn-default btn-lg btn-limpar-carrinho"> Limpar Carrinho</a>
+                <a href="<?= base_url('ControllerCarrinho/limpa_carrinho') ?>" title="Limpar Carrinho" class="btn btn-default btn-lg btn-limpar-carrinho"> Limpar Carrinho</a>
             </div>
             <div class="col-md-6 text-right">
                 <a href="<?= base_url('checkout') ?>" title="Finalizar compra" class="btn btn-success btn-lg">

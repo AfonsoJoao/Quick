@@ -1,20 +1,56 @@
 var App = function () {
 
+    var alteraQtdProdutoCarrinho = function () {
+
+        $('.btn-qtd-produto-carrinho').on('click', function () {
+            
+            var id_produto = $(this).attr('data-id');
+            var qtd_compra = $('#produto_'+id_produto).val();
+
+            if (qtd_compra > 0) {
+
+                $.ajax({//Funcão ajax responsavel por enviar o id do produto para o controller.
+                    type: 'POST',
+                    url: url_quick +'ControllerCarrinho/altera',
+                    data: {id:id_produto, qtd:qtd_compra},
+                    dataType: "JSON" // Irá retornar um json esta função
+                }).then(function (res) { // o res é a minha resposta quanndo a função for executada.
+
+                    if (res.erro == 0) {
+                        $(location).attr('href', url_quick + 'ControllerCarrinho/carrinho');
+
+                    }
+
+                }, function () {
+                    alert('Erro ao alterar quantidade de produto!');
+
+                });
+
+            } else {
+                alert('A quantidade deve ser maior que zero!');
+            }
+
+
+
+        });
+
+    }
+
     var apagaProdutoCarrinho = function () { // Função responsável por apagar o produto do carrinho.
 
         $('.btn-apagar-produto-carrinho').on('click', function () {
 
             var id_produto = $(this).attr('data-id');
-            
+
             $.ajax({//Funcão ajax responsavel por enviar o id do produto para o controller.
                 type: 'POST',
                 url: url_quick + 'ControllerCarrinho/apagar_item',
-                data: {id:id_produto},
-                dataType: "JSON"
+                data: {id: id_produto},
+                dataType: "JSON" // Irá retornar um json esta função
             }).then(function (res) { // o res é a minha resposta quanndo a função for executada.
 
                 if (res.erro == 0) {
-                    $(location).attr('href', url_quick +'ControllerCarrinho/carrinho');
+                    $(location).attr('href', url_quick + 'ControllerCarrinho/carrinho');
 
                 }
 
@@ -34,7 +70,7 @@ var App = function () {
                 type: 'POST',
                 url: url_quick + 'ControllerCarrinho/limpa',
                 data: {limpar: true},
-                dataType: "JSON"
+                dataType: "JSON"  // Irá retornar um json esta função
             }).then(function (res) { // o res é a minha resposta quanndo a função for executada.
 
                 if (res.erro == 0) {
@@ -82,7 +118,7 @@ var App = function () {
                 type: 'POST',
                 url: url_quick + 'ControllerCarrinho/add',
                 data: {id: id_produto},
-                dataType: "JSON"
+                dataType: "JSON" // Irá retornar um json esta função
             }).then(function (res) { // o res é a minha resposta quanndo a função for executada.
 
                 if (res.erro == 0) {
@@ -121,6 +157,7 @@ var App = function () {
             verificaCarrinhoCompra();
             limpaCarrinhoCompra();
             apagaProdutoCarrinho();
+            alteraQtdProdutoCarrinho();
         }
     }
 
