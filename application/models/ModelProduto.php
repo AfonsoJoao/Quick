@@ -44,4 +44,15 @@ class ModelProduto extends CI_Model {
         $query = $this->db->get('produto');
         return $query->result_array();
     }
+    
+   function qtde_produto(){
+        $this->db->select('count(*) as total');
+        return $this->db->get('produto')->result();
+    }
+    
+    function get_produto($value, $registros_p_pagina){
+        $this->db->select('*');
+        $this->db->limit( $registros_p_pagina, $value);
+        return $this->db->get('produto')->result();
+    }
 }
