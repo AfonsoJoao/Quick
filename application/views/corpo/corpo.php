@@ -57,8 +57,8 @@
                                                             <fieldset>
                                                                 <input type="hidden" name="idProduto" value="<?php echo $produto->idProduto; ?>"/>
                                                                 <a href="#" title="Adicionar produtos carrinho" 
-                                                                   class="btn btn-success btn-lg btn-block btn-add-produto-carrinho"
-                                                                   data-id="<?= $produto->idProduto ?>"><i class="fa fa-shopping-cart"></i> Adicionar ao Carrinho </a>
+                                                                   class="btn btn-success btn-block btn-add-produto-carrinho"
+                                                                   data-id="<?= $produto->idProduto ?>"><i class="fa fa-shopping-cart"></i><font size="3">&nbsp;&nbsp;Adicionar ao Carrinho </font></a>
                                                             </fieldset>
                                                         </div>
                                                     </div>

@@ -1,18 +1,33 @@
- <div class="container-fluid">  
-    <div class="bs-docs-example">
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Nome</th>
-                    <th>Descrição</th>
-                    <th>Editar</th>
-                    <th>Excluir</th>
-                </tr>
-            </thead>
-            <tbody>
+<!-- DataTables Example -->
+<div class="container">
+<div class="card mb-3">
+                        <div class="card-header">
+                            <i class="fas fa-table"></i>
+                            Lista de banners cadastrastrados</div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>Id</th>
+                                            <th>Nome</th>
+                                            <th>Descrição</th>
+                                            <th>Editar</th>
+                                            <th>Excluir</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                             <th>Id</th>
+                                            <th>Nome</th>
+                                            <th>Descrição</th>
+                                            <th>Editar</th>
+                                            <th>Excluir</th>
 
-                <?php
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        <?php
                 if (isset($banner)) {
                     foreach ($banner as $banner) {
                     ?>
@@ -26,9 +41,14 @@
                 <?php } 
                 
                             }?>
-            </tbody>
-        </table>
-    </div>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+                    </div>
+
 </div>
-<?php
+                <!-- /.container-fluid -->
+
 

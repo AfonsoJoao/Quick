@@ -119,6 +119,8 @@ class ControllerAdministrador extends CI_Controller {
     }
     
     public function painel() {
+        $this->load->view('estrutura/menuPainel');
         $this->load->view('corpo/corpoPainel');
+        $this->load->view('estrutura/rodapePainel');
     }
 }

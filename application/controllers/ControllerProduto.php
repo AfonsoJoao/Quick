@@ -47,10 +47,9 @@ class ControllerProduto extends CI_Controller {
     public function listaProduto() {
         $this->load->model("modelProduto", '', TRUE);
         $dados['produto'] = $this->modelProduto->listarProduto();
-        $this->load->view('estrutura/cabecalho');
-        $this->load->view('estrutura/barraMenu');
+        $this->load->view('estrutura/menuPainel');
         $this->load->view('corpo/Produto/produtosCadastrados', $dados);
-        $this->load->view('estrutura/rodape');
+        $this->load->view('estrutura/rodapePainel');
     }
 
     public function listaUnicoProduto() {

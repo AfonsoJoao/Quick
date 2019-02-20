@@ -59,10 +59,9 @@ class ControllerCliente extends CI_Controller {
     public function listaCliente() { /** Nesta função eu só consigo exibir os dados da entidade */
         $this->load->Model('modelCliente', '', TRUE);
         $dados['clientes'] = $this->modelCliente->listarCliente();
-        $this->load->view('estrutura/cabecalho');
-        $this->load->view('estrutura/barraMenu');
+        $this->load->view('estrutura/menuPainel');
         $this->load->view('corpo/Cliente/clientesCadastrados', $dados);
-        $this->load->view('estrutura/rodape');
+        $this->load->view('estrutura/rodapePainel');
     }
 
     public function listaUnicoCliente() { /** Nesta função eu consigo manipular os dados da entidade */

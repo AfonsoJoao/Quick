@@ -41,10 +41,9 @@ class ControllerBanner extends CI_Controller {
     public function listaBanner() {
         $this->load->model("modelBanner", '', TRUE);
         $dados['banner'] = $this->modelBanner->listarBanner();
-       $this->load->view('estrutura/cabecalho');
-       $this->load->view('estrutura/barraMenu');
+       $this->load->view('estrutura/menuPainel');
         $this->load->view('corpo/Banners/bannersCadastrados', $dados);
-        $this->load->view('estrutura/rodape');
+        $this->load->view('estrutura/rodapePainel');
     }
     public function listaUnicoBanner() {
         $this->load->Model('modelBanner', '', TRUE);
