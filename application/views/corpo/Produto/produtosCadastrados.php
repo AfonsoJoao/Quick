@@ -1,4 +1,12 @@
 <div class="container">
+    <br>
+     <!-- Breadcrumbs-->
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="<?php echo base_url('paineladministrativo/')?>">Painel administrativo</a>
+                        </li>
+                        <li class="breadcrumb-item active">Produtos cadastrados</li>
+                    </ol>
 <div class="card mb-3">
                         <div class="card-header">
                             <i class="fas fa-table"></i>

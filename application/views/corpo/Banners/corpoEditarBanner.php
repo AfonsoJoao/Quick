@@ -1,3 +1,13 @@
+<div class="container-fluid">
+    <br>
+    <!-- Breadcrumbs-->
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="<?php echo base_url('paineladministrativo/')?>">Painel administrativo</a>
+                        </li>
+                        <li class="breadcrumb-item active">Editar Banner</li>
+                    </ol>
+<div class="form">
 <?php
 if (isset($situacao)) {
     $st = $situacao;
@@ -8,7 +18,7 @@ if (isset($situacao)) {
 }
 ?>
 <div class="w3_login">
-    <div class="w3_login_module"><h3 class="w3l_fruit">Cadastrar banners</h3>
+    <center><div class="w3_login_module"><h3 class="w3l_fruit">Editar banner</h3></center>
         <div class="module form-module">
             <div class="form">
             </div>
@@ -26,21 +36,24 @@ if (isset($situacao)) {
                         echo $ban->idBanner;
                     }
                 ?>">
-
-                <input class="form-control" type="text" name="nomePromocao" placeholder="Nome da Promoção" required="" value="<?php
+                Nome do banner:
+                <input class="form-control" type="text" name="nomePromocao" required="" value="<?php
                 if (isset($banner))
                     foreach ($banner as $ban) {
                         echo $ban->nomePromocao;
                     }
                 ?>">
+                <br>
+                Descrição do banner:
                 <div class="form-group">
-                    <textarea class="form-control" rows="5" name="descricaoPromocao" placeholder="Texto da Promoção(opcional)" ><?php
+                    <textarea class="form-control" rows="5" name="descricaoPromocao" ><?php
                         if (isset($banner))
                             foreach ($banner as $ban) {
                                 echo $ban->descricaoPromocao;
                             }
                         ?></textarea>
                 </div>
+                Foto do banner:
                 <input class="form-control" type="file" required name="imagemBanner" value="<?php
                 if (isset($banner))
                     foreach ($banner as $ban) {
@@ -50,12 +63,11 @@ if (isset($situacao)) {
                 <br>
                 <input type="hidden" class="form-control" name="data" value="<?php echo date_format(new DateTime(), 'Y/m/d'); ?>" >
                 <input type="hidden" name="disponibilidade" value="true">
-                <input type="submit" value="Cadastrar">
+                <center><input type="submit" value="Editar"></center>
             </div>
             <?php echo form_close(); ?>
         </div>
     </div>
 </div>
-<?php
-
-
+    <br><br><br><br>
+</div>

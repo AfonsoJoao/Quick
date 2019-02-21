@@ -1,17 +1,13 @@
-
-
-            
-
-            <div id="content-wrapper">
+<div id="content-wrapper">
 
                 <div class="container-fluid">
 
                     <!-- Breadcrumbs-->
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item">
-                            <a href="#">Dashboard</a>
+                            <a href="<?php echo base_url('paineladministrativo/')?>">Painel administrativo</a>
                         </li>
-                        <li class="breadcrumb-item active">Overview</li>
+                        <li class="breadcrumb-item active">Início</li>
                     </ol>
 
                     <!-- Icon Cards-->
@@ -20,12 +16,12 @@
                             <div class="card text-white bg-primary o-hidden h-100">
                                 <div class="card-body">
                                     <div class="card-body-icon">
-                                        <i class="fas fa-fw fa-comments"></i>
+                                        <i class="fas fa-fw fa-list"></i>
                                     </div>
-                                    <div class="mr-5">26 New Messages!</div>
+                                    <div class="mr-5">26 Produtos cadastrados!</div>
                                 </div>
                                 <a class="card-footer text-white clearfix small z-1" href="#">
-                                    <span class="float-left">View Details</span>
+                                    <span class="float-left">Ver detalhes</span>
                                     <span class="float-right">
                                         <i class="fas fa-angle-right"></i>
                                     </span>
@@ -38,10 +34,10 @@
                                     <div class="card-body-icon">
                                         <i class="fas fa-fw fa-list"></i>
                                     </div>
-                                    <div class="mr-5">11 New Tasks!</div>
+                                    <div class="mr-5">11 Banners cadastrados!</div>
                                 </div>
                                 <a class="card-footer text-white clearfix small z-1" href="#">
-                                    <span class="float-left">View Details</span>
+                                    <span class="float-left">Ver detalhes</span>
                                     <span class="float-right">
                                         <i class="fas fa-angle-right"></i>
                                     </span>
@@ -52,12 +48,12 @@
                             <div class="card text-white bg-success o-hidden h-100">
                                 <div class="card-body">
                                     <div class="card-body-icon">
-                                        <i class="fas fa-fw fa-shopping-cart"></i>
+                                        <i class="fas fa-fw fa-users"></i>
                                     </div>
-                                    <div class="mr-5">123 New Orders!</div>
+                                    <div class="mr-5">123 Clientes cadastrados!</div>
                                 </div>
                                 <a class="card-footer text-white clearfix small z-1" href="#">
-                                    <span class="float-left">View Details</span>
+                                    <span class="float-left">Ver detalhes</span>
                                     <span class="float-right">
                                         <i class="fas fa-angle-right"></i>
                                     </span>
@@ -68,12 +64,12 @@
                             <div class="card text-white bg-danger o-hidden h-100">
                                 <div class="card-body">
                                     <div class="card-body-icon">
-                                        <i class="fas fa-fw fa-life-ring"></i>
+                                        <i class="fas fa-fw fa-shopping-cart"></i>
                                     </div>
-                                    <div class="mr-5">13 New Tickets!</div>
+                                    <div class="mr-5">13 Pedidos recebidos!</div>
                                 </div>
                                 <a class="card-footer text-white clearfix small z-1" href="#">
-                                    <span class="float-left">View Details</span>
+                                    <span class="float-left">Ver detalhes</span>
                                     <span class="float-right">
                                         <i class="fas fa-angle-right"></i>
                                     </span>
@@ -104,7 +100,7 @@
                     </script>
 
                     <body>
-                        <button id="btnMostrarEsconderProdutos" type="button" class="container" class="label label-default">cadastrar produtos</button>
+                        <button id="btnMostrarEsconderProdutos" type="button" class="container-fluid" class="label label-default">cadastrar produtos</button>
                         <div id="divConteudoProdutos">
                             <div class="form">
 
@@ -130,61 +126,26 @@
                                                 else
                                                     echo "inserir";
                                                 ?>">
-                                                <input type="hidden" name="idProduto" value="<?php
-                                                if (isset($produto))
-                                                    foreach ($produto as $pro) {
-                                                        echo $pro->idProduto;
-                                                    }
-                                                ?>">
+                                                <input type="hidden" name="idProduto" value="">
                                                 Nome do produto:
-                                                <input class="form-control" type="text" name="nomeProduto"required="" value="<?php
-                                                if (isset($produto))
-                                                    foreach ($produto as $pro) {
-                                                        echo $pro->nomeProduto;
-                                                    }
-                                                ?>">
+                                                <input class="form-control" type="text" name="nomeProduto"required="" value="">
                                                 <br>
                                                 Valor unitario do produto:
-                                                <input class="form-control" type="number" pattern="[0-9]+([,\.][0-9]+)?" min="0" step="any" name="valorUnitario" required="" value="<?php
-                                                if (isset($produto))
-                                                    foreach ($produto as $pro) {
-                                                        echo $pro->valorUnitario;
-                                                    }
-                                                ?>">
+                                                <input class="form-control" type="number" pattern="[0-9]+([,\.][0-9]+)?" min="0" step="any" name="valorUnitario" required="" value="">
                                                 <br>
                                                 Descrição do produto:
                                                 <div class="form-group">
-                                                    <textarea class="form-control" rows="5" name="descricaoProduto"><?php
-                                                        if (isset($produto))
-                                                            foreach ($produto as $pro) {
-                                                                echo $pro->descricaoProduto;
-                                                            }
-                                                        ?></textarea>
+                                                    <textarea class="form-control" rows="5" name="descricaoProduto"></textarea>
                                                 </div>
                                                 Peso do produto em kg ou litros:
-                                                <input class="form-control" type="number" pattern="[0-9]+([,\.][0-9]+)?" min="0" step="any" name="peso" required="" value="<?php
-                                                if (isset($produto))
-                                                    foreach ($produto as $pro) {
-                                                        echo $pro->peso;
-                                                    }
-                                                ?>">
+                                                <input class="form-control" type="number" pattern="[0-9]+([,\.][0-9]+)?" min="0" step="any" name="peso" required="" value="">
                                                 <br>
                                                 Marca do produto:
-                                                <input class="form-control" type="text" name="marca" required="" value="<?php
-                                                if (isset($produto))
-                                                    foreach ($produto as $pro) {
-                                                        echo $pro->marca;
-                                                    }
-                                                ?>">
+                                                <input class="form-control" type="text" name="marca" required="" value="">
                                                 <br>
                                                 Categoria do produto:
                                                 <select class="form-control" id="categoria" name="categoria" value="">
-                                                    <option><?php
-                                                        if (isset($produto))
-                                                            foreach ($produto as $pro) {
-                                                                echo $pro->categoria;
-                                                            }
-                                                        ?></option>
+                                                    <option></option>
                                                     <optgroup label="Alimentação">
                                                         <option value="arroz">Arroz</option>
                                                         <option value="feijao">Feijão</option>
@@ -211,24 +172,14 @@
                                                 </select>
                                                 <br>
                                                 Foto do produto:
-                                                <input class="form-control" type="file" required name="imagem" value="<?php
-                                                if (isset($produto))
-                                                    foreach ($produto as $pro) {
-                                                        echo $pro->imagem;
-                                                    }
-                                                ?>">
+                                                <input class="form-control" type="file" required name="imagem" value="">
                                                 <br>
                                                 <input type="hidden" class="form-control" name="data" value="<?php echo date_format(new DateTime(), 'Y/m/d'); ?>" >
 
                                                 <input type="hidden" name="disponibilidade" value="1">
                                                 Destacar produto como:
                                                 <select class="form-control" id="tipoDestaque" name="tipoDestaque" value="">
-                                                    <option><?php
-                                                        if (isset($produto))
-                                                            foreach ($produto as $pro) {
-                                                                echo $pro->tipoDestaque;
-                                                            }
-                                                        ?></option>
+                                                    <option></option>
                                                     <option value="2">Destacar como promoção</option>
                                                     <option value="3">Apenas destacar</option>
                                                     <option value="NULL">Não destacar</option>
@@ -244,7 +195,7 @@
                         <br><br>
                         
                         
-                        <button id="btnMostrarEsconderBanners" type="button" class="container" class="label label-default">Cadastrar Banners</button>
+                        <button id="btnMostrarEsconderBanners" type="button" class="container-fluid" class="label label-default">Cadastrar Banners</button>
                         <div id="divConteudoBanners">
                             <div class="form">
 <?php
@@ -269,38 +220,18 @@ if (isset($situacao)) {
                 else
                     echo "inserir";
                 ?>">
-                <input type="hidden" name="idBanner" value="<?php
-                if (isset($banner))
-                    foreach ($banner as $ban) {
-                        echo $ban->idBanner;
-                    }
-                ?>">
+                <input type="hidden" name="idBanner" value="">
                 Nome do banner:
-                <input class="form-control" type="text" name="nomePromocao" required="" value="<?php
-                if (isset($banner))
-                    foreach ($banner as $ban) {
-                        echo $ban->nomePromocao;
-                    }
-                ?>">
+                <input class="form-control" type="text" name="nomePromocao" required="" value="">
                 <br>
                 Descrição do banner:
                 <div class="form-group">
-                    <textarea class="form-control" rows="5" name="descricaoPromocao" ><?php
-                        if (isset($banner))
-                            foreach ($banner as $ban) {
-                                echo $ban->descricaoPromocao;
-                            }
-                        ?></textarea>
+                    <textarea class="form-control" rows="5" name="descricaoPromocao" ></textarea>
                 </div>
                 Foto do banner:
-                <input class="form-control" type="file" required name="imagemBanner" value="<?php
-                if (isset($banner))
-                    foreach ($banner as $ban) {
-                        echo $ban->imagemBanner;
-                    }
-                ?>">
+                <input class="form-control" type="file" required name="imagemBanner" value="">
                 <br>
-                <input type="hidden" class="form-control" name="data" value="<?php echo date_format(new DateTime(), 'Y/m/d'); ?>" >
+                <input type="hidden" class="form-control" name="data" value="" >
                 <input type="hidden" name="disponibilidade" value="true">
                 <center><input type="submit" value="Cadastrar"></center>
             </div>

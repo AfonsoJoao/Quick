@@ -1,5 +1,13 @@
 <!-- DataTables Example -->
 <div class="container">
+    <br>
+     <!-- Breadcrumbs-->
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="<?php echo base_url('paineladministrativo/')?>">Painel administrativo</a>
+                        </li>
+                        <li class="breadcrumb-item active">Clientes cadastrados</li>
+                    </ol>
 <div class="card mb-3">
                         <div class="card-header">
                             <i class="fas fa-table"></i>
@@ -17,7 +25,6 @@
                             <th>CPF</th>
                             <th>RG</th>
                             <th>Telefone</th>
-                            <th>Editar</th>
                             <th>Excluir</th>
                                         </tr>
                                     </thead>
@@ -31,7 +38,6 @@
                             <th>CPF</th>
                             <th>RG</th>
                             <th>Telefone</th>
-                            <th>Editar</th>
                             <th>Excluir</th>
 
                                         </tr>
@@ -50,7 +56,6 @@
                                     <td><?php echo $cliente->cpf;?></td>
                                     <td><?php echo $cliente->rg;?></td>
                                     <td><?php echo $cliente->telefone;?></td>
-                                    <td><a href="<?php echo base_url("ControllerCliente/listaUnicoCliente/$cliente->idCliente"); ?>"><img src="<?php echo base_url('application/images/edit-Icon.png');?>"></a></td>
                                     <td><a href="javascript:func()" onclick="excluirCliente(<?php echo $cliente->idCliente; ?>, '<?php echo $cliente->nome; ?>')"> <img src=" <?php echo base_url('application/images/close_1.png');?>"> </a></td>
                                 </tr>   
                             <?php }

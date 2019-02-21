@@ -2,13 +2,6 @@
 
 class ControllerProduto extends CI_Controller {
 
-    public function cadproduto() {
-        $this->load->view('estrutura/cabecalho');
-        $this->load->view('estrutura/barraMenu');
-        $this->load->view('corpo/Produto/corpoCadProduto');
-        $this->load->view('estrutura/rodape');
-    }
-
     public function gravarProduto() {
         $this->load->Model('modelProduto', '', TRUE);
         $produto = array(
@@ -39,9 +32,9 @@ class ControllerProduto extends CI_Controller {
 
 
 
-        $this->load->view('estrutura/cabecalho');
-        $this->load->view('corpo/Produto/corpoCadProduto', $msn);
-        $this->load->view('estrutura/rodape');
+       $this->load->view('estrutura/menuPainel');
+        $this->load->view('corpo/corpoPainel', $msn);
+        $this->load->view('estrutura/rodapePainel');
     }
 
     public function listaProduto() {
@@ -55,9 +48,9 @@ class ControllerProduto extends CI_Controller {
     public function listaUnicoProduto() {
         $this->load->Model('modelProduto', '', TRUE);
         $dados['produto'] = $this->modelProduto->listaProduto($this->uri->segment(3));
-        $this->load->view('estrutura/cabecalho');
-        $this->load->view('corpo/Produto/corpoCadProduto', $dados);
-        $this->load->view('estrutura/rodape');
+        $this->load->view('estrutura/menuPainel');
+        $this->load->view('corpo/Produto/corpoEditarProduto', $dados);
+        $this->load->view('estrutura/rodapePainel');
     }
 
     function excluirProduto() {

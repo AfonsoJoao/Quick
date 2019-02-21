@@ -11,6 +11,23 @@
 
         <title>Quick - Painel administrativo</title>
 
+        <script>
+
+            function excluirBanner(id, nome) {
+                if (confirm('Deseja excluir o Banner ' + nome)) {
+                    location.href = "<?php echo base_url('ControllerBanner/excluirBanner'); ?>" + "/" + id;
+                }
+            }
+        </script>
+        <script>
+
+            function excluirProduto(id, nome) {
+                if (confirm('Deseja excluir o produto ' + nome)) {
+                    location.href = "<?php echo base_url('ControllerProduto/excluirProduto'); ?>" + "/" + id;
+                }
+            }
+        </script>
+        
         <!-- Custom fonts for this template-->
         <link href="<?php echo base_url('vendor/fontawesome-free/css/all.min.css'); ?>" rel="stylesheet" type="text/css">
 

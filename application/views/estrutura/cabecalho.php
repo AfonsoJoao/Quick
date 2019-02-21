@@ -58,14 +58,6 @@ and open the template in the editor.
                 }
             }
         </script>
-        <script>
-
-            function excluirProduto(id, nome) {
-                if (confirm('Deseja excluir o produto ' + nome)) {
-                    location.href = "<?php echo base_url('ControllerProduto/excluirProduto'); ?>" + "/" + id;
-                }
-            }
-        </script>
 
         <script>
 
@@ -81,15 +73,6 @@ and open the template in the editor.
             function excluirAdministrador(id, nome) {
                 if (confirm('Deseja excluir o administrador ' + nome)) {
                     location.href = "<?php echo base_url('ControllerAdministrador/excluirAdministrador'); ?>" + "/" + id;
-                }
-            }
-        </script>
-
-        <script>
-
-            function excluirBanner(id, nome) {
-                if (confirm('Deseja excluir o Banner ' + nome)) {
-                    location.href = "<?php echo base_url('ControllerBanner/excluirBanner'); ?>" + "/" + id;
                 }
             }
         </script>
