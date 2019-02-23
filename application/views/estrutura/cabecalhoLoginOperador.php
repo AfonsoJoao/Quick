@@ -20,6 +20,8 @@ and open the template in the editor.
         <!-- Obs: Caso não der certo configurar adicionar a pasta application as referencias do css -->
 
         <link href="<?php echo base_url('css/bootstrap.css'); ?>" rel="stylesheet" type="text/css" media="all"/>
+        
+        <link href="<?php echo base_url('css/carrinho.css'); ?>" rel="stylesheet" type="text/css" media="all"/>
 
         <link href="<?php echo base_url('css/style.css'); ?>" rel="stylesheet" type="text/css" media="all" />
 
@@ -70,23 +72,54 @@ and open the template in the editor.
             <div class="w3l_offers">
                 <a>-------------------</a>
             </div>
+            
             <div class="w3l_search">
-                <form action="#" method="post">
-                    <input type="text" name="Product" value="Buscar produtos..." onfocus="this.value = '';" onblur="if (this.value == '') {
-                                this.value = 'Search a product...';
-                            }" required="">
-                    <input type="submit" value=" ">
+                <form action="<?php echo base_url('resultadodabusca/') ?>" method="post">
+                    <input type="text" name="busca" placeholder="Buscar produtos...">
+                    <input type="submit" value="">
                 </form>
             </div>
-            <div class="product_list_header">  
-                <form action="#" method="post" class="last" >
-                    <fieldset>
-                        <input type="hidden" name="cmd" value="_cart" />
-                        <input type="hidden" name="display" value="1" />
-                        <input type="submit" name="submit" value="Seu carrinho " class="button" />
-                    </fieldset>
-                </form>
+            
+            <div class="dropdown">
+                <div class="w3l_header_right">
+                    <ul>
+                        <li class="dropdown profile_details_drop">
+                            <a href="#" class="dropdown" data-toggle="dropdown" role="button" data-hover="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-shopping-cart"></i> Carrinho Compra  (Itens <span class="carrinho-top-total-item">0</span>
+                                ) <span class="caret"></span> <!-- A class caret serve para mostrar a setinha em um campo dropdown -->
+                            </a>
+                            <ul class="dropdown-menu carrinho-compra">
+                                
+                                <div class="row body-carrinho-vazio">
+                                    <div class="col-xs-12 col-md-12 text-center">
+                                        Carrinho está vazio
+                                    </div>  
+                                </div>
+                                
+                                <div class="row body-carrinho-top hide">
+                                    <div class="col-xs-12 col-md-4" >
+                                        Itens: <span class="carrinho-top-total-item"></span>
+                                    </div>
+                                    <div class="col-xs-12 col-md-8 text-right" >
+                                        Total: <span class="carrinho-top-total-valor"></span>
+                                    </div>
+                                </div>
+                                <!-- Separador de submenus  -->
+                                <div class="row margin-top-20 btns-carrinho-topo hide">
+                                    
+                                    <div class="col-xs-12 col-md-6">
+                                        <a href="<?= base_url('ControllerCarrinho/carrinho') ?>" title="Exibir Carrinho" class="btn btn-success btn-block">Exibir Carrinho</a>
+                                    </div>
+                                    <div class="col-xs-12 col-md-6"> <!-- O col-xs-6 coloca botões um ao lado do outro  -->
+                                        <a href="#" class="btn btn-danger btn-block btn-limpar-carrinho">Limpar</a>
+                                    </div>
+                                </div>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
             </div>
+            
             <div class="w3l_header_right">
                 <ul>
                     <li class="dropdown profile_details_drop">
@@ -126,7 +159,7 @@ and open the template in the editor.
         <div class="logo_products">
             <div class="container">
                 <div class="w3ls_logo_products_left">
-                    <h1><a href="<?php echo base_url('index/') ?>"><img src="<?php echo base_url('application/images/Logo-Quick2.jpg'); ?>" width="130" height="100"></a></h1>
+                    <h1><a href="<?php echo base_url('operador/') ?>"><img src="<?php echo base_url('application/images/Logo-Quick2.jpg'); ?>" width="130" height="100"></a></h1>
                 </div>
                 <div class="w3ls_logo_products_left1">
                     <ul class="special_items">
@@ -142,7 +175,7 @@ and open the template in the editor.
         <div class="products-breadcrumb">
             <div class="container">
                 <ul>
-                    <li><img src="<?php echo base_url('application/images/home.png'); ?>" width="25" height="20"><a href="<?php echo base_url('index/') ?>">Inicio</a><span>|</span></li>
+                    <li><img src="<?php echo base_url('application/images/home.png'); ?>" width="25" height="20"><a href="<?php echo base_url('operador/') ?>">Inicio</a><span>|</span></li>
                     <li>**<span>|</span></li>
                     <li>**</li>
                 </ul>

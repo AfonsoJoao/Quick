@@ -1,3 +1,6 @@
+
+<script src="<?php echo base_url('js/mascaras.js'); ?>"></script>
+
 <?php
         if (isset($situacao)) {
             $st = $situacao;
@@ -80,7 +83,7 @@
                                 }
                             ?>">
                             
-                            <input type="text" name="cpf" placeholder="CPF" required="" value="<?php
+                            <input type="text" class="cpf" name="cpf" placeholder="CPF" required="" value="<?php
                             if (isset($cliente))
                                 foreach ($cliente as $cli) {
                                     echo $cli->cpf;
@@ -94,7 +97,7 @@
                                 }
                             ?>">
                             
-                            <input type="text" name="telefone" placeholder="Telefone" required=" " value="<?php
+                            <input type="text" class="telefone" name="telefone" placeholder="Telefone" required=" " value="<?php
                             if (isset($cliente))
                                 foreach ($cliente as $cli) {
                                     echo $cli->telefone;

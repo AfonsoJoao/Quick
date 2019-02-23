@@ -1,6 +1,6 @@
 <?php
 
-class ControllerCarrinho extends CI_Controller {
+class ControllerCheckout extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
@@ -9,14 +9,10 @@ class ControllerCarrinho extends CI_Controller {
         $this->load->library('carrinhocompras');
     }
 
-    public function carrinho() {
-
-        //unset($_SESSION['carrinho']); // Serve para encerrar a sessão do carrinho.
-        $car ['carrinho'] = $this->carrinhocompras->listarProdutos(); // a variavel carrinho tá recebendo os dados da biblioteca carrinho compras
-        // e listando os produtos do carrinho através do metodo listar produtos
-
+    public function checkout() {
         $this->load->view('estrutura/cabecalho');
-        $this->load->view('corpo/Carrinho/corpoCarrinho', $car);
+        $this->load->view('estrutura/barraMenu');
+        $this->load->view('corpo/Checkout/corpoCheckout');
         $this->load->view('estrutura/rodape');
     }
 

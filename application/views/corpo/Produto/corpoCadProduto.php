@@ -7,6 +7,9 @@ if (isset($situacao)) {
     unset($situacao);
 }
 ?>
+  
+  <script src="<?php echo base_url('js/mascaras.js'); ?>"></script>
+    
 <div class="w3_login">
     <div class="w3_login_module"><h3 class="w3l_fruit">Cadastrar produtos</h3>
         <div class="module form-module">
@@ -33,7 +36,7 @@ if (isset($situacao)) {
                         echo $pro->nomeProduto;
                     }
                 ?>">
-                <input class="form-control" type="number" pattern="[0-9]+([,\.][0-9]+)?" min="0" step="any" name="valorUnitario" placeholder="Valor unitario do produto" required="" value="<?php
+                <input class="form-control input_moeda" type="text" name="valorUnitario" placeholder="Valor unitario do produto" required="" value="<?php
                 if (isset($produto))
                     foreach ($produto as $pro) {
                         echo $pro->valorUnitario;

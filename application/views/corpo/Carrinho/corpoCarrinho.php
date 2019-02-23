@@ -27,7 +27,6 @@
     </div><br><br>
     <hr><br>
 
-
     <div class="col-md-12">
         <table class="table table-bordered">
             <thead>
@@ -44,7 +43,7 @@
                 <?php foreach ($carrinho as $indice => $linha) { ?> <!-- exibe a lista de produtos do carrinho através do foreach -->
                     <tr>
                         <td><?= $linha['nome'] ?></td>
-                        <td class="text-right"><?= $linha['valor'] ?></td>
+                        <td class="text-right"><?= formataMoedaReal ($linha['valor'], TRUE) ?></td>
                         <td class="text-center">
                             <input type="tel" name="carrinho_qtd" class="input-carrinho-qtd" value="<?= $linha['qtd'] ?>"
                                    id="produto_<?= $linha['id'] ?>">
@@ -53,7 +52,7 @@
                                 <i class="fa fa-undo"></i>
                             </a>
                         </td>
-                        <td class="text-right"><?= $linha['subtotal'] ?></td> <!-- OBS: Depois colocar no formato moeda real -->
+                        <td class="text-right"><?= formataMoedaReal ($linha['subtotal'], TRUE) ?></td> <!-- OBS: Depois colocar no formato moeda real -->
                         <td class="text-center"><a href="#" title="Apagar Produto" class="btn-apagar-produto-carrinho" 
                                                    data-id="<?= $linha['id'] ?>"><i class="fa fa-trash-o fa-2x"></i></a></td>
 
@@ -64,7 +63,7 @@
             <tfoot>
                 <tr>
                     <td colspan="3" class="text-right">Total Carrinho</td>
-                    <td class="text-right total-carrinho"><?= $this->carrinhocompras->total() ?></td>
+                    <td class="text-right total-carrinho"><?= formataMoedaReal ($this->carrinhocompras->total(), TRUE) ?></td>
 
                 </tr>
 

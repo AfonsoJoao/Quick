@@ -91,3 +91,21 @@ $route ['resultadodabuscaProdutosCadastrados'] = 'ControllerProduto/buscarProdut
 //Rota para tela de administrador
 $route ['paineladministrativo'] = 'ControllerAdministrador/painel';
 
+//Rota para para a pagina do cliente logado
+$route ['cliente'] = 'ControllerLogin/loginfeitoCliente';
+
+//Rota para para a pagina do administrador logado
+$route ['administrador'] = 'ControllerLogin/loginfeitoAdministrador';
+
+//Rota para para a pagina do operador logado
+$route ['operador'] = 'ControllerLogin/loginfeitoOperador';
+
+//Rota para para a pagina das categorias dos produtos com o cliente logado
+// $route ['categorias'] = 'ControllerCategoriasLogado/loginfeitoCliente';
+
+// $route ['categ'] = 'Controller/loginfeitoCliente';
+
+
+
+
+

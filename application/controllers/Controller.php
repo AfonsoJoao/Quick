@@ -4,6 +4,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Controller extends CI_Controller {
 
+    public function __construct() {
+        parent::__construct();
+        $this->ci = & get_instance();
+        $this->ci->load->helper('funcoes');
+    }
+
     public function index() {
         $this->load->model("modelProduto", '', TRUE);
         $dados['produto'] = $this->modelProduto->listarProduto();
@@ -14,4 +20,5 @@ class Controller extends CI_Controller {
         $this->load->view('corpo/corpo', $dados);
         $this->load->view('estrutura/rodape');
     }
+
 }

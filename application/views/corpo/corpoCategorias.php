@@ -84,8 +84,8 @@
                                                 <div class="snipcart-thumb">
                                                     <div class="snipcart-details">
                                                         <a href="<?php echo base_url("controllerProduto/unicoProduto/$produto->idProduto") ?>"><img src="<?php echo base_url('application/images/' . $produto->imagem) ?>" width="140px" height="140px"></a>
-                                                        <p><?php echo $produto->nomeProduto; ?></p>
-                                                        <h4><?php echo "R$ " . $produto->valorUnitario; ?></h4>
+                                                        <p><?= $produto->nomeProduto ?></p>
+                                                        <h4><?= formataMoedaReal ($produto->valorUnitario, TRUE) ?></h4>
                                                         <br>
                                                         <div class="quantity"> 
                                                             <div class="quantity-select">                           
@@ -97,7 +97,7 @@
                                                         <br> 
 
                                                         <fieldset>
-                                                            <input type="hidden" name="idProduto" value="<?php echo $produto->idProduto; ?>"/>
+                                                            <input type="hidden" name="idProduto" value="<?= $produto->idProduto ?>"/>
                                                             <a href="#" title="Adicionar produtos carrinho" 
                                                                class="btn btn-success btn-lg btn-block btn-add-produto-carrinho"
                                                                data-id="<?= $produto->idProduto ?>"><i class="fa fa-shopping-cart"></i> Adicionar ao Carrinho </a>

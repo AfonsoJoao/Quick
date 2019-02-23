@@ -2,6 +2,13 @@
 
 class ControllerProduto extends CI_Controller {
 
+    public function __construct() {
+        parent::__construct();
+        $this->ci = & get_instance();
+        $this->ci->load->helper('funcoes');
+    }
+
+    
     public function cadproduto() {
         $this->load->view('estrutura/cabecalho');
         $this->load->view('estrutura/barraMenu');
@@ -14,7 +21,7 @@ class ControllerProduto extends CI_Controller {
         $produto = array(
             'nomeProduto' => $this->input->post('nomeProduto'),
             'data' => $this->input->post('data'),
-            'valorUnitario' => $this->input->post('valorUnitario'),
+            'valorUnitario' => formatoDecimal ($this->input->post('valorUnitario')),
             'descricaoProduto' => $this->input->post('descricaoProduto'),
             'peso' => $this->input->post('peso'),
             'marca' => $this->input->post('marca'),
@@ -43,7 +50,8 @@ class ControllerProduto extends CI_Controller {
         $this->load->view('corpo/Produto/corpoCadProduto', $msn);
         $this->load->view('estrutura/rodape');
     }
-
+    
+    
     public function listaProduto() {
         $this->load->model("modelProduto", '', TRUE);
         $dados['produto'] = $this->modelProduto->listarProduto();

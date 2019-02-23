@@ -9,7 +9,7 @@ var App = function () {
 
             if (qtd_compra > 0) {
 
-                $.ajax({//Funcão ajax responsavel por enviar o id do produto para o controller.
+                $.ajax({//Funcão ajax responsavel por enviar o id do produto para o controller carrinho.
                     type: 'POST',
                     url: url_quick +'ControllerCarrinho/altera',
                     data: {id:id_produto, qtd:qtd_compra},
@@ -152,7 +152,7 @@ var App = function () {
     }
 
     return {
-        init: function () {
+        init: function () { // Serve para iniciar a função automaticamente.
             addProdutoCarrinho();
             verificaCarrinhoCompra();
             limpaCarrinhoCompra();
@@ -161,7 +161,7 @@ var App = function () {
         }
     }
 
-}(); // esse parentese serve para executar a função automaticamente.
+}();
 
 jQuery(document).ready(function () { // Quando for lido o documento inicie a função app.
     App.init();

@@ -26,12 +26,12 @@
                     foreach ($produto as $produto) {
                     ?>
                     <tr>
-                        <td><?php echo $produto->idProduto; ?></td>
-                        <td><?php echo $produto->nomeProduto; ?></td>
-                        <td><?php echo $produto->marca; ?></td>
-                        <td><?php echo $produto->descricaoProduto; ?></td>
-                        <td><?php echo "R$ " . $produto->valorUnitario; ?></td>
-                        <td><?php
+                        <td><?= $produto->idProduto ?></td>
+                        <td><?= $produto->nomeProduto ?></td>
+                        <td><?= $produto->marca ?></td>
+                        <td><?= $produto->descricaoProduto ?></td>
+                        <td><?= formataMoedaReal($produto->valorUnitario, TRUE) ?></td>
+                        <td><?=
                             $cate = $produto->categoria;
                             if ($cate == 'naoalcoolicas' || $cate == 'alcoolicas') {
                                 echo $produto->peso . " L";
@@ -40,7 +40,7 @@
                             }
                             ?></td>
                         <td><a href="<?php echo base_url("ControllerProduto/listaUnicoProduto/$produto->idProduto"); ?>"><img src="<?php echo base_url('application/images/edit-Icon.png') ?>"></a></td>
-                        <td><a href="javascript:func()" onclick="excluirProduto(<?php echo $produto->idProduto; ?>,'<?php echo $produto->nomeProduto; ?>')"><img src="<?php echo base_url('application/images/close_1.png') ?>"></a></td>
+                        <td><a href="javascript:func()" onclick="excluirProduto(<?php echo $produto->idProduto; ?>,'<?php echo $produto->nomeProduto; ?>')"><i class="fa fa-trash-o fa-2x"></i></a></td>
                     </tr>
                 <?php } 
                 
