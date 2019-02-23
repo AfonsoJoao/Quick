@@ -46,27 +46,26 @@ class ControllerProduto extends CI_Controller {
 
 
 
-        $this->load->view('estrutura/cabecalho');
-        $this->load->view('corpo/Produto/corpoCadProduto', $msn);
-        $this->load->view('estrutura/rodape');
+       $this->load->view('estrutura/menuPainel');
+        $this->load->view('corpo/corpoPainel', $msn);
+        $this->load->view('estrutura/rodapePainel');
     }
     
     
     public function listaProduto() {
         $this->load->model("modelProduto", '', TRUE);
         $dados['produto'] = $this->modelProduto->listarProduto();
-        $this->load->view('estrutura/cabecalho');
-        $this->load->view('estrutura/barraMenu');
+        $this->load->view('estrutura/menuPainel');
         $this->load->view('corpo/Produto/produtosCadastrados', $dados);
-        $this->load->view('estrutura/rodape');
+        $this->load->view('estrutura/rodapePainel');
     }
 
     public function listaUnicoProduto() {
         $this->load->Model('modelProduto', '', TRUE);
         $dados['produto'] = $this->modelProduto->listaProduto($this->uri->segment(3));
-        $this->load->view('estrutura/cabecalho');
-        $this->load->view('corpo/Produto/corpoCadProduto', $dados);
-        $this->load->view('estrutura/rodape');
+        $this->load->view('estrutura/menuPainel');
+        $this->load->view('corpo/Produto/corpoEditarProduto', $dados);
+        $this->load->view('estrutura/rodapePainel');
     }
 
     function excluirProduto() {
@@ -113,5 +112,29 @@ class ControllerProduto extends CI_Controller {
         $this->load->view('corpo/Produto/corpoUnicoProduto', $dados);
         $this->load->view('estrutura/rodape');
     }
-
+    
+    public function paginacao($value=null){
+         if($value==null){
+             $value = 1;}
+         $registros_p_pagina = 2;
+         if($value <= $registros_p_pagina){
+             $data['botaoA'] = 'disable';
+         }else{
+             $data['botaoA'] = '';
+         }
+        $this->load->model("modelProduto", '', TRUE);
+        $u = $this->modelProduto->qtde_produto();
+        
+        if(($u[0]->total-$value) < $registros_p_pagina){
+            $data['botaoP'] = 'disable';
+         }else{
+             $data['botaoP'] = '';
+        }
+        $dados['produto'] = $this->modelProduto->get_produto($value, $registros_p_pagina);
+        $this->load->model("modelProduto", '', TRUE);
+        $this->load->view('estrutura/cabecalho');
+        $this->load->view('estrutura/barraMenu');
+        $this->load->view('corpo/Produto/produtosCadastrados', $dados);
+        $this->load->view('estrutura/rodape');
+    }
 }

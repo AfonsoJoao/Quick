@@ -61,14 +61,6 @@ and open the template in the editor.
                 }
             }
         </script>
-        <script>
-
-            function excluirProduto(id, nome) {
-                if (confirm('Deseja excluir o produto ' + nome)) {
-                    location.href = "<?php echo base_url('ControllerProduto/excluirProduto'); ?>" + "/" + id;
-                }
-            }
-        </script>
 
         <script>
 
@@ -84,15 +76,6 @@ and open the template in the editor.
             function excluirAdministrador(id, nome) {
                 if (confirm('Deseja excluir o administrador ' + nome)) {
                     location.href = "<?php echo base_url('ControllerAdministrador/excluirAdministrador'); ?>" + "/" + id;
-                }
-            }
-        </script>
-
-        <script>
-
-            function excluirBanner(id, nome) {
-                if (confirm('Deseja excluir o Banner ' + nome)) {
-                    location.href = "<?php echo base_url('ControllerBanner/excluirBanner'); ?>" + "/" + id;
                 }
             }
         </script>
@@ -118,7 +101,7 @@ and open the template in the editor.
                     <ul>
                         <li class="dropdown profile_details_drop">
                             <a href="#" class="dropdown" data-toggle="dropdown" role="button" data-hover="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fa fa-shopping-cart"></i> Carrinho Compra  (Itens <span class="carrinho-top-total-item">0</span>
+                                <i class="fa fa-shopping-cart"></i> Carrinho de compras  (Itens <span class="carrinho-top-total-item">0</span>
                                 ) <span class="caret"></span> <!-- A class caret serve para mostrar a setinha em um campo dropdown -->
                             </a>
                             <ul class="dropdown-menu carrinho-compra">
