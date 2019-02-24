@@ -34,3 +34,7 @@ and open the template in the editor.
     width: 50px;
     text-align: center;
 }
+
+.margin-checkout {
+    margin-top: 5px;
+}
