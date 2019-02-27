@@ -84,7 +84,8 @@
                         <title></title>
                     </head>
                     
-                    <script src="<?php echo base_url('js/mascaras.js'); ?>"></script>
+                   <script src="<?php echo base_url('js/mascaras.js'); ?>"></script>
+                    
                     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
                     <script type="text/javascript">
                         $(document).ready(function (e) {
