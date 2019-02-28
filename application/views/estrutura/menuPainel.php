@@ -10,7 +10,7 @@
         <meta name="author" content="">
 
         <title>Quick - Painel administrativo</title>
-
+         <script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
         <script>
 
             function excluirBanner(id, nome) {
@@ -38,7 +38,7 @@
               <link href="<?php echo base_url('css/sb-admin.css'); ?>" rel="stylesheet">
 
     </head>
-    <script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+   
 
     <body id="page-top">
 

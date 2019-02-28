@@ -15,7 +15,7 @@
 <div class="top-brands">
 
     <div class="row msg-add-carrinho hide"> <!-- o Hide serve para deixar a classe invisivel -->
-        <div class="col-md-12 msg-carrinho-alert text-center">
+        <div class="col-md-12 msg-carrinho-alert text-center"> <!-- o Mensagem de alerta quando é adicionado produto no carrinho -->
 
         </div>  
     </div><br><br>
