@@ -198,3 +198,8 @@
                         </div>
                     </div>
                 </div>
+                <script src="<?php echo base_url('js/carrinho.js'); ?>"></script>
+
+        <script type="text/javascript">
+            var url_quick = "<?= base_url() ?>";
+        </script>

@@ -19,41 +19,41 @@
                             <li class="hassubs">
                                 <a href="#">Alimentação<i class="fas fa-chevron-right"></i></a>
                                 <ul>
-                                    <li><a href="#">Arroz<i class="fas fa-chevron-right"></i></a></li>
-                                    <li><a href="#">Feijão<i class="fas fa-chevron-right"></i></a></li>
-                                    <li><a href="#">Sal<i class="fas fa-chevron-right"></i></a></li>
-                                    <li><a href="#">Açucar<i class="fas fa-chevron-right"></i></a></li>
-                                    <li><a href="#">Massas<i class="fas fa-chevron-right"></i></a></li>
-                                    <li><a href="#">Oléos<i class="fas fa-chevron-right"></i></a></li>
-                                    <li><a href="#">Laticínios<i class="fas fa-chevron-right"></i></a></li>
-                                    <li><a href="#">Pães<i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="<?php echo base_url('ControllerCategorias/listaCate/arroz'); ?>">Arroz<i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="<?php echo base_url('ControllerCategorias/listaCate/feijao'); ?>">Feijão<i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="<?php echo base_url('ControllerCategorias/listaCate/sal'); ?>">Sal<i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="<?php echo base_url('ControllerCategorias/listaCate/acucar'); ?>">Açucar<i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="<?php echo base_url('ControllerCategorias/listaCate/massas'); ?>">Massas<i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="<?php echo base_url('ControllerCategorias/listaCate/oleos'); ?>">Oléos<i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="<?php echo base_url('ControllerCategorias/listaCate/laticineos'); ?>">Laticínios<i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="<?php echo base_url('ControllerCategorias/listaCate/paes'); ?>">Pães<i class="fas fa-chevron-right"></i></a></li>
                                 </ul>
                             </li>
                             <li class="hassubs">
                                 <a href="#">Frios<i class="fas fa-chevron-right"></i></a>
                                 <ul>
-                                    <li><a href="#">Carnes<i class="fas fa-chevron-right"></i></a></li>
-                                    <li><a href="#">Aves<i class="fas fa-chevron-right"></i></a></li>
-                                    <li><a href="#">Peixes<i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="<?php echo base_url('ControllerCategorias/listaCate/carnes'); ?>">Carnes<i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="<?php echo base_url('ControllerCategorias/listaCate/aves'); ?>">Aves<i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="<?php echo base_url('ControllerCategorias/listaCate/peixes'); ?>">Peixes<i class="fas fa-chevron-right"></i></a></li>
                                 </ul>
                             </li>
                             <li class="hassubs">
                                 <a href="#">Hortifruti<i class="fas fa-chevron-right"></i></a>
                                 <ul>
-                                    <li><a href="#">Frutas<i class="fas fa-chevron-right"></i></a></li>
-                                    <li><a href="#">Vegetais<i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="<?php echo base_url('ControllerCategorias/listaCate/frutas'); ?>">Frutas<i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="<?php echo base_url('ControllerCategorias/listaCate/vegetais'); ?>">Vegetais<i class="fas fa-chevron-right"></i></a></li>
                                 </ul>
                             </li>
                             <li class="hassubs">
                                 <a href="#">Bebidas<i class="fas fa-chevron-right"></i></a>
                                 <ul>
-                                    <li><a href="#">Alcoólicas<i class="fas fa-chevron-right"></i></a></li>
-                                    <li><a href="#">Não alcoólicas<i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="<?php echo base_url('ControllerCategorias/listaCate/alcoolicas'); ?>">Alcoólicas<i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="<?php echo base_url('ControllerCategorias/listaCate/naoalcoolicas'); ?>">Não alcoólicas<i class="fas fa-chevron-right"></i></a></li>
                                 </ul>
                             </li>
-                            <li><a href="#">Produtos de limpeza <i class="fas fa-chevron-right ml-auto"></i></a></li>
-                            <li><a href="#">Higiene<i class="fas fa-chevron-right"></i></a></li>
-                            <li><a href="#">Pets<i class="fas fa-chevron-right"></i></a></li>
+                            <li><a href="<?php echo base_url('ControllerCategorias/listaCate/limpeza'); ?>">Produtos de limpeza <i class="fas fa-chevron-right ml-auto"></i></a></li>
+                            <li><a href="<?php echo base_url('ControllerCategorias/listaCate/higiene'); ?>">Higiene<i class="fas fa-chevron-right"></i></a></li>
+                            <li><a href="<?php echo base_url('ControllerCategorias/listaCate/pet'); ?>">Pets<i class="fas fa-chevron-right"></i></a></li>
                         </ul>
                     </div>
 
@@ -85,6 +85,6 @@
 <!-- Banner -->
 
 <div class="banner">
-    <div class="banner_background" style="background-image:url(application/images/1.jpg)"></div>
+    <div class="banner_background" style="background-image:url(<?php echo base_url('application/images/1.jpg')?>)"></div>
     <br><br><br><br><br><br><br><br><br><br><br>
 </div>

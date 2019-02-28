@@ -1,15 +1,10 @@
 <!-- Characteristics -->
 <title>Quick - Início</title>
 <!-- Hot New Arrivals -->
-<script src="<?php echo base_url('js/carrinho.js'); ?>"></script>
-
-        <script type="text/javascript">
-            var url_quick = "<?= base_url() ?>";
-        </script>
-        <div class="row msg-add-carrinho hide"> <!-- o Hide serve para deixar a classe invisivel -->
+<div class="row msg-add-carrinho hide"> <!-- o Hide serve para deixar a classe invisivel -->
         <div class="col-md-12 msg-carrinho-alert text-center">
 
-        </div>  
+        </div> 
     </div><br><br>
 <div class="new_arrivals">
     <div class="container">
@@ -134,7 +129,7 @@
                             <div class="owl-item">
                                 <div class="popular_category d-flex flex-column align-items-center justify-content-center">
                                     <div class="popular_category_image"><img src="application/images/icones/produtos-icon.png" alt=""></div>
-                                    <div class="popular_category_text">Produtos de limpeza</div>
+                                    <div class="popular_category_text">Limpeza</div>
                                 </div>
                             </div>
 
