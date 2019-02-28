@@ -33,12 +33,12 @@
                             foreach ($produto as $produto) {
                                 ?>
                                 <tr>
-                                    <td><?= $produto->idProduto ?></td>
-                                    <td><?= $produto->nomeProduto ?></td>
-                                    <td><?= $produto->marca ?></td>
-                                    <td><?= $produto->descricaoProduto ?></td>
-                                    <td><?= formataMoedaReal($produto->valorUnitario, TRUE) ?></td>
-                                    <td><?=
+                                    <td><?php echo $produto->idProduto; ?></td>
+                                    <td><?php echo $produto->nomeProduto; ?></td>
+                                    <td><?php echo $produto->marca; ?></td>
+                                    <td><?php echo $produto->descricaoProduto; ?></td>
+                                    <td><?php echo formataMoedaReal($produto->valorUnitario, TRUE); ?></td>
+                                    <td><?php
                                         $cate = $produto->categoria;
                                         if ($cate == 'naoalcoolicas' || $cate == 'alcoolicas') {
                                             echo $produto->peso . " L";

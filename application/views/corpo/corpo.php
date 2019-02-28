@@ -1,83 +1,162 @@
-<html>
-    <body>
-        <script src="<?php echo base_url('js/carrinho.js'); ?>"></script>
+<!-- Characteristics -->
+<title>Quick - Início</title>
+<!-- Hot New Arrivals -->
+<script src="<?php echo base_url('js/carrinho.js'); ?>"></script>
 
         <script type="text/javascript">
             var url_quick = "<?= base_url() ?>";
         </script>
-        <!-- //flexSlider -->
-    </div>
-    <div class="clearfix"></div>
-</div>
-<!-- banner -->
-<!-- top-brands -->
-<div class="top-brands">
-
-    <div class="row msg-add-carrinho hide"> <!-- o Hide serve para deixar a classe invisivel -->
+        <div class="row msg-add-carrinho hide"> <!-- o Hide serve para deixar a classe invisivel -->
         <div class="col-md-12 msg-carrinho-alert text-center">
 
         </div>  
     </div><br><br>
-
+<div class="new_arrivals">
     <div class="container">
-        <h3>Destaques</h3>
-        <?php
-        if (isset($produto)) {
-            foreach ($produto as $produto) {
-                ?>
-                <?php if ($produto->disponibilidade == 1) { ?>
-                    <?php if ($produto->tipoDestaque == 2 || $produto->tipoDestaque == 3) { ?>
-
-                        <div class="w3ls_w3l_banner_nav_right_grid1 w3ls_w3l_banner_nav_right_grid1_veg">
-                            <div class="col-md-3 w3ls_w3l_banner_left w3ls_w3l_banner_left_asdfdfd">
-                                <div class="hover14 column">
-                                    <div class="agile_top_brand_left_grid w3l_agile_top_brand_left_grid">
-                                        <?php if ($produto->tipoDestaque == "2") { ?>
-                                            <div class="agile_top_brand_left_grid_pos">
-                                                <img src="<?php echo base_url('application/images/offer.png'); ?>" alt=" " class="img-responsive" />
-                                            </div>
-                                        <?php } ?>
-                                        <div class="agile_top_brand_left_grid1">
-                                            <figure>
-                                                <div class="snipcart-item block">
-                                                    <div class="snipcart-thumb">
-                                                        <div class="snipcart-details">
-                                                            <a href="<?php echo base_url("controllerProduto/unicoProduto/$produto->idProduto") ?>"><img src="<?php echo base_url('application/images/' . $produto->imagem) ?>" width="140px" height="140px"></a>
-                                                            <p><?= $produto->nomeProduto ?></p>
-                                                            <h4><?= formataMoedaReal ($produto->valorUnitario, TRUE) ?></h4>
-                                                            <br>
-                                                            <div class="quantity"> 
-                                                                <div class="quantity-select">                           
-                                                                    <div class="entry value-minus">&nbsp;</div>
-                                                                    <div class="entry value"><span>1</span></div>
-                                                                    <div class="entry value-plus active">&nbsp;</div>
-                                                                </div>
-                                                            </div>
-                                                            <br> 
-                                                            <fieldset>
-                                                                <input type="hidden" name="idProduto" value="<?= $produto->idProduto ?>"/>
-                                                                <a href="#" title="Adicionar produtos carrinho" 
-                                                                   class="btn btn-success btn-block btn-add-produto-carrinho"
+        <div class="row">
+            <div class="col">
+                <div class="tabbed_container">
+                    <div class="tabs clearfix tabs-right">
+                        <div class="new_arrivals_title">Produtos em destaque</div>
+                        <ul class="clearfix">
+                            <li class="active"></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                        <div class="tabs_line"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12" style="z-index:1;">
+                            <!-- Product Panel -->
+                            <div class="product_panel panel active">
+                                <div class="arrivals_slider slider">
+                                    <?php
+                                    if (isset($produto)) {
+                                        foreach ($produto as $produto) {
+                                            ?>
+                                            <?php if ($produto->disponibilidade == 1) { ?>
+                                                <?php if ($produto->tipoDestaque == 2 || $produto->tipoDestaque == 3) { ?>
+                                                    <!-- Slider Item -->
+                                                    <div class="arrivals_slider_item">
+                                                        <div class="border_active"></div>
+                                                        <?php if ($produto->tipoDestaque == "2") { ?>
+                                                            <div class="product_item discount d-flex flex-column align-items-center justify-content-center text-center">
+                                                            <?php } else { ?>
+                                                                <div class="product_item d-flex flex-column align-items-center justify-content-center text-center">
+                                                                <?php } ?>
+                                                                <div class="product_image d-flex flex-column align-items-center justify-content-center"><img src="<?php echo base_url('application/images/' . $produto->imagem) ?>" alt=""></div>
+                                                                <div class="product_content">
+                                                                    <div class="product_price"><?= formataMoedaReal($produto->valorUnitario, TRUE) ?></div>
+                                                                    <div class="product_name"><div><a href="<?php echo base_url("controllerProduto/unicoProduto/$produto->idProduto") ?>"><?= $produto->nomeProduto ?></a></div></div>
+                                                                    <div class="product_extras">
+                                                                        <a href="#" title="Adicionar produtos carrinho" 
+                                                                   class="btn btn-primary btn-block btn-add-produto-carrinho"
                                                                    data-id="<?= $produto->idProduto ?>"><i class="fa fa-shopping-cart"></i><font size="3">&nbsp;&nbsp;Adicionar ao Carrinho </font></a>
-                                                            </fieldset>
+                                                                    </div>
+                                                                </div>
+                                                                <ul class="product_marks">
+                                                                    <li class="product_mark product_discount">-25%</li>
+                                                                    <li class="product_mark product_new">new</li>
+                                                                </ul>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                            </figure>
-                                        </div>  
+                                                        <?php
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        ?>
                                     </div>
-                                    <br>
+                                    <div class="arrivals_slider_dots_cover"></div>
                                 </div>
                             </div>
                         </div>
-                        <?php
-                    }
-                }
-            }
-        }
-        ?>
+
+                    </div>
+                </div>
+            </div>
+        </div>		
     </div>
-</div>
+    <!-- Popular Categories -->
 
-</body>
+    <div class="popular_categories">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="popular_categories_content">
+                        <div class="popular_categories_title">Categorias</div>
+                        <div class="popular_categories_slider_nav">
+                            <div class="popular_categories_prev popular_categories_nav"><i class="fas fa-angle-left ml-auto"></i></div>
+                            <div class="popular_categories_next popular_categories_nav"><i class="fas fa-angle-right ml-auto"></i></div>
+                        </div>
+                    </div>
+                </div>
 
-</html>
+                <!-- Popular Categories Slider -->
+
+                <div class="col-lg-9">
+                    <div class="popular_categories_slider_container">
+                        <div class="owl-carousel owl-theme popular_categories_slider">
+
+                            <!-- Popular Categories Item -->
+                            <div class="owl-item">
+                                <div class="popular_category d-flex flex-column align-items-center justify-content-center">
+                                    <div class="popular_category_image"><img src="application/images/icones/comida-icon.png" alt=""></div>
+                                    <div class="popular_category_text">Almentação</div>
+                                </div>
+                            </div>
+
+                            <!-- Popular Categories Item -->
+                            <div class="owl-item">
+                                <div class="popular_category d-flex flex-column align-items-center justify-content-center">
+                                    <div class="popular_category_image"><img src="application/images/icones/frios-icon.png" alt=""></div>
+                                    <div class="popular_category_text">Frios</div>
+                                </div>
+                            </div>
+
+                            <!-- Popular Categories Item -->
+                            <div class="owl-item">
+                                <div class="popular_category d-flex flex-column align-items-center justify-content-center">
+                                    <div class="popular_category_image"><img src="application/images/icones/hortifruti-icon.png" alt=""></div>
+                                    <div class="popular_category_text">Hortifruti</div>
+                                </div>
+                            </div>
+
+                            <!-- Popular Categories Item -->
+                            <div class="owl-item">
+                                <div class="popular_category d-flex flex-column align-items-center justify-content-center">
+                                    <div class="popular_category_image"><img src="application/images/icones/bebidas-icon.png" alt=""></div>
+                                    <div class="popular_category_text">Bebidas</div>
+                                </div>
+                            </div>
+
+                            <!-- Popular Categories Item -->
+                            <div class="owl-item">
+                                <div class="popular_category d-flex flex-column align-items-center justify-content-center">
+                                    <div class="popular_category_image"><img src="application/images/icones/produtos-icon.png" alt=""></div>
+                                    <div class="popular_category_text">Produtos de limpeza</div>
+                                </div>
+                            </div>
+
+                            <!-- Popular Categories Item -->
+                            <div class="owl-item">
+                                <div class="popular_category d-flex flex-column align-items-center justify-content-center">
+                                    <div class="popular_category_image"><img src="application/images/icones/higiene-icon.png" alt=""></div>
+                                    <div class="popular_category_text">Higiene</div>
+                                </div>
+                            </div>
+
+                            <!-- Popular Categories Item -->
+                            <div class="owl-item">
+                                <div class="popular_category d-flex flex-column align-items-center justify-content-center">
+                                    <div class="popular_category_image"><img src="application/images/icones/pets-icon.png" alt=""></div>
+                                    <div class="popular_category_text">Pets</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>	
+

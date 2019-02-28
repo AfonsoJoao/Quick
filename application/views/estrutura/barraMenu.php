@@ -293,23 +293,4 @@
             </ul>
         </div>
     </div>
-<?php } /**?>
-<!-- //Barras de menu da tela de painel administrativo -->
-<?php
-if (isset($produto)) {
-    foreach ($produto as $produto) {
-        ?>
-        <?php if ($produto->idProduto == $this->uri->segment(3)) { ?>
-            <div class="products-breadcrumb">
-                <div class="container">
-                    <ul>
-                        <i class="fa fa-home" aria-hidden="true"></i><li><a href=<?php echo base_url('index') ?>>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Início</a><span>|</span></li>
-                        <li><?php echo $produto->nomeProduto; ?></li>
-                    </ul>
-                </div>
-            </div>
-        <?php
-        }
-    }
-}
-?>*/
+<?php }
