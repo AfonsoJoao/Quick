@@ -8,11 +8,16 @@ class ControllerCheckout extends CI_Controller {
         $this->ci->load->helper('funcoes');
         $this->load->library('carrinhocompras');
     }
+    
+    
 
     public function checkout() {
+        
+        $car ['carrinho'] = $this->carrinhocompras->listarProdutos();
+        
         $this->load->view('estrutura/cabecalho');
         $this->load->view('estrutura/barraMenu');
-        $this->load->view('corpo/Checkout/corpoCheckout');
+        $this->load->view('corpo/Checkout/corpoCheckout', $car);
         $this->load->view('estrutura/rodape');
     }
     

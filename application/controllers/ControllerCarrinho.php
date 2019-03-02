@@ -11,7 +11,6 @@ class ControllerCarrinho extends CI_Controller {
 
     public function carrinho() {
 
-        //unset($_SESSION['carrinho']); // Serve para encerrar a sessão do carrinho.
         $car ['carrinho'] = $this->carrinhocompras->listarProdutos(); // a variavel carrinho tá recebendo os dados da biblioteca carrinho compras
         // e listando os produtos do carrinho através do metodo listar produtos
 

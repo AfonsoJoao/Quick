@@ -45,12 +45,15 @@
                         <td><?= $linha['nome'] ?></td>
                         <td class="text-right"><?= formataMoedaReal ($linha['valor'], TRUE) ?></td>
                         <td class="text-center">
+                            <div class="form-group">
                             <input type="tel" name="carrinho_qtd" class="input-carrinho-qtd" value="<?= $linha['qtd'] ?>"
                                    id="produto_<?= $linha['id'] ?>">
                             <a href="#" title="Atualizar quantidade" class="btn-qtd-produto-carrinho" 
                                data-id="<?= $linha['id'] ?>">
                                 <i class="fa fa-undo"></i>
                             </a>
+                            </div>
+                            
                         </td>
                         <td class="text-right"><?= formataMoedaReal ($linha['subtotal'], TRUE) ?></td> <!-- OBS: Depois colocar no formato moeda real -->
                         <td class="text-center"><a href="#" title="Apagar Produto" class="btn-apagar-produto-carrinho" 
