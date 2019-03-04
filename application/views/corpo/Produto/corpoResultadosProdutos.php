@@ -1,82 +1,83 @@
-<div class="clearfix"></div>
-<!-- banner -->
-<!-- top-brands -->
-<div class="top-brands">
-    <div class="container">
-        <h3>Produtos encontrados</h3>
-        <table class="table">
-            <tbody>
-                <?php echo form_open('ControllerProduto/buscarProduto'); ?>
-                <?php
-                if (isset($listagem)) {
-                    foreach ($listagem as $listagem) {
-                        ?>
-                    <div class="w3ls_w3l_banner_nav_right_grid1 w3ls_w3l_banner_nav_right_grid1_veg">
-                        <div class="col-md-3 w3ls_w3l_banner_left w3ls_w3l_banner_left_asdfdfd">
-                            <div class="hover14 column">
-                                <div class="agile_top_brand_left_grid w3l_agile_top_brand_left_grid">
-                                    <div class="agile_top_brand_left_grid1">
-                                        <figure>
-                                            <div class="snipcart-item block">
-                                                <div class="snipcart-thumb">
-                                                    <div class="snipcart-details">
-                                                        <a href="<?php echo base_url("controllerProduto/unicoProduto/") . $listagem['idProduto']; ?>"><img src=<?php echo base_url('application/images/' . $listagem['imagem']) ?>  width="140px" height="140px"></a>
-                                                        <p><?php echo $listagem['nomeProduto']; ?></p>
-                                                        <h4><?php echo "R$ " . $listagem['valorUnitario']; ?></h4>
-                                                        <br>
-                                                        <div class="quantity"> 
-                                                            <div class="quantity-select">                           
-                                                                <div class="entry value-minus">&nbsp;</div>
-                                                                <div class="entry value"><span>1</span></div>
-                                                                <div class="entry value-plus active">&nbsp;</div>
-                                                            </div>
-                                                        </div>
-                                                        <br> 
-                                                        <fieldset>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="OneTech shop project">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/bootstrap4/bootstrap.min.css'); ?>">
+        <link href="plugins/fontawesome-free-5.0.1/css/fontawesome-all.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+        <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+        <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
+        <link rel="stylesheet" type="text/css" href="plugins/jquery-ui-1.12.1.custom/jquery-ui.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/shop_styles.css'); ?>">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/shop_responsive.css'); ?>">
 
+    </head>
 
-                                                            <?php
-                                                            if (isset($cliente)) {
-                                                                foreach ($cliente as $cli) {
-                                                                    ?>
-                                                                    <input type="hidden" name="idCliente" value="<?php echo $cli['idCliente']; ?>" />
-                                                                    <?php
-                                                                }
-                                                            }
-                                                            ?>
-                                                            <input type="hidden" class="form-control" name="data" value="<?php echo date_format(new DateTime(), 'Y/m/d'); ?>" >
-                                                            <input type="hidden" name="idProduto" value="<?php echo $listagem['idProduto']; ?>" />
-                                                            <input type="hidden" name="nomeProduto" value="<?php echo $listagem['nomeProduto']; ?>" />
-                                                            <input type="hidden" name="quantidade" value="4" />
-                                                            <input type="hidden" name="valorUnitario" value="<?php echo $listagem['valorUnitario']; ?>" />
-                                                            <input type="hidden" name="valorTotal" value="" />
-                                                            <input type="submit" name="submit" value="Adicionar ao carrinho" class="button" />
-                                                        </fieldset>
-                                                    </div>
-                                                </div>
-                                        </figure>
-                                    </div>
+    <body>
+
+        <div class="super_container">
+            <!-- Shop -->
+
+            <div class="shop">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-12">    
+
+                            <!-- Shop Content -->
+
+                            <div class="shop_content">
+                                <div class="shop_bar clearfix">
+                                    <div class="shop_product_count">Produtos encontrados</div>
                                 </div>
-                                    <br>
+<?php echo form_open('ControllerProduto/buscarProduto'); ?>
+                                <div class="product_grid">
+                                    <div class="product_grid_border"></div>
+                                    <?php
+                                    if (isset($listagem)) {
+                                        foreach ($listagem as $listagem) {
+                                            ?>
+                                            <?php if ($listagem['disponibilidade'] == 1) { ?>
+                                                <!-- Product Item -->
+                                                <?php if ($listagem['tipoDestaque'] == "2") { ?>
+                                                    <div class="product_item discount">
+                                                    <?php } else { ?>
+                                                        <div class="product_item">
+                                                        <?php } ?>
+                                                        <div class="product_border"></div>
+                                                        <div class="product_image d-flex flex-column align-items-center justify-content-center"><img src="<?php echo base_url('application/images/' . $listagem['imagem']) ?>" alt=""></div>
+                                                        <div class="product_content">
+                                                            <div class="product_price"><?= formataMoedaReal($listagem['valorUnitario'], TRUE) ?></div>
+                                                            <div class="product_name"><div><a href="#" tabindex="0"><?php echo $listagem['nomeProduto']; ?></a></div></div>
+                                                        </div>
+                                                        <br>
+                                                        <h3><a href="#" title="Adicionar produtos carrinho" 
+                                                               class="btn btn-primary btn-block btn-add-produto-carrinho"
+                                                               data-id="<?= $listagem['idProduto'] ?>">&nbsp;<i class="fa fa-shopping-cart"></i><font size="3">&nbsp;&nbsp;Carrinho&nbsp;&nbsp; </font></a></h3>
+                                                        <ul class="product_marks">
+                                                            <li class="product_mark product_discount">-25%</li>
+                                                            <li class="product_mark product_new">new</li>
+                                                        </ul>
+                                                        <?php if ($listagem['tipoDestaque'] == "2") { ?>
+                                                        </div>
+                                                    <?php } else { ?>
+                                                    </div>
+                                                <?php } ?>
+
+                                                <?php
+                                            }
+                                        }
+                                        ?>
+                                    <?php } ?>
+                                    <?php echo form_close(); ?>
+
+                                </div>
                             </div>
+
                         </div>
                     </div>
-                    <tr></tr>
-
-                    <?php
-                }
-            }
-            ?>
-
-            <?php echo form_close(); ?>
-            </tbody>
-        </table> 
-
-    </div>
-
-</div>
-
-
-<?php
-
-
+                </div>
+            </div>

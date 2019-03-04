@@ -32,6 +32,7 @@ class ControllerCategorias extends CI_Controller {
         $dados['produto'] = $this->ModelCategoria->listarCategoria($this->uri->segment(3), $value, $registros_p_pagina);
         
         $this->load->view('estrutura/cabecalho');
+        $this->load->view('estrutura/barraMenu');
         $this->load->view('estrutura/banner', $Z);
         $this->load->view('corpo/corpoCategorias', $dados);
         $this->load->view('estrutura/rodape');

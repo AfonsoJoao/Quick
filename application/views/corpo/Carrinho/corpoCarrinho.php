@@ -83,18 +83,21 @@
     </div>
 
     <div class="row">
-        <div class="col-md-12">
-            <div class="col-md-6">
+            <div class="col">
                 <a href="<?= base_url() ?>" title="Continuar Comprando" class="btn btn-default btn-lg">
                     <i class="fa fa-reply-all"></i> Continuar Comprando
                 </a>
+                </div>
+         <div class="col-7">
                 <a href="<?= base_url('ControllerCarrinho/limpa_carrinho') ?>" title="Limpar Carrinho" class="btn btn-default btn-lg btn-limpar-carrinho"> Limpar Carrinho</a>
-            </div>
-            <div class="col-md-6 text-right">
+                 </div>
+                <div class="col">
                 <a href="<?= base_url('checkout') ?>" title="Finalizar compra" class="btn btn-success btn-lg">
                     <i class="fa fa-check"></i> Finalizar Compra
                 </a>
             </div>
+            
+                
         </div>
     </div>
 
