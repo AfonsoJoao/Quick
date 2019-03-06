@@ -135,6 +135,18 @@
                                                     <option value="NULL">Não destacar</option>
                                                 </select>
                                                 <br>
+                                                Disponibilidade do produto:
+                                                <select class="form-control" id="disponibilidade" name="disponibilidade" value="">
+                                                    <option><?php
+                                                        if (isset($produto))
+                                                            foreach ($produto as $pro) {
+                                                                echo $pro->disponibilidade;
+                                                            }
+                                                        ?></option>
+                                                    <option value="1">Disponivel</option>
+                                                    <option value="2">Indisponivel</option>
+                                                </select>
+                                                <br>
                                                 <center><input type="submit" value="Editar"></center>
                                             </div>
                                             <?php echo form_close(); ?>

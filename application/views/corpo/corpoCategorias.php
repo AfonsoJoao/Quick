@@ -70,7 +70,7 @@
                                                         <div class="product_image d-flex flex-column align-items-center justify-content-center"><img src="<?php echo base_url('application/images/' . $produto->imagem) ?>" alt=""></div>
                                                         <div class="product_content">
                                                             <div class="product_price"><?= formataMoedaReal($produto->valorUnitario, TRUE) ?></div>
-                                                            <div class="product_name"><div><a href="#" tabindex="0"><?= $produto->nomeProduto ?></a></div></div>
+                                                            <div class="product_name"><div><a href="<?php echo base_url("controllerProduto/unicoProduto/$produto->idProduto") ?>" tabindex="0"><?= $produto->nomeProduto ?></a></div></div>
                                                         </div>
                                                         <br>
                                                         <h3><a href="#" title="Adicionar produtos carrinho" 
