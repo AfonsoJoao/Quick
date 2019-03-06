@@ -8,6 +8,7 @@ class ControllerBanner extends CI_Controller {
             'nomePromocao' => $this->input->post('nomePromocao'),
             'descricaoPromocao' => $this->input->post('descricaoPromocao'),
             'imagemBanner' => $this->input->post('imagemBanner'),
+            'status' => $this->input->post('status'),
             'data' => $this->input->post('data')
             );
         if ($this->input->post('acao') == "inserir") {

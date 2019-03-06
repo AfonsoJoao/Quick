@@ -50,7 +50,9 @@
                                                                     </div>
                                                                 </div>
                                                                 <ul class="product_marks">
-                                                                    <li class="product_mark product_discount">-25%</li>
+                                                                    <?php if ($produto->tipoDestaque == "2") { ?>
+                                                                    <li class="product_mark product_discount"><?php echo $produto->valorPromocao;?>%</li>
+                                                                    <?php }?>
                                                                     <li class="product_mark product_new">new</li>
                                                                 </ul>
                                                             </div>

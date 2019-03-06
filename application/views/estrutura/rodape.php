@@ -143,6 +143,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script src="<?php echo base_url('plugins/parallax-js-master/parallax.min.js')?>"></script>
 <script src="<?php echo base_url('js/custom.js')?>"></script>
 <script src="<?php echo base_url('js/shop_custom.js')?>"></script>
+<script src="<?php echo base_url('js/product_custom.js')?>"></script>
 
 </body>
 

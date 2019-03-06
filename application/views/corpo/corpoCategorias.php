@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Shop</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="OneTech shop project">
@@ -64,25 +63,29 @@
                                                 <!-- Product Item -->
                                                 <?php if ($produto->tipoDestaque == "2") { ?>
                                                     <div class="product_item discount">
-                                                    <?php }else{?>
+                                                    <?php } else { ?>
                                                         <div class="product_item">
-                                                    <?php }?>
+                                                        <?php } ?>
                                                         <div class="product_border"></div>
                                                         <div class="product_image d-flex flex-column align-items-center justify-content-center"><img src="<?php echo base_url('application/images/' . $produto->imagem) ?>" alt=""></div>
                                                         <div class="product_content">
                                                             <div class="product_price"><?= formataMoedaReal($produto->valorUnitario, TRUE) ?></div>
-                                                            <div class="product_name"><div><a href="#" tabindex="0"><?= $produto->nomeProduto ?></a></div></div>
+                                                            <div class="product_name"><div><a href="<?php echo base_url("controllerProduto/unicoProduto/$produto->idProduto") ?>" tabindex="0"><?= $produto->nomeProduto ?></a></div></div>
                                                         </div>
+                                                        <br>
+                                                        <h3><a href="#" title="Adicionar produtos carrinho" 
+                                                           class="btn btn-primary btn-block btn-add-produto-carrinho"
+                                                           data-id="<?= $produto->idProduto ?>">&nbsp;<i class="fa fa-shopping-cart"></i><font size="3">&nbsp;&nbsp;Carrinho&nbsp;&nbsp; </font></a></h3>
                                                         <ul class="product_marks">
                                                             <li class="product_mark product_discount">-25%</li>
                                                             <li class="product_mark product_new">new</li>
                                                         </ul>
                                                         <?php if ($produto->tipoDestaque == "2") { ?>
+                                                        </div>
+                                                    <?php } else { ?>
                                                     </div>
-                                                    <?php }else{?>
-                                                    </div>
-                                                    <?php }?>
-                                                    
+                                                <?php } ?>
+
                                                 <?php
                                             }
                                         }

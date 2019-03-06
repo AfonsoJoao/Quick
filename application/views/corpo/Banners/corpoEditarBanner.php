@@ -62,7 +62,18 @@ if (isset($situacao)) {
                 ?>">
                 <br>
                 <input type="hidden" class="form-control" name="data" value="<?php echo date_format(new DateTime(), 'Y/m/d'); ?>" >
-                <input type="hidden" name="disponibilidade" value="true">
+                Status do banner:
+                                                <select class="form-control" id="status" name="status" value="">
+                                                    <option><?php
+                                                        if (isset($banner))
+                                                            foreach ($banner as $ban) {
+                                                                echo $ban->status;
+                                                            }
+                                                        ?></option>
+                                                    <option value="1">Ativo</option>
+                                                    <option value="2">Desativado</option>
+                                                </select>
+                                                <br>
                 <center><input type="submit" value="Editar"></center>
             </div>
             <?php echo form_close(); ?>

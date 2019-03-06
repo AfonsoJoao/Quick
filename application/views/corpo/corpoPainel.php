@@ -188,6 +188,9 @@
                                                     <option value="NULL">Não destacar</option>
                                                 </select>
                                                 <br>
+                                                Porcentagem da promoção:
+                                                <input class="form-control" type="text" name="valorPromocao" required="" value="">
+                                                <br>
                                                 <center><input type="submit" value="Cadastrar"></center>
                                             </div>
                                             <?php echo form_close(); ?>
@@ -235,8 +238,9 @@ if (isset($situacao)) {
                 <input class="form-control" type="file" required name="imagemBanner" value="">
                 <br>
                 <input type="hidden" class="form-control" name="data" value="" >
-                <input type="hidden" name="disponibilidade" value="true">
+                <input type="hidden" name="status" value="1">
                 <center><input type="submit" value="Cadastrar"></center>
+                <input type="hidden">
             </div>
             <?php echo form_close(); ?>
         </div>

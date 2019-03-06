@@ -28,6 +28,7 @@ class ControllerProduto extends CI_Controller {
             'categoria' => $this->input->post('categoria'),
             'disponibilidade' => $this->input->post('disponibilidade'),
             'tipoDestaque' => $this->input->post('tipoDestaque'),
+            'valorPromocao' => $this->input->post('valorPromocao'),
             'imagem' => $this->input->post('imagem')
         );
         if ($this->input->post('acao') == "inserir") {
@@ -86,21 +87,10 @@ class ControllerProduto extends CI_Controller {
         $dados['listagem'] = $this->modelProduto->buscar($_POST);
         $this->load->view('estrutura/cabecalho');
         $this->load->view('estrutura/barraMenu');
+        $this->load->view('estrutura/banner');
         $this->load->view('corpo/Produto/corpoResultadosProdutos', $dados);
         $this->load->view('estrutura/rodape');
     }
-    
-    public function buscarProdutosCadastrados() {
-        $this->load->Model('modelProduto', '', TRUE);
-        $dados['produto'] = $this->modelProduto->listaProduto($this->uri->segment(3));
-        $this->load->Model('modelProduto', '', TRUE);
-        $dados['listagem'] = $this->modelProduto->buscar($_POST);
-        $this->load->view('estrutura/cabecalho');
-        $this->load->view('estrutura/barraMenu');
-        $this->load->view('corpo/Produto/corpoResultadoProdutosCadastrados', $dados);
-        $this->load->view('estrutura/rodape');
-    }
-
     public function unicoProduto() {
         $this->load->Model('modelProduto', '', TRUE);
         $dados['produto'] = $this->modelProduto->listaProduto($this->uri->segment(3));
@@ -108,7 +98,6 @@ class ControllerProduto extends CI_Controller {
         $Z['banner'] = $this->modelBanner->listarBanner();
         $this->load->view('estrutura/cabecalho');
         $this->load->view('estrutura/barraMenu');
-        $this->load->view('estrutura/banner', $Z);
         $this->load->view('corpo/Produto/corpoUnicoProduto', $dados);
         $this->load->view('estrutura/rodape');
     }

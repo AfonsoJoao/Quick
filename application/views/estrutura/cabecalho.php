@@ -16,6 +16,7 @@
         <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/shop_responsive.css') ?>">
         <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/main_styles.css') ?>">
         <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/responsive.css') ?>">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('css/product_responsive.css') ?>">
         <link href="<?php echo base_url('css/carrinho.css'); ?>" rel="stylesheet" type="text/css" media="all"/>
 
         <link href="<?php echo base_url('css/font-awesome.css'); ?>" rel="stylesheet" type="text/css" media="all" /> 
