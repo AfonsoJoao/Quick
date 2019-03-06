@@ -16,7 +16,7 @@ class Controller extends CI_Controller {
         $this->load->model("modelBanner", '', TRUE);
         $Z['banner'] = $this->modelBanner->listarBanner();
         $this->load->view('estrutura/cabecalho');
-        $this->load->view('estrutura/banner', $Z);
+        $this->load->view('estrutura/banner');
         $this->load->view('corpo/corpo', $dados);
         $this->load->view('estrutura/rodape');
     }

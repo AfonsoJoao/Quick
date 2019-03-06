@@ -106,27 +106,27 @@ and open the template in the editor.
                         </div><!-- /input-group -->
 
                         <div class="form-group">
-                            <label for="endereco" class="margin-top-1">Endereço</label>
+                            <label for="endereco" class="margin-top-1">Endereço</label> <!-- OBS: Salvar na tabela endereco no campo nome da rua -->
                             <input type="text" class="form-control" name="endereco" id="endereco" placeholder="Endereço">
                         </div>
 
                         <div class="form-group">
-                            <label for="numero">Número</label>
+                            <label for="numero">Número</label> <!-- OBS: Salvar na tabela endereco -->
                             <input type="text" class="form-control" name="numero" id="numero" placeholder="Número">
                         </div>
 
                         <div class="form-group">
-                            <label for="bairro">Bairro</label>
+                            <label for="bairro">Bairro</label> <!-- OBS: Salvar na tabela bairro -->
                             <input type="text" class="form-control" name="bairro" id="bairro" placeholder="Bairro">
                         </div>
 
                         <div class="form-group">
-                            <label for="cidade">Cidade</label>
+                            <label for="cidade">Cidade</label> <!-- OBS: Salvar na tabela cidade -->
                             <input type="text" class="form-control" name="cidade" id="cidade" placeholder="Cidade">
                         </div>
 
                         <div class="form-group">
-                            <label for="estado">Estado</label>
+                            <label for="estado">Estado</label> <!-- OBS: Salvar na tabela estado -->
                             <select class="form-control" name="estado" id="estado">
                                 <option value="AC">Acre</option>
                                 <option value="AL">Alagoas</option>

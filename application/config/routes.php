@@ -100,6 +100,13 @@ $route ['administrador'] = 'ControllerLogin/loginfeitoAdministrador';
 //Rota para para a pagina do operador logado
 $route ['operador'] = 'ControllerLogin/loginfeitoOperador';
 
+// Rota da Configuração do PagSeguro
+$route ['pagseguro'] = 'ControllerConfig/pagseguro';
+
+$route ['pedidos'] = 'ControllerPedido/pedido';
+
+
+
 //Rota para para a pagina das categorias dos produtos com o cliente logado
 // $route ['categorias'] = 'ControllerCategoriasLogado/loginfeitoCliente';
 
