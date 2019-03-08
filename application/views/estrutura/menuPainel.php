@@ -10,7 +10,7 @@
         <meta name="author" content="">
 
         <title>Quick - Painel administrativo</title>
-         <script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+        <script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
         <script>
 
             function excluirBanner(id, nome) {
@@ -27,18 +27,21 @@
                 }
             }
         </script>
-        
+
         <!-- Custom fonts for this template-->
         <link href="<?php echo base_url('vendor/fontawesome-free/css/all.min.css'); ?>" rel="stylesheet" type="text/css">
 
         <!-- Page level plugin CSS-->
         <link href="<?php echo base_url('vendor/datatables/dataTables.bootstrap4.css'); ?>" rel="stylesheet">
 
-              <!-- Custom styles for this template-->
-              <link href="<?php echo base_url('css/sb-admin.css'); ?>" rel="stylesheet">
+        <!-- Custom styles for this template-->
+        <link href="<?php echo base_url('css/sb-admin.css'); ?>" rel="stylesheet">
 
+        <link href="<?php echo base_url('css/carrinho.css'); ?>" rel="stylesheet" type="text/css" media="all"/>
+        
+        
     </head>
-   
+
 
     <body id="page-top">
 
@@ -106,29 +109,35 @@
             <!-- Sidebar -->
             <ul class="sidebar navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="<?php echo base_url('paineladministrativo')?>">
+                    <a class="nav-link" href="<?php echo base_url('paineladministrativo') ?>">
                         <i class="fas fa-fw fa-tachometer-alt"></i>
                         <span>Painel administrativo</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo base_url('listaproduto')?>">
+                    <a class="nav-link" href="<?php echo base_url('listaproduto') ?>">
                         <i class="fas fa-fw fa-list"></i>
                         <span>Produtos cadatrados</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo base_url('listabanner')?>">
+                    <a class="nav-link" href="<?php echo base_url('listabanner') ?>">
                         <i class="fas fa-fw fa-list"></i>
                         <span>Banners cadastrados</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo base_url('listacliente')?>">
+                    <a class="nav-link" href="<?php echo base_url('listacliente') ?>">
                         <i class="fas fa-fw fa-users"></i>
                         <span>Usuários cadastrados</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo base_url('')?>">
+                    <a class="nav-link" href="<?php echo base_url('pedidos') ?>">
                         <i class="fas fa-fw fa-shopping-cart"></i>
-                        <span>Pedidos recebidos</span></a>
+                        <span>Pedidos</span></a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo base_url('pagseguro') ?>">
+                        <i class="fas fa-fw fa-list"></i>
+                        <span>Pag Seguro</span></a>
                 </li>
             </ul>

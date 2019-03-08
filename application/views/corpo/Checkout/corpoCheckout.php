@@ -8,10 +8,11 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <title></title>
-
-        <script src="<?php echo base_url('js/carrinho.js'); ?>"></script>
+        
         <script src="<?php echo base_url('js/checkout.js'); ?>"></script>
-
+        
+        <script src="<?php echo base_url('js/carrinho.js'); ?>"></script>
+        
         <script type="text/javascript">
             var url_quick = "<?= base_url() ?>";
         </script>
@@ -21,6 +22,43 @@ and open the template in the editor.
         <br>
         <section class="margin-top-40 checkout-loja">
             <div class="container">
+                
+             <div class="col-md-12">
+            <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Descrição</th>
+                    <th class="text-right">Valor</th>
+                    <th class="text-center">Quantidade</th>
+                    <th class="text-right">Subtotal</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <?php foreach ($carrinho as $indice => $linha) { ?> <!-- exibe a lista de produtos do carrinho através do foreach -->
+                    <tr>
+                        <td><?= $linha['nome'] ?></td>
+                        <td class="text-right"><?= formataMoedaReal ($linha['valor'], TRUE) ?></td>
+                        <td class="text-center"> <?= $linha['qtd'] ?> </td>
+                        <td class="text-right"><?= formataMoedaReal ($linha['subtotal'], TRUE) ?></td> <!-- OBS: Depois colocar no formato moeda real -->
+                        
+
+                    </tr>
+                <?php } // Fim da lista produtos carrinho ?>
+
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3" class="text-right">Total Carrinho</td>
+                    <td class="text-right total-carrinho"><?= formataMoedaReal ($this->carrinhocompras->total(), TRUE) ?></td>
+
+                </tr>
+
+            </tfoot>
+
+        </table>
+        <br><br>
+    </div>
 
                 <div class="form">
                     <?php echo form_open('ControllerProduto/gravarProduto'); ?>
@@ -36,7 +74,7 @@ and open the template in the editor.
 
                         <div class="form-group">
                             <label for="cpf">CPF</label>
-                            <input type="text" class="form-control" name="cpf" id="cpf" placeholder="CPF">
+                            <input type="text" class="form-control input_cpf" name="cpf" id="cpf" placeholder="CPF">
                         </div>
 
                         <div class="form-group">
@@ -59,42 +97,66 @@ and open the template in the editor.
                     <div class="col-md-4">
                         <h2> <i class="fa fa-truck"></i> Envio</h2>
 
-                       <!-- <div class="input-group">
-                            <label for="cep">CEP</label>
-                            <input type="text" class="form-control" placeholder="Search for...">
+                        <label for="cep" class="margin-checkout">CEP</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control input_cep" name="cep" id="cep" placeholder="CEP">
                             <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">Go!</button>
+                                <button class="btn btn-primary btn-calculo-frete-checkout" type="button">Calcular</button>
                             </span>
                         </div><!-- /input-group -->
 
-                        <div class="form-group margin-checkout">
-                            <label for="cep">CEP</label>
-                            <input type="text" class="form-control" name="cep" id="cep" placeholder="CEP">
-                        </div>
-
                         <div class="form-group">
-                            <label for="endereco">Endereço</label>
+                            <label for="endereco" class="margin-top-1">Endereço</label> <!-- OBS: Salvar na tabela endereco no campo nome da rua -->
                             <input type="text" class="form-control" name="endereco" id="endereco" placeholder="Endereço">
                         </div>
 
                         <div class="form-group">
-                            <label for="numero">Número</label>
+                            <label for="numero">Número</label> <!-- OBS: Salvar na tabela endereco -->
                             <input type="text" class="form-control" name="numero" id="numero" placeholder="Número">
                         </div>
 
                         <div class="form-group">
-                            <label for="bairro">Bairro</label>
+                            <label for="bairro">Bairro</label> <!-- OBS: Salvar na tabela bairro -->
                             <input type="text" class="form-control" name="bairro" id="bairro" placeholder="Bairro">
                         </div>
 
                         <div class="form-group">
-                            <label for="cidade">Cidade</label>
+                            <label for="cidade">Cidade</label> <!-- OBS: Salvar na tabela cidade -->
                             <input type="text" class="form-control" name="cidade" id="cidade" placeholder="Cidade">
                         </div>
 
                         <div class="form-group">
-                            <label for="estado">Estado</label>
-                            <input type="text" class="form-control" name="estado" id="estado" placeholder="Estado">
+                            <label for="estado">Estado</label> <!-- OBS: Salvar na tabela estado -->
+                            <select class="form-control" name="estado" id="estado">
+                                <option value="AC">Acre</option>
+                                <option value="AL">Alagoas</option>
+                                <option value="AP">Amapá</option>
+                                <option value="AM">Amazonas</option>
+                                <option value="BA">Bahia</option>
+                                <option value="CE">Ceará</option>
+                                <option value="DF">Distrito Federal</option>
+                                <option value="ES">Espírito Santo</option>
+                                <option value="GO">Goiás</option>
+                                <option value="MA">Maranhão</option>
+                                <option value="MT">Mato Grosso</option>
+                                <option value="MS">Mato Grosso do Sul</option>
+                                <option value="MG">Minas Gerais</option>
+                                <option value="PA">Pará</option>
+                                <option value="PB">Paraíba</option>
+                                <option value="PR">Paraná</option>
+                                <option value="PE">Pernambuco</option>
+                                <option value="PI">Piauí</option>
+                                <option value="RJ">Rio de Janeiro</option>
+                                <option value="RN">Rio Grande do Norte</option>
+                                <option value="RS">Rio Grande do Sul</option>
+                                <option value="RO">Rondônia</option>
+                                <option value="RR">Roraima</option>
+                                <option value="SC">Santa Catarina</option>
+                                <option value="SP">São Paulo</option>
+                                <option value="SE">Sergipe</option>
+                                <option value="TO">Tocantins</option>
+                            </select>
+                            
                         </div>
 
                     </div>
@@ -121,7 +183,7 @@ and open the template in the editor.
 
                             <div class="form-group margin-checkout">
                                 <label for="cc_validade">Validade do Cartão</label>
-                                <input type="text" class="form-control" id="cc_validade" placeholder="00/0000">
+                                <input type="text" class="form-control input_mes_ano" id="cc_validade" placeholder="00/0000">
                             </div>
 
                             <div class="form-group margin-checkout">

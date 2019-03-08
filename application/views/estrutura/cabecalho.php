@@ -32,7 +32,7 @@
         <script type="text/javascript" src="<?php echo base_url('js/move-top.js'); ?>"></script>
         <script type="text/javascript" src="<?php echo base_url('js/easing.js'); ?>"></script>
 
-        <script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js" type="text/javascript"></script>
 
         <script type="text/javascript">
             jQuery(document).ready(function ($) {
@@ -96,7 +96,7 @@
                                         <div><a href="<?php echo base_url('login/'); ?>">Entre</a></div>
                                         <div><a href="<?php echo base_url('cadastroclientes/'); ?>">Cadastre-se&nbsp;&nbsp;</a></div>
                                         <div class="dropdown profile_details_drop">
-                        <a href="<?php echo base_url('paineladministrativo/'); ?>" ><i class="fa fa-th-list"></i><span></span></a>                
+                                            <a href="<?php echo base_url('paineladministrativo/'); ?>" ><i class="fa fa-th-list"></i><span></span></a>                
                                         </div>
                                     </div>
                                 </div>
@@ -158,7 +158,8 @@
                                                         <ul>
                                                             <li class="dropdown profile_details_drop">
                                                                 <a href="#" class="dropdown" data-toggle="dropdown" role="button" data-hover="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                                    <i class=""></i> Carrinho</a>
+                                                                    <span class="caret">Carrinho</span></a>
+
                                                                 <ul class="dropdown-menu carrinho-compra">
 
                                                                     <div class="row body-carrinho-vazio">
@@ -201,6 +202,6 @@
                 </div>
                 <script src="<?php echo base_url('js/carrinho.js'); ?>"></script>
 
-        <script type="text/javascript">
+                <script type="text/javascript">
             var url_quick = "<?= base_url() ?>";
-        </script>
+                </script>
