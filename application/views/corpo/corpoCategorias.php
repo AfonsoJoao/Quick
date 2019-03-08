@@ -24,27 +24,7 @@
             <div class="shop">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-3">
-
-                            <!-- Shop Sidebar -->
-                            <div class="shop_sidebar">
-                                <div class="sidebar_section">
-                                    <div class="sidebar_title">Categorias</div>
-                                    <ul class="sidebar_categories">
-                                        <li><a href="#">Alimentação</a></li>
-                                        <li><a href="#">Frios</a></li>
-                                        <li><a href="#">Hortifruti</a></li>
-                                        <li><a href="#">Bebidas</a></li>
-                                        <li><a href="#">Produtos de limpeza</a></li>
-                                        <li><a href="#">Higiene</a></li>
-                                        <li><a href="#">Pets</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="col-lg-9">    
+                        <div class="col-lg-12">    
 
                             <!-- Shop Content -->
 

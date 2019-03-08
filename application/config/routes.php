@@ -61,8 +61,7 @@ $route ['index'] = 'Controller/index';
 $route ['cadastroclientes'] = 'ControllerCliente/cadcliente';
 $route ['listacliente'] = 'ControllerCliente/listaCliente';
 
-//Rota do cadastro, alteração, lista e exclusão de produtos
-$route ['cadastroprodutos'] = 'ControllerProduto/cadproduto';
+//Rota da alteração, lista e exclusão de produtos
 $route ['listaproduto'] = 'ControllerProduto/listaProduto';
 $route ['getcat'] = 'ControllerProduto/getCategoria/';
 
@@ -82,7 +81,6 @@ $route ['cadastroadministrador'] = 'ControllerAdministrador/cadadministrador';
 $route ['listaadmnistrador'] = 'ControllerAdministrador/listaAdministrador';
 
 //Rota do cadastro, alteração, listaggem e exclusão dos banners
-$route ['cadbanner'] = 'ControllerBanner/cadBanner';
 $route ['listabanner'] = 'ControllerBanner/listaBanner';
 
 //Rota para tela de resultados dos produtos procurados

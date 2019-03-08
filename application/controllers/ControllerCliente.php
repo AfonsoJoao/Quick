@@ -6,7 +6,6 @@ class ControllerCliente extends CI_Controller {
         $this->load->view('estrutura/cabecalho');
         $this->load->view('estrutura/barraMenu');
         $this->load->view('corpo/Cliente/corpoCadCliente');
-        $this->load->view('estrutura/rodape');
     }
 
     public function generateSalt() {

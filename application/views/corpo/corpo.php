@@ -98,15 +98,15 @@
                             <!-- Popular Categories Item -->
                             <div class="owl-item">
                                 <div class="popular_category d-flex flex-column align-items-center justify-content-center">
-                                    <div class="popular_category_image"><img src="application/images/icones/comida-icon.png" alt=""></div>
-                                    <div class="popular_category_text">Almentação</div>
+                                    <div class="popular_category_image"><img src="<?php echo base_url('application/images/icones/comida-icon.png')?>" alt=""></div>
+                                    <div class="popular_category_text">Alimentação</div>
                                 </div>
                             </div>
 
                             <!-- Popular Categories Item -->
                             <div class="owl-item">
                                 <div class="popular_category d-flex flex-column align-items-center justify-content-center">
-                                    <div class="popular_category_image"><img src="application/images/icones/frios-icon.png" alt=""></div>
+                                    <div class="popular_category_image"><img src="<?php echo base_url('application/images/icones/frios-icon.png')?>" alt=""></div>
                                     <div class="popular_category_text">Frios</div>
                                 </div>
                             </div>
@@ -114,7 +114,7 @@
                             <!-- Popular Categories Item -->
                             <div class="owl-item">
                                 <div class="popular_category d-flex flex-column align-items-center justify-content-center">
-                                    <div class="popular_category_image"><img src="application/images/icones/hortifruti-icon.png" alt=""></div>
+                                    <div class="popular_category_image"><img src="<?php echo base_url('application/images/icones/hortifruti-icon.png')?>" alt=""></div>
                                     <div class="popular_category_text">Hortifruti</div>
                                 </div>
                             </div>
@@ -122,7 +122,7 @@
                             <!-- Popular Categories Item -->
                             <div class="owl-item">
                                 <div class="popular_category d-flex flex-column align-items-center justify-content-center">
-                                    <div class="popular_category_image"><img src="application/images/icones/bebidas-icon.png" alt=""></div>
+                                    <div class="popular_category_image"><img src="<?php echo base_url('application/images/icones/bebidas-icon.png')?>" alt=""></div>
                                     <div class="popular_category_text">Bebidas</div>
                                 </div>
                             </div>
@@ -130,7 +130,7 @@
                             <!-- Popular Categories Item -->
                             <div class="owl-item">
                                 <div class="popular_category d-flex flex-column align-items-center justify-content-center">
-                                    <div class="popular_category_image"><img src="application/images/icones/produtos-icon.png" alt=""></div>
+                                    <div class="popular_category_image"><img src="<?php echo base_url('application/images/icones/produtos-icon.png')?>" alt=""></div>
                                     <div class="popular_category_text">Limpeza</div>
                                 </div>
                             </div>
@@ -138,7 +138,7 @@
                             <!-- Popular Categories Item -->
                             <div class="owl-item">
                                 <div class="popular_category d-flex flex-column align-items-center justify-content-center">
-                                    <div class="popular_category_image"><img src="application/images/icones/higiene-icon.png" alt=""></div>
+                                    <div class="popular_category_image"><img src="<?php echo base_url('application/images/icones/higiene-icon.png')?>" alt=""></div>
                                     <div class="popular_category_text">Higiene</div>
                                 </div>
                             </div>
@@ -146,7 +146,7 @@
                             <!-- Popular Categories Item -->
                             <div class="owl-item">
                                 <div class="popular_category d-flex flex-column align-items-center justify-content-center">
-                                    <div class="popular_category_image"><img src="application/images/icones/pets-icon.png" alt=""></div>
+                                    <div class="popular_category_image"><img src="<?php echo base_url('application/images/icones/pets-icon.png')?>" alt=""></div>
                                     <div class="popular_category_text">Pets</div>
                                 </div>
                             </div>

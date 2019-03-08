@@ -8,14 +8,6 @@ class ControllerProduto extends CI_Controller {
         $this->ci->load->helper('funcoes');
     }
 
-    
-    public function cadproduto() {
-        $this->load->view('estrutura/cabecalho');
-        $this->load->view('estrutura/barraMenu');
-        $this->load->view('corpo/Produto/corpoCadProduto');
-        $this->load->view('estrutura/rodape');
-    }
-
     public function gravarProduto() {
         $this->load->Model('modelProduto', '', TRUE);
         $produto = array(
@@ -83,11 +75,12 @@ class ControllerProduto extends CI_Controller {
     public function buscarProduto() {
         $this->load->Model('modelProduto', '', TRUE);
         $dados['produto'] = $this->modelProduto->listaProduto($this->uri->segment(3));
-        $this->load->Model('modelProduto', '', TRUE);
+        $this->load->model("modelBanner", '', TRUE);
+        $Z['banner'] = $this->modelBanner->listarBanner();
         $dados['listagem'] = $this->modelProduto->buscar($_POST);
         $this->load->view('estrutura/cabecalho');
         $this->load->view('estrutura/barraMenu');
-        $this->load->view('estrutura/banner');
+        $this->load->view('estrutura/banner', $Z);
         $this->load->view('corpo/Produto/corpoResultadosProdutos', $dados);
         $this->load->view('estrutura/rodape');
     }

@@ -12,7 +12,6 @@ class ControllerLogin extends CI_Controller {
         $this->load->view('estrutura/cabecalho');
         $this->load->view('estrutura/barraMenu');
         $this->load->view('corpo/corpoLogin');
-        $this->load->view('estrutura/rodape');
     }
 
     public function loginfeitoCliente() {

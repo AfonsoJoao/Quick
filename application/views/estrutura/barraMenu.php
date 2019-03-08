@@ -120,23 +120,11 @@
                             <!-- //Barras de menu das categorias -->
                             <!-- Barras de menu do login e cadastro e listagem dos cliente -->
                             <?php if ($this->uri->segment(1) == 'login') { ?>
-                                <div class="products-breadcrumb">
-                                    <div class="container">
-                                        <ul>
-                                            <i class="fa fa-home" aria-hidden="true"></i><li><a href=<?php echo base_url('index') ?>>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Início</a><span>|</span></li>
-                                            <li><?php echo "Entrar"; ?></li>
-                                        </ul>
-                                    </div>
-                                </div>
+                                <li><a>Login<i class="fas fa-chevron-down"></i></a></li>
+                                <title>Quick - Login</title>
                             <?php } else if ($this->uri->segment(1) == 'cadastroclientes') { ?>
-                                <div class="products-breadcrumb">
-                                    <div class="container">
-                                        <ul>
-                                            <i class="fa fa-home" aria-hidden="true"></i><li><a href=<?php echo base_url('index') ?>>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Início</a><span>|</span></li>
-                                            <li><?php echo "Cadastre-se"; ?></li>
-                                        </ul>
-                                    </div>
-                                </div>
+                                <title>Quick - Cadastro de cliente</title>
+                                <li><a>Cadastro de clientes<i class="fas fa-chevron-down"></i></a></li>
                             <?php } else if ($this->uri->segment(1) == 'listacliente') { ?>
                                 <div class="products-breadcrumb">
                                     <div class="container">
