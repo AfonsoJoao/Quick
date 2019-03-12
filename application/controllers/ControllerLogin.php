@@ -4,8 +4,7 @@ class ControllerLogin extends CI_Controller {
     
     public function __construct() {
         parent::__construct();
-        $this->ci =& get_instance();
-        $this->ci->load->helper('funcoes');
+        $this->load->helper('funcoes');
     }
 
     public function login() {

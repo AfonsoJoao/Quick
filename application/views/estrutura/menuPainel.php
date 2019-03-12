@@ -10,7 +10,21 @@
         <meta name="author" content="">
 
         <title>Quick - Painel administrativo</title>
-        <script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+        
+        <script src="<?php echo base_url('js/jquery-1.11.1.min.js'); ?>"></script> <!-- Plugin do jquery--> 
+        
+         <!-- Custom fonts for this template-->
+        <link href="<?php echo base_url('front/vendor/fontawesome-free/css/all.min.css'); ?>" rel="stylesheet" type="text/css">
+
+        <!-- Page level plugin CSS-->
+        <link href="<?php echo base_url('front/vendor/datatables/dataTables.bootstrap4.css'); ?>" rel="stylesheet">
+
+        <!-- Custom styles for this template-->
+        <link href="<?php echo base_url('css/sb-admin.css'); ?>" rel="stylesheet">
+
+        <link href="<?php echo base_url('css/carrinho.css'); ?>" rel="stylesheet" type="text/css" media="all"/>
+        
+       
         <script>
 
             function excluirBanner(id, nome) {
@@ -28,17 +42,6 @@
             }
         </script>
 
-        <!-- Custom fonts for this template-->
-        <link href="<?php echo base_url('vendor/fontawesome-free/css/all.min.css'); ?>" rel="stylesheet" type="text/css">
-
-        <!-- Page level plugin CSS-->
-        <link href="<?php echo base_url('vendor/datatables/dataTables.bootstrap4.css'); ?>" rel="stylesheet">
-
-        <!-- Custom styles for this template-->
-        <link href="<?php echo base_url('css/sb-admin.css'); ?>" rel="stylesheet">
-
-        <link href="<?php echo base_url('css/carrinho.css'); ?>" rel="stylesheet" type="text/css" media="all"/>
-        
         
     </head>
 
@@ -141,3 +144,5 @@
                         <span>Pag Seguro</span></a>
                 </li>
             </ul>
+            
+    </body>

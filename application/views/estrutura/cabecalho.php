@@ -6,6 +6,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="OneTech shop project">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- js -->
+        <script src="<?php echo base_url('js/jquery-1.11.1.min.js'); ?>"></script> <!-- Plugin do jquery--> 
         <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/bootstrap4/bootstrap.min.css') ?>">
         <link href="<?php echo base_url('plugins/fontawesome-free-5.0.1/css/fontawesome-all.css') ?>" rel="stylesheet" type="text/css">
         <link rel="stylesheet" type="text/css" href="<?php echo base_url('plugins/OwlCarousel2-2.2.1/owl.carousel.css') ?>">
@@ -16,14 +18,13 @@
         <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/shop_responsive.css') ?>">
         <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/main_styles.css') ?>">
         <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/responsive.css') ?>">
-<link rel="stylesheet" type="text/css" href="<?php echo base_url('css/product_responsive.css') ?>">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/product_responsive.css') ?>">
+
         <link href="<?php echo base_url('css/carrinho.css'); ?>" rel="stylesheet" type="text/css" media="all"/>
 
         <link href="<?php echo base_url('css/font-awesome.css'); ?>" rel="stylesheet" type="text/css" media="all" /> 
 
         <!-- //font-awesome icons -->
-        <!-- js -->
-        <script src="<?php echo base_url('js/jquery-1.11.1.min.js'); ?>"></script>
 
         <!-- //js -->
         <link href="<?php echo base_url('//fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,500,500italic,700,700italic'); ?>" rel='stylesheet' type='text/css'>
