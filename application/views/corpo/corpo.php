@@ -1,11 +1,7 @@
 <!-- Characteristics -->
 <title>Quick - Início</title>
 <!-- Hot New Arrivals -->
-<div class="row msg-add-carrinho hide"> <!-- o Hide serve para deixar a classe invisivel -->
-        <div class="col-md-12 msg-carrinho-alert text-center">
 
-        </div> 
-    </div><br><br>
 <div class="new_arrivals">
     <div class="container">
         <div class="row">

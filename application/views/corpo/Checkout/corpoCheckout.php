@@ -10,13 +10,7 @@ and open the template in the editor.
         <title></title>
         
         <script src="<?php echo base_url('js/checkout.js'); ?>"></script>
-        
-        <script src="<?php echo base_url('js/carrinho.js'); ?>"></script>
-        
-        <script type="text/javascript">
-            var url_quick = "<?= base_url() ?>";
-        </script>
-
+      
     </head>
     <body>
         <br>

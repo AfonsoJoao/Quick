@@ -75,11 +75,12 @@ var App = function () {
 
                 if (res.erro == 0) {
 
-                    $('.body-carrinho-top').addClass('hide');
-                    $('.btns-carrinho-topo').addClass('hide');
-                    $('.body-carrinho-vazio').removeClass('hide');
+                    $('.body-carrinho-top').addClass('d-none');
+                    $('.btns-carrinho-topo').addClass('d-none');
+                    $('.body-carrinho-vazio').removeClass('d-none');
                     $('.carrinho-top-total-item').html('0'); // Deixa zero a quantidade de itens no botão carrinho compra quando a função limpacarrinhocompra for executada.
-
+                    $('.carrinho-top-total-valor').addClass('d-none');
+                    
 
                 }
 
@@ -98,9 +99,11 @@ var App = function () {
             if (res.erro == 0) {
                 $('.carrinho-top-total-item').html(res.itens);
                 $('.carrinho-top-total-valor').html(res.total);
-                $('.body-carrinho-top').removeClass('hide');
-                $('.btns-carrinho-topo').removeClass('hide');
-                $('.body-carrinho-vazio').addClass('hide');
+                
+                $('.carrinho-top-total-valor').removeClass('d-none');
+                $('.body-carrinho-top').removeClass('d-none');
+                $('.btns-carrinho-topo').removeClass('d-none');
+                $('.body-carrinho-vazio').addClass('d-none');
 
 
             }
@@ -129,14 +132,15 @@ var App = function () {
                             '</button>' + res.msg + ' <a href="' + url_quick + 'ControllerCarrinho/carrinho" title="" class="btn btn-success">Finalizar Compra</a></div>';
 
                     $('.msg-carrinho-alert').html(msg);
-                    $('.msg-add-carrinho').removeClass('hide');
+                    $('.msg-add-carrinho').removeClass('d-none');
 
                     $('.carrinho-top-total-item').html(res.itens);
                     $('.carrinho-top-total-valor').html(res.total);
-
-                    $('.body-carrinho-top').removeClass('hide');
-                    $('.btns-carrinho-topo').removeClass('hide');
-                    $('.body-carrinho-vazio').addClass('hide');
+                    
+                    $('.carrinho-top-total-valor').removeClass('d-none');
+                    $('.body-carrinho-top').removeClass('d-none');
+                    $('.btns-carrinho-topo').removeClass('d-none');
+                    $('.body-carrinho-vazio').addClass('d-none');
 
 
                 } else {

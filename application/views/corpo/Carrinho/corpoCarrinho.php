@@ -1,11 +1,5 @@
 <!-- about -->
 
-<script src="<?php echo base_url('js/carrinho.js'); ?>"></script>
-
-<script type="text/javascript">
-    var url_quick = "<?= base_url() ?>";
-</script>
-
 <br>
 <br><br>
 
@@ -92,7 +86,7 @@
                 </a>
                 </div>
          <div class="col-7">
-                <a href="<?= base_url('ControllerCarrinho/limpa_carrinho') ?>" title="Limpar Carrinho" class="btn btn-default btn-lg btn-limpar-carrinho"> Limpar Carrinho</a>
+                <a href="<?= base_url('ControllerCarrinho/limpa_carrinho') ?>" title="Limpar Carrinho" class="btn btn-default btn-lg"> Limpar Carrinho</a>
                  </div>
                 <div class="col">
                 <a href="<?= base_url('checkout') ?>" title="Finalizar compra" class="btn btn-success btn-lg">

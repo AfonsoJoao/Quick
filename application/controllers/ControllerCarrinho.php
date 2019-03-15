@@ -19,7 +19,7 @@ class ControllerCarrinho extends CI_Controller {
     }
 
     public function add() {
-        // $this->carrinhocompras->add(1, 3);
+        
         if ($this->input->post('id')) {
             $id = $this->input->post('id');
             $qtd = 1; //Colocar a quantidade via post pra ver se dá certo também.
@@ -89,7 +89,13 @@ class ControllerCarrinho extends CI_Controller {
 
     public function limpa_carrinho() {
         $this->carrinhocompras->limpa();
-        redirect('ControllerCarrinho/carrinho', 'refresh');
+        
+        $json = ['erro' => 0,
+                'msg' => 'Carrinho Limpo!'
+            ];
+            echo json_encode($json);
+            
+        redirect('ControllerCarrinho/carrinho');
     }
 
 }

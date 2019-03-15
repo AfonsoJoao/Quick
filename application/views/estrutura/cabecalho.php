@@ -169,7 +169,7 @@
                                                                         </div>  
                                                                     </div>
 
-                                                                    <div class="row body-carrinho-top hide">
+                                                                    <div class="row body-carrinho-top d-none">
                                                                         <div class="col-xs-12 col-md-4" >
                                                                             Itens: <span class="carrinho-top-total-item"></span>
                                                                         </div>
@@ -178,7 +178,7 @@
                                                                         </div>
                                                                     </div>
                                                                     <!-- Separador de submenus  -->
-                                                                    <div class="row margin-top-20 btns-carrinho-topo hide">
+                                                                    <div class="row margin-top-20 btns-carrinho-topo d-none">
 
                                                                         <div class="col-xs-12 col-md-6">
                                                                             <a href="<?= base_url('ControllerCarrinho/carrinho') ?>" title="Exibir Carrinho" class="btn btn-success btn-block">Exibir Carrinho</a>
@@ -192,7 +192,7 @@
                                                         </ul>
                                                     </div>
                                                 </div>
-                                                <div class="cart_price"><span class="carrinho-top-total-valor"></span></div>
+                                                <div class="cart_price"><span class="carrinho-top-total-valor d-none"></span></div>
                                             </div>
                                         </div>
                                     </div>
@@ -206,3 +206,10 @@
                 <script type="text/javascript">
             var url_quick = "<?= base_url() ?>";
                 </script>
+
+
+                <div class="row msg-add-carrinho d-none"> <!-- o Hide serve para deixar a classe invisivel -->
+                    <div class="col-md-12 msg-carrinho-alert text-center">
+
+                    </div> 
+                </div>
