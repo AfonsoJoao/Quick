@@ -7,6 +7,12 @@ class ControllerProduto extends CI_Controller {
         $this->load->helper('funcoes');
     }
 
+     public function cadproduto() {
+        $this->load->view('estrutura/menuPainel');
+        $this->load->view('corpo/Produto/corpoCadProduto');
+        $this->load->view('estrutura/rodapePainel');
+    }
+    
     public function gravarProduto() {
         $this->load->Model('modelProduto', '', TRUE);
         $produto = array(
@@ -39,7 +45,7 @@ class ControllerProduto extends CI_Controller {
 
 
        $this->load->view('estrutura/menuPainel');
-        $this->load->view('corpo/corpoPainel', $msn);
+        $this->load->view('corpo/Produto/corpoCadProduto',$msn);
         $this->load->view('estrutura/rodapePainel');
     }
     

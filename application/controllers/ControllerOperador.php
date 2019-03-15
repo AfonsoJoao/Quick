@@ -14,10 +14,7 @@
 class ControllerOperador extends CI_Controller {
 
     public function cadoperador() {
-        $this->load->view('estrutura/cabecalho');
-        $this->load->view('estrutura/barraMenu');
         $this->load->view('corpo/Operador/corpoCadOperador');
-        $this->load->view('estrutura/rodape');
     }
 
     public function gravarOperador() {
@@ -48,18 +45,15 @@ class ControllerOperador extends CI_Controller {
             }
         }
 
-        $this->load->view('estrutura/cabecalho');
         $this->load->view('corpo/corpoCadOperador', $msn);
-        $this->load->view('estrutura/rodape');
     }
     
     public function listaOperador() { /** Nesta função eu só consigo exibir os dados da entidade */
         $this->load->Model('modelOperador', '', TRUE);
         $dados['operadores'] = $this->modelOperador->listarOperador();
-        $this->load->view('estrutura/cabecalho');
-        $this->load->view('estrutura/barraMenu');
-        $this->load->view('corpo/Operador/OperadoresCadastrados', $dados);
-        $this->load->view('estrutura/rodape');
+        $this->load->view('estrutura/menuPainel');
+        $this->load->view('corpo/Operador/operadoresCadastrados', $dados);
+        $this->load->view('estrutura/rodapePainel');
     }
     
      public function listaUnicoOperador() { /** Nesta função eu consigo manipular os dados da entidade */

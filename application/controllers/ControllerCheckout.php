@@ -17,7 +17,6 @@ class ControllerCheckout extends CI_Controller {
         $this->load->view('estrutura/cabecalho');
         $this->load->view('estrutura/barraMenu');
         $this->load->view('corpo/Checkout/corpoCheckout', $car);
-        $this->load->view('estrutura/rodape');
     }
     
 
