@@ -189,7 +189,7 @@ and open the template in the editor.
 
                         <div class="pagamento-avista hide">
                             <div class="form-group margin-checkout">
-                                <label for="cedulas">Quais cedulas serão utilizadas no pagamento?</label><br>
+                                <label for="cedulas">Quais cedulas serão utilizadas para efetuação do pagamento?</label><br>
                                 <input type="checkbox" name="2,00" value="2,00"> R$ 2,00<br>
                                 <input type="checkbox" name="5,00" value="5,00"> R$ 5,00<br>
                                 <input type="checkbox" name="10,00" value="10,00"> R$ 10,00<br>

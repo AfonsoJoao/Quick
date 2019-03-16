@@ -17,8 +17,6 @@ and open the template in the editor.
             function hideURLbar(){ window.scrollTo(0,1); } </script>
         <!-- //for-mobile-apps -->
 
-        <!-- Obs: Caso não der certo configurar adicionar a pasta application as referencias do css -->
-
         <link href="<?php echo base_url('css/bootstrap.css'); ?>" rel="stylesheet" type="text/css" media="all"/>
         
         <link href="<?php echo base_url('css/carrinho.css'); ?>" rel="stylesheet" type="text/css" media="all"/>
