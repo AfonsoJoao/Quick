@@ -1,31 +1,24 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
+<html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <title>Quick</title>
-        <!-- for-mobile-apps -->
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="OneTech shop project">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta name="keywords" content="Grocery Store Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
-              Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-        <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
-            function hideURLbar(){ window.scrollTo(0,1); } </script>
-        <!-- //for-mobile-apps -->
-
-        <!-- Obs: Caso não der certo configurar adicionar a pasta application as referencias do css -->
-
-        <link href="<?php echo base_url('css/bootstrap.css'); ?>" rel="stylesheet" type="text/css" media="all"/>
-        
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/bootstrap4/bootstrap.min.css') ?>">
+        <link href="<?php echo base_url('plugins/fontawesome-free-5.0.1/css/fontawesome-all.css') ?>" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url('plugins/OwlCarousel2-2.2.1/owl.carousel.css') ?>">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url('plugins/OwlCarousel2-2.2.1/owl.theme.default.css') ?>">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url('plugins/OwlCarousel2-2.2.1/animate.css') ?>">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url('plugins/slick-1.8.0/slick.css') ?>">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/shop_styles.css') ?>">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/shop_responsive.css') ?>">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/main_styles.css') ?>">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/responsive.css') ?>">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('css/product_responsive.css') ?>">
         <link href="<?php echo base_url('css/carrinho.css'); ?>" rel="stylesheet" type="text/css" media="all"/>
-        
-        <link href="<?php echo base_url('css/style.css'); ?>" rel="stylesheet" type="text/css" media="all" />
 
-        <!-- font-awesome icons -->
         <link href="<?php echo base_url('css/font-awesome.css'); ?>" rel="stylesheet" type="text/css" media="all" /> 
 
         <!-- //font-awesome icons -->
@@ -35,9 +28,12 @@ and open the template in the editor.
         <!-- //js -->
         <link href="<?php echo base_url('//fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,500,500italic,700,700italic'); ?>" rel='stylesheet' type='text/css'>
         <link href="<?php echo base_url('//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic'); ?>" rel='stylesheet' type='text/css'>
-              <!-- start-smoth-scrolling -->
+        <!-- start-smoth-scrolling -->
         <script type="text/javascript" src="<?php echo base_url('js/move-top.js'); ?>"></script>
         <script type="text/javascript" src="<?php echo base_url('js/easing.js'); ?>"></script>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js" type="text/javascript"></script>
+
         <script type="text/javascript">
             jQuery(document).ready(function ($) {
                 $(".scroll").click(function (event) {
@@ -49,139 +45,160 @@ and open the template in the editor.
         <!-- start-smoth-scrolling -->
 
         <script>
-            
+
             function excluirCliente(id, nome) {
                 if (confirm('Deseja excluir o cliente ' + nome)) {
                     location.href = "<?php echo base_url('ControllerCliente/excluirCliente'); ?>" + "/" + id;
                 }
             }
         </script>
+
         <script>
-            
-            function excluirProduto(id, nome) {
-                if (confirm('Deseja excluir o produto ' + nome)) {
-                    location.href = "<?php echo base_url('ControllerProduto/excluirProduto'); ?>" + "/" + id;
+
+            function excluirOperador(id, nome) {
+                if (confirm('Deseja excluir o operador ' + nome)) {
+                    location.href = "<?php echo base_url('ControllerOperador/excluirOperador'); ?>" + "/" + id;
+                }
+            }
+        </script>
+
+        <script>
+
+            function excluirAdministrador(id, nome) {
+                if (confirm('Deseja excluir o administrador ' + nome)) {
+                    location.href = "<?php echo base_url('ControllerAdministrador/excluirAdministrador'); ?>" + "/" + id;
                 }
             }
         </script>
 
     </head>
+
     <body>
-        <!-- header -->
-        <div class="agileits_header">
-            <div class="w3l_offers">
-                <a>-------------------</a>
-            </div>
-            
-            <div class="w3l_search">
-                <form action="<?php echo base_url('resultadodabusca/') ?>" method="post">
-                    <input type="text" name="busca" placeholder="Buscar produtos...">
-                    <input type="submit" value="">
-                </form>
-            </div>
-            
-            <div class="dropdown">
-                <div class="w3l_header_right">
-                    <ul>
-                        <li class="dropdown profile_details_drop">
-                            <a href="#" class="dropdown" data-toggle="dropdown" role="button" data-hover="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fa fa-shopping-cart"></i> Carrinho Compra  (Itens <span class="carrinho-top-total-item">0</span>
-                                ) <span class="caret"></span> <!-- A class caret serve para mostrar a setinha em um campo dropdown -->
-                            </a>
-                            <ul class="dropdown-menu carrinho-compra">
-                                
-                                <div class="row body-carrinho-vazio">
-                                    <div class="col-xs-12 col-md-12 text-center">
-                                        Carrinho está vazio
-                                    </div>  
-                                </div>
-                                
-                                <div class="row body-carrinho-top hide">
-                                    <div class="col-xs-12 col-md-4" >
-                                        Itens: <span class="carrinho-top-total-item"></span>
-                                    </div>
-                                    <div class="col-xs-12 col-md-8 text-right" >
-                                        Total: <span class="carrinho-top-total-valor"></span>
-                                    </div>
-                                </div>
-                                <!-- Separador de submenus  -->
-                                <div class="row margin-top-20 btns-carrinho-topo hide">
-                                    
-                                    <div class="col-xs-12 col-md-6">
-                                        <a href="<?= base_url('ControllerCarrinho/carrinho') ?>" title="Exibir Carrinho" class="btn btn-success btn-block">Exibir Carrinho</a>
-                                    </div>
-                                    <div class="col-xs-12 col-md-6"> <!-- O col-xs-6 coloca botões um ao lado do outro  -->
-                                        <a href="#" class="btn btn-danger btn-block btn-limpar-carrinho">Limpar</a>
-                                    </div>
-                                </div>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="w3l_header_right">
-                <ul>
-                    <li class="dropdown profile_details_drop">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i><span class="caret"></span></a>
-                        <div class="mega-dropdown-menu">
-                            <div class="w3ls_vegetables">
-                                <ul class="dropdown-menu drp-mnu">
-                                    <li><a href="<?php echo base_url('#'); ?>">Perfil</a></li> 
-                                    <li><a href="<?php echo base_url('logout/'); ?>">Sair</a></li>
-                                    <li><a href="<?php echo base_url('#'); ?>">Histórico Compras</a></li>
-                                </ul>
-                            </div>                  
-                        </div>	
-                    </li>
-                </ul>
-            </div>
-            
-            <div class="clearfix"> </div>
-        </div>
-        <!-- script-for sticky-nav -->
-        <script>
-            $(document).ready(function () {
-                var navoffeset = $(".agileits_header").offset().top;
-                $(window).scroll(function () {
-                    var scrollpos = $(window).scrollTop();
-                    if (scrollpos >= navoffeset) {
-                        $(".agileits_header").addClass("fixed");
-                    } else {
-                        $(".agileits_header").removeClass("fixed");
-                    }
-                });
 
-            });
-        </script>
-        <!-- //script-for sticky-nav -->
-        <div class="logo_products">
-            <div class="container">
-                <div class="w3ls_logo_products_left">
-                    <h1><a href="<?php echo base_url('cliente/') ?>"><img src="<?php echo base_url('application/images/Logo-Quick2.jpg'); ?>" width="130" height="100"></a></h1>
-                </div>
-                <div class="w3ls_logo_products_left1">
-                    <ul class="special_items">
-                        <li><i class="fa fa-phone" aria-hidden="true"></i>(XX) XXXX-XXXX</li>
-                        <li><i class="fa fa-envelope-o" aria-hidden="true"></i>TESTE@TESTE.COM</li>
-                    </ul>
-                </div>
-                <div class="clearfix"> </div>
-            </div>
-        </div>
-        <!-- //header -->
-        <!-- products-breadcrumb -->
-        <div class="products-breadcrumb">
-            <div class="container">
-                <ul>
-                    <li><img src="<?php echo base_url('application/images/home.png'); ?>" width="25" height="20"><a href="<?php echo base_url('cliente/') ?>">Inicio</a><span>|</span></li>
-                    <li>**<span>|</span></li>
-                    <li>**</li>
-                </ul>
-            </div>
-        </div>
-        <!-- //products-breadcrumb -->
+        <div class="super_container">
 
-                </body>
-                </html>
-                <?php
+            <!-- Header -->
+
+            <header class="header">
+
+                <!-- Top Bar -->
+
+                <div class="top_bar">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col d-flex flex-row">
+                                <div class="top_bar_contact_item"><div class="top_bar_icon"><img src="<?php echo base_url('application/images/icones/phone.png') ?>" alt=""></div>+XX XXXXX.XXXX</div>
+                                <div class="top_bar_contact_item"><div class="top_bar_icon"><img src="<?php echo base_url('application/images/icones/mail.png') ?>" alt=""></div><a href="mailto:fastsales@gmail.com">email@email.com</a></div>
+                                <div class="top_bar_content ml-auto">
+
+                                    <div class="top_bar_user">
+                                        <div class="user_icon"><img src="<?php echo base_url('application/images/icones/user.svg') ?>" alt=""></div>
+                                        <div><a href="<?php echo base_url('login/'); ?>">Entre</a></div>
+                                        <div><a href="<?php echo base_url('cadastroclientes/'); ?>">Cadastre-se&nbsp;&nbsp;</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>		
+                </div>
+
+                <!-- Header Main -->
+
+                <div class="header_main">
+                    <div class="container">
+                        <div class="row">
+
+                            <!-- Logo -->
+                            <div class="col-lg-2 col-sm-3 col-3 order-1">
+                                <div class="logo_container">
+                                    <div class="logo"><a href="<?php echo base_url('index') ?>"><img src="<?php echo base_url('application/images/Logo-Quick.png') ?>" width="150" height="150"></a></div>
+                                </div>
+                            </div>
+
+                            <!-- Search -->
+                            <div class="col-lg-6 col-12 order-lg-2 order-3 text-lg-left text-right">
+                                <div class="header_search">
+                                    <div class="header_search_content">
+                                        <div class="header_search_form_container">
+                                            <form action="<?php echo base_url('resultadodabusca/') ?>" class="header_search_form clearfix"  method="post">
+                                                <input type="search" name="busca" class="header_search_input" placeholder="Procurar por um produto...">
+                                                <div class="">
+                                                    <div class="">
+                                                        <span class="custom_dropdown_placeholder clc"></span>
+                                                        <ul class="custom_list clc">
+
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <button type="submit" class="header_search_button trans_300" value="Submit"><img src="<?php echo base_url('application/images/icones/search.png') ?>" alt=""></button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Wishlist -->
+                            <div class="col-lg-4 col-9 order-lg-3 order-2 text-lg-left text-right">
+                                <div class="wishlist_cart d-flex flex-row align-items-center justify-content-end">
+
+
+                                    <!-- Cart -->
+                                    <div class="cart">
+                                        <div class="cart_container d-flex flex-row align-items-center justify-content-end">
+                                            <div class="cart_icon">
+                                                <img src="<?php echo base_url('application/images/icones/cart.png') ?>" alt="">
+                                                <div class="cart_count"><span class="carrinho-top-total-item">0</span></div>
+                                            </div>
+                                            <div class="cart_content">
+                                                <div class="dropdown">
+                                                    <div class="w3l_header_right">
+                                                        <ul>
+                                                            <li class="dropdown profile_details_drop">
+                                                                <a href="#" class="dropdown" data-toggle="dropdown" role="button" data-hover="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                    <span class="caret">Carrinho</span></a>
+
+                                                                <ul class="dropdown-menu carrinho-compra">
+
+                                                                    <div class="row body-carrinho-vazio">
+                                                                        <div class="col-xs-12 col-md-12 text-center">
+                                                                            Carrinho está vazio
+                                                                        </div>  
+                                                                    </div>
+
+                                                                    <div class="row body-carrinho-top hide">
+                                                                        <div class="col-xs-12 col-md-4" >
+                                                                            Itens: <span class="carrinho-top-total-item"></span>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-md-8 text-right" >
+                                                                            Total: <span class="carrinho-top-total-valor"></span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- Separador de submenus  -->
+                                                                    <div class="row margin-top-20 btns-carrinho-topo hide">
+
+                                                                        <div class="col-xs-12 col-md-6">
+                                                                            <a href="<?= base_url('ControllerCarrinho/carrinho') ?>" title="Exibir Carrinho" class="btn btn-success btn-block">Exibir Carrinho</a>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-md-6"> <!-- O col-xs-6 coloca botões um ao lado do outro  -->
+                                                                            <a href="#" class="btn btn-danger btn-block btn-limpar-carrinho">Limpar</a>
+                                                                        </div>
+                                                                    </div>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="cart_price"><span class="carrinho-top-total-valor"></span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script src="<?php echo base_url('js/carrinho.js'); ?>"></script>
+
+                <script type="text/javascript">
+            var url_quick = "<?= base_url() ?>";
+                </script>

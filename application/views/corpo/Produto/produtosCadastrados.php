@@ -65,7 +65,7 @@
                                         <td>Indisponivel</td>
                                     <?php } ?>
                                     <td><a href="<?php echo base_url("ControllerProduto/listaUnicoProduto/$produto->idProduto"); ?>"><img src="<?php echo base_url('application/images/icones/edit-Icon.png') ?>"></a></td>
-                                    <td><a href="javascript:func()" onclick="excluirProduto(<?php echo $produto->idProduto; ?>, '<?php echo $produto->nomeProduto; ?>')"><i class="fa fa-trash-o fa-2x"></i></a></td>
+                                    <td><a href="javascript:func()" onclick="excluirProduto(<?php echo $produto->idProduto; ?>, '<?php echo $produto->nomeProduto; ?>')"><img src=" <?php echo base_url('application/images/icones/close_1.png'); ?>"></a></td>
                                 </tr>
                             <?php }
                         }

@@ -9,7 +9,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>SB Admin - Register</title>
+        <title>Painel administrativo - Administrador</title>
 
         <!-- Custom fonts for this template-->
         <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -40,11 +40,11 @@
     ?>
 
     <body class="bg-dark">
+        <br><br><br><br><br>
         <div class="container">
             <div class="card card-register mx-auto mt-5">
                 <div class="card-header">Cadastrar administrador</div>
                 <div class="card-body">
-                    <form>
                         <?php echo form_open('ControllerAdministrador/gravarAdministrador'); ?>
                         <input type="hidden" name="acao" value="<?php
                         if (isset($administrador))
@@ -60,28 +60,14 @@
                             }
                         ?>">
                         <input type="hidden" name="tipo" value="administrador">
-                        <input type="text" name="nome" class="form-control" placeholder="Nome completo" required="required">
+                        <input type="nome" name="nome" class="form-control" placeholder="Nome" required="required">
                         <br>
                         <input type="email" name="email" class="form-control" placeholder="Email" required="required">
                         <br>
                         <input type="password" name="senha" class="form-control" placeholder="Senha" required="required">
                         <br>
-                        <input type="text" name="telefone" class="form-control" placeholder="Telefone" required="required">
-                        <br>
-                        <input type="date" name="dataNascimento" class="form-control" placeholder="Data de nascimento" required="required">
-                        <br>
-                        <select name="sexo" id="sexo" class="form-control" placeholder="Sexo" required="required">
-                            <option value="masculino">Masculino</option>
-                            <option value="feminino">Feminino</option>
-                        </select>
-                        <br>
-                        <input type="text" name="cpf" class="form-control" placeholder="CPF" required="required">
-                        <br>
-                        <input type="text" name="rg" class="form-control" placeholder="RG" required="required">
-                        <br>
                          <input class="btn btn-primary btn-block" type="submit" value="salvar">
                         <?php echo form_close(); ?>
-                    </form>
                     
                 </div>
             </div>

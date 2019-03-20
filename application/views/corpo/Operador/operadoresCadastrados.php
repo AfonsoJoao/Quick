@@ -19,12 +19,7 @@
                         <tr>
                             <th>Id</th>
                             <th>Nome</th>
-                            <th>Data Nascimento</th>
-                            <th>Sexo</th>
                             <th>E-mail</th>
-                            <th>CPF</th>
-                            <th>RG</th>
-                            <th>Telefone</th>
                             <th>Editar</th>
                             <th>Excluir</th>
                         </tr>
@@ -33,12 +28,7 @@
                         <tr>
                             <th>Id</th>
                             <th>Nome</th>
-                            <th>Data Nascimento</th>
-                            <th>Sexo</th>
                             <th>E-mail</th>
-                            <th>CPF</th>
-                            <th>RG</th>
-                            <th>Telefone</th>
                             <th>Editar</th>
                             <th>Excluir</th>
 
@@ -52,14 +42,9 @@
                                 <tr>
                                     <td><?php echo $operador->idOperador; ?></td>
                                     <td><?php echo $operador->nome; ?></td>
-                                    <td><?php echo $operador->dataNascimento; ?></td>
-                                    <td><?php echo $operador->sexo; ?></td>
                                     <td><?php echo $operador->email; ?></td>
-                                    <td><?php echo $operador->cpf; ?></td>
-                                    <td><?php echo $operador->rg; ?></td>
-                                    <td><?php echo $operador->telefone; ?></td>
-                                    <td><a href="<?php echo base_url("ControllerOperador/listaUnicoOperador/$operador->idOperador"); ?>"><img src="<?php echo base_url('application/images/edit-Icon.png'); ?>"></a></td>
-                                    <td><a href="javascript:func()" onclick="excluirOperador(<?php echo $operador->idOperador; ?>, '<?php echo $operador->nome; ?>')"> <img src=" <?php echo base_url('application/images/close_1.png'); ?>"> </a></td>
+                                    <td><a href="<?php echo base_url("ControllerOperador/listaUnicoOperador/$operador->idOperador"); ?>"><center><img src="<?php echo base_url('application/images/icones/edit-Icon.png'); ?>"></center></a></td>
+                                    <td><a href="javascript:func()" onclick="excluirOperador(<?php echo $operador->idOperador; ?>, '<?php echo $operador->nome; ?>')"><center><img src=" <?php echo base_url('application/images/icones/close_1.png'); ?>"></center></a></td>
                                 </tr>   
                             <?php
                             }
