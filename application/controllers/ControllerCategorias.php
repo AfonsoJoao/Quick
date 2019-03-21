@@ -10,7 +10,7 @@ class ControllerCategorias extends CI_Controller {
     public function listaCate($value=null) {
         $this->load->model("modelCategoria", '', TRUE);
         $this->load->model("modelBanner", '', TRUE);
-        $Z['banner'] = $this->modelBanner->listarBanner();
+        $banner['banner'] = $this->modelBanner->listarBanner();
         
         if($value==null){
              $value = 1;}
@@ -32,7 +32,7 @@ class ControllerCategorias extends CI_Controller {
         
         $this->load->view('estrutura/cabecalho');
         $this->load->view('estrutura/barraMenu');
-        $this->load->view('estrutura/banner', $Z);
+        $this->load->view('estrutura/banner', $banner);
         $this->load->view('corpo/corpoCategorias', $dados);
         $this->load->view('estrutura/rodape');
     }
