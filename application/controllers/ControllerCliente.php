@@ -77,4 +77,22 @@ class ControllerCliente extends CI_Controller {
         $this->listaCliente();
     }
 
+    public function alterarSenha() {
+        $this->load->Model('modelCliente', '', TRUE);
+        $email = $this->input->post('email');
+
+        $dados = $this->modelCliente->buscarEmail($email);
+        if (isset($dados)) {
+            $novasenha = substr(md5(time()), 0, 6);
+            $nscriptografada = md5(md5($novasenha));
+            echo $novasenha;
+            
+            $this->modelCliente->alterarSenhaCliente($this->input->post('idCliente'), $nscriptografada);
+        }else{
+            echo "email invalido";
+        }
+
+        $this->load->view('corpo/corpoRecuperarSenha');
+    }
+
 }

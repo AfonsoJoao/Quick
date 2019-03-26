@@ -31,7 +31,20 @@ class ModelCliente extends CI_Model {
         return $this->db->delete('cliente', array('idCliente' => $id));
     }
 
-     public function recuperarSenha($dadosRecuperarSenha) {
+    public function buscarEmail($email){
+        $query = $this->db->get_where('cliente', array('email' => $email));
+        if ($query->num_rows() > 0) {
+            return $query->result();
+        } 
+    }
+    
+    public function alterarSenhaCliente($nscriptografada, $email) {
+        return $this->db->set('senha', $nscriptografada);
+        $this->db->where('email', $email);
+        $this->db->insert('cliente');
+    }
+
+    /*public function recuperarSenha($dadosRecuperarSenha) {
         $this->db->select('idCliente, email');
         $this->db->from('cliente');
         $this->db->where('email', $dadosRecuperarSenha['email']);
@@ -42,6 +55,6 @@ class ModelCliente extends CI_Model {
         $this->db->set('senhaCliente', base64_encode($dadosNovaSenhaUsuario['senhaCliente']));
         $this->db->where('idCliente', $dadosNovaSenhaUsuario['idCliente']);
         return $this->db->update('cliente');
-    }
+    }*/
 
 }
