@@ -84,15 +84,29 @@ class ControllerCliente extends CI_Controller {
         $dados = $this->modelCliente->buscarEmail($email);
         if (isset($dados)) {
             $novasenha = substr(md5(time()), 0, 6);
-            $nscriptografada = md5(md5($novasenha));
+            $nscriptografada = base64_encode(base64_encode($novasenha));
             echo $novasenha;
-            
-            $this->modelCliente->alterarSenhaCliente($this->input->post('idCliente'), $nscriptografada);
-        }else{
+
+            $this->modelCliente->alterarSenhaCliente($nscriptografada, $email);
+        } else {
             echo "email invalido";
         }
 
         $this->load->view('corpo/corpoRecuperarSenha');
+    }
+
+    public function enviar() {
+        $this->load->library('email') ;
+        
+        $this->email->from("afonsoneto.joao@gmail.com", 'Afonso');
+        $this->email->subject("Teste");
+        $this->email->to("afonsojoao-neto@hotmail.com");
+        $this->email->message("Mensagem teste");
+        if($this->email->send()){
+            echo "True";
+        }else{
+            echo  $this->email->print_debugger();
+        }
     }
 
 }

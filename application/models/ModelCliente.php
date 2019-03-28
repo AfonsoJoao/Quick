@@ -39,9 +39,9 @@ class ModelCliente extends CI_Model {
     }
     
     public function alterarSenhaCliente($nscriptografada, $email) {
-        return $this->db->set('senha', $nscriptografada);
+        $this->db->set('senha', $nscriptografada);
         $this->db->where('email', $email);
-        $this->db->insert('cliente');
+        return $this->db->update('cliente');
     }
 
     /*public function recuperarSenha($dadosRecuperarSenha) {
