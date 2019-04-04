@@ -6,19 +6,122 @@ class ControllerCheckout extends CI_Controller {
         parent::__construct();
         $this->load->helper('funcoes');
         $this->load->library('carrinhocompras');
+        $this->load->library('session');
+        $this->load->Model('modelPedido');
     }
-    
-    
+
+    public function cadClienteCheckout() {
+        $this->load->view('estrutura/cabecalho');
+        $this->load->view('estrutura/barraMenu');
+        $this->load->view('corpo/Cliente/corpoCadClienteCheckout');
+    }
+
+    public function autenticarCliente() {
+        $this->load->model('modelLogin', '', TRUE); // carrega o modelo model login
+        $car ['carrinho'] = $this->carrinhocompras->listarProdutos();
+        $email = $this->input->post('email'); // pega via post o email que veio do formulario
+        $senha = base64_encode($this->input->post('senha')); // pega via post a senha que veio do formulario
+        $login = $this->modelLogin->buscaPorEmailSenhaCliente($email, $senha);
+        $car ['cliente'] = $this->modelPedido->getCliente($email, $senha);
+
+        if (isset($login['0']->tipo)) {
+            $tipo = ($login['0']->tipo);
+
+            if ($tipo == "usuario") {
+
+                if ($login) {
+                    $this->session->set_userdata("usuario_logado", $login);
+                    $this->load->view('estrutura/cabecalhoLoginCliente');
+                    $this->load->view('estrutura/barraMenu');
+                    $this->load->view('corpo/Checkout/corpoCheckout', $car);
+                }
+            }
+        } else {
+            $this->session->set_flashdata("danger", "Usuário ou Senha Inválidos");
+            $this->checkout();
+        }
+    }
 
     public function checkout() {
-        
+
         $car ['carrinho'] = $this->carrinhocompras->listarProdutos();
-        
+
         $this->load->view('estrutura/cabecalho');
         $this->load->view('estrutura/barraMenu');
         $this->load->view('corpo/Checkout/corpoCheckout', $car);
-        $this->load->view('estrutura/rodape');
     }
-    
+
+    public function enviarPedido() {
+        $this->load->Model('modelCheckout', '', TRUE);
+        $this->load->Model('modelPedido', '', TRUE);
+
+        $endereco ['idCliente'] = $this->input->post('idCliente');
+        $endereco['nomeCliente'] = $this->input->post('nomeCliente');
+        $endereco['cpf'] = $this->input->post('cpf');
+        $endereco['email'] = $this->input->post('email');
+        $endereco['senha'] = $this->input->post('senha');
+        $endereco['telefone'] = $this->input->post('telefone');
+        $endereco ['cep'] = $this->input->post('cep');
+        $endereco ['endereco'] = $this->input->post('endereco');
+        $endereco ['total_pedido'] = $this->input->post('total');
+        $endereco ['numero'] = $this->input->post('numero');
+        $endereco ['complemento'] = $this->input->post('complemento');
+        $endereco ['bairro'] = $this->input->post('bairro');
+        $endereco ['cidade'] = $this->input->post('cidade');
+        $endereco ['estado'] = $this->input->post('estado');
+        $endereco ['forma_Envio'] = $this->input->post('forma_Envio');
+        $endereco ['numeroCartao'] = $this->input->post('numeroCartao');
+        $endereco ['nomeTitular'] = $this->input->post('nomeTitular');
+        $endereco ['validadeCartao'] = $this->input->post('validadeCartao');
+        $endereco ['codigoSeguranca'] = $this->input->post('codigoSeguranca');
+
+        $id_item = $this->modelPedido->insertpedido($endereco);
+
+        $pedido ['nome_Item'] = $this->input->post('nome');
+        $pedido ['valorUnitario'] = $this->input->post('valor');
+        $pedido ['quantidade'] = $this->input->post('qtd');
+        $pedido ['subtotal'] = $this->input->post('subtotal');
+        $pedido ['idPedido'] = $id_item;
+
+        
+
+        if ($this->input->post('acao') == "inserir") {
+            if ($this->modelPedido->insert_pedido_item($pedido)) {
+                $msn['situacao'] = "Cadastro Realizado com Sucesso";
+            } else {
+                $msn['situacao'] = "Erro na Realização do Cadastro";
+            }
+            
+            $this->checkout($msn);
+        }
+    }
+
+    public function atualizarPedido() {
+
+        $endereco ['idCliente'] = $this->input->post('idCliente');
+        $endereco['nomeCliente'] = $this->input->post('nomeCliente');
+        $endereco['telefone'] = $this->input->post('telefone');
+        $endereco ['cep'] = $this->input->post('cep');
+        $endereco ['endereco'] = $this->input->post('endereco');
+        $endereco ['numero'] = $this->input->post('numero');
+        $endereco ['complemento'] = $this->input->post('complemento');
+        $endereco ['bairro'] = $this->input->post('bairro');
+        $endereco ['cidade'] = $this->input->post('cidade');
+        $endereco ['estado'] = $this->input->post('estado');
+        $endereco ['forma_Envio'] = $this->input->post('forma_Envio');
+
+
+        if ($this->input->post('acao') == "alterar") {
+            if ($this->modelPedido->alterarPedido($this->input->post('idPedido'), $endereco)) {
+                $msn['situacao'] = "Dados alterados com Sucesso";
+            } else {
+                $msn['situacao'] = "Erro na Alteração dos Dados";
+            }
+
+            $this->load->view('estrutura/cabecalho');
+            $this->load->view('corpo/Pedido/editarPedido', $msn);
+            $this->load->view('estrutura/rodape');
+        }
+    }
 
 }

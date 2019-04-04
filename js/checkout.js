@@ -66,10 +66,10 @@ var Checkout = function () {
                             '<label for="cartao" class="col-sm-3 control-label">Mudar Status Para</label>' +
                             '<div class="col-sm-7">' +
                             '<select name="cartao" class="form-control">' +
-                            '<option value="1">Aguardando Pagamento</option>' +
+                            '<option value="1">Enviado</option>' +
                             '<option value="2">Pagamento Confirmado</option>' +
-                            '<option value="3">Enviado</option>' +
-                            '<option value="4">Pedido Cancelado</option>' +
+                            '<option value="3">Pedido Cancelado</option>' +
+                            '<option value="4">Aguardando Pagamento</option>' +
                             '</select>' +
                             '</div>' +
                             '</div>' +

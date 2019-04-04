@@ -13,21 +13,8 @@
  */
 class ModelAdministrador extends CI_Model {
 
-    public function inserirAdministrador($dados, $endereco, $estado, $cidade, $bairro) {
-        $this->db->insert('administrador', $dados);
-        $this->db->insert('endereco', $endereco);
-        $this->db->insert('estado', $estado);
-        $this->db->insert('cidade', $cidade);
-        $this->db->insert('bairro', $bairro);
-      /*$this->db->insert('endereco', $endereco);
-        $this->db->insert('estado', $estado);
-        $this->db->insert('cidade', $cidade);
-        $this->db->select('#');
-        $this->db->from('cidade');
-        $this->db->join('bairro', 'bairro.idCidade = cidade.idCidade');        
-        $this->db->where('bairro.idCidade =', $cidade);
-        $this->db->join('bairro', 'bairro.idCidade = cidade.idCidade');
-        $this->db->insert('bairro', $bairro); */
+    public function inserirAdministrador($administrador) {
+        return $this->db->insert('administrador', $administrador);
     }
 
     public function listarAdministrador() { // Está função apenas exibe a lista de registros armazenados em uma entidade do banco

@@ -8,31 +8,14 @@ class ControllerCliente extends CI_Controller {
         $this->load->view('corpo/Cliente/corpoCadCliente');
     }
 
-    public function generateSalt() {
-        $salt = '';
-        $alfabeto = 'abcdefghijklmnopqrstuvxwyzABCDEFGHIJKLMNOPQRSTUVXWYZ';
-        $numeros = '0123456789';
-
-        $str = $alfabeto . $numeros;
-        $qtde = strlen($str);
-
-        for ($i = 0; $i < 22; $i++) {
-            $salt .= $str[rand(0, $qtde - 1)];
-        }
-        return $salt;
-    }
-
     public function gravarCliente() {
         $this->load->Model('modelCliente', '', TRUE);
         $cliente = array(
-            'nome' => $this->input->post('nome'),
+            'nomeCliente' => $this->input->post('nomeCliente'),
             'tipo' => $this->input->post('tipo'),
-            'dataNascimento' => $this->input->post('dataNascimento'),
-            'sexo' => $this->input->post('sexo'),
             'email' => $this->input->post('email'),
             'senha' => base64_encode($this->input->post('senha')),
             'cpf' => $this->input->post('cpf'),
-            'rg' => $this->input->post('rg'),
             'telefone' => $this->input->post('telefone')
         );
 

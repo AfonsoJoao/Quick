@@ -31,7 +31,7 @@ and open the template in the editor.
                     <table class="table table-striped table-bordered">
                         <tr>
                             <td class="text-left">Nome: </td>
-                            <td class="text-left"><?= $pedido->nome ?></td>
+                            <td class="text-left"><?= $pedido->nomeCliente ?></td>
                         </tr>
                         
                         <tr>
@@ -94,12 +94,12 @@ and open the template in the editor.
                             <td class="text-left"><?= $i->nome_Item ?></td>
                             <td><?= $i->quantidade ?></td>
                             <td class="text-right"><?= formataMoedaReal($i->valorUnitario, TRUE) ?></td>
-                            <td class="text-right"><?= formataMoedaReal($i->valor_Total_Item, TRUE) ?></td>
+                            <td class="text-right"><?= formataMoedaReal($i->subtotal, TRUE) ?></td>
                         </tr>
                         
                         <tr>
                             <td colspan="3" class="text-right">Total Compra</td>
-                            <td class="text-right"><?= formataMoedaReal ($pedido->total_produto, TRUE) ?> </td>
+                            <td class="text-right"><?= formataMoedaReal ($pedido->total_pedido, TRUE) ?> </td>
                             
                         </tr>
                         <?php } ?>

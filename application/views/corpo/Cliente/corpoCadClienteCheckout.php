@@ -11,15 +11,7 @@ if (isset($situacao)) {
 }
 ?>
 <div class="w3_login">
-    <?php if ($this->session->flashdata("success")) : ?>
-        <p class="alert alert-success"><?= $this->session->flashdata("success") ?></p>
-
-    <?php endif ?>
-
-    <?php if ($this->session->flashdata("danger")) : ?>
-
-        <center><p class="alert alert-danger"><?= $this->session->flashdata("danger") ?></p></center>
-    <?php endif ?>
+   
         <br><br>
     <div class="row justify-content-md-center">
         <div class="col-sm-6">
@@ -46,56 +38,31 @@ if (isset($situacao)) {
                     
                     <div class="form-group">
                        <div class="text-left">Nome:</div>
-                    <input type="text" class="form-control margin-top-2" name="nomeCliente" placeholder="Nome completo" required=" " value="<?php
-                    if (isset($cliente))
-                        foreach ($cliente as $cli) {
-                            echo $cli->nome;
-                        }
-                    ?>">
+                    <input type="text" class="form-control margin-top-2" name="nomeCliente" placeholder="Nome completo" required=" ">
                     
                     </div>
                     
                     <div class="form-group">
                        <div class="text-left">E-mail:</div>
-                    <input type="email" class="form-control margin-top-2" name="email" placeholder="E-mail" required=" " value="<?php
-                    if (isset($cliente))
-                        foreach ($cliente as $cli) {
-                            echo $cli->email;
-                        }
-                    ?>">
+                    <input type="email" class="form-control margin-top-2" name="email" placeholder="E-mail" required=" ">
                     
                     </div>
                     
                     <div class="form-group">
                        <div class="text-left">Senha:</div>
-                    <input type="password" class="form-control margin-top-2" name="senha" placeholder="Senha" required=" " value="<?php
-                    if (isset($cliente))
-                        foreach ($cliente as $cli) {
-                            echo $cli->senha;
-                        }
-                    ?>">
+                    <input type="password" class="form-control margin-top-2" name="senha" placeholder="Senha" required=" ">
                     
                     </div>
                     
                     <div class="form-group">
                        <div class="text-left">CPF:</div>
-                    <input type="text" class="form-control margin-top-2" class="cpf" name="cpf" placeholder="CPF" required="" value="<?php
-                    if (isset($cliente))
-                        foreach ($cliente as $cli) {
-                            echo $cli->cpf;
-                        }
-                    ?>">
+                    <input type="text" class="form-control margin-top-2" class="cpf" name="cpf" placeholder="CPF" required="">
                     
                     </div>
                     
                     <div class="form-group">
                        <div class="text-left">Telefone:</div>
-                    <input type="text" class="form-control margin-top-2" class="telefone" name="telefone" placeholder="Telefone" required=" " value="<?php
-                    if (isset($cliente))
-                        foreach ($cliente as $cli) {
-                            echo $cli->telefone;
-                        }
-                    ?>">
+                    <input type="text" class="form-control margin-top-2" class="telefone" name="telefone" placeholder="Telefone" required=" ">
                     
                     </div>
                     

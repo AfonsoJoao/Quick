@@ -41,7 +41,7 @@
                                                                     <div class="product_name"><div><a href="<?php echo base_url("controllerProduto/unicoProduto/$produto->idProduto") ?>"><?= $produto->nomeProduto ?></a></div></div>
                                                                     <div class="product_extras">
                                                                         <a href="#" title="Adicionar produtos carrinho" 
-                                                                   class="btn btn-primary btn-block btn-add-produto-carrinho"
+                                                                   class="btn btn-primary btn-lg btn-add-produto-carrinho"
                                                                    data-id="<?= $produto->idProduto ?>"><i class="fa fa-shopping-cart"></i><font size="3">&nbsp;&nbsp;Adicionar ao Carrinho </font></a>
                                                                     </div>
                                                                 </div>

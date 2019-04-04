@@ -208,8 +208,11 @@
                 </script>
 
 
-                <div class="row msg-add-carrinho d-none"> <!-- o Hide serve para deixar a classe invisivel -->
+                <div class="row msg-add-carrinho d-none"> <!-- o d-none serve para deixar a classe invisivel -->
                     <div class="col-md-12 msg-carrinho-alert text-center">
 
                     </div> 
                 </div>
+                
+            </header>
+        </div>

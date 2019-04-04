@@ -63,13 +63,14 @@ $route ['listacliente'] = 'ControllerCliente/listaCliente';
 
 //Rota da alteração, lista e exclusão de produtos
 $route ['listaproduto'] = 'ControllerProduto/listaProduto';
+$route ['cadproduto'] = 'ControllerProduto/cadProduto';
 $route ['getcat'] = 'ControllerProduto/getCategoria/';
 
 //rota do login e logout cliente
 $route ['login'] = 'ControllerLogin/login';
 $route ['logout'] = 'ControllerLogin/logoutCliente';
-$route ['logout'] = 'ControllerLogin/logoutOperador';
-$route ['logout'] = 'ControllerLogin/logoutAdministrador';
+$route ['sair'] = 'ControllerLogin/logoutOperador';
+$route ['logouff'] = 'ControllerLogin/logoutAdministrador';
 
 
 //Rota do cadastro, alteração, listagem e exclusão de operador
@@ -82,6 +83,7 @@ $route ['listaadmnistrador'] = 'ControllerAdministrador/listaAdministrador';
 
 //Rota do cadastro, alteração, listaggem e exclusão dos banners
 $route ['listabanner'] = 'ControllerBanner/listaBanner';
+$route ['cadbanner'] = 'ControllerBanner/cadBanner';
 
 //Rota para tela de resultados dos produtos procurados
 $route ['resultadodabusca'] = 'ControllerProduto/buscarProduto';
@@ -103,7 +105,11 @@ $route ['pagseguro'] = 'ControllerConfig/pagseguro';
 
 $route ['pedidos'] = 'ControllerPedido/pedido';
 
+// Rota para o checkout
 
+$route ['checkout'] = 'ControllerCheckout/checkout';
+
+$route ['home'] = 'Controller/indexlogado';
 
 //Rota para para a pagina das categorias dos produtos com o cliente logado
 // $route ['categorias'] = 'ControllerCategoriasLogado/loginfeitoCliente';

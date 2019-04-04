@@ -17,6 +17,16 @@ class ControllerCarrinho extends CI_Controller {
         $this->load->view('corpo/Carrinho/corpoCarrinho', $car);
         $this->load->view('estrutura/rodape');
     }
+    
+    public function carrinhoLogado() {
+
+        $car ['carrinho'] = $this->carrinhocompras->listarProdutos(); // a variavel carrinho tá recebendo os dados da biblioteca carrinho compras
+        // e listando os produtos do carrinho através do metodo listar produtos
+
+        $this->load->view('estrutura/cabecalhoLoginCliente');
+        $this->load->view('corpo/Carrinho/corpoCarrinho', $car);
+        $this->load->view('estrutura/rodape');
+    }
 
     public function add() {
         

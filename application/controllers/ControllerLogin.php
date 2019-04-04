@@ -1,10 +1,11 @@
 <?php
 
 class ControllerLogin extends CI_Controller {
-    
+
     public function __construct() {
         parent::__construct();
         $this->load->helper('funcoes');
+        $this->load->library('session');
     }
 
     public function login() {
@@ -71,9 +72,9 @@ class ControllerLogin extends CI_Controller {
     }
 
     public function autenticar() {
-        $this->load->model('modelLogin', '', TRUE); // chama o modelo model login
-        $email = $this->input->post('email'); // pega via post o email que venho do formulario
-        $senha = base64_encode($this->input->post('senha')); // pega via post a senha que venho do formulario
+        $this->load->model('modelLogin', '', TRUE); // carrega o modelo model login
+        $email = $this->input->post('email'); // pega via post o email que veio do formulario
+        $senha = base64_encode($this->input->post('senha')); // pega via post a senha que veio do formulario
         $cliente = $this->modelLogin->buscaPorEmailSenhaCliente($email, $senha);
         if (isset($cliente['0']->tipo)) {
             $tipo = ($cliente['0']->tipo);
@@ -91,7 +92,7 @@ class ControllerLogin extends CI_Controller {
                     $this->loginfeitoOperador();
                 }   //  echo 'operador';
             } else if ($tipo == "administrador") {
-                
+
                 if ($cliente) {
                     $this->session->set_userdata("administrador_logado", $cliente);
                     $this->loginfeitoAdministrador();
@@ -99,9 +100,11 @@ class ControllerLogin extends CI_Controller {
                 }
             }
         } else {
-           $this->session->set_flashdata("danger", "Usuário ou Senha Inválidos");
-           $this->login();
+            $this->session->set_flashdata("danger", "Usuário ou Senha Inválidos");
+            $this->login();
         }
     }
 
+    
 }
+            

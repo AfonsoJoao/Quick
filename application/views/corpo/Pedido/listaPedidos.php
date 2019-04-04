@@ -41,6 +41,7 @@ and open the template in the editor.
                     </div>
 
                 </div>
+                
 
                 <div class="card-body">
                     <div class="table-responsive">
@@ -58,17 +59,19 @@ and open the template in the editor.
                             </thead>
 
                             <tbody>
-
+                                    
+                                
+     
                                 <?php foreach ($pedido as $p) { ?> 
                                     <tr>
                                         <td><?= $p->idPedido ?> </td>
-                                        <td><?= $p->nome ?></td>
+                                        <td><?= $p->nomeCliente ?></td>
                                         <td><?= formataMoedaReal($p->total_pedido, TRUE) ?></td>
                                         <td class="text-center">
                                             <?php
                                             switch ($p->status) {
                                                 case 1:
-                                                    echo 'Aguardando Pagamento';
+                                                    echo 'Enviado';
                                                     break;
 
                                                 case 2:
@@ -76,11 +79,11 @@ and open the template in the editor.
                                                     break;
 
                                                 case 3:
-                                                    echo 'Enviado';
+                                                    echo 'Cancelado';
                                                     break;
 
                                                 default:
-                                                    echo 'Cancelado';
+                                                    echo 'Aguardando Pagamento';
                                                     break;
                                             }
                                             ?>
@@ -89,25 +92,27 @@ and open the template in the editor.
                                         <td class="text-right">
                                             <button type="button" title="Mudar Status" class="btn btn-primary
                                                     btn-mudar-status-pedido" data-toggle="modal" data-id-pedido="<?= $p->idPedido ?>">
-                                                <i class="fas fa-edit"></i>  
+                                                <i class="fas fa-edit"></i> Mudar Status 
                                             </button>
 
-                                            <a href="<?= base_url('pedidos/codigo_rastreio') ?>" title="Código Rastreio"
-                                               class="btn btn-primary">
-                                                <i class="fa fa-truck"></i>
-                                            </a>
+                                           
 
-                                            <a href="<?= base_url('ControllerPedido/imprimir/'. $p->idPedido) ?>" target="_blank"
+                                            <a href="<?= base_url('ControllerPedido/imprimir/' . $p->idPedido) ?>" target="_blank"
                                                title="Imprimir Pedido" class="btn btn-primary" > <!-- O comando target="_blank" serve para abrir uma página em uma nova aba do navegador   -->
-                                                <i class="fa fa-print"></i>
+                                                <i class="fa fa-print"></i> Imprimir Pedido
                                             </a>
 
                                         </td>
-                                        <td class="text-center"></td>
-                                        <td class="text-center"></td>
+                                        <td class="text-center"><a href="<?php echo base_url("ControllerPedido/listaUnicoPedido/"
+                                        . "$p->idPedido"); ?>"><img src="<?php echo base_url('application/images/icones/edit-Icon.png'); ?>"></a></td>
+                                       
+                                        <td class="text-center"><a href="javascript:func()" onclick="excluirPedido(<?php echo $p->idPedido; ?>,
+                                        '<?php echo $p->idPedido; ?>')" class="btn btn-danger">Excluir</a></td>
                                     </tr>
 
                                 <?php } // Fim do foreach   ?>
+                                    
+                                   
 
                             </tbody>
                         </table>

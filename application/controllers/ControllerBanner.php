@@ -2,6 +2,13 @@
 
 class ControllerBanner extends CI_Controller {
 
+     
+    public function cadbanner() {
+        $this->load->view('estrutura/menuPainel');
+        $this->load->view('corpo/Banners/corpoCadBanner');
+        $this->load->view('estrutura/rodapePainel');
+    }
+    
     public function gravarBanner() {
         $this->load->Model('modelBanner', '', TRUE);
         $banner = array(
@@ -28,7 +35,7 @@ class ControllerBanner extends CI_Controller {
         
 
         $this->load->view('estrutura/menuPainel');
-        $this->load->view('corpo/corpoPainel', $msn);
+        $this->load->view('corpo/Banners/corpoCadBanner',$msn);
         $this->load->view('estrutura/rodapePainel');
     }
 

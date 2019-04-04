@@ -1,20 +1,20 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title></title>
-    </head>
-    <body>
-
-        <div class="container-fluid">  
-            <div class="bs-docs-example">
-                <center><h1>Lista de Operadores</h1></center><br><br>
-                <table class="table table-striped">
+<!-- DataTables Example -->
+<div class="container">
+    <br>
+    <!-- Breadcrumbs-->
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="<?php echo base_url('paineladministrativo/') ?>">Painel administrativo</a>
+        </li>
+        <li class="breadcrumb-item active">Operadores cadastrados</li>
+    </ol>
+    <div class="card mb-3">
+        <div class="card-header">
+            <i class="fas fa-table"></i>
+            Lista de operadores cadastrados</div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
                             <th>Id</th>
@@ -22,7 +22,6 @@ and open the template in the editor.
                             <th>Data Nascimento</th>
                             <th>Sexo</th>
                             <th>E-mail</th>
-                            <th>Senha do Operador</th>
                             <th>CPF</th>
                             <th>RG</th>
                             <th>Telefone</th>
@@ -30,6 +29,21 @@ and open the template in the editor.
                             <th>Excluir</th>
                         </tr>
                     </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nome</th>
+                            <th>Data Nascimento</th>
+                            <th>Sexo</th>
+                            <th>E-mail</th>
+                            <th>CPF</th>
+                            <th>RG</th>
+                            <th>Telefone</th>
+                            <th>Editar</th>
+                            <th>Excluir</th>
+
+                        </tr>
+                    </tfoot>
                     <tbody>
                         <?php
                         if (isset($operadores)) {
@@ -41,7 +55,6 @@ and open the template in the editor.
                                     <td><?php echo $operador->dataNascimento; ?></td>
                                     <td><?php echo $operador->sexo; ?></td>
                                     <td><?php echo $operador->email; ?></td>
-                                    <td><?php echo $operador->senha; ?></td>
                                     <td><?php echo $operador->cpf; ?></td>
                                     <td><?php echo $operador->rg; ?></td>
                                     <td><?php echo $operador->telefone; ?></td>
@@ -56,6 +69,8 @@ and open the template in the editor.
                 </table>
             </div>
         </div>
-        <?php ?>
-    </body>
-</html>
+        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+    </div>
+
+</div>
+<!-- /.container-fluid -->
