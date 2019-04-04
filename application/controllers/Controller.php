@@ -14,24 +14,11 @@ class Controller extends CI_Controller {
         $this->load->model("modelProduto", '', TRUE);
         $dados['produto'] = $this->modelProduto->listarProduto();
         $this->load->model("modelBanner", '', TRUE);
-        $Z['banner'] = $this->modelBanner->listarBanner();
+        $banner['banner'] = $this->modelBanner->listarBanner();
         $this->load->view('estrutura/cabecalho');
         $this->load->view('estrutura/barraMenu');
-        $this->load->view('estrutura/banner', $Z);
+        $this->load->view('estrutura/banner', $banner);
         $this->load->view('corpo/corpo', $dados);
         $this->load->view('estrutura/rodape');
     }
-
-    public function indexlogado() {
-        $this->load->model("modelProduto", '', TRUE);
-        $dados['produto'] = $this->modelProduto->listarProduto();
-        $this->load->model("modelBanner", '', TRUE);
-        $Z['banner'] = $this->modelBanner->listarBanner();
-        $this->load->view('estrutura/cabecalhoLoginCliente');
-        $this->load->view('estrutura/barraMenu');
-        $this->load->view('estrutura/banner', $Z);
-        $this->load->view('corpo/corpo', $dados);
-        $this->load->view('estrutura/rodape');
-    }
-
 }

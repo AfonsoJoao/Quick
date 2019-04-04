@@ -20,15 +20,10 @@ class ControllerAdministrador extends CI_Controller {
     public function gravarAdministrador() {
         $this->load->Model('modelAdministrador', '', TRUE);
         $administrador = array(
-            'nome' => $this->input->post('nome'),
             'tipo' => $this->input->post('tipo'),
-            'dataNascimento' => $this->input->post('dataNascimento'),
-            'sexo' => $this->input->post('sexo'),
+            'nome' => $this->input->post('nome'),
             'email' => $this->input->post('email'),
-            'senha' => base64_encode($this->input->post('senha')),
-            'cpf' => $this->input->post('cpf'),
-            'rg' => $this->input->post('rg'),
-            'telefone' => $this->input->post('telefone')
+            'senha' => base64_encode($this->input->post('senha'))
         );
         if ($this->input->post('acao') == "inserir") {
             if ($this->modelAdministrador->inserirAdministrador($administrador)) {
@@ -44,7 +39,9 @@ class ControllerAdministrador extends CI_Controller {
             }
         }
 
-        $this->load->view('corpo/Administrador/corpoCadAdministrador', $msn);
+        $this->load->view('estrutura/menuPainel');
+        $this->load->view('corpo/corpoPainel', $msn);
+        $this->load->view('estrutura/rodapePainel');
     }
 
     public function listaAdministrador() { /** Nesta função eu só consigo exibir os dados da entidade */
@@ -59,9 +56,7 @@ class ControllerAdministrador extends CI_Controller {
     public function listaUnicoAdministrador() { /** Nesta função eu consigo manipular os dados da entidade */
         $this->load->Model('modelAdministrador', '', TRUE);
         $dados['administrador'] = $this->modelAdministrador->listaAdministrador($this->uri->segment(3));/** O segment é um parametro ou seja são dados de uma entidade que irão ser manipulados a partir da url */
-        $this->load->view('estrutura/cabecalho');
-        $this->load->view('corpo/Administrador/corpoCadAdministrador', $dados);
-        $this->load->view('estrutura/rodape');
+        $this->load->view('corpo/Administrador/corpoEditarAdministrador', $dados);
     }
 
     public function excluirAdministrador() { /** Nesta função eu consigo acessar os dados do cliente atavés da model e manipular esses dados através da url utilizando o segment e neste caso irá excluir os dados   */

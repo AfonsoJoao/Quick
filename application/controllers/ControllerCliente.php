@@ -60,4 +60,55 @@ class ControllerCliente extends CI_Controller {
         $this->listaCliente();
     }
 
+    public function recuperarSenha() {
+        $this->load->view('estrutura/cabecalho');
+        $this->load->view('estrutura/barraMenu');
+        $this->load->view('corpo/corpoRecuperarSenha');
+    }
+
+    public function alterarSenha() {
+        $this->load->Model('modelCliente', '', TRUE);
+        $this->load->library('email');
+        $email = $this->input->post('email');
+
+        $dados = $this->modelCliente->buscarEmail($email);
+
+        $this->email->from("quicksupermercados.contato@gmail.com", 'Contato Quick supermercados');
+        $this->email->subject("Nova senha temporária");
+        $this->email->to($this->input->post('email'));
+        $novasenha = substr(base64_encode(time()), 0, 6);
+        $this->email->message("A sua senha temporária é " . $novasenha);
+
+        if (isset($dados)) {
+            if ($this->email->send()) {
+                $this->modelCliente->alterarSenhaCliente($novasenha, $email);
+                $this->load->view('corpo/instrucoes');
+            } else {
+                $msn['mensagem'] = "Aconteceu um erro ao enviar o email tente novamente mais tarde";
+                $this->load->view('estrutura/cabecalho');
+                $this->load->view('estrutura/barraMenu');
+                $this->load->view('corpo/corpoRecuperarSenha', $msn);
+            }
+        } else {
+            $msn['mensagem'] = "O email informado não consta no nosso banco de dados";
+            $this->load->view('estrutura/cabecalho');
+            $this->load->view('estrutura/barraMenu');
+            $this->load->view('corpo/corpoRecuperarSenha', $msn);
+        }
+    }
+
+    public function enviar() {
+        $this->load->library('email');
+
+        $this->email->from("afonsoneto.joao@gmail.com", 'Afonso');
+        $this->email->subject("Teste");
+        $this->email->to("afonsojoao-neto@hotmail.com");
+        $this->email->message("Mensagem teste");
+        if ($this->email->send()) {
+            echo "True";
+        } else {
+            echo $this->email->print_debugger();
+        }
+    }
+
 }

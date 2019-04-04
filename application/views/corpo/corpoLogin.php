@@ -23,41 +23,29 @@ if (isset($situacao)) {
         <center><p class="alert alert-danger"><?= $this->session->flashdata("danger") ?><button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span></button></p></center>
     <?php endif ?>
-    
-    <div class="container">
-        <div class="row">     
-            <div class="col-sm">
-
-                <div class="row justify-content-md-center">
-                    <div class="col-sm-6">
-                        <div class="card text-center">
-                            <div class="card-header">
-                                <h2>Faça login em sua conta</h2>
-                            </div>
-                            <div class="card-body">
-                                <?php echo form_open('ControllerLogin/autenticar'); ?>
-                                <div class="form-group">
-                                    <div class="text-left">E-mail:</div>
-                                    <input type="text" class="form-control margin-top-2" name="email" placeholder="E-mail" required=" ">    
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="text-left">Senha:</div>
-                                    <input type="password" class="form-control margin-top-2" name="senha" placeholder="Senha" required=" ">
-                                </div>
-
-                                <input type="submit" class="btn btn-primary btn-lg" value="Entrar">
-
-                                <?php echo form_close(); ?>
-                            </div>
-                        </div>
-                    </div>
+    <br><br>
+    <div class="row justify-content-md-center">
+        <div class="col-sm-6">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h2>Faça login em sua conta</h2>
                 </div>
-
+                <div class="card-body">
+                    <?php echo form_open('ControllerLogin/autenticar'); ?>
+                    <input type="text" class="form-control" name="email" placeholder="Email" required=" "><br>
+                    <input type="password" class="form-control" name="senha" placeholder="Senha" required=" "><br>
+                    <div class="col-sm-12" align="left">
+                        <a href="<?php echo base_url('recuperarsenha/'); ?>">Esqueceu sua senha?</a>
+                    </div>
+                    <center><div class="col-sm-4">
+                            <input type="submit" class="btn btn-primary btn-block" value="Entrar">
+                        </div></center>
+                    ou <a href="<?php echo base_url('cadastroclientes/'); ?>">criar uma conta</a>
+                    <?php echo form_close(); ?>
+                </div>
             </div>
         </div>
     </div>
-
     <br><br>
     <script>
         $('.toggle').click(function () {

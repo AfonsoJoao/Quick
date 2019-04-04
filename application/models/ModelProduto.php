@@ -36,23 +36,24 @@ class ModelProduto extends CI_Model {
     }
 
     public function buscar($busca) {
-        if (empty($busca)) 
+        if (empty($busca))
             return array();
-        
+
         $busca = $this->input->post('busca');
         $this->db->like('nomeProduto', $busca);
         $query = $this->db->get('produto');
         return $query->result_array();
     }
-    
-   function qtde_produto(){
-        $this->db->select('count(*) as total');
-        return $this->db->get('produto')->result();
+
+    public function countRow() {
+        $query = $this->db->query('SELECT * FROM produto');
+        echo $query->num_rows();
     }
-    
-    function get_produto($value, $registros_p_pagina){
+
+    function get_produto($value, $registros_p_pagina) {
         $this->db->select('*');
-        $this->db->limit( $registros_p_pagina, $value);
+        $this->db->limit($registros_p_pagina, $value);
         return $this->db->get('produto')->result();
     }
+
 }

@@ -109,7 +109,8 @@ $route ['pedidos'] = 'ControllerPedido/pedido';
 
 $route ['checkout'] = 'ControllerCheckout/checkout';
 
-$route ['home'] = 'Controller/indexlogado';
+//Rota para tela de recuperar senha
+$route ['recuperarsenha'] = 'ControllerCliente/recuperarSenha';
 
 //Rota para para a pagina das categorias dos produtos com o cliente logado
 // $route ['categorias'] = 'ControllerCategoriasLogado/loginfeitoCliente';
