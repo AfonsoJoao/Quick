@@ -60,7 +60,7 @@ class ControllerCarrinho extends CI_Controller {
         if ($this->input->post('id') && $this->input->post('qtd')) {
 
             $id = $this->input->post('id');
-            $qtd = $this->input->post('qtd');
+            $qtd = intval($this->input->post('qtd'));
             $this->carrinhocompras->altera($id, $qtd);
 
             $json = ['erro' => 0,

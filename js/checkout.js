@@ -7,19 +7,20 @@ var Checkout = function () {
             var tipo = $(this).val();
             switch (tipo) {
 
-//Cartão
-                case '1':
+                //Cartão
+                case 'Cartao_de_Credito':
 
-                    $('.pagamento-cartao').removeClass('hide');
-                    $('.pagamento-avista').addClass('hide');
+                    $('.pagamento-cartao').removeClass('d-none');
+                    $('.pagamento-avista').addClass('d-none');
                     $('.pagamento-cartao input').prop('disabled', false);
                     $('.pagamento-avista input').prop('disabled', true);
                     break;
-                    //A Vista    
-                case '2':
+                   
+                //A Vista    
+                case 'A_Vista':
 
-                    $('.pagamento-cartao').addClass('hide');
-                    $('.pagamento-avista').removeClass('hide');
+                    $('.pagamento-cartao').addClass('d-none');
+                    $('.pagamento-avista').removeClass('d-none');
                     $('.pagamento-cartao input').prop('disabled', true);
                     break;
             }

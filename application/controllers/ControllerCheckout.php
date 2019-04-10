@@ -77,23 +77,20 @@ class ControllerCheckout extends CI_Controller {
 
         $id_item = $this->modelPedido->insertpedido($endereco);
 
-        $pedido ['nome_Item'] = $this->input->post('nome');
-        $pedido ['valorUnitario'] = $this->input->post('valor');
-        $pedido ['quantidade'] = $this->input->post('qtd');
-        $pedido ['subtotal'] = $this->input->post('subtotal');
-        $pedido ['idPedido'] = $id_item;
 
-        
+        foreach ($_SESSION ['dados'] as $produto) {
 
-        if ($this->input->post('acao') == "inserir") {
-            if ($this->modelPedido->insert_pedido_item($pedido)) {
-                $msn['situacao'] = "Cadastro Realizado com Sucesso";
-            } else {
-                $msn['situacao'] = "Erro na Realização do Cadastro";
-            }
-            
-            $this->checkout($msn);
+            $pedido ['nome_Item'] = $produto ['nome_Item'];
+            $pedido ['valorUnitario'] = $produto ['valorUnitario'];
+            $pedido ['quantidade'] = $produto ['quantidade'];
+            $pedido ['subtotal'] = $produto ['subtotal'];
+            $pedido ['idPedido'] = $id_item;
+
+            $this->modelPedido->insert_pedido_item($pedido);
         }
+
+        $this->checkout();
+        
     }
 
     public function atualizarPedido() {

@@ -10,8 +10,6 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <title></title>
 
-        <script src="<?php echo base_url('js/checkout.js'); ?>"></script>
-
     </head>
     <body>
 
@@ -87,7 +85,7 @@ and open the template in the editor.
                                     </div>
                                     <div class="card-body">
                                         <?php echo form_open('ControllerCheckout/autenticarCliente'); ?>
-                                      
+
 
                                         <div class="form-group">
                                             <div class="text-left">E-mail:</div>
@@ -265,6 +263,7 @@ and open the template in the editor.
     <script src="<?php echo base_url('plugins/Isotope/isotope.pkgd.min.js') ?>"></script>
     <script src="<?php echo base_url('plugins/jquery-ui-1.12.1.custom/jquery-ui.js') ?>"></script>
     <script src="<?php echo base_url('plugins/parallax-js-master/parallax.min.js') ?>"></script>
+    
 
 
     <!--Fim da pagina do checkout sem o cliente tá logado. -->
@@ -302,27 +301,36 @@ and open the template in the editor.
 
 
                     <tbody>
-                        <?php foreach ($carrinho as $indice => $linha) { ?> <!-- exibe a lista de produtos do carrinho através do foreach -->
 
-                            <?php echo form_open('ControllerCheckout/enviarPedido'); ?>    
+                        <?php echo form_open('ControllerCheckout/enviarPedido'); ?>
+                        <?php $_SESSION ['dados'] = array(); ?> <!-- criado a sessão dados que é um array. -->
 
-                        <input type="hidden" name="acao" value="<?php
-                        if (isset($pedido))
-                            echo "alterar";
-                        else
-                            echo "inserir";
-                        ?>">
+                        <?php foreach ($carrinho as $indice => $linha) { ?> <!-- exibe a lista de produtos do carrinho através do foreach -->    
 
-                        <tr>
-                            <td><?= $linha['nome'] ?></td>
-                            <td class="text-right"><?= formataMoedaReal($linha['valor'], TRUE) ?></td>
-                            <td class="text-center"> <?= $linha['qtd'] ?> </td>
-                            <td class="text-right"><?= formataMoedaReal($linha['subtotal'], TRUE) ?></td> <!-- OBS: Depois colocar no formato moeda real -->
+                            <tr>
+                                <td><?= $linha['nome'] ?></td>
+                                <td class="text-right"><?= formataMoedaReal($linha['valor'], TRUE) ?></td>
+                                <td class="text-center"> <?= $linha['qtd'] ?> </td>
+                                <td class="text-right"><?= formataMoedaReal($linha['subtotal'], TRUE) ?></td> <!-- OBS: Depois colocar no formato moeda real -->
 
 
-                        </tr>
+                            </tr>
 
-                    <?php } // Fim da lista produtos carrinho  ?>
+                            <?php
+                            array_push($_SESSION ['dados'], array('nome_Item' => $linha['nome'],
+                                'valorUnitario' => $linha['valor'],
+                                'quantidade' => $linha['qtd'],
+                                'subtotal' => $linha['subtotal']
+                                    
+                            )
+                            ); //array push é responsavel por adicionar itens a um array já existente 
+                            ?>   
+
+                        <?php } // Fim da lista produtos carrinho  ?>
+                       
+
+
+                    <input type="hidden" name="total" value="<?= $this->carrinhocompras->total() ?>">
 
                     </tbody>
                     <tfoot>
@@ -339,20 +347,7 @@ and open the template in the editor.
             </div>
         </div>
 
-        <?php foreach ($carrinho as $indice => $linha) { ?>
-
-            <input type="hidden" name="nome" value="<?= $linha['nome'] ?>">
-            <input type="hidden" name="valor" value="<?= $linha['valor'] ?>">
-            <input type="hidden" name="qtd" value="<?= $linha['qtd'] ?>">
-            <input type="hidden" name="subtotal" value="<?= $linha['subtotal'] ?>">
-            <input type="hidden" name="total" value="<?= $this->carrinhocompras->total() ?>">
-            
-
-        <?php  }   ?>
-            
-
-        <?php
-        foreach ($cliente as $cli) {   ?>
+    <?php foreach ($cliente as $cli) { ?>
 
             <input type="hidden" name="idCliente" value="<?php echo $cli->idCliente; ?>">
             <input type="hidden" name="nomeCliente" value="<?php echo $cli->nomeCliente; ?>">
@@ -361,9 +356,9 @@ and open the template in the editor.
             <input type="hidden" name="senha" value="<?php echo $cli->senha; ?>">
             <input type="hidden" name="telefone" value="<?php echo $cli->telefone; ?>">
 
-            <?php
-        }
-        ?>
+        <?php
+    }
+    ?>
 
 
 
@@ -445,12 +440,13 @@ and open the template in the editor.
                     <div class="form-group margin-checkout">
                         <label for="forma_pagamento">Forma de Pagamento</label>
                         <select name="forma_Envio" class="form-control select-forma-pagamento">
-                            <option value="Cartão de Crédito">Cartão de Crédito</option>
-                            <option value="A Vista">A Vista</option>
+                            <option>Forma de Pagamento</option>
+                            <option value="Cartao_de_Credito">Cartão de Crédito</option>
+                            <option value="A_Vista">A Vista</option>
                         </select>
                     </div>
 
-                    <div class="pagamento-cartao">
+                    <div class="pagamento-cartao d-none">
                         <div class="form-group margin-checkout">
                             <label for="cc_numero">Número do Cartão</label>
                             <input type="text" class="form-control" name="numeroCartao" id="cc_numero" placeholder="0000 0000 0000 0000">
@@ -473,7 +469,7 @@ and open the template in the editor.
 
                     </div>
 
-                    <!--  <div class="pagamento-avista hide">
+                      <div class="pagamento-avista d-none">
                           <div class="form-group margin-checkout">
                               <label for="cedulas">Quais cedulas serão utilizadas no pagamento?</label><br>
                               <input type="checkbox" name="2,00" value="2,00"> R$ 2,00<br>
@@ -483,7 +479,7 @@ and open the template in the editor.
                               <input type="checkbox" name="50,00" value="50,00"> R$ 50,00<br>
                               <input type="checkbox" name="100,00" value="100,00"> R$ 100,00<br>
                           </div>
-                      </div> -->
+                      </div>
                     <br><br><br><br><br><br>
 
                     <div class="col margin-top-40">
@@ -491,7 +487,7 @@ and open the template in the editor.
 
                     </div>
                 </div>
-                <?php echo form_close(); ?>
+    <?php echo form_close(); ?>
 
             </div>
         </div>
@@ -641,6 +637,7 @@ and open the template in the editor.
     <script src="<?php echo base_url('plugins/Isotope/isotope.pkgd.min.js') ?>"></script>
     <script src="<?php echo base_url('plugins/jquery-ui-1.12.1.custom/jquery-ui.js') ?>"></script>
     <script src="<?php echo base_url('plugins/parallax-js-master/parallax.min.js') ?>"></script>
+    <script src="<?php echo base_url('js/checkout.js'); ?>"></script>
 
 
     <!--Fim da pagina do checkout com o cliente logado. -->

@@ -97,12 +97,14 @@ and open the template in the editor.
                             <td class="text-right"><?= formataMoedaReal($i->subtotal, TRUE) ?></td>
                         </tr>
                         
+                        
+                        <?php } ?>
+                        
                         <tr>
                             <td colspan="3" class="text-right">Total Compra</td>
                             <td class="text-right"><?= formataMoedaReal ($pedido->total_pedido, TRUE) ?> </td>
                             
                         </tr>
-                        <?php } ?>
                         
                     </table>
                 </div>
