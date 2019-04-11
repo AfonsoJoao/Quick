@@ -15,8 +15,8 @@ class ModelCliente extends CI_Model {
         return;
     }
     
-     public function listaCliente($id) { // Está função captura lista de registros armazenados no banco para que possam ser manipulados.
-        $resultado = $this->db->get_where('cliente', array('idCliente' => $id));
+     public function listaCliente() { // Está função captura lista de registros armazenados no banco para que possam ser manipulados.
+         $resultado = $this->db->get_where('cliente', array('email' => $_SESSION['email']));
         if ($resultado->num_rows() > 0) {
             return $resultado->result();
         }
@@ -38,8 +38,8 @@ class ModelCliente extends CI_Model {
         } 
     }
     
-    public function alterarSenhaCliente($nscriptografada, $email) {
-        $this->db->set('senha', $nscriptografada);
+    public function alterarSenhaCliente( $nscriptografada, $email) {
+        $this->db->set('senha',  $nscriptografada);
         $this->db->where('email', $email);
         return $this->db->update('cliente');
     }

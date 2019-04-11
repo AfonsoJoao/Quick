@@ -24,6 +24,7 @@ class ControllerCategoriasLogado extends CI_Controller {
         $this->load->model("modelBanner", '', TRUE);
         $Z['banner'] = $this->modelBanner->listarBanner();
         $this->load->view('estrutura/cabecalhoLoginCliente');
+        $this->load->view('estrutura/barraMenuLogadoCliente');
         $this->load->view('estrutura/bannerLoginCliente', $Z);
         $this->load->view('corpo/corpoCategorias', $dados);
         $this->load->view('estrutura/rodape');

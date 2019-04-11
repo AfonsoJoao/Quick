@@ -1,0 +1,37 @@
+[04-Apr-2019 14:13:43 America/Chicago] PHP Fatal error:  Call to undefined function base64_dencode() in /home/quicksup/public_html/application/controllers/ControllerLogin.php on line 89
+[07-Apr-2019 19:19:39] PHP Parse error:  syntax error, unexpected T_CONST in /home/quicksup/public_html/system/core/CodeIgniter.php on line 58
+[07-Apr-2019 19:19:43] PHP Parse error:  syntax error, unexpected T_CONST in /home/quicksup/public_html/system/core/CodeIgniter.php on line 58
+[07-Apr-2019 19:19:43] PHP Parse error:  syntax error, unexpected T_CONST in /home/quicksup/public_html/system/core/CodeIgniter.php on line 58
+[08-Apr-2019 18:40:26 America/Chicago] PHP Parse error:  syntax error, unexpected '}' in /home/quicksup/public_html/application/controllers/ControllerCarrinho.php on line 99
+[08-Apr-2019 18:40:33 America/Chicago] PHP Parse error:  syntax error, unexpected '}' in /home/quicksup/public_html/application/controllers/ControllerCarrinho.php on line 99
+[08-Apr-2019 18:40:38 America/Chicago] PHP Parse error:  syntax error, unexpected '}' in /home/quicksup/public_html/application/controllers/ControllerCarrinho.php on line 99
+[08-Apr-2019 18:40:44 America/Chicago] PHP Parse error:  syntax error, unexpected '}' in /home/quicksup/public_html/application/controllers/ControllerCarrinho.php on line 99
+[08-Apr-2019 18:40:47 America/Chicago] PHP Parse error:  syntax error, unexpected '}' in /home/quicksup/public_html/application/controllers/ControllerCarrinho.php on line 99
+[08-Apr-2019 18:40:50 America/Chicago] PHP Parse error:  syntax error, unexpected '}' in /home/quicksup/public_html/application/controllers/ControllerCarrinho.php on line 99
+[08-Apr-2019 18:41:48 America/Chicago] PHP Parse error:  syntax error, unexpected '}' in /home/quicksup/public_html/application/controllers/ControllerCarrinho.php on line 99
+[08-Apr-2019 18:41:50 America/Chicago] PHP Parse error:  syntax error, unexpected '}' in /home/quicksup/public_html/application/controllers/ControllerCarrinho.php on line 99
+[08-Apr-2019 18:41:54 America/Chicago] PHP Parse error:  syntax error, unexpected '}' in /home/quicksup/public_html/application/controllers/ControllerCarrinho.php on line 99
+[08-Apr-2019 18:42:05 America/Chicago] PHP Parse error:  syntax error, unexpected '}' in /home/quicksup/public_html/application/controllers/ControllerCarrinho.php on line 99
+[08-Apr-2019 18:42:07 America/Chicago] PHP Parse error:  syntax error, unexpected '}' in /home/quicksup/public_html/application/controllers/ControllerCarrinho.php on line 99
+[08-Apr-2019 18:43:12 America/Chicago] PHP Parse error:  syntax error, unexpected '}' in /home/quicksup/public_html/application/controllers/ControllerCarrinho.php on line 99
+[08-Apr-2019 18:43:14 America/Chicago] PHP Parse error:  syntax error, unexpected '}' in /home/quicksup/public_html/application/controllers/ControllerCarrinho.php on line 99
+[08-Apr-2019 18:43:31 America/Chicago] PHP Parse error:  syntax error, unexpected '}' in /home/quicksup/public_html/application/controllers/ControllerCarrinho.php on line 99
+[08-Apr-2019 18:43:34 America/Chicago] PHP Parse error:  syntax error, unexpected '}' in /home/quicksup/public_html/application/controllers/ControllerCarrinho.php on line 99
+[08-Apr-2019 18:43:40 America/Chicago] PHP Parse error:  syntax error, unexpected '}' in /home/quicksup/public_html/application/controllers/ControllerCarrinho.php on line 99
+[08-Apr-2019 18:43:47 America/Chicago] PHP Parse error:  syntax error, unexpected '}' in /home/quicksup/public_html/application/controllers/ControllerCarrinho.php on line 99
+[08-Apr-2019 18:43:54 America/Chicago] PHP Parse error:  syntax error, unexpected '}' in /home/quicksup/public_html/application/controllers/ControllerCarrinho.php on line 99
+[08-Apr-2019 18:45:53 America/Chicago] PHP Parse error:  syntax error, unexpected '}' in /home/quicksup/public_html/application/controllers/ControllerCarrinho.php on line 99
+[08-Apr-2019 18:45:55 America/Chicago] PHP Parse error:  syntax error, unexpected '}' in /home/quicksup/public_html/application/controllers/ControllerCarrinho.php on line 99
+[08-Apr-2019 18:46:02 America/Chicago] PHP Parse error:  syntax error, unexpected '}' in /home/quicksup/public_html/application/controllers/ControllerCarrinho.php on line 99
+[08-Apr-2019 18:46:05 America/Chicago] PHP Parse error:  syntax error, unexpected '}' in /home/quicksup/public_html/application/controllers/ControllerCarrinho.php on line 99
+[08-Apr-2019 18:46:28 America/Chicago] PHP Parse error:  syntax error, unexpected '}' in /home/quicksup/public_html/application/controllers/ControllerCarrinho.php on line 99
+[08-Apr-2019 18:49:08 America/Chicago] PHP Parse error:  syntax error, unexpected '}' in /home/quicksup/public_html/application/controllers/ControllerCarrinho.php on line 99
+[08-Apr-2019 18:49:19 America/Chicago] PHP Parse error:  syntax error, unexpected '}' in /home/quicksup/public_html/application/controllers/ControllerCarrinho.php on line 99
+[09-Apr-2019 12:23:22 America/Chicago] PHP Parse error:  syntax error, unexpected '{' in /home/quicksup/public_html/application/controllers/ControllerCliente.php on line 42
+[09-Apr-2019 12:30:04 America/Chicago] PHP Parse error:  syntax error, unexpected '{', expecting '(' in /home/quicksup/public_html/application/controllers/ControllerCliente.php on line 163
+[09-Apr-2019 13:46:21 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE) in /home/quicksup/public_html/application/controllers/ControllerCliente.php on line 51
+[09-Apr-2019 13:46:23 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE) in /home/quicksup/public_html/application/controllers/ControllerCliente.php on line 51
+[09-Apr-2019 13:50:41 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting function (T_FUNCTION) in /home/quicksup/public_html/application/controllers/ControllerCliente.php on line 51
+[09-Apr-2019 13:51:24 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting function (T_FUNCTION) in /home/quicksup/public_html/application/controllers/ControllerCliente.php on line 51
+[09-Apr-2019 13:51:27 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting function (T_FUNCTION) in /home/quicksup/public_html/application/controllers/ControllerCliente.php on line 51
+[09-Apr-2019 13:56:07 America/Chicago] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/quicksup/public_html/application/controllers/ControllerCliente.php on line 64

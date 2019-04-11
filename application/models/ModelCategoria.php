@@ -2,10 +2,9 @@
 
 class ModelCategoria extends CI_Model{
 
-    public function listarCategoria($categoria, $registros_p_pagina){
+    public function listarCategoria($categoria){
      $resultado = $this->db->get_where('produto', array('categoria' => $categoria));
-     $this->db->limit($registros_p_pagina);
-        if ($resultado->num_rows() > 0) {
+      if ($resultado->num_rows() > 0) {
             return $resultado->result();
         }
         return;
