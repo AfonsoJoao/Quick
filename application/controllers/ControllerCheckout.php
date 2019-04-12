@@ -5,7 +5,7 @@ class ControllerCheckout extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->helper('funcoes');
-        $this->load->library('carrinhocompras');
+        $this->load->library('CarrinhoCompras');
         $this->load->library('session');
         $this->load->Model('modelPedido');
     }
@@ -43,9 +43,9 @@ class ControllerCheckout extends CI_Controller {
     }
 
     public function checkout() {
-
-        $car ['carrinho'] = $this->carrinhocompras->listarProdutos();
-
+        $this->load->Model('modelCliente', '', TRUE);
+        $car ['carrinho'] = $this->CarrinhoCompras->listarProdutos();
+        $car['cliente'] = $this->modelCliente->listaCliente();
         $this->load->view('estrutura/cabecalho');
         $this->load->view('estrutura/barraMenu');
         $this->load->view('corpo/Checkout/corpoCheckout', $car);
@@ -90,7 +90,6 @@ class ControllerCheckout extends CI_Controller {
         }
 
         $this->checkout();
-        
     }
 
     public function atualizarPedido() {

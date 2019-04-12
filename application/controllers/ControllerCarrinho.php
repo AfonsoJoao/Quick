@@ -5,7 +5,7 @@ class ControllerCarrinho extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->helper('funcoes');
-        $this->load->library('carrinhocompras');
+        $this->load->library('CarrinhoCompras');
     }
 
     public function carrinho() {

@@ -24,7 +24,14 @@
 
         <link href="<?php echo base_url('css/carrinho.css'); ?>" rel="stylesheet" type="text/css" media="all"/>
         
-       
+        <script>
+
+            function excluirCliente(id, nome) {
+                if (confirm('Deseja excluir o cliente ' + nome)) {
+                    location.href = "<?php echo base_url('ControllerCliente/excluirCliente'); ?>" + "/" + id;
+                }
+            }
+        </script>
         <script>
 
             function excluirBanner(id, nome) {

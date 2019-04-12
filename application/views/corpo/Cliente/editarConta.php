@@ -41,29 +41,22 @@ if (isset($situacao)) {
                             echo $cli->idCliente;
                         }
                     ?>">
-
+                    
+                    <input type="hidden" name="cpf" value="<?php
+                    if (isset($cliente))
+                        foreach ($cliente as $cli) {
+                            echo $cli->cpf;
+                        }
+                    ?>">
+                    
                     <input type="hidden" name="tipo" value="usuario">
 			<p align="left"><font size="3">Nome:</font></p>
-                    <input type="text" class="form-control" name="nome" placeholder="Nome completo" required=" " value="<?php
+                    <input type="text" class="form-control" name="nomeCliente" placeholder="Nome completo" required=" " value="<?php
                     if (isset($cliente))
                         foreach ($cliente as $cli) {
-                            echo $cli->nome;
+                            echo $cli->nomeCliente;
                         }
                     ?>"><br>
-			<p align="left"><font size="3">Data de nascimento:</font></p>
-                    <input class="form-control" type="date" name="dataNascimento" required=" " value="<?php
-                    if (isset($cliente))
-                        foreach ($cliente as $cli) {
-                            echo $cli->dataNascimento;
-                        }
-                    ?>"><br>
-			<p align="left"><font size="3">Sexo:</font></p>
-                    <select class="form-control" id="sexo" name="sexo">
-                        <option>Sexo</option>
-                        <option value="masculino">Masculino</option>
-                        <option value="feminino">Feminino</option>
-                        <option value="feminino">Outros</option>
-                    </select><br>
 			<p align="left"><font size="3">E-mail:</font></p>
                     <input type="email" class="form-control" name="email" placeholder="Email" required=" " value="<?php
                     if (isset($cliente))

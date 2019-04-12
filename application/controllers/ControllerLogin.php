@@ -5,7 +5,6 @@ class ControllerLogin extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->helper('funcoes');
-        $this->load->library('session');
     }
 
     public function login() {
@@ -19,9 +18,9 @@ class ControllerLogin extends CI_Controller {
         $dados['produto'] = $this->modelProduto->listarProduto();
         $this->load->model("modelBanner", '', TRUE);
         $banner['banner'] = $this->modelBanner->listarBanner();
-        $this->load->view('estrutura/cabecalhoLoginCliente');
-        $this->load->view('estrutura/barraMenuLogadoCliente', $banner);
-        $this->load->view('estrutura/bannerLoginCliente', $banner);
+        $this->load->view('estrutura/cabecalho');
+        $this->load->view('estrutura/barraMenu');
+        $this->load->view('estrutura/banner', $banner);
         $this->load->view('corpo/corpo', $dados);
         $this->load->view('estrutura/rodape');
     }
@@ -37,12 +36,9 @@ class ControllerLogin extends CI_Controller {
     public function loginfeitoOperador() {
         $this->load->model("modelProduto", '', TRUE);
         $dados['produto'] = $this->modelProduto->listarProduto();
-        $this->load->model("modelBanner", '', TRUE);
-        $Z['banner'] = $this->modelBanner->listarBanner();
-        $this->load->view('estrutura/cabecalhoLoginOperador');
-        $this->load->view('estrutura/bannerLoginOperador', $Z);
-        $this->load->view('corpo/corpo', $dados);
-        $this->load->view('estrutura/rodape');
+        $this->load->view('estrutura/menuPainel');
+        $this->load->view('corpo/corpoPainel', $dados);
+        $this->load->view('estrutura/rodapePainel');
     }
 
     public function logoutOperador() {
@@ -56,12 +52,9 @@ class ControllerLogin extends CI_Controller {
     public function loginfeitoAdministrador() {
         $this->load->model("modelProduto", '', TRUE);
         $dados['produto'] = $this->modelProduto->listarProduto();
-        $this->load->model("modelBanner", '', TRUE);
-        $Z['banner'] = $this->modelBanner->listarBanner();
-        $this->load->view('estrutura/cabecalhoLoginAdministrador');
-        $this->load->view('estrutura/bannerLoginAdministrador', $Z);
-        $this->load->view('corpo/corpo', $dados);
-        $this->load->view('estrutura/rodape');
+        $this->load->view('estrutura/menuPainel');
+        $this->load->view('corpo/corpoPainel', $dados);
+        $this->load->view('estrutura/rodapePainel');
     }
 
     public function logoutAdministrador() {
@@ -72,10 +65,22 @@ class ControllerLogin extends CI_Controller {
         $this->load->view('estrutura/rodape');
     }
 
+    public function listaCate() {
+        $this->load->model("modelCategoria", '', TRUE);
+        $dados['produto'] = $this->modelCategoria->listarCategoria($this->uri->segment(3));
+        $this->load->model("modelBanner", '', TRUE);
+        $Z['banner'] = $this->modelBanner->listarBanner();
+        $this->load->view('estrutura/cabecalhoLoginCliente');
+        $this->load->view('estrutura/barraMenuLogadoCliente');
+        $this->load->view('estrutura/bannerLoginCliente', $Z);
+        $this->load->view('corpo/corpoCategorias', $dados);
+        $this->load->view('estrutura/rodape');
+    }
+
     public function autenticar() {
-        $this->load->model('modelLogin', '', TRUE); // carrega o modelo model login
-        $email = $this->input->post('email'); // pega via post o email que veio do formulario
-        $senha = base64_encode($this->input->post('senha')); // pega via post a senha que veio do formulario
+        $this->load->model('modelLogin', '', TRUE); // chama o modelo model login
+        $email = $this->input->post('email'); // pega via post o email que venho do formulario
+        $senha = base64_encode($this->input->post('senha')); // pega via post a senha que venho do formulario
         $cliente = $this->modelLogin->buscaPorEmailSenhaCliente($email, $senha);
         if (isset($cliente['0']->tipo)) {
             $tipo = ($cliente['0']->tipo);
@@ -84,7 +89,7 @@ class ControllerLogin extends CI_Controller {
                 if ($cliente) {
                     $this->session->set_userdata("usuario_logado", $cliente);
                     $this->loginfeitoCliente();
-                    // echo 'usuario';
+                    $_SESSION['email'] = $email;
                 }
             } else if ($tipo == "operador") {
 
@@ -101,11 +106,9 @@ class ControllerLogin extends CI_Controller {
                 }
             }
         } else {
-            $this->session->set_flashdata("danger", "Usuário ou Senha Inválidos");
+            $this->session->set_flashdata("danger", "UsuÃ¡rio ou Senha InvÃ¡lidos");
             $this->login();
         }
     }
 
-    
 }
-            

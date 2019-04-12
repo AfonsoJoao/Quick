@@ -22,7 +22,6 @@
                             <th>E-mail</th>
                             <th>CPF</th>
                             <th>Telefone</th>
-                            <th>Editar</th>
                             <th>Excluir</th>
                         </tr>
                     </thead>
@@ -38,8 +37,7 @@
                                     <td><?php echo $cliente->email; ?></td>
                                     <td><?php echo $cliente->cpf; ?></td>
                                     <td><?php echo $cliente->telefone; ?></td>
-                                    <td></td>
-                                    <td><a href="javascript:func()" onclick="excluirCliente(<?php echo $cliente->idCliente; ?>, '<?php echo $cliente->nomeCliente; ?>')"> <img src=" <?php echo base_url('application/images/close_1.png'); ?>"> </a></td>
+                                    <td><a href="javascript:func()" onclick="excluirCliente(<?php echo $cliente->idCliente; ?>, '<?php echo $cliente->nomeCliente; ?>')"><center><img src=" <?php echo base_url('application/images/icones/close_1.png'); ?>"></center></a></td>
                                 </tr>   
                             <?php
                             }

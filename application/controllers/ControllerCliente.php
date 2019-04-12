@@ -27,12 +27,9 @@ class ControllerCliente extends CI_Controller {
         $cliente = array(
             'nome' => $this->input->post('nome'),
             'tipo' => $this->input->post('tipo'),
-            'dataNascimento' => $this->input->post('dataNascimento'),
-            'sexo' => $this->input->post('sexo'),
             'email' => $this->input->post('email'),
             'senha' => base64_encode($this->input->post('senha')),
             'cpf' => $this->input->post('cpf'),
-            'rg' => $this->input->post('rg'),
             'telefone' => $this->input->post('telefone')
         );
         
@@ -113,7 +110,7 @@ class ControllerCliente extends CI_Controller {
         $this->email->to($email = $this->input->post('email'));
         $novasenha = substr(md5(time()), 0, 6);
         $nscriptografada = base64_encode($novasenha);
-        $this->email->message("Olá, a sua senha temporária é <b>" . $novasenha . "</b>. Agora acesse o site <b>quicksupermercados.com.br</b> e siga o passo a passo para alterar a sua senha para a senha que desejar. Caso estaja com algum problema para redefinir sua senha ou tenha encontrado qualquer outro problema no nosso sistema, entre em contato com o E-mail <b>quicksupermercados.contato@gmail.com</b>");
+        $this->email->message("Olá, a sua senha é <b>" . $novasenha . "</b>. Agora acesse o site <b>quicksupermercados.com.br</b> e siga o passo a passo para alterar a sua senha para a senha que desejar. Caso estaja com algum problema para redefinir sua senha ou tenha encontrado qualquer outro problema no nosso sistema, entre em contato com o E-mail <b>quicksupermercados.contato@gmail.com</b>");
 
         if (isset($dados)) {
             if ($this->email->send()) {

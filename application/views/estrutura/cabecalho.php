@@ -19,6 +19,7 @@
         <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/main_styles.css') ?>">
         <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/responsive.css') ?>">
         <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/product_responsive.css') ?>">
+        
 
         <link href="<?php echo base_url('css/carrinho.css'); ?>" rel="stylesheet" type="text/css" media="all"/>
 
@@ -44,34 +45,6 @@
             });
         </script>
         <!-- start-smoth-scrolling -->
-
-        <script>
-
-            function excluirCliente(id, nome) {
-                if (confirm('Deseja excluir o cliente ' + nome)) {
-                    location.href = "<?php echo base_url('ControllerCliente/excluirCliente'); ?>" + "/" + id;
-                }
-            }
-        </script>
-
-        <script>
-
-            function excluirOperador(id, nome) {
-                if (confirm('Deseja excluir o operador ' + nome)) {
-                    location.href = "<?php echo base_url('ControllerOperador/excluirOperador'); ?>" + "/" + id;
-                }
-            }
-        </script>
-
-        <script>
-
-            function excluirAdministrador(id, nome) {
-                if (confirm('Deseja excluir o administrador ' + nome)) {
-                    location.href = "<?php echo base_url('ControllerAdministrador/excluirAdministrador'); ?>" + "/" + id;
-                }
-            }
-        </script>
-
     </head>
 
     <body>
@@ -89,17 +62,42 @@
                         <div class="row">
                             <div class="col d-flex flex-row">
                                 <div class="top_bar_contact_item"><div class="top_bar_icon"><img src="<?php echo base_url('application/images/icones/phone.png') ?>" alt=""></div>+XX XXXXX.XXXX</div>
-                                <div class="top_bar_contact_item"><div class="top_bar_icon"><img src="<?php echo base_url('application/images/icones/mail.png') ?>" alt=""></div><a href="mailto:fastsales@gmail.com">email@email.com</a></div>
+                                <div class="top_bar_contact_item"><div class="top_bar_icon"><img src="<?php echo base_url('application/images/icones/mail.png') ?>" alt=""></div>quicksupermercados.contato@gmail.com</div>
                                 <div class="top_bar_content ml-auto">
 
+                                    
+                                        <?php
+                                        if (!isset($_SESSION['usuario_logado'])) {
+                                            ?>
                                     <div class="top_bar_user">
-                                        <div class="user_icon"><img src="<?php echo base_url('application/images/icones/user.svg') ?>" alt=""></div>
-                                        <div><a href="<?php echo base_url('login/'); ?>">Entre</a></div>
-                                        <div><a href="<?php echo base_url('cadastroclientes/'); ?>">Cadastre-se&nbsp;&nbsp;</a></div>
-                                        <div class="dropdown profile_details_drop">
-                                            <a href="<?php echo base_url('paineladministrativo/'); ?>" ><i class="fa fa-th-list"></i><span></span></a>                
-                                        </div>
+                                            <div class = "user_icon"><img src = "<?php echo base_url('application/images/icones/user.svg') ?>" alt = ""></div>
+                                            <div><a href = "<?php echo base_url('login/'); ?>">Entre</a></div>
+                                            <div><a href = "<?php echo base_url('cadastroclientes/'); ?>">Cadastre-se&nbsp;
+                                                    &nbsp;
+                                                </a></div>
                                     </div>
+                                            <?php
+                                        } else {
+                                            ?> 
+                                    
+                                            <ul class="navbar-nav d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+                                                <li class="nav-item dropdown no-arrow">
+                                                    <a class="nav-link dropdown-toggle" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <i class="fas fa-user-circle fa-fw fa-2x"></i>
+                                                    </a>
+                                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                                                        <a class="dropdown-item" href="<?php echo base_url('editarConta')?>">Editar conta</a>
+                                                        <div class="dropdown-divider"></div>
+                                                        <a class="dropdown-item" href="">HistÃ³rico de compras</a>
+                                                        <div class="dropdown-divider"></div>
+                                                        <a class="dropdown-item" href="<?php echo base_url('logout')?>">sair</a>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <?php
+                                        }
+                                        ?>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -165,7 +163,7 @@
 
                                                                     <div class="row body-carrinho-vazio">
                                                                         <div class="col-xs-12 col-md-12 text-center">
-                                                                            Carrinho está vazio
+                                                                            Carrinho estÃ¡ vazio
                                                                         </div>  
                                                                     </div>
 
@@ -183,7 +181,7 @@
                                                                         <div class="col-xs-12 col-md-6">
                                                                             <a href="<?= base_url('ControllerCarrinho/carrinho') ?>" title="Exibir Carrinho" class="btn btn-success btn-block">Exibir Carrinho</a>
                                                                         </div>
-                                                                        <div class="col-xs-12 col-md-6"> <!-- O col-xs-6 coloca botões um ao lado do outro  -->
+                                                                        <div class="col-xs-12 col-md-6"> <!-- O col-xs-6 coloca botÃµes um ao lado do outro  -->
                                                                             <a href="#" class="btn btn-danger btn-block btn-limpar-carrinho">Limpar</a>
                                                                         </div>
                                                                     </div>
@@ -208,11 +206,8 @@
                 </script>
 
 
-                <div class="row msg-add-carrinho d-none"> <!-- o d-none serve para deixar a classe invisivel -->
+                <div class="row msg-add-carrinho d-none"> <!-- o Hide serve para deixar a classe invisivel -->
                     <div class="col-md-12 msg-carrinho-alert text-center">
 
                     </div> 
                 </div>
-                
-            </header>
-        </div>
