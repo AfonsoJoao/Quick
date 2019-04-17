@@ -11,7 +11,7 @@ class ControllerCarrinho extends CI_Controller {
     public function carrinho() {
 
         $car ['carrinho'] = $this->carrinhocompras->listarProdutos(); // a variavel carrinho tá recebendo os dados da biblioteca carrinho compras
-        // e listando os produtos do carrinho através do metodo listar produtos
+// e listando os produtos do carrinho através do metodo listar produtos
 
         $this->load->view('estrutura/cabecalho');
         $this->load->view('corpo/Carrinho/corpoCarrinho', $car);
@@ -21,7 +21,7 @@ class ControllerCarrinho extends CI_Controller {
     public function carrinhoLogado() {
 
         $car ['carrinho'] = $this->carrinhocompras->listarProdutos(); // a variavel carrinho tá recebendo os dados da biblioteca carrinho compras
-        // e listando os produtos do carrinho através do metodo listar produtos
+// e listando os produtos do carrinho através do metodo listar produtos
         if (isset($_SESSION['usuario_logado'])) {
             $this->load->Model('modelCliente', '', TRUE);
             $car['clientes'] = $this->modelCliente->listaCliente();
@@ -114,9 +114,15 @@ class ControllerCarrinho extends CI_Controller {
         $this->load->Model('modelCarrinho', '', TRUE);
 
         $cliente ['idCliente'] = $this->input->post('idCliente');
+        $cliente ['nomeLista'] = $this->input->post('nomeLista');
 
-        $id_item = $this->modelCarrinho->salvarLista($cliente);
 
+
+        if ($id_item = $this->modelCarrinho->salvarLista($cliente)) {
+            $car['situacao'] = "Lista salva com sucesso";
+        } else {
+            $car['situacao'] = "Erro ao salvar lista";
+        }
 
         foreach ($_SESSION ['lista'] as $produto) {
             $list ['idProduto'] = $produto ['idProduto'];
@@ -124,6 +130,14 @@ class ControllerCarrinho extends CI_Controller {
 
             $this->modelCarrinho->salvarItemLista($list);
         }
+        $car ['carrinho'] = $this->carrinhocompras->listarProdutos(); // a variavel carrinho tá recebendo os dados da biblioteca carrinho compras
+// e listando os produtos do carrinho através do metodo listar produtos
+        if (isset($_SESSION['usuario_logado'])) {
+            $this->load->Model('modelCliente', '', TRUE);
+            $car['clientes'] = $this->modelCliente->listaCliente();
+        }
+        $this->load->view('estrutura/cabecalho');
+        $this->load->view('corpo/Carrinho/corpoCarrinho', $car);
+        $this->load->view('estrutura/rodape');
     }
-
 }
