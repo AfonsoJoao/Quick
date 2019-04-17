@@ -17,19 +17,22 @@ class ControllerCarrinho extends CI_Controller {
         $this->load->view('corpo/Carrinho/corpoCarrinho', $car);
         $this->load->view('estrutura/rodape');
     }
-    
+
     public function carrinhoLogado() {
 
         $car ['carrinho'] = $this->carrinhocompras->listarProdutos(); // a variavel carrinho tá recebendo os dados da biblioteca carrinho compras
         // e listando os produtos do carrinho através do metodo listar produtos
-
+        if (isset($_SESSION['usuario_logado'])) {
+            $this->load->Model('modelCliente', '', TRUE);
+            $car['clientes'] = $this->modelCliente->listaCliente();
+        }
         $this->load->view('estrutura/cabecalhoLoginCliente');
         $this->load->view('corpo/Carrinho/corpoCarrinho', $car);
         $this->load->view('estrutura/rodape');
     }
 
     public function add() {
-        
+
         if ($this->input->post('id')) {
             $id = $this->input->post('id');
             $qtd = 1; //Colocar a quantidade via post pra ver se dá certo também.
@@ -67,8 +70,7 @@ class ControllerCarrinho extends CI_Controller {
                 'msg' => 'Quantidade Alterada com Sucesso!'
             ];
             echo json_encode($json);
-            
-        } 
+        }
     }
 
     public function apagar_item() {
@@ -99,13 +101,29 @@ class ControllerCarrinho extends CI_Controller {
 
     public function limpa_carrinho() {
         $this->carrinhocompras->limpa();
-        
+
         $json = ['erro' => 0,
-                'msg' => 'Carrinho Limpo!'
-            ];
-            echo json_encode($json);
-            
+            'msg' => 'Carrinho Limpo!'
+        ];
+        echo json_encode($json);
+
         redirect('ControllerCarrinho/carrinho');
+    }
+
+    public function salvarLista() {
+        $this->load->Model('modelCarrinho', '', TRUE);
+
+        $cliente ['idCliente'] = $this->input->post('idCliente');
+
+        $id_item = $this->modelCarrinho->salvarLista($cliente);
+
+
+        foreach ($_SESSION ['lista'] as $produto) {
+            $list ['idProduto'] = $produto ['idProduto'];
+            $list ['idSalvarLista'] = $id_item;
+
+            $this->modelCarrinho->salvarItemLista($list);
+        }
     }
 
 }

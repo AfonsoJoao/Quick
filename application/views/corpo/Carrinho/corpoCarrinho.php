@@ -92,6 +92,41 @@
                 <a href="<?= base_url('checkout') ?>" title="Finalizar compra" class="btn btn-success btn-lg">
                     <i class="fa fa-check"></i> Finalizar Compra
                 </a>
+                    <?php
+		if (isset($_SESSION['usuario_logado'])) {
+                                            ?>
+                <?php echo form_open('ControllerCarrinho/salvarLista'); ?>
+                <?php $_SESSION['lista'] = array(); ?>
+                
+		 <?php foreach ($carrinho as $indice => $linha) { ?>
+                  <?php
+                  
+                                array_push($_SESSION ['lista'], array(
+                                'idProduto' => $linha['id']
+                                        )
+                                ); 
+                                
+                                ?>
+                               <?php var_dump($_SESSION['lista']); ?>
+                                <?php }?>
+                		
+                 <?php
+                        if (isset($clientes)) {
+                            foreach ($clientes as $cliente) {
+                                ?>
+                                <input type="hidden" name="idCliente" value="<?php echo $cliente->idCliente; ?>">
+                            <?php
+                            }
+                        }
+                        ?>
+            	</div>
+                
+                <div class="col-7">
+                <button type="submit" class="btn btn-success btn-lg">Salvar Lista</button>
+                 </div>
+                 
+             <?php echo form_close(); 
+             }?>
             </div>
             
                 

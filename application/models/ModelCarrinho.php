@@ -20,6 +20,18 @@ class ModelCarrinho extends CI_Model {
         }
     }
 
+    public function salvarLista($dados = NULL) {
+        if ($dados != NULL) {
+            $this->db->insert('salvarlista', $dados);
+            return $this->db->insert_id();
+        }
+    }
+    public function salvarItemLista($dados = NULL) {
+        if ($dados != NULL) {
+            $this->db->insert('salvarlista_item', $dados);
+        }
+    }
+
     /* /  public function abrirCarrinho($carrinho) {
       $this->db->insert('carrinho', $carrinho);
       $resultado = $this->db->get_where('carrinho', array('idCarrinho' => $this->db->insert_id()));
