@@ -32,27 +32,27 @@ class ControllerCliente extends CI_Controller {
             'cpf' => $this->input->post('cpf'),
             'telefone' => $this->input->post('telefone')
         );
-        
+
         $email = $this->input->post('email');
         $dados = $this->modelCliente->buscarEmail($email);
-        
-        if(isset($dados)&& $this->input->post('acao') == "inserir"){
-        $msn['situacao'] = "O e-mail inserido não está disponível";
-        }else{
-        if ($this->input->post('acao') == "inserir") {
-            if ($this->modelCliente->inserirCliente($cliente)) {
-                $msn['situacao'] = "Cadastro Realizado com Sucesso";
-            } else {
-                $msn['situacao'] = "Erro na Realização do Cadastro";
-            }
+
+        if (isset($dados) && $this->input->post('acao') == "inserir") {
+            $msn['situacao'] = "O e-mail inserido não está disponível";
         } else {
-            if ($this->modelCliente->alterarCliente($this->input->post('idCliente'), $cliente)) {
-                $msn['situacao'] = "Dados alterados com Sucesso";
+            if ($this->input->post('acao') == "inserir") {
+                if ($this->modelCliente->inserirCliente($cliente)) {
+                    $msn['situacao'] = "Cadastro Realizado com Sucesso";
+                } else {
+                    $msn['situacao'] = "Erro na Realização do Cadastro";
+                }
             } else {
-                $msn['situacao'] = "Erro na Alteração dos Dados";
+                if ($this->modelCliente->alterarCliente($this->input->post('idCliente'), $cliente)) {
+                    $msn['situacao'] = "Dados alterados com Sucesso";
+                } else {
+                    $msn['situacao'] = "Erro na Alteração dos Dados";
+                }
             }
         }
-}
         $this->load->view('estrutura/cabecalho');
         $this->load->view('corpo/Cliente/corpoCadCliente', $msn);
         $this->load->view('estrutura/rodape');
@@ -72,7 +72,6 @@ class ControllerCliente extends CI_Controller {
         $this->load->view('estrutura/cabecalho');
         $this->load->view('estrutura/barraMenu');
         $this->load->view('corpo/Cliente/editarConta', $dados);
-
     }
 
     public function excluirCliente() { /** Nesta função eu consigo acessar os dados do cliente atavés da model e manipular esses dados através da url utilizando o segment e neste caso irá excluir os dados   */
@@ -87,18 +86,18 @@ class ControllerCliente extends CI_Controller {
         $this->load->view('corpo/corpoRecuperarSenha');
     }
 
-     public function alterarSenha() {
+    public function alterarSenha() {
         $this->load->Model('modelCliente', '', TRUE);
-        $config = array( //"Array" changed to "array" 1/15/15
-           'smtp_host' => 'ssl://smtp.gmail.com',
-           'smtp_port' => 465,
-           'smtp_user' => 'quicksupermercados.contato@gmail.com',
-           'smtp_pass' => 'senhaquick123',
-           'protocol'  => 'smtp',
-           'validate'  => TRUE,
-           'mailtype'  => 'html',
-           'charset'  => 'utf-8',
-           'newline'  => "\r\n"
+        $config = array(//"Array" changed to "array" 1/15/15
+            'smtp_host' => 'ssl://smtp.gmail.com',
+            'smtp_port' => 465,
+            'smtp_user' => 'quicksupermercados.contato@gmail.com',
+            'smtp_pass' => 'senhaquick123',
+            'protocol' => 'smtp',
+            'validate' => TRUE,
+            'mailtype' => 'html',
+            'charset' => 'utf-8',
+            'newline' => "\r\n"
         );
         $this->load->library('email', $config);
         $email = $this->input->post('email');
@@ -121,7 +120,7 @@ class ControllerCliente extends CI_Controller {
                 $this->load->view('estrutura/cabecalho');
                 $this->load->view('estrutura/barraMenu');
                 $this->load->view('corpo/corpoRecuperarSenha', $msn);
-                 echo $this->email->print_debugger();
+                echo $this->email->print_debugger();
             }
         } else {
             $msn['mensagem'] = "O email informado não consta no nosso banco de dados";
@@ -132,18 +131,18 @@ class ControllerCliente extends CI_Controller {
     }
 
     public function enviar() {
-    
-    $config = array( //"Array" changed to "array" 1/15/15
-        
-           'smtp_host' => 'ssl://smtp.gmail.com',
-           'smtp_port' => 465,
-           'smtp_user' => 'afonsoneto.joao@gmail.com',
-           'smtp_pass' => 'afonso2011',
-           'protocol'  => 'smtp',
-           'validate'  => TRUE,
-           'mailtype'  => 'html',
-           'charset'  => 'utf-8',
-           'newline'  => "\r\n"
+
+        $config = array(//"Array" changed to "array" 1/15/15
+
+            'smtp_host' => 'ssl://smtp.gmail.com',
+            'smtp_port' => 465,
+            'smtp_user' => 'afonsoneto.joao@gmail.com',
+            'smtp_pass' => 'afonso2011',
+            'protocol' => 'smtp',
+            'validate' => TRUE,
+            'mailtype' => 'html',
+            'charset' => 'utf-8',
+            'newline' => "\r\n"
         );
         $this->load->library('email', $config);
 
@@ -157,7 +156,17 @@ class ControllerCliente extends CI_Controller {
             echo $this->email->print_debugger();
         }
     }
-public function instrucoes(){
-$this->load->view('corpo/instrucoes');
-}
+
+    public function instrucoes() {
+        $this->load->view('corpo/instrucoes');
+    }
+
+    public function listasSalvas() {
+        $this->load->Model('modelCliente', '', TRUE);
+        $dados['cliente'] = $this->modelCliente->listasSalvas();
+        $this->load->view('estrutura/cabecalho');
+        $this->load->view('corpo/Cliente/listasSalvas', $dados);
+        $this->load->view('estrutura/rodape');
+    }
+
 }

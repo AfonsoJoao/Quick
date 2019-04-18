@@ -1,7 +1,12 @@
 <!-- Characteristics -->
 <title>Quick - Início</title>
 <!-- Hot New Arrivals -->
-
+<?php
+if (isset($cliente))
+    foreach ($cliente as $cli) {
+        $_SESSION['idCliente'] = $cli->idCliente;
+    }
+?>
 <div class="new_arrivals">
     <div class="container">
         <div class="row">
@@ -26,29 +31,29 @@
                                         foreach ($produto as $produto) {
                                             ?>
                                             <?php if ($produto->disponibilidade == 1) { ?>
-                                                <?php if ($produto->tipoDestaque == 2 || $produto->tipoDestaque == 3) { ?>
+            <?php if ($produto->tipoDestaque == 2 || $produto->tipoDestaque == 3) { ?>
                                                     <!-- Slider Item -->
                                                     <div class="arrivals_slider_item">
                                                         <div class="border_active"></div>
-                                                        <?php if ($produto->tipoDestaque == "2") { ?>
+                                                            <?php if ($produto->tipoDestaque == "2") { ?>
                                                             <div class="product_item discount d-flex flex-column align-items-center justify-content-center text-center">
-                                                            <?php } else { ?>
+                                                                <?php } else { ?>
                                                                 <div class="product_item d-flex flex-column align-items-center justify-content-center text-center">
-                                                                <?php } ?>
+                <?php } ?>
                                                                 <div class="product_image d-flex flex-column align-items-center justify-content-center"><img src="<?php echo base_url('application/images/' . $produto->imagem) ?>" alt=""></div>
                                                                 <div class="product_content">
                                                                     <div class="product_price"><?= formataMoedaReal($produto->valorUnitario, TRUE) ?></div>
                                                                     <div class="product_name"><div><a href="<?php echo base_url("controllerProduto/unicoProduto/$produto->idProduto") ?>"><?= $produto->nomeProduto ?></a></div></div>
                                                                     <div class="product_extras">
                                                                         <a href="#" title="Adicionar produtos carrinho" 
-                                                                   class="btn btn-primary btn-lg btn-add-produto-carrinho"
-                                                                   data-id="<?= $produto->idProduto ?>"><i class="fa fa-shopping-cart"></i><font size="3">&nbsp;&nbsp;Adicionar ao Carrinho </font></a>
+                                                                           class="btn btn-primary btn-lg btn-add-produto-carrinho"
+                                                                           data-id="<?= $produto->idProduto ?>"><i class="fa fa-shopping-cart"></i><font size="3">&nbsp;&nbsp;Adicionar ao Carrinho </font></a>
                                                                     </div>
                                                                 </div>
                                                                 <ul class="product_marks">
                                                                     <?php if ($produto->tipoDestaque == "2") { ?>
-                                                                    <li class="product_mark product_discount"><?php echo $produto->valorPromocao;?>%</li>
-                                                                    <?php }?>
+                                                                        <li class="product_mark product_discount"><?php echo $produto->valorPromocao; ?>%</li>
+                <?php } ?>
                                                                     <li class="product_mark product_new">new</li>
                                                                 </ul>
                                                             </div>
@@ -94,7 +99,7 @@
                             <!-- Popular Categories Item -->
                             <div class="owl-item">
                                 <div class="popular_category d-flex flex-column align-items-center justify-content-center">
-                                    <div class="popular_category_image"><img src="<?php echo base_url('application/images/icones/comida-icon.png')?>" alt=""></div>
+                                    <div class="popular_category_image"><img src="<?php echo base_url('application/images/icones/comida-icon.png') ?>" alt=""></div>
                                     <div class="popular_category_text">Alimentação</div>
                                 </div>
                             </div>
@@ -102,7 +107,7 @@
                             <!-- Popular Categories Item -->
                             <div class="owl-item">
                                 <div class="popular_category d-flex flex-column align-items-center justify-content-center">
-                                    <div class="popular_category_image"><img src="<?php echo base_url('application/images/icones/frios-icon.png')?>" alt=""></div>
+                                    <div class="popular_category_image"><img src="<?php echo base_url('application/images/icones/frios-icon.png') ?>" alt=""></div>
                                     <div class="popular_category_text">Frios</div>
                                 </div>
                             </div>
@@ -110,7 +115,7 @@
                             <!-- Popular Categories Item -->
                             <div class="owl-item">
                                 <div class="popular_category d-flex flex-column align-items-center justify-content-center">
-                                    <div class="popular_category_image"><img src="<?php echo base_url('application/images/icones/hortifruti-icon.png')?>" alt=""></div>
+                                    <div class="popular_category_image"><img src="<?php echo base_url('application/images/icones/hortifruti-icon.png') ?>" alt=""></div>
                                     <div class="popular_category_text">Hortifruti</div>
                                 </div>
                             </div>
@@ -118,7 +123,7 @@
                             <!-- Popular Categories Item -->
                             <div class="owl-item">
                                 <div class="popular_category d-flex flex-column align-items-center justify-content-center">
-                                    <div class="popular_category_image"><img src="<?php echo base_url('application/images/icones/bebidas-icon.png')?>" alt=""></div>
+                                    <div class="popular_category_image"><img src="<?php echo base_url('application/images/icones/bebidas-icon.png') ?>" alt=""></div>
                                     <div class="popular_category_text">Bebidas</div>
                                 </div>
                             </div>
@@ -126,7 +131,7 @@
                             <!-- Popular Categories Item -->
                             <div class="owl-item">
                                 <div class="popular_category d-flex flex-column align-items-center justify-content-center">
-                                    <div class="popular_category_image"><img src="<?php echo base_url('application/images/icones/produtos-icon.png')?>" alt=""></div>
+                                    <div class="popular_category_image"><img src="<?php echo base_url('application/images/icones/produtos-icon.png') ?>" alt=""></div>
                                     <div class="popular_category_text">Limpeza</div>
                                 </div>
                             </div>
@@ -134,7 +139,7 @@
                             <!-- Popular Categories Item -->
                             <div class="owl-item">
                                 <div class="popular_category d-flex flex-column align-items-center justify-content-center">
-                                    <div class="popular_category_image"><img src="<?php echo base_url('application/images/icones/higiene-icon.png')?>" alt=""></div>
+                                    <div class="popular_category_image"><img src="<?php echo base_url('application/images/icones/higiene-icon.png') ?>" alt=""></div>
                                     <div class="popular_category_text">Higiene</div>
                                 </div>
                             </div>
@@ -142,7 +147,7 @@
                             <!-- Popular Categories Item -->
                             <div class="owl-item">
                                 <div class="popular_category d-flex flex-column align-items-center justify-content-center">
-                                    <div class="popular_category_image"><img src="<?php echo base_url('application/images/icones/pets-icon.png')?>" alt=""></div>
+                                    <div class="popular_category_image"><img src="<?php echo base_url('application/images/icones/pets-icon.png') ?>" alt=""></div>
                                     <div class="popular_category_text">Pets</div>
                                 </div>
                             </div>

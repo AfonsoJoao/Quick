@@ -18,6 +18,8 @@ class ControllerLogin extends CI_Controller {
         $dados['produto'] = $this->modelProduto->listarProduto();
         $this->load->model("modelBanner", '', TRUE);
         $banner['banner'] = $this->modelBanner->listarBanner();
+        $this->load->model("modelCliente", '', TRUE);
+        $dados['cliente'] = $this->modelCliente->listaCliente();
         $this->load->view('estrutura/cabecalho');
         $this->load->view('estrutura/barraMenu');
         $this->load->view('estrutura/banner', $banner);
