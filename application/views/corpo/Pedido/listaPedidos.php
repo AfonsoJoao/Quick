@@ -32,14 +32,21 @@ and open the template in the editor.
 
                     <div class="row margin-botton-20">
                         <div class="col-md-12 text-right">
-                            <a href="#" title="Relatorios" class="btn btn-success">
-                                <i class="far fa-file-alt"></i> Relatório
-                            </a>
+                            
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-primary dropdown-toggle" 
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  <i class="far fa-file-alt"></i> Relatórios <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <a class="dropdown-item" href="<?= base_url('ControllerRelatorio/mensal') ?>" target="_blank">Vendas Mensais</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Vendas Diárias</a>
+                                </ul>
+                            </div>
 
                         </div>
-
                     </div>
-
                 </div>
                 
 
