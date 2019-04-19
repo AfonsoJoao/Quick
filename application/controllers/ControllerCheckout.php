@@ -31,7 +31,7 @@ class ControllerCheckout extends CI_Controller {
 
                 if ($login) {
                     $this->session->set_userdata("usuario_logado", $login);
-                    $this->load->view('estrutura/cabecalhoLoginCliente');
+                    $this->load->view('estrutura/cabecalho');
                     $this->load->view('estrutura/barraMenu');
                     $this->load->view('corpo/Checkout/corpoCheckout', $car);
                 }
@@ -44,7 +44,7 @@ class ControllerCheckout extends CI_Controller {
 
     public function checkout() {
         $this->load->Model('modelCliente', '', TRUE);
-        $car ['carrinho'] = $this->CarrinhoCompras->listarProdutos();
+        $car ['carrinho'] = $this->carrinhocompras->listarProdutos();
         $car['cliente'] = $this->modelCliente->listaCliente();
         $this->load->view('estrutura/cabecalho');
         $this->load->view('estrutura/barraMenu');
@@ -70,11 +70,7 @@ class ControllerCheckout extends CI_Controller {
         $endereco ['cidade'] = $this->input->post('cidade');
         $endereco ['estado'] = $this->input->post('estado');
         $endereco ['forma_Envio'] = $this->input->post('forma_Envio');
-        $endereco ['numeroCartao'] = $this->input->post('numeroCartao');
-        $endereco ['nomeTitular'] = $this->input->post('nomeTitular');
-        $endereco ['validadeCartao'] = $this->input->post('validadeCartao');
-        $endereco ['codigoSeguranca'] = $this->input->post('codigoSeguranca');
-
+        
         $id_item = $this->modelPedido->insertpedido($endereco);
 
 

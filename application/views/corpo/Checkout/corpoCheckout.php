@@ -210,8 +210,6 @@ and open the template in the editor.
             }
             ?>
 
-
-
             <div class="container">
                 <div class="row">
 
@@ -296,7 +294,7 @@ and open the template in the editor.
                             </select>
                         </div>
 
-                        <div class="pagamento-cartao d-none">
+                       <!-- <div class="pagamento-cartao d-none">
                             <div class="form-group margin-checkout">
                                 <label for="cc_numero">Número do Cartão</label>
                                 <input type="text" class="form-control" name="numeroCartao" id="cc_numero" placeholder="0000 0000 0000 0000">
@@ -329,7 +327,7 @@ and open the template in the editor.
                                 <input type="checkbox" name="50,00" value="50,00"> R$ 50,00<br>
                                 <input type="checkbox" name="100,00" value="100,00"> R$ 100,00<br>
                             </div>
-                        </div>
+                        </div> -->
                         <br><br><br><br><br><br>
 
                         <div class="col margin-top-40">
