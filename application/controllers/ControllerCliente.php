@@ -165,8 +165,15 @@ class ControllerCliente extends CI_Controller {
         $this->load->Model('modelCliente', '', TRUE);
         $dados['cliente'] = $this->modelCliente->listasSalvas();
         $this->load->view('estrutura/cabecalho');
+                $this->load->view('estrutura/barraMenu');
         $this->load->view('corpo/Cliente/listasSalvas', $dados);
         $this->load->view('estrutura/rodape');
     }
-
+    
+        public function excluirLista() {
+        $this->load->Model('modelCliente', '', TRUE);
+        $this->modelCliente->excluirLista($this->uri->segment(3));
+        $this->modelCliente->excluirLista_Item($this->uri->segment(3));
+        $this->listasSalvas();
+    }
 }

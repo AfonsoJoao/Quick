@@ -113,6 +113,9 @@ $route ['checkout'] = 'ControllerCheckout/checkout';
 $route ['recuperarsenha'] = 'ControllerCliente/recuperarSenha';
 
 $route ['editarConta'] = 'ControllerCliente/listaUnicoCliente';
+
+//Rota para a tela de listas salvas
+$route ['listassalvas'] = 'ControllerCliente/listasSalvas';
 //Rota para para a pagina das categorias dos produtos com o cliente logado
 // $route ['categorias'] = 'ControllerCategoriasLogado/loginfeitoCliente';
 

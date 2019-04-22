@@ -45,6 +45,15 @@
             });
         </script>
         <!-- start-smoth-scrolling -->
+        
+        <script>
+
+            function excluirLista(id, nome) {
+                if (confirm('Deseja excluir a lista: ' + nome)) {
+                    location.href = "<?php echo base_url('ControllerCliente/excluirLista'); ?>" + "/" + id;
+                }
+            }
+        </script>
     </head>
 
     <body>
@@ -89,6 +98,8 @@
                                                         <a class="dropdown-item" href="<?php echo base_url('editarConta')?>">Editar conta</a>
                                                         <div class="dropdown-divider"></div>
                                                         <a class="dropdown-item" href="">HistÃ³rico de compras</a>
+                                                        <div class="dropdown-divider"></div>
+                                                        <a class="dropdown-item" href="<?php echo base_url('listassalvas')?>">Listas salvas</a>
                                                         <div class="dropdown-divider"></div>
                                                         <a class="dropdown-item" href="<?php echo base_url('logout')?>">sair</a>
                                                     </div>

@@ -51,6 +51,15 @@ class ModelCliente extends CI_Model {
         return;
     }
 
+    
+    public function excluirLista($id) {
+        return $this->db->delete('salvarlista', array('idSalvarLista' => $id));
+    }
+    
+     public function excluirLista_Item($id) {
+        return $this->db->delete('salvarlista_item', array('idSalvarLista' => $id));
+    }
+    
     /* public function recuperarSenha($dadosRecuperarSenha) {
       $this->db->select('idCliente, email');
       $this->db->from('cliente');
