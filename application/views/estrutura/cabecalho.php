@@ -96,8 +96,8 @@
                                                     </a>
                                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                                                         <a class="dropdown-item" href="<?php echo base_url('editarConta')?>">Editar conta</a>
-                                                        <div class="dropdown-divider"></div>
-                                                        <a class="dropdown-item" href="">HistÃ³rico de compras</a>
+                                                        <?php /*<div class="dropdown-divider"></div>
+                                                        <a class="dropdown-item" href="">Histórico de compras</a>*/?>
                                                         <div class="dropdown-divider"></div>
                                                         <a class="dropdown-item" href="<?php echo base_url('listassalvas')?>">Listas salvas</a>
                                                         <div class="dropdown-divider"></div>

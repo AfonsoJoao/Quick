@@ -110,7 +110,7 @@ class ControllerCarrinho extends CI_Controller {
         redirect('ControllerCarrinho/carrinho');
     }
 
-    public function salvarLista() {
+/*    public function salvarLista() {
         $this->load->Model('modelCarrinho', '', TRUE);
 
         $cliente ['idCliente'] = $this->input->post('idCliente');
@@ -139,5 +139,5 @@ class ControllerCarrinho extends CI_Controller {
         $this->load->view('estrutura/cabecalho');
         $this->load->view('corpo/Carrinho/corpoCarrinho', $car);
         $this->load->view('estrutura/rodape');
-    }
+    }*/
 }

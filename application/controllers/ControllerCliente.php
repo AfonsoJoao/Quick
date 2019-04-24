@@ -161,7 +161,7 @@ class ControllerCliente extends CI_Controller {
         $this->load->view('corpo/instrucoes');
     }
 
-    public function listasSalvas() {
+/*    public function listasSalvas() {
         $this->load->Model('modelCliente', '', TRUE);
         $dados['cliente'] = $this->modelCliente->listasSalvas();
         $this->load->view('estrutura/cabecalho');
@@ -176,4 +176,38 @@ class ControllerCliente extends CI_Controller {
         $this->modelCliente->excluirLista_Item($this->uri->segment(3));
         $this->listasSalvas();
     }
+        
+    public function enviarLista() {
+        $this->load->Model('modelCliente', '', TRUE);
+        $id = $this->uri->segment(3);
+        $dados['cliente'] = $this->modelCliente->enviarLista($id);
+
+        $this->load->view('corpo/produtosLista', $dados);
+
+    }
+    
+    public function teste(){
+    
+     $cliente = array(
+            'idProduto' => $this->input->post('idProduto')
+        );
+        if (isset($cliente)) {
+        foreach($cliente as $cli){
+        print_r($cliente);
+        }
+        }
+    
+    
+    if (isset($cliente)) {
+            $id = $cliente;
+            $qtd = 1; //Colocar a quantidade via post pra ver se dá certo também.
+            $this->carrinhocompras->add($id, $qtd);
+            $json = ['erro' => 0,
+                'msg' => 'Produto adicionado com Sucesso!',
+                'itens' => $this->carrinhocompras->totalItem(),
+                'total' => formataMoedaReal($this->carrinhocompras->total(), TRUE)
+            ];
+            echo json_encode($json);
+        }
+    }*/
 }
