@@ -108,7 +108,7 @@ class ControllerLogin extends CI_Controller {
                 }
             }
         } else {
-            $this->session->set_flashdata("danger", "UsuÃ¡rio ou Senha InvÃ¡lidos");
+            $this->session->set_flashdata("danger", "Usuário ou Senha Inválidos");
             $this->login();
         }
     }

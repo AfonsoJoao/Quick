@@ -101,7 +101,7 @@
                                                         <div class="dropdown-divider"></div>
                                                         <a class="dropdown-item" href="<?php echo base_url('listassalvas')?>">Listas salvas</a>
                                                         <div class="dropdown-divider"></div>
-                                                        <a class="dropdown-item" href="<?php echo base_url('logout')?>">sair</a>
+                                                        <a class="dropdown-item" href="<?php echo base_url('logout')?>">Sair</a>
                                                     </div>
                                                 </li>
                                             </ul>
@@ -174,7 +174,7 @@
 
                                                                     <div class="row body-carrinho-vazio">
                                                                         <div class="col-xs-12 col-md-12 text-center">
-                                                                            Carrinho estÃ¡ vazio
+                                                                            Carrinho está vazio
                                                                         </div>  
                                                                     </div>
 
