@@ -70,7 +70,7 @@ class ControllerCheckout extends CI_Controller {
         $endereco ['cidade'] = $this->input->post('cidade');
         $endereco ['estado'] = $this->input->post('estado');
         $endereco ['forma_Envio'] = $this->input->post('forma_Envio');
-        
+        $endereco['data_Pedido'] = date('Y-m-d');
         $id_item = $this->modelPedido->insertpedido($endereco);
 
 

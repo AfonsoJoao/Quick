@@ -289,8 +289,8 @@ and open the template in the editor.
                             <label for="forma_pagamento">Forma de Pagamento</label>
                             <select name="forma_Envio" class="form-control select-forma-pagamento">
                                 <option>Forma de Pagamento</option>
-                                <option value="Cartao_de_Credito">Cartão de Crédito</option>
-                                <option value="A_Vista">A Vista</option>
+                                <option value="Cartao de Credito">Cartão de Crédito</option>
+                                <option value="A Vista">A Vista</option>
                             </select>
                         </div>
 

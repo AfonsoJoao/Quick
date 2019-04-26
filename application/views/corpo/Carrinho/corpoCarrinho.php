@@ -103,10 +103,10 @@ if (isset($situacao)) {
         </div>       
     </div>
     </div>
-    <?php/*
-    if (isset($_SESSION['usuario_logado'])) {
+    <?php
+  //  if (isset($_SESSION['usuario_logado'])) {
         ?>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Salvar Lista</button>
+       <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Salvar Lista</button>
 
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -118,26 +118,26 @@ if (isset($situacao)) {
                         </button>
                     </div>
                     <div class="modal-body">
-                        <?php echo form_open('ControllerCarrinho/salvarLista'); ?>
-                        <?php $_SESSION['lista'] = array(); ?>
+                        <?php//  echo form_open('ControllerCarrinho/salvarLista'); ?>
+                        <?php// $_SESSION['lista'] = array(); ?>
 
-                        <?php foreach ($carrinho as $indice => $linha) { ?>
+                        <?php// foreach ($carrinho as $indice => $linha) { ?>
                             <?php
-                            array_push($_SESSION ['lista'], array(
-                                'idProduto' => $linha['id']
-                                    )
-                            );
+                           // array_push($_SESSION ['lista'], array(
+                           //     'idProduto' => $linha['id']
+                           //         )
+                          //  );
                             ?>
-                        <?php } ?>
+                        <?php // } ?>
 
                         <?php
-                        if (isset($clientes)) {
-                            foreach ($clientes as $cliente) {
+                       // if (isset($clientes)) {
+                         //   foreach ($clientes as $cliente) {
                                 ?>
-                                <input type="hidden" name="idCliente" value="<?php echo $cliente->idCliente; ?>">
+                                <input type="hidden" name="idCliente" value="<?php// echo $cliente->idCliente; ?>">
                                 <?php
-                            }
-                        }
+                         //   }
+                     //   }
                         ?>
                         <div class="form-group">
                             <input type="text" class="form-control" name="nomeLista" placeholder="Nome da lista"value="">
@@ -146,14 +146,14 @@ if (isset($situacao)) {
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                             <button type="submit" class="btn btn-primary">Salvar lista</button>
                         </div>
-        <?php echo form_close();
-    }
+        <?php// echo form_close();
+  //  }
     ?>
                 </div>
             </div>
         </div>
-    </div>
+    </div>  -->
 
-*/} // fim do carrinho  ?>
+ <?php } // fim do carrinho  ?>
 
 <br><br>

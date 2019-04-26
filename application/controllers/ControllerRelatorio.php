@@ -16,14 +16,15 @@ class ControllerRelatorio extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->helper('funcoes');
-        $this->load->Model('modelRelatorio');
     }
     
 
     public function mensal() {
-
-        $data ['titulo'] = 'Imprimir Relatório Mensal';
-        $data['item'] = $this->modelRelatorio->getPedido();
+        $this->load->Model('modelRelatorio');
+        $getData = date('Y-m-d');   
+        
+        $data ['titulo'] = 'Imprimir Relatório de Pedidos Diário';
+        $data['item'] = $this->modelRelatorio->getPedido($getData);
 
         $this->load->view('corpo/Relatorio/imprimirRelatorio', $data);
     }

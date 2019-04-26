@@ -12,16 +12,11 @@
  * @author Mateus
  */
 class ModelRelatorio extends CI_Model {
-    public function __construct() {
-        parent::__construct();
-        $this->load->helper('funcoes');
-    }
-   
-    public function getPedido(){
-        
-        $this->db->where('data_Pedido', dataDiaDB());
+
+    public function getPedido($getData) {
+
+        $this->db->where('data_Pedido', $getData);
         return $this->db->get('pedido')->result();
-        
     }
-    
+
 }

@@ -36,4 +36,18 @@ function dataDB() {
     return $data;
 }
 
+function formataDataView($data=NULL){
+    
+    if ($data) {
+        
+        //Entrada
+        $data = explode('-', $data);
+        
+        //Saida
+        return $data[2] .'/'. $data[1] .'/'. $data[0];
+        
+    }
+    
+}
+
 
