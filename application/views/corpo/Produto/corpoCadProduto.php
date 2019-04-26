@@ -36,23 +36,23 @@
                                     echo "inserir";
                                 ?>">
                                 <input type="hidden" name="idProduto" value="">
-                                Nome do produto*
+                                Nome do produto:
                                 <input class="form-control" type="text" name="nomeProduto"required="" value="">
                                 <br>
-                                Valor unitario do produto*
+                                Valor unitario do produto:
                                 <input class="form-control input_moeda" type="text" name="valorUnitario" required="" value="">
                                 <br>
-                                Descrição do produto*
+                                Descrição do produto:
                                 <div class="form-group">
                                     <textarea class="form-control" rows="5" name="descricaoProduto"></textarea>
                                 </div>
-                                Peso do produto em kg ou litros*
+                                Peso do produto em kg ou litros:
                                 <input class="form-control" type="number" pattern="[0-9]+([,\.][0-9]+)?" min="0" step="any" name="peso" required="" value="">
                                 <br>
-                                Marca do produto*
+                                Marca do produto:
                                 <input class="form-control" type="text" name="marca" required="" value="">
                                 <br>
-                                Categoria do produto*
+                                Categoria do produto:
                                 <select class="form-control" id="categoria" name="categoria" value="">
                                     <option></option>
                                     <optgroup label="Alimentação">
@@ -80,22 +80,22 @@
                                         <option value="pet">Pet</option>
                                 </select>
                                 <br>
-                                Foto do produto (400x400)*
+                                Foto do produto:
                                 <input class="form-control" type="file" required name="imagem" value="">
                                 <br>
                                 <input type="hidden" class="form-control" name="data" value="<?php echo date_format(new DateTime(), 'Y/m/d'); ?>" >
 
-                                <input type="hidden" name="disponibilidade" value="disponivel">
-                                Destacar produto como
+                                <input type="hidden" name="disponibilidade" value="1">
+                                Destacar produto como:
                                 <select class="form-control" id="tipoDestaque" name="tipoDestaque" value="">
                                     <option></option>
-                                    <option value="Destacar como promoção">Destacar como promoção</option>
-                                    <option value="Apenas destacar">Apenas destacar</option>
-                                    <option value="Não destacar">Não destacar</option>
+                                    <option value="2">Destacar como promoção</option>
+                                    <option value="3">Apenas destacar</option>
+                                    <option value="NULL">Não destacar</option>
                                 </select>
                                 <br>
-                                Porcentagem da promoção
-                                <input class="form-control" type="text" name="valorPromocao" value="">
+                                Porcentagem da promoção:
+                                <input class="form-control" type="text" name="valorPromocao" required="" value="">
                                 <br>
                                 <center><input type="submit" value="Cadastrar"></center>
                             </div>

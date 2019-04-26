@@ -90,8 +90,8 @@ class ControllerLogin extends CI_Controller {
 
                 if ($cliente) {
                     $this->session->set_userdata("usuario_logado", $cliente);
-                    $_SESSION['email'] = $email;
                     $this->loginfeitoCliente();
+                    $_SESSION['email'] = $email;
                 }
             } else if ($tipo == "operador") {
 

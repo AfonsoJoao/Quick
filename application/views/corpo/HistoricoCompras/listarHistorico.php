@@ -1,4 +1,4 @@
-<title>Quick - Histórico de compras</title>
+
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -33,9 +33,9 @@ and open the template in the editor.
                                 <td class="text-center"><?= formataMoedaReal($hist->total_pedido, TRUE) ?></td>
                                 <td class="text-center"><?= $hist->forma_Envio ?></td>
                             </tr>
+                            
 
-
-                        <?php } ?>
+                          <?php } ?>
 
                     </tbody>
                 </table>

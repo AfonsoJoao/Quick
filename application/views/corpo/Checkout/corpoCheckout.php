@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('css/bootstrap4/bootstrap.min.css') ?>">
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -7,7 +8,7 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Quick - Finalizar pedido</title>
+        <title></title>
 
     </head>
     <body>
@@ -293,40 +294,40 @@ and open the template in the editor.
                             </select>
                         </div>
 
-                        <!-- <div class="pagamento-cartao d-none">
-                             <div class="form-group margin-checkout">
-                                 <label for="cc_numero">Número do Cartão</label>
-                                 <input type="text" class="form-control" name="numeroCartao" id="cc_numero" placeholder="0000 0000 0000 0000">
-                             </div>
+                       <!-- <div class="pagamento-cartao d-none">
+                            <div class="form-group margin-checkout">
+                                <label for="cc_numero">Número do Cartão</label>
+                                <input type="text" class="form-control" name="numeroCartao" id="cc_numero" placeholder="0000 0000 0000 0000">
+                            </div>
 
-                             <div class="form-group margin-checkout">
-                                 <label for="cc_titular">Nome do Titular</label>
-                                 <input type="text" class="form-control" name="nomeTitular" id="cc_titular" placeholder="Nome do Titular">
-                             </div>
+                            <div class="form-group margin-checkout">
+                                <label for="cc_titular">Nome do Titular</label>
+                                <input type="text" class="form-control" name="nomeTitular" id="cc_titular" placeholder="Nome do Titular">
+                            </div>
 
-                             <div class="form-group margin-checkout">
-                                 <label for="cc_validade">Validade do Cartão</label>
-                                 <input type="text" class="form-control input_mes_ano" name="validadeCartao" id="cc_validade" placeholder="00/0000">
-                             </div>
+                            <div class="form-group margin-checkout">
+                                <label for="cc_validade">Validade do Cartão</label>
+                                <input type="text" class="form-control input_mes_ano" name="validadeCartao" id="cc_validade" placeholder="00/0000">
+                            </div>
 
-                             <div class="form-group margin-checkout">
-                                 <label for="cc_codigo">Código de Segurança</label>
-                                 <input type="text" class="form-control" name="codigoSeguranca" id="cc_codigo" placeholder="000">
-                             </div>
+                            <div class="form-group margin-checkout">
+                                <label for="cc_codigo">Código de Segurança</label>
+                                <input type="text" class="form-control" name="codigoSeguranca" id="cc_codigo" placeholder="000">
+                            </div>
 
-                         </div>
+                        </div>
 
-                         <div class="pagamento-avista d-none">
-                             <div class="form-group margin-checkout">
-                                 <label for="cedulas">Quais cedulas serão utilizadas no pagamento?</label><br>
-                                 <input type="checkbox" name="2,00" value="2,00"> R$ 2,00<br>
-                                 <input type="checkbox" name="5,00" value="5,00"> R$ 5,00<br>
-                                 <input type="checkbox" name="10,00" value="10,00"> R$ 10,00<br>
-                                 <input type="checkbox" name="20,00" value="20,00"> R$ 20,00<br>
-                                 <input type="checkbox" name="50,00" value="50,00"> R$ 50,00<br>
-                                 <input type="checkbox" name="100,00" value="100,00"> R$ 100,00<br>
-                             </div>
-                         </div> -->
+                        <div class="pagamento-avista d-none">
+                            <div class="form-group margin-checkout">
+                                <label for="cedulas">Quais cedulas serão utilizadas no pagamento?</label><br>
+                                <input type="checkbox" name="2,00" value="2,00"> R$ 2,00<br>
+                                <input type="checkbox" name="5,00" value="5,00"> R$ 5,00<br>
+                                <input type="checkbox" name="10,00" value="10,00"> R$ 10,00<br>
+                                <input type="checkbox" name="20,00" value="20,00"> R$ 20,00<br>
+                                <input type="checkbox" name="50,00" value="50,00"> R$ 50,00<br>
+                                <input type="checkbox" name="100,00" value="100,00"> R$ 100,00<br>
+                            </div>
+                        </div> -->
                         <br><br><br><br><br><br>
 
                         <div class="col margin-top-40">

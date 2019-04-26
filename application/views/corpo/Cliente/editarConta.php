@@ -1,5 +1,4 @@
 <html>
-<title>Quick - Editar informações da conta</title>
 <script src="<?php echo base_url('js/mascaras.js'); ?>"></script>
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/bootstrap4/bootstrap.min.css') ?>">
 <?php
