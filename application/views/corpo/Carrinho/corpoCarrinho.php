@@ -1,5 +1,5 @@
 <!-- about -->
-
+<title>Quick - Carrinho de compras</title>
 <br>
 <br><br>
 <?php
