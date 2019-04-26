@@ -1,4 +1,4 @@
-
+<title>Quick - Detalhes do produto</title>
         <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/product_styles.css') ?>">
 <!-- Single Product -->
 

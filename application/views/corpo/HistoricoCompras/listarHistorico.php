@@ -1,4 +1,4 @@
-
+<title>Quick - Histórico de compras</title>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
