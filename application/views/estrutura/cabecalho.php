@@ -19,7 +19,7 @@
         <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/main_styles.css') ?>">
         <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/responsive.css') ?>">
         <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/product_responsive.css') ?>">
-        
+
 
         <link href="<?php echo base_url('css/carrinho.css'); ?>" rel="stylesheet" type="text/css" media="all"/>
 
@@ -45,7 +45,7 @@
             });
         </script>
         <!-- start-smoth-scrolling -->
-        
+
         <script>
 
             function excluirLista(id, nome) {
@@ -74,41 +74,41 @@
                                 <div class="top_bar_contact_item"><div class="top_bar_icon"><img src="<?php echo base_url('application/images/icones/mail.png') ?>" alt=""></div>quicksupermercados.contato@gmail.com</div>
                                 <div class="top_bar_content ml-auto">
 
-                                    
-                                        <?php
-                                        if (!isset($_SESSION['usuario_logado'])) {
-                                            ?>
-                                    <div class="top_bar_user">
+
+                                    <?php
+                                    if (!isset($_SESSION['usuario_logado'])) {
+                                        ?>
+                                        <div class="top_bar_user">
                                             <div class = "user_icon"><img src = "<?php echo base_url('application/images/icones/user.svg') ?>" alt = ""></div>
                                             <div><a href = "<?php echo base_url('login/'); ?>">Entre</a></div>
                                             <div><a href = "<?php echo base_url('cadastroclientes/'); ?>">Cadastre-se&nbsp;
                                                     &nbsp;
                                                 </a></div>
-                                    </div>
-                                            <?php
-                                        } else {
-                                            ?> 
-                                    
-                                            <ul class="navbar-nav d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
-                                                <li class="nav-item dropdown no-arrow">
-                                                    <a class="nav-link dropdown-toggle" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                        <i class="fas fa-user-circle fa-fw fa-2x"></i>
-                                                    </a>
-                                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                                                        <a class="dropdown-item" href="<?php echo base_url('editarConta')?>">Editar conta</a>
-                                                        <?php /*<div class="dropdown-divider"></div>
-                                                        <a class="dropdown-item" href="">Histórico de compras</a>*/?>
-                                                        <div class="dropdown-divider"></div>
-                                                        <a class="dropdown-item" href="<?php echo base_url('listassalvas')?>">Listas salvas</a>
-                                                        <div class="dropdown-divider"></div>
-                                                        <a class="dropdown-item" href="<?php echo base_url('logout')?>">Sair</a>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                            <?php
-                                        }
-                                        ?>
-                                    
+                                        </div>
+                                        <?php
+                                    } else {
+                                        ?> 
+
+                                        <ul class="navbar-nav d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+                                            <li class="nav-item dropdown no-arrow">
+                                                <a class="nav-link dropdown-toggle" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <i class="fas fa-user-circle fa-fw fa-2x"></i>
+                                                </a>
+                                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                                                    <a class="dropdown-item" href="<?php echo base_url('editarConta') ?>">Editar conta</a>
+                                                    <div class="dropdown-divider"></div>
+                                                    <a class="dropdown-item" href="<?php echo base_url('historicodecompras') ?>">Histórico de compras</a>
+                                                    <div class="dropdown-divider"></div>
+                                                    <?php /* <a class="dropdown-item" href="<?php echo base_url('listassalvas')?>">Listas salvas</a> */ ?>
+                                                    <div class="dropdown-divider"></div>
+                                                    <a class="dropdown-item" href="<?php echo base_url('logout') ?>">Sair</a>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <?php
+                                    }
+                                    ?>
+
                                 </div>
                             </div>
                         </div>
