@@ -11,8 +11,10 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
-
+        <br>
         <div class="card-body">
+            <h2>Histórico de Compras</h2>
+            <hr/><br>
             <div class="table-responsive">
                 <table class="table" id="dataTable" width="100%" cellspacing="0">
                     <thead>
@@ -20,26 +22,32 @@ and open the template in the editor.
                             <th class="text-center">Data da Compra</th>
                             <th class="text-center">Total Compra</th>
                             <th class="text-center">Forma de Pagamento</th>
+                            <th class="text-center">Status</th>
 
                         </tr>
                     </thead>
 
                     <tbody>
+                        <?php
+                        if (isset($historico)) {
+                            foreach ($historico as $hist) {
+                                ?>
 
-                        <?php foreach ($historico as $hist) { ?>
+                                <tr>
+                                    <td class="text-center"><?= formataDataView($hist->data_Pedido) ?> </td>
+                                    <td class="text-center"><?= formataMoedaReal($hist->total_pedido, TRUE) ?></td>
+                                    <td class="text-center"><?= $hist->forma_Envio ?></td>
+                                    <td class="text-center"><?= $hist->status ?></td>
+                                </tr>
 
-                            <tr>
-                                <td class="text-center"><?= $hist->data_Pedido ?> </td>
-                                <td class="text-center"><?= formataMoedaReal($hist->total_pedido, TRUE) ?></td>
-                                <td class="text-center"><?= $hist->forma_Envio ?></td>
-                            </tr>
-                            
-
-                          <?php } ?>
+                                <?php
+                            }
+                        }
+                        ?>
 
                     </tbody>
                 </table>
             </div>
-        </div>                
+        </div><br>                
     </body>
 </html>

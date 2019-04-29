@@ -18,11 +18,13 @@ class ControllerCheckout extends CI_Controller {
 
     public function autenticarCliente() {
         $this->load->model('modelLogin', '', TRUE); // carrega o modelo model login
+        $this->load->model('modelCliente', '', TRUE);
         $car ['carrinho'] = $this->carrinhocompras->listarProdutos();
         $email = $this->input->post('email'); // pega via post o email que veio do formulario
         $senha = base64_encode($this->input->post('senha')); // pega via post a senha que veio do formulario
         $login = $this->modelLogin->buscaPorEmailSenhaCliente($email, $senha);
-        $car ['cliente'] = $this->modelPedido->getCliente($email, $senha);
+        $_SESSION['email'] = $email;
+        $car['cliente'] = $this->modelCliente->listaCliente();
 
         if (isset($login['0']->tipo)) {
             $tipo = ($login['0']->tipo);
@@ -45,7 +47,6 @@ class ControllerCheckout extends CI_Controller {
     public function checkout() {
         $this->load->Model('modelCliente', '', TRUE);
         $car ['carrinho'] = $this->carrinhocompras->listarProdutos();
-        $car['cliente'] = $this->modelCliente->listaCliente();
         $this->load->view('estrutura/cabecalho');
         $this->load->view('estrutura/barraMenu');
         $this->load->view('corpo/Checkout/corpoCheckout', $car);
@@ -64,6 +65,7 @@ class ControllerCheckout extends CI_Controller {
         $endereco ['cep'] = $this->input->post('cep');
         $endereco ['endereco'] = $this->input->post('endereco');
         $endereco ['total_pedido'] = $this->input->post('total');
+        $endereco ['status'] = $this->input->post('status');
         $endereco ['numero'] = $this->input->post('numero');
         $endereco ['complemento'] = $this->input->post('complemento');
         $endereco ['bairro'] = $this->input->post('bairro');

@@ -77,16 +77,16 @@ and open the template in the editor.
                                         <td class="text-center">
                                             <?php
                                             switch ($p->status) {
-                                                case 1:
+                                                case 'Enviado':
                                                     echo 'Enviado';
                                                     break;
 
-                                                case 2:
+                                                case 'Pagamento Confirmado':
                                                     echo 'Pagamento Confirmado';
                                                     break;
 
-                                                case 3:
-                                                    echo 'Cancelado';
+                                                case 'Pedido Cancelado':
+                                                    echo 'Pedido Cancelado';
                                                     break;
 
                                                 default:

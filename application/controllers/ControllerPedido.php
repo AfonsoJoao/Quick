@@ -48,16 +48,16 @@ class ControllerPedido extends CI_Controller {
         }
 
         switch ($query->status) {
-            case 1:
+            case 'Enviado':
                 $status = 'Enviado';
                 break;
 
-            case 2:
+            case 'Pagamento Confirmado':
                 $status = 'Pagamento Confirmado';
                 break;
 
-            case 3:
-                $status = 'Cancelado';
+            case 'Pedido Cancelado':
+                $status = 'Pedido Cancelado';
                 break;
 
             default:
