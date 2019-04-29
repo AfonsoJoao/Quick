@@ -39,28 +39,30 @@
                                     if (isset($produto)) {
                                         foreach ($produto as $produto) {
                                             ?>
-                                            <?php if ($produto->disponibilidade == 1) { ?>
+                                            <?php if ($produto->disponibilidade == "disponivel") { ?>
                                                 <!-- Product Item -->
-                                                <?php if ($produto->tipoDestaque == "2") { ?>
+                                               <?php if ($produto->tipoDestaque == "Destacar como promoção" || $produto->tipoDestaque == "Apenas destacar") { ?>
                                                     <div class="product_item discount">
                                                     <?php } else { ?>
                                                         <div class="product_item">
                                                         <?php } ?>
                                                         <div class="product_border"></div>
-                                                        <div class="product_image d-flex flex-column align-items-center justify-content-center"><img src="<?php echo base_url('application/images/' . $produto->imagem) ?>" alt=""></div>
+                                                        <div class="product_image d-flex flex-column align-items-center justify-content-center"><img src="<?php echo base_url('application/images/' . $produto->imagem) ?>"  width="120px" height="120px" alt=""></div>
                                                         <div class="product_content">
                                                             <div class="product_price"><?= formataMoedaReal($produto->valorUnitario, TRUE) ?></div>
                                                             <div class="product_name"><div><a href="<?php echo base_url("controllerProduto/unicoProduto/$produto->idProduto") ?>" tabindex="0"><?= $produto->nomeProduto ?></a></div></div>
                                                         </div>
                                                         <br>
-                                                        <h3><a href="#" title="Adicionar produtos carrinho" 
-                                                           class="btn btn-primary btn-lg btn-add-produto-carrinho"
-                                                           data-id="<?= $produto->idProduto ?>">&nbsp;<i class="fa fa-shopping-cart"></i><font size="3">&nbsp;&nbsp;Adicionar ao Carrinho&nbsp;&nbsp; </font></a></h3>
+                                                                       <h3><a href="#" title="Carrinho" 
+                                                           class="btn btn-primary btn-md btn-add-produto-carrinho"
+                                                           data-id="<?= $produto->idProduto ?>">&nbsp;<i class="fa fa-shopping-cart"></i><font size="3">&nbsp;&nbsp;Adicionar&nbsp;&nbsp; </font></a></h3>
                                                         <ul class="product_marks">
-                                                            <li class="product_mark product_discount">-25%</li>
-                                                            <li class="product_mark product_new">new</li>
-                                                        </ul>
-                                                        <?php if ($produto->tipoDestaque == "2") { ?>
+                                                                    <?php if ($produto->tipoDestaque == "Destacar como promoção") { ?>
+                                                                        <li class="product_mark product_discount"><?php echo $produto->valorPromocao; ?>%</li>
+                <?php } ?>
+                                                                    <li class="product_mark product_new">new</li>
+                                                                </ul>
+                                                        <?php if ($produto->tipoDestaque == "Destacar como promoção") { ?>
                                                         </div>
                                                     <?php } else { ?>
                                                     </div>
