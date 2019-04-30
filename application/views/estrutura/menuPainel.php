@@ -1,148 +1,252 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- Main Navigation -->
 
-    <head>
+<nav class="main_nav">
+    <div class="container">
+        <div class="row">
+            <div class="col">
 
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="">
-        <meta name="author" content="">
+                <div class="main_nav_content d-flex flex-row">
 
-        <title>Quick - Painel administrativo</title>
-        
-        <script src="<?php echo base_url('js/jquery-1.11.1.min.js'); ?>"></script> <!-- Plugin do jquery--> 
-        
-         <!-- Custom fonts for this template-->
-        <link href="<?php echo base_url('front/vendor/fontawesome-free/css/all.min.css'); ?>" rel="stylesheet" type="text/css">
+                    <!-- Categories Menu -->
 
-        <!-- Page level plugin CSS-->
-        <link href="<?php echo base_url('front/vendor/datatables/dataTables.bootstrap4.css'); ?>" rel="stylesheet">
+                    <div class="cat_menu_container">
+                        <div class="cat_menu_title d-flex flex-row align-items-center justify-content-start">
+                            <div class="cat_burger"><span></span><span></span><span></span></div>
+                            <div class="cat_menu_text">categorias</div>
+                        </div>
 
-        <!-- Custom styles for this template-->
-        <link href="<?php echo base_url('css/sb-admin.css'); ?>" rel="stylesheet">
-
-        <link href="<?php echo base_url('css/carrinho.css'); ?>" rel="stylesheet" type="text/css" media="all"/>
-        
-        <script>
-
-            function excluirCliente(id, nome) {
-                if (confirm('Deseja excluir o cliente ' + nome)) {
-                    location.href = "<?php echo base_url('ControllerCliente/excluirCliente'); ?>" + "/" + id;
-                }
-            }
-        </script>
-        <script>
-
-            function excluirBanner(id, nome) {
-                if (confirm('Deseja excluir o Banner ' + nome)) {
-                    location.href = "<?php echo base_url('ControllerBanner/excluirBanner'); ?>" + "/" + id;
-                }
-            }
-        </script>
-        <script>
-
-            function excluirProduto(id, nome) {
-                if (confirm('Deseja excluir o produto ' + nome)) {
-                    location.href = "<?php echo base_url('ControllerProduto/excluirProduto'); ?>" + "/" + id;
-                }
-            }
-        </script>
-                <script>
-
-            function excluirOperador(id, nome) {
-                if (confirm('Deseja excluir o operador ' + nome)) {
-                    location.href = "<?php echo base_url('ControllerOperador/excluirOperador'); ?>" + "/" + id;
-                }
-            }
-        </script>
-
-        <script>
-
-            function excluirAdministrador(id, nome) {
-                if (confirm('Deseja excluir o administrador ' + nome)) {
-                    location.href = "<?php echo base_url('ControllerAdministrador/excluirAdministrador'); ?>" + "/" + id;
-                }
-            }
-        </script>
-        
-        <script>
-
-            function excluirPedido(id) {
-                if (confirm('Deseja excluir o pedido? ')) {
-                    location.href = "<?php echo base_url('ControllerPedido/excluirPedido'); ?>" + "/" + id;
-                }
-            }
-        </script>
-        
-        
-    </head>
-
-
-    <body id="page-top">
-
-        <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
-
-            <a class="navbar-brand mr-1" href="">Administrador</a>
-
-            <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
-                <i class="fas fa-bars"></i>
-            </button>
-
-           
-
-            <!-- Navbar -->
-            <ul class="navbar-nav d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
-
-                <li class="nav-item dropdown no-arrow">
-                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-user-circle fa-fw"></i>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                        <a class="dropdown-item" href="#">Editar conta</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Sair</a>
+                        <ul class="cat_menu">
+                            <li class="hassubs">
+                                <a href="#">Alimentação<i class="fas fa-chevron-right"></i></a>
+                                <ul>
+                                    <li><a href="<?php echo base_url('ControllerCategorias/listaCate/arroz'); ?>">Arroz<i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="<?php echo base_url('ControllerCategorias/listaCate/feijao'); ?>">Feijão<i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="<?php echo base_url('ControllerCategorias/listaCate/sal'); ?>">Sal<i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="<?php echo base_url('ControllerCategorias/listaCate/acucar'); ?>">Açucar<i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="<?php echo base_url('ControllerCategorias/listaCate/massas'); ?>">Massas<i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="<?php echo base_url('ControllerCategorias/listaCate/oleos'); ?>">Oléos<i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="<?php echo base_url('ControllerCategorias/listaCate/laticinios'); ?>">Laticínios<i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="<?php echo base_url('ControllerCategorias/listaCate/paes'); ?>">Pães<i class="fas fa-chevron-right"></i></a></li>
+                                </ul>
+                            </li>
+                            <li class="hassubs">
+                                <a href="#">Frios<i class="fas fa-chevron-right"></i></a>
+                                <ul>
+                                    <li><a href="<?php echo base_url('ControllerCategorias/listaCate/carnes'); ?>">Carnes<i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="<?php echo base_url('ControllerCategorias/listaCate/aves'); ?>">Aves<i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="<?php echo base_url('ControllerCategorias/listaCate/peixes'); ?>">Peixes<i class="fas fa-chevron-right"></i></a></li>
+                                </ul>
+                            </li>
+                            <li class="hassubs">
+                                <a href="#">Hortifruti<i class="fas fa-chevron-right"></i></a>
+                                <ul>
+                                    <li><a href="<?php echo base_url('ControllerCategorias/listaCate/frutas'); ?>">Frutas<i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="<?php echo base_url('ControllerCategorias/listaCate/vegetais'); ?>">Vegetais<i class="fas fa-chevron-right"></i></a></li>
+                                </ul>
+                            </li>
+                            <li class="hassubs">
+                                <a href="#">Bebidas<i class="fas fa-chevron-right"></i></a>
+                                <ul>
+                                    <li><a href="<?php echo base_url('ControllerCategorias/listaCate/alcoolicas'); ?>">Alcoólicas<i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="<?php echo base_url('ControllerCategorias/listaCate/naoalcoolicas'); ?>">Não alcoólicas<i class="fas fa-chevron-right"></i></a></li>
+                                </ul>
+                            </li>
+                            <li><a href="<?php echo base_url('ControllerCategorias/listaCate/limpeza'); ?>">Produtos de limpeza <i class="fas fa-chevron-right ml-auto"></i></a></li>
+                            <li><a href="<?php echo base_url('ControllerCategorias/listaCate/higiene'); ?>">Higiene<i class="fas fa-chevron-right"></i></a></li>
+                            <li><a href="<?php echo base_url('ControllerCategorias/listaCate/pet'); ?>">Pets<i class="fas fa-chevron-right"></i></a></li>
+                        </ul>
                     </div>
-                </li>
-            </ul>
 
-        </nav>
+                    <!-- Main Nav Menu -->
+                    <div class="main_nav_menu ml-auto">
+                        <ul class="standard_dropdown main_nav_dropdown">
+                            <li><a href="<?php echo base_url('index') ?>">Início<i class="fas fa-chevron-down"></i></a></li>
+                            <!-- Barras de menus das categorias-->
+                            <?php if ($this->uri->segment(3) == 'arroz') { ?>
+                                <li><a>Arroz<i class="fas fa-chevron-down"></i></a></li>
+                                <title>Quick - Categoria Arroz</title>
+                            <?php } else if ($this->uri->segment(3) == 'feijao') { ?>
+                                <li><a>Feijão<i class="fas fa-chevron-down"></i></a></li>
+                                <title>Quick - Categoria Feijão</title>
+                            <?php } else if ($this->uri->segment(3) == 'sal') { ?>
+                                <li><a>Sal<i class="fas fa-chevron-down"></i></a></li>
+                                <title>Quick - Categoria Sal</title>
+                            <?php } else if ($this->uri->segment(3) == 'acucar') { ?>
+                                <li><a>Açucar<i class="fas fa-chevron-down"></i></a></li>
+                                <title>Quick - Categoria Açucar</title>
+                            <?php } else if ($this->uri->segment(3) == 'massas') { ?>
+                                <li><a>Massas<i class="fas fa-chevron-down"></i></a></li>
+                                <title>Quick - Categoria Massa</title>
+                            <?php } else if ($this->uri->segment(3) == 'oleos') { ?>
+                                <li><a>Oléos<i class="fas fa-chevron-down"></i></a></li>
+                                <title>Quick - Categoria Oléos</title>
+                            <?php } else if ($this->uri->segment(3) == 'laticinios') { ?>
+                                <li><a>Laticínios<i class="fas fa-chevron-down"></i></a></li>
+                                <title>Quick - Categoria Laticínios</title>
+                            <?php } else if ($this->uri->segment(3) == 'paes') { ?>
+                                <li><a>Pães<i class="fas fa-chevron-down"></i></a></li>
+                                <title>Quick - Categoria Pães</title>
+                            <?php } else if ($this->uri->segment(3) == 'carnes') { ?>
+                                <li><a>Carnes<i class="fas fa-chevron-down"></i></a></li>
+                                <title>Quick - Categoria Carnes</title>
+                            <?php } else if ($this->uri->segment(3) == 'aves') { ?>
+                                <li><a>Aves<i class="fas fa-chevron-down"></i></a></li>
+                                <title>Quick - Categoria Aves</title>
+                            <?php } else if ($this->uri->segment(3) == 'peixes') { ?>
+                                <li><a>Peixes<i class="fas fa-chevron-down"></i></a></li>
+                                <title>Quick - Categoria Peixes</title>
+                            <?php } else if ($this->uri->segment(3) == 'vegetais') { ?>
+                                <li><a>Vegetais<i class="fas fa-chevron-down"></i></a></li>
+                                <title>Quick - Categoria Vegetais</title>
+                            <?php } else if ($this->uri->segment(3) == 'frutas') { ?>
+                                <li><a>Frutas<i class="fas fa-chevron-down"></i></a></li>
+                                <title>Quick - Categoria Frutas</title>
+                            <?php } else if ($this->uri->segment(3) == 'alcoolicas') { ?>
+                                <li><a>Bebidas alcoólicas<i class="fas fa-chevron-down"></i></a></li>
+                                <title>Quick - Categoria Alcoólicas</title>
+                            <?php } else if ($this->uri->segment(3) == 'naoalcoolicas') { ?>
+                                <li><a>Bebidas não alcoólicas<i class="fas fa-chevron-down"></i></a></li>
+                                <title>Quick - Categoria Não alcoólicas</title>
+                            <?php } else if ($this->uri->segment(3) == 'limpeza') { ?>
+                                <li><a>Produtos de limpeza<i class="fas fa-chevron-down"></i></a></li>
+                                <title>Quick - Categoria Produtos de limpeza</title>
+                            <?php } else if ($this->uri->segment(3) == 'higiene') { ?>
+                                <li><a>Higiene<i class="fas fa-chevron-down"></i></a></li>
+                                <title>Quick - Categoria Higiene</title>
+                            <?php } else if ($this->uri->segment(3) == 'pet') { ?>
+                                <li><a>Pets<i class="fas fa-chevron-down"></i></a></li>
+                                <title>Quick - Categoria Pets</title>
+                            <?php } ?>
+                            <!-- //Barras de menu das categorias -->
+                            <!-- Barras de menu do login e cadastro e listagem dos cliente -->
+                            <?php if ($this->uri->segment(1) == 'login') { ?>
+                                <li><a>Login<i class="fas fa-chevron-down"></i></a></li>
+                                <title>Quick - Login</title>
+                            <?php } else if ($this->uri->segment(1) == 'cadastroclientes') { ?>
+                                <title>Quick - Cadastro de cliente</title>
+                                <li><a>Cadastro de clientes<i class="fas fa-chevron-down"></i></a></li>
+                            <?php } else if ($this->uri->segment(1) == 'listacliente') { ?>
+                                <div class="products-breadcrumb">
+                                    <div class="container">
+                                        <ul>
+                                            <i class="fa fa-home" aria-hidden="true"></i><li><a href=<?php echo base_url('index') ?>>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Início</a><span>|</span></li>
+                                            <li><?php echo "Clientes cadastrados"; ?></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            <?php } else if ($this->uri->segment(1) == 'resultadodabusca') { ?>
+                                <!-- //Barras de menu do login e cadastro dos cliente -->
+                                <!-- //Barras de menu da tela de pesquisa -->
+                                <li><a>Resultado da busca<i class="fas fa-chevron-down"></i></a></li>
+                                <title>Quick - Resultado da busca</title>
+                            <?php } ?>
+                            <!-- //Barras de menu da tela de pesquisa -->
+                        </ul>
+                    </div>
 
-        <div id="wrapper">
-            <!-- Sidebar -->
-            <ul class="sidebar navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="<?php echo base_url('paineladministrativo') ?>">
-                        <i class="fas fa-fw fa-tachometer-alt"></i>
-                        <span>Painel administrativo</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="cadproduto">
-                        <i class="fas fa-fw fa-list"></i>
-                        <span>Cadastrar produtos</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="cadbanner">
-                        <i class="fas fa-fw fa-list"></i>
-                        <span>Cadastrar banners</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="cadastroadministrador">
-                        <i class="fas fa-fw fa-users"></i>
-                        <span>Cadastrar admin</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="cadastrooperador">
-                        <i class="fas fa-fw fa-users"></i>
-                        <span>Cadastrar operador</span></a>
-                </li>
+                    <!-- Menu Trigger -->
 
-                <li class="nav-item">
-                    <a class="nav-link" href="<?php echo base_url('pagseguro') ?>">
-                        <i class="fas fa-fw fa-list"></i>
-                        <span>Pag Seguro</span></a>
-                </li>
-            </ul>
-            
-    </body>
+                    <div class="menu_trigger_container ml-auto">
+                        <div class="menu_trigger d-flex flex-row align-items-center justify-content-end">
+                            <div class="menu_burger">
+                                <div class="menu_trigger_text">menu</div>
+                                <div class="cat_burger menu_burger_inner"><span></span><span></span><span></span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Menu -->
+
+<div class="page_menu">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+
+                <div class="page_menu_content">
+
+                    <div class="page_menu_search">
+                        <form action="#">
+                            <input type="search" required="required" class="page_menu_search_input" placeholder="Search for products...">
+                        </form>
+                    </div>
+                    <ul class="page_menu_nav">
+                        <li class="page_menu_item has-children">
+                            <a href="#">Language<i class="fa fa-angle-down"></i></a>
+                            <ul class="page_menu_selection">
+                                <li><a href="#">English<i class="fa fa-angle-down"></i></a></li>
+                                <li><a href="#">Italian<i class="fa fa-angle-down"></i></a></li>
+                                <li><a href="#">Spanish<i class="fa fa-angle-down"></i></a></li>
+                                <li><a href="#">Japanese<i class="fa fa-angle-down"></i></a></li>
+                            </ul>
+                        </li>
+                        <li class="page_menu_item has-children">
+                            <a href="#">Currency<i class="fa fa-angle-down"></i></a>
+                            <ul class="page_menu_selection">
+                                <li><a href="#">US Dollar<i class="fa fa-angle-down"></i></a></li>
+                                <li><a href="#">EUR Euro<i class="fa fa-angle-down"></i></a></li>
+                                <li><a href="#">GBP British Pound<i class="fa fa-angle-down"></i></a></li>
+                                <li><a href="#">JPY Japanese Yen<i class="fa fa-angle-down"></i></a></li>
+                            </ul>
+                        </li>
+                        <li class="page_menu_item">
+                            <a href="#">Home<i class="fa fa-angle-down"></i></a>
+                        </li>
+                        <li class="page_menu_item has-children">
+                            <a href="#">Super Deals<i class="fa fa-angle-down"></i></a>
+                            <ul class="page_menu_selection">
+                                <li><a href="#">Super Deals<i class="fa fa-angle-down"></i></a></li>
+                                <li class="page_menu_item has-children">
+                                    <a href="#">Menu Item<i class="fa fa-angle-down"></i></a>
+                                    <ul class="page_menu_selection">
+                                        <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
+                                        <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
+                                        <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
+                                        <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
+                                <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
+                                <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
+                            </ul>
+                        </li>
+                        <li class="page_menu_item has-children">
+                            <a href="#">Featured Brands<i class="fa fa-angle-down"></i></a>
+                            <ul class="page_menu_selection">
+                                <li><a href="#">Featured Brands<i class="fa fa-angle-down"></i></a></li>
+                                <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
+                                <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
+                                <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
+                            </ul>
+                        </li>
+                        <li class="page_menu_item has-children">
+                            <a href="#">Trending Styles<i class="fa fa-angle-down"></i></a>
+                            <ul class="page_menu_selection">
+                                <li><a href="#">Trending Styles<i class="fa fa-angle-down"></i></a></li>
+                                <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
+                                <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
+                                <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
+                            </ul>
+                        </li>
+                        <li class="page_menu_item"><a href="blog.html">blog<i class="fa fa-angle-down"></i></a></li>
+                        <li class="page_menu_item"><a href="contact.html">contact<i class="fa fa-angle-down"></i></a></li>
+                    </ul>
+
+                    <div class="menu_contact">
+                        <div class="menu_contact_item"><div class="menu_contact_icon"><img src="images/phone_white.png" alt=""></div>+38 068 005 3570</div>
+                        <div class="menu_contact_item"><div class="menu_contact_icon"><img src="images/mail_white.png" alt=""></div><a href="mailto:fastsales@gmail.com">fastsales@gmail.com</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</header>
+
+
