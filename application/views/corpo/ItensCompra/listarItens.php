@@ -37,8 +37,8 @@ and open the template in the editor.
                                 <tr>
                                     <td class="text-center"><?= $i->nome_Item ?> </td>
                                     <td class="text-center"><?= $i->quantidade ?></td>
-                                    <td class="text-center"><?= formataMoedaReal($i->valorUnitario, TRUE) ?></td>
-                                    <td class="text-center"><?= formataMoedaReal($i->subtotal, TRUE) ?></td>
+                                    <td class="text-right"><?= formataMoedaReal($i->valorUnitario, TRUE) ?></td>
+                                    <td class="text-right"><?= formataMoedaReal($i->subtotal, TRUE) ?></td>
                                     
                                 </tr>
 

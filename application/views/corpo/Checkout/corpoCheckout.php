@@ -133,7 +133,7 @@ and open the template in the editor.
             unset($situacao);
         }
         ?>
-            
+
 
         <?php if ($this->session->flashdata("success")) : ?>
             <center><p class="alert alert-success"><?= $this->session->flashdata("success") ?><button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -148,7 +148,7 @@ and open the template in the editor.
         <?php endif ?>
 
 
-        
+
         <section class="margin-top-40 checkout-loja">
             <div class="container">
 
@@ -246,6 +246,82 @@ and open the template in the editor.
             }
             ?>
 
+
+            <!-- Adicionando JQuery -->
+            <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+                    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+
+            <!-- Adicionando Javascript -->
+            <script type="text/javascript" >
+
+            $(document).ready(function () {
+
+                function limpa_formulário_cep() {
+                    // Limpa valores do formulário de cep.
+                    $("#rua").val("");
+                    $("#bairro").val("");
+                    $("#cidade").val("");
+                    $("#uf").val("");
+
+                }
+
+                //Quando o campo cep perde o foco.
+                $("#cep").blur(function () {
+
+                    //Nova variável "cep" somente com dígitos.
+                    var cep = $(this).val().replace(/\D/g, '');
+
+                    //Verifica se campo cep possui valor informado.
+                    if (cep != "") {
+
+                        //Expressão regular para validar o CEP.
+                        var validacep = /^[0-9]{8}$/;
+
+                        //Valida o formato do CEP.
+                        if (validacep.test(cep)) {
+
+                            //Preenche os campos com "..." enquanto consulta webservice.
+                            $("#rua").val("Carregando");
+                            $("#bairro").val("Carregando");
+                            $("#cidade").val("Carregando");
+                            $("#uf").val("Carregando");
+
+
+                            //Consulta o webservice viacep.com.br/
+                            $.getJSON("https://viacep.com.br/ws/" + cep + "/json/?callback=?", function (dados) {
+
+                                if (!("erro" in dados)) {
+                                    //Atualiza os campos com os valores da consulta.
+                                    $("#rua").val(dados.logradouro);
+                                    $("#bairro").val(dados.bairro);
+                                    $("#cidade").val(dados.localidade);
+                                    $("#uf").val(dados.uf);
+
+                                } //end if.
+                                else {
+                                    //CEP pesquisado não foi encontrado.
+                                    limpa_formulário_cep();
+                                    alert("CEP não encontrado.");
+                                }
+                            });
+                        } //end if.
+                        else {
+                            //cep é inválido.
+                            limpa_formulário_cep();
+                            alert("Formato de CEP inválido.");
+                        }
+                    } //end if.
+                    else {
+                        //cep sem valor, limpa formulário.
+                        limpa_formulário_cep();
+                    }
+                });
+            });
+
+            </script>
+
+
             <div class="container">
                 <div class="row">
 
@@ -262,17 +338,7 @@ and open the template in the editor.
 
                         <div class="form-group">
                             <label for="endereco" class="margin-top-1">Endereço</label> <!-- OBS: Salvar na tabela endereco no campo nome da rua -->
-                            <input type="text" class="form-control" name="endereco" id="endereco" placeholder="Endereço">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="numero">Número</label> <!-- OBS: Salvar na tabela endereco -->
-                            <input type="text" class="form-control" name="numero" id="numero" placeholder="Número">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="complemeto">Complemento</label> <!-- OBS: Salvar na tabela endereco -->
-                            <input type="text" class="form-control" name="complemento" id="complemento" placeholder="Complemento">
+                            <input type="text" class="form-control" name="endereco" id="rua" placeholder="Endereço">
                         </div>
 
                         <div class="form-group">
@@ -287,38 +353,24 @@ and open the template in the editor.
 
                         <div class="form-group">
                             <label for="estado">Estado</label> <!-- OBS: Salvar na tabela estado -->
-                            <select class="form-control" name="estado" id="estado">
-                                <option value="AC">Acre</option>
-                                <option value="AL">Alagoas</option>
-                                <option value="AP">Amapá</option>
-                                <option value="AM">Amazonas</option>
-                                <option value="BA">Bahia</option>
-                                <option value="CE">Ceará</option>
-                                <option value="DF">Distrito Federal</option>
-                                <option value="ES">Espírito Santo</option>
-                                <option value="GO">Goiás</option>
-                                <option value="MA">Maranhão</option>
-                                <option value="MT">Mato Grosso</option>
-                                <option value="MS">Mato Grosso do Sul</option>
-                                <option value="MG">Minas Gerais</option>
-                                <option value="PA">Pará</option>
-                                <option value="PB">Paraíba</option>
-                                <option value="PR">Paraná</option>
-                                <option value="PE">Pernambuco</option>
-                                <option value="PI">Piauí</option>
-                                <option value="RJ">Rio de Janeiro</option>
-                                <option value="RN">Rio Grande do Norte</option>
-                                <option value="RS">Rio Grande do Sul</option>
-                                <option value="RO">Rondônia</option>
-                                <option value="RR">Roraima</option>
-                                <option value="SC">Santa Catarina</option>
-                                <option value="SP">São Paulo</option>
-                                <option value="SE">Sergipe</option>
-                                <option value="TO">Tocantins</option>
-                            </select>
+                            <input type="text" class="form-control" name="estado" id="uf" placeholder="Estado">
 
                         </div>
+
+                        <div class="form-group">
+                            <label for="complemeto">Complemento</label> <!-- OBS: Salvar na tabela endereco -->
+                            <input type="text" class="form-control" name="complemento" id="complemento" placeholder="Complemento">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="numero">Número</label> <!-- OBS: Salvar na tabela endereco -->
+                            <input type="text" class="form-control" name="numero" id="numero" placeholder="Número">
+                        </div>
+
+
+
                     </div>
+
                     <div class="col-sm">
                         <h2> <i class="fa fa-credit-card"></i> Pagamento</h2>
                         <div class="form-group margin-checkout">
