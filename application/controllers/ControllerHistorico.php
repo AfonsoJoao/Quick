@@ -26,5 +26,23 @@ class ControllerHistorico extends CI_Controller {
         $this->load->view('corpo/HistoricoCompras/listarHistorico', $dados);
         $this->load->view('estrutura/rodape');
     }
+    
+    public function getItensCompra($id_pedido=NULL){
+        $this->load->Model('modelHistorico', '', TRUE);
+        
+        if (!$id_pedido) {
+            echo 'Erro você deve informar um id válido.';
+            exit;
+        }
+        
+        $ped['item'] = $this->modelHistorico->getDadosItens($id_pedido);
+        
+        
+        $this->load->view('estrutura/cabecalho');
+        $this->load->view('corpo/ItensCompra/listarItens', $ped);
+        $this->load->view('estrutura/rodape');
+        
+        
+    }
 
 }

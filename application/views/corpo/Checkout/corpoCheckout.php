@@ -133,9 +133,22 @@ and open the template in the editor.
             unset($situacao);
         }
         ?>
+            
+
+        <?php if ($this->session->flashdata("success")) : ?>
+            <center><p class="alert alert-success"><?= $this->session->flashdata("success") ?><button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span></button></p></center>
+
+        <?php endif ?>
+
+        <?php if ($this->session->flashdata("danger")) : ?>
+
+            <center><p class="alert alert-danger"><?= $this->session->flashdata("danger") ?><button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span></button></p></center>
+        <?php endif ?>
 
 
-        <br>
+        
         <section class="margin-top-40 checkout-loja">
             <div class="container">
 
@@ -162,7 +175,7 @@ and open the template in the editor.
                                     <td><?= $linha['nome'] ?></td>
                                     <td class="text-right"><?= formataMoedaReal($linha['valor'], TRUE) ?></td>
                                     <td class="text-center"> <?= $linha['qtd'] ?> </td>
-                                    <td class="text-right"><?= formataMoedaReal($linha['subtotal'], TRUE) ?></td> <!-- OBS: Depois colocar no formato moeda real -->
+                                    <td class="text-right"><?= formataMoedaReal($linha['subtotal'], TRUE) ?></td>
 
 
                                 </tr>
@@ -197,6 +210,24 @@ and open the template in the editor.
                     <br><br>
                 </div>
             </div>
+
+            <?php
+            if (isset($cli)) {
+                foreach ($cli as $dados) {
+                    ?>
+
+                    <input type="hidden" name="idCliente" value="<?php echo $dados->idCliente; ?>">
+                    <input type="hidden" name="nomeCliente" value="<?php echo $dados->nomeCliente; ?>">
+                    <input type="hidden" name="cpf" value="<?php echo $dados->cpf; ?>">
+                    <input type="hidden" name="email" value="<?php echo $dados->email; ?>">
+                    <input type="hidden" name="senha" value="<?php echo $dados->senha; ?>">
+                    <input type="hidden" name="telefone" value="<?php echo $dados->telefone; ?>">
+
+                    <?php
+                }
+            }
+            ?>
+
 
             <?php
             if (isset($cliente)) {
@@ -299,48 +330,47 @@ and open the template in the editor.
                             </select>
                         </div>
 
-                        <!-- <div class="pagamento-cartao d-none">
-                             <div class="form-group margin-checkout">
-                                 <label for="cc_numero">Número do Cartão</label>
-                                 <input type="text" class="form-control" name="numeroCartao" id="cc_numero" placeholder="0000 0000 0000 0000">
-                             </div>
+                        <div class="pagamento-cartao d-none">
+                            <div class="form-group margin-checkout">
+                                <label for="cc_numero">Número do Cartão</label>
+                                <input type="text" class="form-control" name="numeroCartao" id="cc_numero" placeholder="0000 0000 0000 0000">
+                            </div>
 
-                             <div class="form-group margin-checkout">
-                                 <label for="cc_titular">Nome do Titular</label>
-                                 <input type="text" class="form-control" name="nomeTitular" id="cc_titular" placeholder="Nome do Titular">
-                             </div>
+                            <div class="form-group margin-checkout">
+                                <label for="cc_titular">Nome do Titular</label>
+                                <input type="text" class="form-control" name="nomeTitular" id="cc_titular" placeholder="Nome do Titular">
+                            </div>
 
-                             <div class="form-group margin-checkout">
-                                 <label for="cc_validade">Validade do Cartão</label>
-                                 <input type="text" class="form-control input_mes_ano" name="validadeCartao" id="cc_validade" placeholder="00/0000">
-                             </div>
+                            <div class="form-group margin-checkout">
+                                <label for="cc_validade">Validade do Cartão</label>
+                                <input type="text" class="form-control input_mes_ano" name="validadeCartao" id="cc_validade" placeholder="00/0000">
+                            </div>
 
-                             <div class="form-group margin-checkout">
-                                 <label for="cc_codigo">Código de Segurança</label>
-                                 <input type="text" class="form-control" name="codigoSeguranca" id="cc_codigo" placeholder="000">
-                             </div>
+                            <div class="form-group margin-checkout">
+                                <label for="cc_codigo">Código de Segurança</label>
+                                <input type="text" class="form-control" name="codigoSeguranca" id="cc_codigo" placeholder="000">
+                            </div>
 
-                         </div>
+                        </div>
 
-                         <div class="pagamento-avista d-none">
-                             <div class="form-group margin-checkout">
-                                 <label for="cedulas">Quais cedulas serão utilizadas no pagamento?</label><br>
-                                 <input type="checkbox" name="2,00" value="2,00"> R$ 2,00<br>
-                                 <input type="checkbox" name="5,00" value="5,00"> R$ 5,00<br>
-                                 <input type="checkbox" name="10,00" value="10,00"> R$ 10,00<br>
-                                 <input type="checkbox" name="20,00" value="20,00"> R$ 20,00<br>
-                                 <input type="checkbox" name="50,00" value="50,00"> R$ 50,00<br>
-                                 <input type="checkbox" name="100,00" value="100,00"> R$ 100,00<br>
-                             </div>
-                         </div> -->
-                        <br><br><br><br><br><br>
+                        <div class="pagamento-avista d-none">
+                            <div class="form-group margin-checkout">
+                                <label for="cedulas">Quais cedulas serão utilizadas no pagamento?</label><br>
+                                <input type="checkbox" name="cedulas" value="2,00"> R$ 2,00<br>
+                                <input type="checkbox" name="cedulas" value="5,00"> R$ 5,00<br>
+                                <input type="checkbox" name="cedulas" value="10,00"> R$ 10,00<br>
+                                <input type="checkbox" name="cedulas" value="20,00"> R$ 20,00<br>
+                                <input type="checkbox" name="cedulas" value="50,00"> R$ 50,00<br>
+                                <input type="checkbox" name="cedulas" value="100,00"> R$ 100,00<br>
+                            </div>
+                        </div>
 
                         <div class="col margin-top-40">
                             <button type="submit" class="btn btn-success btn-lg">Enviar Pedido</button>
 
                         </div>
                     </div>
-    <?php echo form_close(); ?>
+                    <?php echo form_close(); ?>
 
                 </div>
             </div>
@@ -348,7 +378,7 @@ and open the template in the editor.
 
         </section>
 
-<?php } ?>
+    <?php } ?>
 
     <div class="newsletter">
         <div class="container">

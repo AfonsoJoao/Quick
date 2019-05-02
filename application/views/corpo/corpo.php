@@ -16,12 +16,7 @@
 
 </head>
 <!-- Hot New Arrivals -->
-<?php
-if (isset($cliente))
-    foreach ($cliente as $cli) {
-        $_SESSION['idCliente'] = $cli->idCliente;
-    }
-?>
+
 </head>
 
 <body>
@@ -47,10 +42,10 @@ if (isset($cliente))
                                 if (isset($produto)) {
                                     foreach ($produto as $produto) {
                                         ?>
-                                        <?php if ($produto->tipoDestaque == "Destacar como promoção" || $produto->tipoDestaque == "Apenas destacar") { ?>
-                                            <?php if ($produto->disponibilidade == "disponivel") { ?>
+                                        <?php if ($produto->tipoDestaque == 2 || $produto->tipoDestaque == 3) { ?>
+                                            <?php if ($produto->disponibilidade == 1) { ?>
                                                 <!-- Product Item -->
-                                                <?php if ($produto->tipoDestaque == "Destacar como promoção" || $produto->tipoDestaque == "Apenas destacar") { ?>
+                                                <?php if ($produto->tipoDestaque == "2" || $produto->tipoDestaque == "2") { ?>
                                                     <div class="product_item discount">
                                                     <?php } else { ?>
                                                         <div class="product_item">

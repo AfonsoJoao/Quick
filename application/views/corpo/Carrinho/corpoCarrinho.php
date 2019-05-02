@@ -25,16 +25,16 @@ if (isset($situacao)) {
 <?php } else { ?>
 
     <div class="col-md-6">
-        <h2>Carrinho Compras <?= '(total de item ' . $this->carrinhocompras->totalItem() . ')' ?> </h2>
-    </div><br><br>
-    <hr><br>
+        <h2>Carrinho Compras <?= '(Total de itens ' . $this->carrinhocompras->totalItem() . ')' ?> </h2>
+    </div>
+    <hr><br><br>
 
     <div class="col-md-12">
         <table class="table table-bordered">
             <thead>
                 <tr>
                     <th>Descrição</th>
-                    <th class="text-right">Valor</th>
+                    <th class="text-right">Valor Unitário</th>
                     <th class="text-center">Quantidade</th>
                     <th class="text-right">Subtotal</th>
                     <th></th>
@@ -102,7 +102,7 @@ if (isset($situacao)) {
             </a>
         </div>       
     </div>
-    </div>
+    
     <?php
   //  if (isset($_SESSION['usuario_logado'])) {
         ?>
@@ -156,4 +156,4 @@ if (isset($situacao)) {
 
  <?php } // fim do carrinho  ?>
 
-<br><br>
+       <br><br><br><br>

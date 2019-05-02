@@ -23,6 +23,7 @@ and open the template in the editor.
                             <th class="text-center">Total Compra</th>
                             <th class="text-center">Forma de Pagamento</th>
                             <th class="text-center">Status</th>
+                            <th class="text-center">Compras</th>
 
                         </tr>
                     </thead>
@@ -38,6 +39,11 @@ and open the template in the editor.
                                     <td class="text-center"><?= formataMoedaReal($hist->total_pedido, TRUE) ?></td>
                                     <td class="text-center"><?= $hist->forma_Envio ?></td>
                                     <td class="text-center"><?= $hist->status ?></td>
+                                    <td class="text-center"><a href="<?= base_url('ControllerHistorico/getItensCompra/' . 
+                                    $hist->idPedido) ?>" target="_blank" title="Visualizar Compra" class="btn btn-primary"> <!-- O comando target="_blank" serve para abrir uma página em uma nova aba do navegador   -->
+                                    Visualizar Compra
+                                            </a>
+                                    </td>
                                 </tr>
 
                                 <?php

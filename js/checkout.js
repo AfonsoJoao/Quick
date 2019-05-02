@@ -8,7 +8,7 @@ var Checkout = function () {
             switch (tipo) {
 
                 //Cartão
-                case 'Cartao_de_Credito':
+                case 'Cartão de Crédito':
 
                     $('.pagamento-cartao').removeClass('d-none');
                     $('.pagamento-avista').addClass('d-none');
@@ -17,11 +17,12 @@ var Checkout = function () {
                     break;
                    
                 //A Vista    
-                case 'A_Vista':
+                case 'A Vista':
 
                     $('.pagamento-cartao').addClass('d-none');
                     $('.pagamento-avista').removeClass('d-none');
                     $('.pagamento-cartao input').prop('disabled', true);
+                    $('.pagamento-avista input').prop('disabled', false);
                     break;
             }
 

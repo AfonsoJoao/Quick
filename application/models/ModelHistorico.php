@@ -21,5 +21,15 @@ class ModelHistorico extends CI_Model {
         }
         return;
     }
+    
+    public function getDadosItens($id_pedido){
+        
+        $resultado = $this->db->get_where('pedido_item', array('idPedido' => $id_pedido));
+        if ($resultado->num_rows() > 0) {
+            return $resultado->result();
+        }
+        return;
+        
+    }
 
 }
