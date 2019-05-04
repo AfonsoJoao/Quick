@@ -18,7 +18,6 @@ and open the template in the editor.
         if (!isset($_SESSION['usuario_logado'])) {
             ?>
 
-
             <br>
 
             <?php if ($this->session->flashdata("success")) : ?>
@@ -255,69 +254,69 @@ and open the template in the editor.
             <!-- Adicionando Javascript -->
             <script type="text/javascript" >
 
-            $(document).ready(function () {
+                $(document).ready(function () {
 
-                function limpa_formulário_cep() {
-                    // Limpa valores do formulário de cep.
-                    $("#rua").val("");
-                    $("#bairro").val("");
-                    $("#cidade").val("");
-                    $("#uf").val("");
+                    function limpa_formulário_cep() {
+                        // Limpa valores do formulário de cep.
+                        $("#rua").val("");
+                        $("#bairro").val("");
+                        $("#cidade").val("");
+                        $("#uf").val("");
 
-                }
+                    }
 
-                //Quando o campo cep perde o foco.
-                $("#cep").blur(function () {
+                    //Quando o campo cep perde o foco.
+                    $("#cep").blur(function () {
 
-                    //Nova variável "cep" somente com dígitos.
-                    var cep = $(this).val().replace(/\D/g, '');
+                        //Nova variável "cep" somente com dígitos.
+                        var cep = $(this).val().replace(/\D/g, '');
 
-                    //Verifica se campo cep possui valor informado.
-                    if (cep != "") {
+                        //Verifica se campo cep possui valor informado.
+                        if (cep != "") {
 
-                        //Expressão regular para validar o CEP.
-                        var validacep = /^[0-9]{8}$/;
+                            //Expressão regular para validar o CEP.
+                            var validacep = /^[0-9]{8}$/;
 
-                        //Valida o formato do CEP.
-                        if (validacep.test(cep)) {
+                            //Valida o formato do CEP.
+                            if (validacep.test(cep)) {
 
-                            //Preenche os campos com "..." enquanto consulta webservice.
-                            $("#rua").val("Carregando");
-                            $("#bairro").val("Carregando");
-                            $("#cidade").val("Carregando");
-                            $("#uf").val("Carregando");
+                                //Preenche os campos com "..." enquanto consulta webservice.
+                                $("#rua").val("Carregando");
+                                $("#bairro").val("Carregando");
+                                $("#cidade").val("Carregando");
+                                $("#uf").val("Carregando");
 
 
-                            //Consulta o webservice viacep.com.br/
-                            $.getJSON("https://viacep.com.br/ws/" + cep + "/json/?callback=?", function (dados) {
+                                //Consulta o webservice viacep.com.br/
+                                $.getJSON("https://viacep.com.br/ws/" + cep + "/json/?callback=?", function (dados) {
 
-                                if (!("erro" in dados)) {
-                                    //Atualiza os campos com os valores da consulta.
-                                    $("#rua").val(dados.logradouro);
-                                    $("#bairro").val(dados.bairro);
-                                    $("#cidade").val(dados.localidade);
-                                    $("#uf").val(dados.uf);
+                                    if (!("erro" in dados)) {
+                                        //Atualiza os campos com os valores da consulta.
+                                        $("#rua").val(dados.logradouro);
+                                        $("#bairro").val(dados.bairro);
+                                        $("#cidade").val(dados.localidade);
+                                        $("#uf").val(dados.uf);
 
-                                } //end if.
-                                else {
-                                    //CEP pesquisado não foi encontrado.
-                                    limpa_formulário_cep();
-                                    alert("CEP não encontrado.");
-                                }
-                            });
+                                    } //end if.
+                                    else {
+                                        //CEP pesquisado não foi encontrado.
+                                        limpa_formulário_cep();
+                                        alert("CEP não encontrado.");
+                                    }
+                                });
+                            } //end if.
+                            else {
+                                //cep é inválido.
+                                limpa_formulário_cep();
+                                alert("Formato de CEP inválido.");
+                            }
                         } //end if.
                         else {
-                            //cep é inválido.
+                            //cep sem valor, limpa formulário.
                             limpa_formulário_cep();
-                            alert("Formato de CEP inválido.");
                         }
-                    } //end if.
-                    else {
-                        //cep sem valor, limpa formulário.
-                        limpa_formulário_cep();
-                    }
+                    });
                 });
-            });
 
             </script>
 
@@ -328,7 +327,7 @@ and open the template in the editor.
                     <div class="col-sm">
                         <h2> <i class="fa fa-truck"></i> Envio</h2>
 
-                        <label for="cep" class="margin-checkout">CEP</label>
+                        <label for="cep" class="margin-checkout">CEP:</label>
                         <div class="input-group">
                             <input type="text" class="form-control input_cep" name="cep" id="cep" placeholder="CEP">
                          <!--   <span class="input-group-btn">
@@ -337,33 +336,33 @@ and open the template in the editor.
                         </div>
 
                         <div class="form-group">
-                            <label for="endereco" class="margin-top-1">Endereço</label> <!-- OBS: Salvar na tabela endereco no campo nome da rua -->
+                            <label for="endereco" class="margin-top-1">Endereço:</label> <!-- OBS: Salvar na tabela endereco no campo nome da rua -->
                             <input type="text" class="form-control" name="endereco" id="rua" placeholder="Endereço">
                         </div>
 
                         <div class="form-group">
-                            <label for="bairro">Bairro</label> <!-- OBS: Salvar na tabela bairro -->
+                            <label for="bairro">Bairro:</label> <!-- OBS: Salvar na tabela bairro -->
                             <input type="text" class="form-control" name="bairro" id="bairro" placeholder="Bairro">
                         </div>
 
                         <div class="form-group">
-                            <label for="cidade">Cidade</label> <!-- OBS: Salvar na tabela cidade -->
+                            <label for="cidade">Cidade:</label> <!-- OBS: Salvar na tabela cidade -->
                             <input type="text" class="form-control" name="cidade" id="cidade" placeholder="Cidade">
                         </div>
 
                         <div class="form-group">
-                            <label for="estado">Estado</label> <!-- OBS: Salvar na tabela estado -->
+                            <label for="estado">Estado:</label> <!-- OBS: Salvar na tabela estado -->
                             <input type="text" class="form-control" name="estado" id="uf" placeholder="Estado">
 
                         </div>
 
                         <div class="form-group">
-                            <label for="complemeto">Complemento</label> <!-- OBS: Salvar na tabela endereco -->
+                            <label for="complemeto">Complemento:</label> <!-- OBS: Salvar na tabela endereco -->
                             <input type="text" class="form-control" name="complemento" id="complemento" placeholder="Complemento">
                         </div>
 
                         <div class="form-group">
-                            <label for="numero">Número</label> <!-- OBS: Salvar na tabela endereco -->
+                            <label for="numero">Número:</label> <!-- OBS: Salvar na tabela endereco -->
                             <input type="text" class="form-control" name="numero" id="numero" placeholder="Número">
                         </div>
 
@@ -374,9 +373,9 @@ and open the template in the editor.
                     <div class="col-sm">
                         <h2> <i class="fa fa-credit-card"></i> Pagamento</h2>
                         <div class="form-group margin-checkout">
-                            <label for="forma_pagamento">Forma de Pagamento</label>
+                            <label for="forma_pagamento">Selecione a forma de pagamento:</label>
                             <select name="forma_Envio" class="form-control select-forma-pagamento">
-                                <option>Forma de Pagamento</option>
+                                <option>Selecione</option>
                                 <option value="Cartão de Crédito">Cartão de Crédito</option>
                                 <option value="A Vista">A Vista</option>
                             </select>
@@ -384,23 +383,17 @@ and open the template in the editor.
 
                         <div class="pagamento-cartao d-none">
                             <div class="form-group margin-checkout">
-                                <label for="cc_numero">Número do Cartão</label>
-                                <input type="text" class="form-control" name="numeroCartao" id="cc_numero" placeholder="0000 0000 0000 0000">
-                            </div>
-
-                            <div class="form-group margin-checkout">
-                                <label for="cc_titular">Nome do Titular</label>
-                                <input type="text" class="form-control" name="nomeTitular" id="cc_titular" placeholder="Nome do Titular">
-                            </div>
-
-                            <div class="form-group margin-checkout">
-                                <label for="cc_validade">Validade do Cartão</label>
-                                <input type="text" class="form-control input_mes_ano" name="validadeCartao" id="cc_validade" placeholder="00/0000">
-                            </div>
-
-                            <div class="form-group margin-checkout">
-                                <label for="cc_codigo">Código de Segurança</label>
-                                <input type="text" class="form-control" name="codigoSeguranca" id="cc_codigo" placeholder="000">
+                                <label for="bandeiras">Selecione a bandeira do seu cartão de crédito:</label>
+                                <select name="bandeira_cartao" class="form-control">
+                                    <option>Selecione</option>
+                                    <option value="Visa">Visa</option>
+                                    <option value="Mastercard">Mastercard</option>
+                                    <option value="American Express">American Express</option>
+                                    <option value="Elo">Elo</option>
+                                    <option value="Hipercard">Hipercard</option>
+                                    <option value="Diners Club">Diners Club</option>
+                                    <option value="Sorocred">Sorocred</option>
+                                </select>
                             </div>
 
                         </div>

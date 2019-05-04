@@ -60,11 +60,11 @@ class ControllerCheckout extends CI_Controller {
         $this->load->Model('modelPedido', '', TRUE);
 
         $endereco ['idCliente'] = $this->input->post('idCliente');
-        $endereco['nomeCliente'] = $this->input->post('nomeCliente');
-        $endereco['cpf'] = $this->input->post('cpf');
-        $endereco['email'] = $this->input->post('email');
-        $endereco['senha'] = $this->input->post('senha');
-        $endereco['telefone'] = $this->input->post('telefone');
+        $endereco ['nomeCliente'] = $this->input->post('nomeCliente');
+        $endereco ['cpf'] = $this->input->post('cpf');
+        $endereco ['email'] = $this->input->post('email');
+        $endereco ['senha'] = $this->input->post('senha');
+        $endereco ['telefone'] = $this->input->post('telefone');
         $endereco ['cep'] = $this->input->post('cep');
         $endereco ['endereco'] = $this->input->post('endereco');
         $endereco ['total_pedido'] = $this->input->post('total');
@@ -75,8 +75,11 @@ class ControllerCheckout extends CI_Controller {
         $endereco ['cidade'] = $this->input->post('cidade');
         $endereco ['estado'] = $this->input->post('estado');
         $endereco ['forma_Envio'] = $this->input->post('forma_Envio');
-       
+        $endereco ['bandeira_cartao'] = $this->input->post('bandeira_cartao');
+      
         $endereco ['cedulas'] = $this->input->post('cedulas');
+        
+        
         
         $endereco['data_Pedido'] = date('Y-m-d');
         $id_item = $this->modelPedido->insertpedido($endereco);
