@@ -94,8 +94,6 @@ class ControllerProduto extends CI_Controller {
         $dados['produto'] = $this->modelProduto->listaProduto($this->uri->segment(3));
         $this->load->model("modelBanner", '', TRUE);
         $Z['banner'] = $this->modelBanner->listarBanner();
-        $this->load->view('estrutura/cabecalho');
-        $this->load->view('estrutura/barraMenu');
         $this->load->view('corpo/Produto/corpoUnicoProduto', $dados);
     }
 

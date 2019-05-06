@@ -8,7 +8,7 @@
                 <div class="main_nav_content d-flex flex-row">
 
                     <!-- Categories Menu -->
-                    
+
                     <div class="cat_menu_container">
                         <div class="cat_menu_title d-flex flex-row align-items-center justify-content-start">
                             <div class="cat_burger"><span></span><span></span><span></span></div>
@@ -84,14 +84,14 @@
                                 <li><a>Laticínios<i class="fas fa-chevron-down"></i></a></li>
                                 <title>Quick - Categoria Laticínios</title>
                             <?php } else if ($this->uri->segment(3) == 'paes') { ?>
-                               <li><a>Pães<i class="fas fa-chevron-down"></i></a></li>
-                               <title>Quick - Categoria Pães</title>
+                                <li><a>Pães<i class="fas fa-chevron-down"></i></a></li>
+                                <title>Quick - Categoria Pães</title>
                             <?php } else if ($this->uri->segment(3) == 'carnes') { ?>
                                 <li><a>Carnes<i class="fas fa-chevron-down"></i></a></li>
                                 <title>Quick - Categoria Carnes</title>
                             <?php } else if ($this->uri->segment(3) == 'aves') { ?>
-                               <li><a>Aves<i class="fas fa-chevron-down"></i></a></li>
-                               <title>Quick - Categoria Aves</title>
+                                <li><a>Aves<i class="fas fa-chevron-down"></i></a></li>
+                                <title>Quick - Categoria Aves</title>
                             <?php } else if ($this->uri->segment(3) == 'peixes') { ?>
                                 <li><a>Peixes<i class="fas fa-chevron-down"></i></a></li>
                                 <title>Quick - Categoria Peixes</title>
@@ -102,14 +102,14 @@
                                 <li><a>Frutas<i class="fas fa-chevron-down"></i></a></li>
                                 <title>Quick - Categoria Frutas</title>
                             <?php } else if ($this->uri->segment(3) == 'alcoolicas') { ?>
-                               <li><a>Bebidas alcoólicas<i class="fas fa-chevron-down"></i></a></li>
-                               <title>Quick - Categoria Alcoólicas</title>
+                                <li><a>Bebidas alcoólicas<i class="fas fa-chevron-down"></i></a></li>
+                                <title>Quick - Categoria Alcoólicas</title>
                             <?php } else if ($this->uri->segment(3) == 'naoalcoolicas') { ?>
                                 <li><a>Bebidas não alcoólicas<i class="fas fa-chevron-down"></i></a></li>
                                 <title>Quick - Categoria Não alcoólicas</title>
                             <?php } else if ($this->uri->segment(3) == 'limpeza') { ?>
-                               <li><a>Produtos de limpeza<i class="fas fa-chevron-down"></i></a></li>
-                               <title>Quick - Categoria Produtos de limpeza</title>
+                                <li><a>Produtos de limpeza<i class="fas fa-chevron-down"></i></a></li>
+                                <title>Quick - Categoria Produtos de limpeza</title>
                             <?php } else if ($this->uri->segment(3) == 'higiene') { ?>
                                 <li><a>Higiene<i class="fas fa-chevron-down"></i></a></li>
                                 <title>Quick - Categoria Higiene</title>
@@ -137,7 +137,7 @@
                             <?php } else if ($this->uri->segment(1) == 'resultadodabusca') { ?>
                                 <!-- //Barras de menu do login e cadastro dos cliente -->
                                 <!-- //Barras de menu da tela de pesquisa -->
-                               <li><a>Resultado da busca<i class="fas fa-chevron-down"></i></a></li>
+                                <li><a>Resultado da busca<i class="fas fa-chevron-down"></i></a></li>
                                 <title>Quick - Resultado da busca</title>
                             <?php } ?>
                             <!-- //Barras de menu da tela de pesquisa -->
@@ -160,91 +160,36 @@
         </div>
     </div>
 </nav>
-		<!-- Menu -->
+<!-- Menu -->
 
-		<div class="page_menu">
-			<div class="container">
-				<div class="row">
-					<div class="col">
-						
-						<div class="page_menu_content">
-							
-							<div class="page_menu_search">
-								<form action="#">
-									<input type="search" required="required" class="page_menu_search_input" placeholder="Search for products...">
-								</form>
-							</div>
-							<ul class="page_menu_nav">
-								<li class="page_menu_item has-children">
-									<a href="#">Language<i class="fa fa-angle-down"></i></a>
-									<ul class="page_menu_selection">
-										<li><a href="#">English<i class="fa fa-angle-down"></i></a></li>
-										<li><a href="#">Italian<i class="fa fa-angle-down"></i></a></li>
-										<li><a href="#">Spanish<i class="fa fa-angle-down"></i></a></li>
-										<li><a href="#">Japanese<i class="fa fa-angle-down"></i></a></li>
-									</ul>
-								</li>
-								<li class="page_menu_item has-children">
-									<a href="#">Currency<i class="fa fa-angle-down"></i></a>
-									<ul class="page_menu_selection">
-										<li><a href="#">US Dollar<i class="fa fa-angle-down"></i></a></li>
-										<li><a href="#">EUR Euro<i class="fa fa-angle-down"></i></a></li>
-										<li><a href="#">GBP British Pound<i class="fa fa-angle-down"></i></a></li>
-										<li><a href="#">JPY Japanese Yen<i class="fa fa-angle-down"></i></a></li>
-									</ul>
-								</li>
-								<li class="page_menu_item">
-									<a href="#">Home<i class="fa fa-angle-down"></i></a>
-								</li>
-								<li class="page_menu_item has-children">
-									<a href="#">Super Deals<i class="fa fa-angle-down"></i></a>
-									<ul class="page_menu_selection">
-										<li><a href="#">Super Deals<i class="fa fa-angle-down"></i></a></li>
-										<li class="page_menu_item has-children">
-											<a href="#">Menu Item<i class="fa fa-angle-down"></i></a>
-											<ul class="page_menu_selection">
-												<li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
-												<li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
-												<li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
-												<li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
-											</ul>
-										</li>
-										<li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
-										<li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
-										<li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
-									</ul>
-								</li>
-								<li class="page_menu_item has-children">
-									<a href="#">Featured Brands<i class="fa fa-angle-down"></i></a>
-									<ul class="page_menu_selection">
-										<li><a href="#">Featured Brands<i class="fa fa-angle-down"></i></a></li>
-										<li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
-										<li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
-										<li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
-									</ul>
-								</li>
-								<li class="page_menu_item has-children">
-									<a href="#">Trending Styles<i class="fa fa-angle-down"></i></a>
-									<ul class="page_menu_selection">
-										<li><a href="#">Trending Styles<i class="fa fa-angle-down"></i></a></li>
-										<li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
-										<li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
-										<li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
-									</ul>
-								</li>
-								<li class="page_menu_item"><a href="blog.html">blog<i class="fa fa-angle-down"></i></a></li>
-								<li class="page_menu_item"><a href="contact.html">contact<i class="fa fa-angle-down"></i></a></li>
-							</ul>
-							
-							<div class="menu_contact">
-								<div class="menu_contact_item"><div class="menu_contact_icon"><img src="images/phone_white.png" alt=""></div>+38 068 005 3570</div>
-								<div class="menu_contact_item"><div class="menu_contact_icon"><img src="images/mail_white.png" alt=""></div><a href="mailto:fastsales@gmail.com">fastsales@gmail.com</a></div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+<div class="page_menu">
+    <div class="container">
+        <div class="row">
+            <div class="col">
 
-	</header>
-	
+                <div class="page_menu_content">
+
+                    <div class="page_menu_search">
+                        <form action="<?php echo base_url('resultadodabusca/') ?>" method="post" >
+                            <input type="search" name="busca" class="page_menu_search_input" placeholder="Procurar por um produto...">
+                        </form>
+                    </div>
+                    <ul class="page_menu_nav">
+                        <li class="page_menu_item"><a href = "<?php echo base_url('login/'); ?>">Entre</a></li>
+                        <li class="page_menu_item"><a href = "<?php echo base_url('cadastroclientes/'); ?>">Cadastre-se&nbsp;
+                                &nbsp;
+                            </a></i></a></li>
+                    </ul>
+
+                    <div class="menu_contact">
+                        <div class="menu_contact_item"><div class="menu_contact_icon"><img src="images/phone_white.png" alt=""></div>+XX XXXXX.XXXX</div>
+                        <div class="menu_contact_item"><div class="menu_contact_icon"><img src="images/mail_white.png" alt=""></div>quicksupermercados.contato@gmail.com</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</header>
+

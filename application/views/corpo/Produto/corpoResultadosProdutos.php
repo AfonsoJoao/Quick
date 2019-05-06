@@ -33,7 +33,7 @@
                                 <div class="shop_bar clearfix">
                                     <div class="shop_product_count">Produtos encontrados</div>
                                 </div>
-<?php echo form_open('ControllerProduto/buscarProduto'); ?>
+                                <?php echo form_open('ControllerProduto/buscarProduto'); ?>
                                 <div class="product_grid">
                                     <div class="product_grid_border"></div>
                                     <?php
@@ -71,8 +71,13 @@
                                             }
                                         }
                                         ?>
+                                    <?php }
+                                    if (!isset($listagem['idProduto'])) {
+                                        ?>
+                                        <br><br>
+                                        <div align="center"><h1>Nenhum produto encontrado...</h1></div>
                                     <?php } ?>
-                                    <?php echo form_close(); ?>
+<?php echo form_close(); ?>
 
                                 </div>
                             </div>
