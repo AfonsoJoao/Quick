@@ -39,9 +39,9 @@
                                     if (isset($produto)) {
                                         foreach ($produto as $produto) {
                                             ?>
-                                            <?php if ($produto->disponibilidade == "disponivel") { ?>
+                                            <?php if ($produto->disponibilidade == 1) { ?>
                                                 <!-- Product Item -->
-                                                <?php if ($produto->tipoDestaque == "Destacar como promoção" || $produto->tipoDestaque == "Apenas destacar") { ?>
+                                                <?php if ($produto->tipoDestaque == 2 || $produto->tipoDestaque == 3) { ?>
                                                     <div class="product_item discount">
                                                     <?php } else { ?>
                                                         <div class="product_item">
@@ -57,12 +57,12 @@
                                                                class="btn btn-primary btn-md btn-add-produto-carrinho"
                                                                data-id="<?= $produto->idProduto ?>">&nbsp;<i class="fa fa-shopping-cart"></i><font size="3">&nbsp;&nbsp;Adicionar&nbsp;&nbsp; </font></a></h3>
                                                         <ul class="product_marks">
-                                                            <?php if ($produto->tipoDestaque == "Destacar como promoção") { ?>
+                                                            <?php if ($produto->tipoDestaque == 2) { ?>
                                                                 <li class="product_mark product_discount"><?php echo $produto->valorPromocao; ?>%</li>
                                                             <?php } ?>
                                                             <li class="product_mark product_new">new</li>
                                                         </ul>
-                                                        <?php if ($produto->tipoDestaque == "Destacar como promoção") { ?>
+                                                        <?php if ($produto->tipoDestaque == 2) { ?>
                                                         </div>
                                                     <?php } else { ?>
                                                     </div>

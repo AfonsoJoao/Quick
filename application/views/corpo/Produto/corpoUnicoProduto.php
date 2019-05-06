@@ -26,7 +26,7 @@
 
                                         <div class="product_price"><?= formataMoedaReal($produto->valorUnitario, TRUE) ?></div>
                                         <div class="button_container">
-                                            <h1><a href="#" title="Adicionar produtos carrinho" 
+                                            <h1><a href="#" title="Adicionar" 
                                                    class="btn btn-primary btn-lg btn-add-produto-carrinho"
                                                    data-id="<?= $produto->idProduto ?>">&nbsp;<i class="fa fa-shopping-cart"></i><font size="3">&nbsp;&nbsp;Adicionar ao Carrinho&nbsp;&nbsp; </font></a></h1>
                                             <div class="product_fav"><i class="fas fa-heart"></i></div>
