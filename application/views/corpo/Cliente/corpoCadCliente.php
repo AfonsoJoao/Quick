@@ -1,4 +1,8 @@
 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+
 <?php
 if (isset($situacao)) {
     $st = $situacao;
@@ -9,6 +13,12 @@ if (isset($situacao)) {
 }
 ?>
 
+    
+    <script type="text/javascript">
+    $("#telefone").mask("(00) 00000-0000");
+    $("#input_cpf").mask('000.000.000-00');
+    </script>
+    
 
 <div class="w3_login">
     <?php if ($this->session->flashdata("success")) : ?>
@@ -79,7 +89,7 @@ if (isset($situacao)) {
 
                     <div class="form-group">
                         <div class="text-left">CPF:</div>
-                        <input type="text" class="form-control margin-top-2" class="cpf" name="cpf" placeholder="CPF" required="" value="<?php
+                        <input type="text" class="form-control margin-top-2" class="cpf" id="input_cpf" name="cpf" placeholder="CPF" required="" value="<?php
                         if (isset($cliente))
                             foreach ($cliente as $cli) {
                                 echo $cli->cpf;
@@ -91,7 +101,7 @@ if (isset($situacao)) {
                     <div class="form-group">
                         <div class="text-left">Telefone:</div> 
                         <input type="text" class="form-control margin-top-2" 
-                        name="telefone" placeholder="Telefone" required="" id="input_telefone">
+                        name="telefone" placeholder="Telefone" required="" id="telefone">
 
                     </div>
 

@@ -32,22 +32,22 @@ and open the template in the editor.
 
                     <div class="row margin-botton-20">
                         <div class="col-md-12 text-right">
-                            
+
                             <div class="btn-group">
                                 <button type="button" class="btn btn-primary dropdown-toggle" 
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  <i class="far fa-file-alt"></i> Relatórios <span class="caret"></span>
+                                    <i class="far fa-file-alt"></i> Relatórios <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu">
                                     <a class="dropdown-item" href="<?= base_url('ControllerRelatorio/mensal') ?>" target="_blank">Vendas Diárias</a>
-                                    
+
                                 </ul>
                             </div>
 
                         </div>
                     </div>
                 </div>
-                
+
 
                 <div class="card-body">
                     <div class="table-responsive">
@@ -65,60 +65,66 @@ and open the template in the editor.
                             </thead>
 
                             <tbody>
-                                    
-                                
-     
-                                <?php foreach ($pedido as $p) { ?> 
-                                    <tr>
-                                        <td><?= $p->idPedido ?> </td>
-                                        <td><?= $p->nomeCliente ?></td>
-                                        <td><?= formataMoedaReal($p->total_pedido, TRUE) ?></td>
-                                        <td class="text-center">
-                                            <?php
-                                            switch ($p->status) {
-                                                case 'Enviado':
-                                                    echo 'Enviado';
-                                                    break;
 
-                                                case 'Pagamento Confirmado':
-                                                    echo 'Pagamento Confirmado';
-                                                    break;
 
-                                                case 'Pedido Cancelado':
-                                                    echo 'Pedido Cancelado';
-                                                    break;
+                                <?php if (isset($pedido)) {
+                                    foreach ($pedido as $p) {
+                                        ?> 
+                                        <tr>
+                                            <td><?= $p->idPedido ?> </td>
+                                            <td><?= $p->nomeCliente ?></td>
+                                            <td><?= formataMoedaReal($p->total_pedido, TRUE) ?></td>
+                                            <td class="text-center">
+                                                <?php
+                                                switch ($p->status) {
+                                                    case 'Enviado':
+                                                        echo 'Enviado';
+                                                        break;
 
-                                                default:
-                                                    echo 'Aguardando Pagamento';
-                                                    break;
-                                            }
-                                            ?>
+                                                    case 'Pagamento Confirmado':
+                                                        echo 'Pagamento Confirmado';
+                                                        break;
 
-                                        </td>
-                                        <td class="text-right">
-                                            <button type="button" title="Mudar Status" class="btn btn-primary
-                                                    btn-mudar-status-pedido" data-toggle="modal" data-id-pedido="<?= $p->idPedido ?>">
-                                                <i class="fas fa-edit"></i> Mudar Status 
-                                            </button>
+                                                    case 'Pedido Cancelado':
+                                                        echo 'Pedido Cancelado';
+                                                        break;
 
-                                           
+                                                    default:
+                                                        echo 'Aguardando Pagamento';
+                                                        break;
+                                                }
+                                                ?>
 
-                                            <a href="<?= base_url('ControllerPedido/imprimir/' . $p->idPedido) ?>" target="_blank"
-                                               title="Imprimir Pedido" class="btn btn-primary" > <!-- O comando target="_blank" serve para abrir uma página em uma nova aba do navegador   -->
-                                                <i class="fa fa-print"></i> Imprimir Pedido
-                                            </a>
+                                            </td>
+                                            <td class="text-right">
+                                                <button type="button" title="Mudar Status" class="btn btn-primary
+                                                        btn-mudar-status-pedido" data-toggle="modal" data-id-pedido="<?= $p->idPedido ?>">
+                                                    <i class="fas fa-edit"></i> Mudar Status 
+                                                </button>
 
-                                        </td>
-                                       <!-- <td class="text-center"><a href="<?php // echo base_url("ControllerPedido/listaUnicoPedido/"
-                                        //. "$p->idPedido"); ?>"><img src="<?php // echo base_url('application/images/icones/edit-Icon.png'); ?>"></a></td> -->
-                                       
-                                        <td class="text-center"><a href="javascript:func()" onclick="excluirPedido(<?php echo $p->idPedido; ?>,
-                                        '<?php echo $p->idPedido; ?>')" class="btn btn-danger">Excluir</a></td>
-                                    </tr>
 
-                                <?php } // Fim do foreach   ?>
-                                    
-                                   
+
+                                                <a href="<?= base_url('ControllerPedido/imprimir/' . $p->idPedido) ?>" target="_blank"
+                                                   title="Imprimir Pedido" class="btn btn-primary" > <!-- O comando target="_blank" serve para abrir uma página em uma nova aba do navegador   -->
+                                                    <i class="fa fa-print"></i> Imprimir Pedido
+                                                </a>
+
+                                            </td>
+                                           <!-- <td class="text-center"><a href="<?php // echo base_url("ControllerPedido/listaUnicoPedido/"
+                                                //. "$p->idPedido"); 
+                                                ?>"><img src="<?php // echo base_url('application/images/icones/edit-Icon.png');  ?>"></a></td> -->
+
+                                            <td class="text-center"><a href="javascript:func()" onclick="excluirPedido(<?php echo $p->idPedido; ?>,
+                                                                '<?php echo $p->idPedido; ?>')" class="btn btn-danger">Excluir</a></td>
+                                        </tr>
+
+                                    <?php
+                                    }
+                                }
+                                // Fim do foreach   
+                                ?>
+
+
 
                             </tbody>
                         </table>
