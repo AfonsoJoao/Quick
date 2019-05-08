@@ -13,6 +13,11 @@
  */
 class ControllerAdministrador extends CI_Controller {
 
+    public function __construct() {
+        parent::__construct();
+        $this->load->helper('funcoes');
+    }
+
     public function cadadministrador() {
         $this->load->view('corpo/Administrador/corpoCadAdministrador');
     }
@@ -38,7 +43,8 @@ class ControllerAdministrador extends CI_Controller {
                 $msn['situacao'] = "Erro na Alteração dos Dados";
             }
         }
-
+        $this->load->Model('modelPedido', '', TRUE);
+        $msn ['pedido'] = $this->modelPedido->getPedidos();
         $this->load->view('estrutura/menuPainel');
         $this->load->view('corpo/corpoPainel', $msn);
         $this->load->view('estrutura/rodapePainel');
@@ -98,8 +104,10 @@ class ControllerAdministrador extends CI_Controller {
     }
 
     public function painel() {
+        $this->load->Model('modelPedido', '', TRUE);
+        $ped ['pedido'] = $this->modelPedido->getPedidos();
         $this->load->view('estrutura/menuPainel');
-        $this->load->view('corpo/corpoPainel');
+        $this->load->view('corpo/corpoPainel', $ped);
         $this->load->view('estrutura/rodapePainel');
     }
 

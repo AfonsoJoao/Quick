@@ -39,7 +39,8 @@ class ControllerOperador extends CI_Controller {
                 $msn['situacao'] = "Erro na Alteração dos Dados";
             }
         }
-
+        $this->load->Model('modelPedido', '', TRUE);
+        $msn ['pedido'] = $this->modelPedido->getPedidos();
         $this->load->view('estrutura/menuPainel');
         $this->load->view('corpo/corpoPainel', $msn);
         $this->load->view('estrutura/rodapePainel');

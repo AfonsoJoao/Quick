@@ -87,12 +87,16 @@
 
                         <input type="hidden" name="disponibilidade" value="1">
                         Destacar produto como
-                        <select class="form-control" id="tipoDestaque" name="tipoDestaque" value="">
-                            <option></option>
-                            <option value="Destacar como promoção">Destacar como promoção</option>
-                            <option value="Apenas destacar">Apenas destacar</option>
-                            <option value="Não destacar">Não destacar</option>
-                        </select>
+                        <br> <br>
+                        <div class="radio">
+                            <label><input type="radio" name="tipoDestaque" value="2">Destacar como promoção</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="tipoDestaque"  value="3">Apenas destacar</label>
+                        </div>
+                        <div class="radio disabled">
+                            <label><input type="radio" name="tipoDestaque"  value="NULL">Não destacar</label>
+                        </div>
                         <br>
                         Porcentagem da promoção
                         <input class="form-control" type="text" name="valorPromocao" value="">
@@ -105,7 +109,4 @@
         </div>
     </div>
     <br><br>
-</div>
-</div>
-</div>
 </div>

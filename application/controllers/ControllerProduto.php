@@ -97,30 +97,4 @@ class ControllerProduto extends CI_Controller {
         $this->load->view('corpo/Produto/corpoUnicoProduto', $dados);
     }
 
-    public function paginacao($value = null) {
-        if ($value == null) {
-            $value = 1;
-        }
-        $registros_p_pagina = 2;
-        if ($value <= $registros_p_pagina) {
-            $data['botaoA'] = 'disable';
-        } else {
-            $data['botaoA'] = '';
-        }
-        $this->load->model("modelProduto", '', TRUE);
-        $u = $this->modelProduto->qtde_produto();
-
-        if (($u[0]->total - $value) < $registros_p_pagina) {
-            $data['botaoP'] = 'disable';
-        } else {
-            $data['botaoP'] = '';
-        }
-        $dados['produto'] = $this->modelProduto->get_produto($value, $registros_p_pagina);
-        $this->load->model("modelProduto", '', TRUE);
-        $this->load->view('estrutura/cabecalho');
-        $this->load->view('estrutura/barraMenu');
-        $this->load->view('corpo/Produto/produtosCadastrados', $dados);
-        $this->load->view('estrutura/rodape');
-    }
-
 }

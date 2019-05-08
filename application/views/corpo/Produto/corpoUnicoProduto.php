@@ -452,7 +452,7 @@
                                                     <div class="button_container">
                                                         <h1><a href="#" title="Adicionar produtos carrinho" 
                                                                class="btn btn-primary btn-lg btn-add-produto-carrinho"
-                                                               data-id="<?= $produto->idProduto ?>">&nbsp;<i class="fa fa-shopping-cart"></i><font size="3">&nbsp;&nbsp;Adicionar ao Carrinho&nbsp;&nbsp; </font></a></h1>
+                                                               data-id="<?= $produto->idProduto ?>">&nbsp;<i class="fa fa-shopping-cart"></i><font size="3">&nbsp;&nbsp;Adicionar&nbsp;&nbsp; </font></a></h1>
                                                         <div class="product_fav"><i class="fas fa-heart"></i></div>
                                                     </div>
 

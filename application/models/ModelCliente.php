@@ -43,27 +43,4 @@ class ModelCliente extends CI_Model {
         return $this->db->update('cliente');
     }
 
-/*    public function listasSalvas() {
-        $resultado = $this->db->get_where('salvarlista', array('idCliente' => $_SESSION['idCliente']));
-        if ($resultado->num_rows() > 0) {
-            return $resultado->result();
-        }
-        return;
-    }
-
-    public function excluirLista($id) {
-        return $this->db->delete('salvarlista', array('idSalvarLista' => $id));
-    }
-
-    public function excluirLista_Item($id) {
-        return $this->db->delete('salvarlista_item', array('idSalvarLista' => $id));
-    }
-
-    public function enviarLista($id) {
-        $resultado = $this->db->get_where('salvarlista_item', array('idSalvarLista' => $id));
-        if ($resultado->num_rows() > 0) {
-            return $resultado->result();
-        }
-        return;
-    }*/
 }

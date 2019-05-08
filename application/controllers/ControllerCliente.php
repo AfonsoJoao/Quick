@@ -25,7 +25,7 @@ class ControllerCliente extends CI_Controller {
     public function gravarCliente() {
         $this->load->Model('modelCliente', '', TRUE);
         $cliente = array(
-            'nome' => $this->input->post('nome'),
+            'nomeCliente' => $this->input->post('nomeCliente'),
             'tipo' => $this->input->post('tipo'),
             'email' => $this->input->post('email'),
             'senha' => base64_encode($this->input->post('senha')),
@@ -130,84 +130,8 @@ class ControllerCliente extends CI_Controller {
         }
     }
 
-    public function enviar() {
-
-        $config = array(//"Array" changed to "array" 1/15/15
-
-            'smtp_host' => 'ssl://smtp.gmail.com',
-            'smtp_port' => 465,
-            'smtp_user' => 'afonsoneto.joao@gmail.com',
-            'smtp_pass' => 'afonso2011',
-            'protocol' => 'smtp',
-            'validate' => TRUE,
-            'mailtype' => 'html',
-            'charset' => 'utf-8',
-            'newline' => "\r\n"
-        );
-        $this->load->library('email', $config);
-
-        $this->email->from("afonsoneto.joao@gmail.com", 'Afonso');
-        $this->email->subject("Teste");
-        $this->email->to("afonsojoao-neto@hotmail.com");
-        $this->email->message("Mensagem teste");
-        if ($this->email->send()) {
-            echo "True";
-        } else {
-            echo $this->email->print_debugger();
-        }
-    }
-
     public function instrucoes() {
         $this->load->view('corpo/instrucoes');
     }
 
-/*    public function listasSalvas() {
-        $this->load->Model('modelCliente', '', TRUE);
-        $dados['cliente'] = $this->modelCliente->listasSalvas();
-        $this->load->view('estrutura/cabecalho');
-                $this->load->view('estrutura/barraMenu');
-        $this->load->view('corpo/Cliente/listasSalvas', $dados);
-        $this->load->view('estrutura/rodape');
-    }
-    
-        public function excluirLista() {
-        $this->load->Model('modelCliente', '', TRUE);
-        $this->modelCliente->excluirLista($this->uri->segment(3));
-        $this->modelCliente->excluirLista_Item($this->uri->segment(3));
-        $this->listasSalvas();
-    }
-        
-    public function enviarLista() {
-        $this->load->Model('modelCliente', '', TRUE);
-        $id = $this->uri->segment(3);
-        $dados['cliente'] = $this->modelCliente->enviarLista($id);
-
-        $this->load->view('corpo/produtosLista', $dados);
-
-    }
-    
-    public function teste(){
-    
-     $cliente = array(
-            'idProduto' => $this->input->post('idProduto')
-        );
-        if (isset($cliente)) {
-        foreach($cliente as $cli){
-        print_r($cliente);
-        }
-        }
-    
-    
-    if (isset($cliente)) {
-            $id = $cliente;
-            $qtd = 1; //Colocar a quantidade via post pra ver se dá certo também.
-            $this->carrinhocompras->add($id, $qtd);
-            $json = ['erro' => 0,
-                'msg' => 'Produto adicionado com Sucesso!',
-                'itens' => $this->carrinhocompras->totalItem(),
-                'total' => formataMoedaReal($this->carrinhocompras->total(), TRUE)
-            ];
-            echo json_encode($json);
-        }
-    }*/
 }

@@ -37,7 +37,7 @@
                             echo $pro->idProduto;
                         }
                     ?>">
-                    Nome do produto:
+                    Nome do produto*
                     <input class="form-control" type="text" name="nomeProduto"required="" value="<?php
                     if (isset($produto))
                         foreach ($produto as $pro) {
@@ -45,15 +45,15 @@
                         }
                     ?>">
                     <br>
-                    Valor unitario do produto:
-                    <input class="form-control" type="number" pattern="[0-9]+([,\.][0-9]+)?" min="0" step="any" name="valorUnitario" required="" value="<?php
+                    Valor unitario do produto*
+                    <input class="form-control" class="form-control input_moeda"  type="text" name="valorUnitario" required="" value="<?php
                     if (isset($produto))
                         foreach ($produto as $pro) {
                             echo $pro->valorUnitario;
                         }
                     ?>">
                     <br>
-                    Descrição do produto:
+                    Descrição do produto*
                     <div class="form-group">
                         <textarea class="form-control" rows="5" name="descricaoProduto"><?php
                             if (isset($produto))
@@ -62,7 +62,7 @@
                                 }
                             ?></textarea>
                     </div>
-                    Peso do produto em kg ou litros:
+                    Peso do produto em kg ou litros*
                     <input class="form-control" type="number" pattern="[0-9]+([,\.][0-9]+)?" min="0" step="any" name="peso" required="" value="<?php
                     if (isset($produto))
                         foreach ($produto as $pro) {
@@ -70,7 +70,7 @@
                         }
                     ?>">
                     <br>
-                    Marca do produto:
+                    Marca do produto*
                     <input class="form-control" type="text" name="marca" required="" value="<?php
                     if (isset($produto))
                         foreach ($produto as $pro) {
@@ -78,7 +78,7 @@
                         }
                     ?>">
                     <br>
-                    Categoria do produto:
+                    Categoria do produto*
                     <select class="form-control" id="categoria" name="categoria" value="">
                         <option><?php
                             if (isset($produto))
@@ -111,7 +111,7 @@
                             <option value="pet">Pet</option>
                     </select>
                     <br>
-                    Foto do produto:
+                    Foto do produto (400x400)*
                     <input class="form-control" type="file" required name="imagem" value="<?php
                     if (isset($produto))
                         foreach ($produto as $pro) {
@@ -121,30 +121,35 @@
                     <br>
                     <input type="hidden" class="form-control" name="data" value="<?php echo date_format(new DateTime(), 'Y/m/d'); ?>" >
 
-                    Destacar produto como:
-                    <select class="form-control" id="tipoDestaque" name="tipoDestaque" value="">
-                        <option><?php
-                            if (isset($produto))
-                                foreach ($produto as $pro) {
-                                    echo $pro->tipoDestaque;
-                                }
-                            ?></option>
-                        <option value="Destacar como promoção">Destacar como promoção</option>
-                        <option value="Apenas destacar">Apenas destacar</option>
-                        <option value="Não destacar">Não destacar</option>
-                    </select>
+                    Destacar produto como
+                    <br> <br>
+                    <div class="radio">
+                        <label><input type="radio" name="tipoDestaque" value="2">Destacar como promoção</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" name="tipoDestaque"  value="3">Apenas destacar</label>
+                    </div>
+                    <div class="radio disabled">
+                        <label><input type="radio" name="tipoDestaque"  value="NULL">Não destacar</label>
+                    </div>
                     <br>
-                    Disponibilidade do produto:
-                    <select class="form-control" id="disponibilidade" name="disponibilidade" value="">
-                        <option><?php
-                            if (isset($produto))
-                                foreach ($produto as $pro) {
-                                    echo $pro->disponibilidade;
-                                }
-                            ?></option>
-                        <option value="disponivel">Disponivel</option>
-                        <option value="indisponivel">Indisponivel</option>
-                    </select>
+                    Porcentagem da promoção
+                    <input class="form-control" type="text" name="valorPromocao" value="<?php
+                    if (isset($produto))
+                        foreach ($produto as $pro) {
+                            echo $pro->valorPromocao;
+                        }
+                    ?>">
+                    <br>
+
+                    Disponibilidade do produto*
+                    <br> <br>
+                    <div class="radio">
+                        <label><input type="radio" name="disponibilidade" value="1">Disponivel</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" name="disponibilidade"  value="2">Indisponivel</label>
+                    </div>
                     <br>
                     <center><input type="submit" value="Editar"></center>
                 </div>

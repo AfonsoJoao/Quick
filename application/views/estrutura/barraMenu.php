@@ -174,13 +174,26 @@
                             <input type="search" name="busca" class="page_menu_search_input" placeholder="Procurar por um produto...">
                         </form>
                     </div>
-                    <ul class="page_menu_nav">
-                        <li class="page_menu_item"><a href = "<?php echo base_url('login/'); ?>">Entre</a></li>
-                        <li class="page_menu_item"><a href = "<?php echo base_url('cadastroclientes/'); ?>">Cadastre-se&nbsp;
-                                &nbsp;
-                            </a></i></a></li>
-                    </ul>
-
+                    <?php
+                    if (!isset($_SESSION['usuario_logado'])) {
+                        ?>
+                        <ul class="page_menu_nav">
+                            <li class="page_menu_item"><a href = "<?php echo base_url('login/'); ?>">Entre</a></li>
+                            <li class="page_menu_item"><a href = "<?php echo base_url('cadastroclientes/'); ?>">Cadastre-se&nbsp;
+                                    &nbsp;
+                                </a></i></a></li>
+                        </ul>
+                        <?php
+                    } else {
+                        ?> 
+                        <ul class="page_menu_nav">
+                            <li class="page_menu_item"><a href = "<?php echo base_url('editarConta') ?>">Editar conta</a></li>
+                            <li class="page_menu_item"><a href = "<?php echo base_url('historicoDeCompras') ?>">Histórico de compras</a></i></a></li>
+                            <li class="page_menu_item"><a href = "<?php echo base_url('logout') ?>">Sair</a></li>
+                        </ul>
+                        <?php
+                    }
+                    ?>
                     <div class="menu_contact">
                         <div class="menu_contact_item"><div class="menu_contact_icon"><img src="images/phone_white.png" alt=""></div>+XX XXXXX.XXXX</div>
                         <div class="menu_contact_item"><div class="menu_contact_icon"><img src="images/mail_white.png" alt=""></div>quicksupermercados.contato@gmail.com</a></div>
