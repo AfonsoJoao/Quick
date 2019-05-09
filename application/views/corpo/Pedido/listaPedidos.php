@@ -59,8 +59,7 @@ and open the template in the editor.
                                     <th>Valor Total</th>
                                     <th class="text-center">Status</th>
                                     <th class="text-right">Opções</th>
-                                   <!-- <th class="text-center">Editar</th> -->
-                                    <th class="text-center">Excluir</th>
+                                   
                                 </tr>
                             </thead>
 
@@ -110,12 +109,7 @@ and open the template in the editor.
                                                 </a>
 
                                             </td>
-                                           <!-- <td class="text-center"><a href="<?php // echo base_url("ControllerPedido/listaUnicoPedido/"
-                                                //. "$p->idPedido"); 
-                                                ?>"><img src="<?php // echo base_url('application/images/icones/edit-Icon.png');  ?>"></a></td> -->
-
-                                            <td class="text-center"><a href="javascript:func()" onclick="excluirPedido(<?php echo $p->idPedido; ?>,
-                                                                '<?php echo $p->idPedido; ?>')" class="btn btn-danger">Excluir</a></td>
+                                           
                                         </tr>
 
                                     <?php

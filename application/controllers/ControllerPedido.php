@@ -118,19 +118,5 @@ class ControllerPedido extends CI_Controller {
         
     }
     
-    public function listaUnicoPedido() { /** Nesta função eu consigo manipular os dados da entidade */
-        $this->load->Model('modelPedido', '', TRUE);
-        $dados['pedido'] = $this->modelPedido->listaPedido($this->uri->segment(3));/** O segment é um parametro ou seja são dados de uma entidade que irão ser manipulados a partir da url */
-        $this->load->view('estrutura/cabecalho');
-        $this->load->view('corpo/Pedido/editarPedido', $dados);
-        $this->load->view('estrutura/rodape');
-        
-    }
-    
-    public function excluirPedido() { /** Nesta função eu consigo acessar os dados do cliente atavés da model e manipular esses dados através da url utilizando o segment e neste caso irá excluir os dados   */
-        $this->load->Model('modelPedido', '', TRUE);
-        $this->modelPedido->excluirPedido($this->uri->segment(3));
-        $this->pedido();
-    }
 
 }

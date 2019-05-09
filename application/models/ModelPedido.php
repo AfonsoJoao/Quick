@@ -89,13 +89,4 @@ class ModelPedido extends CI_Model {
         return;
     }
 
-    public function alterarPedido($id, $pedido) {
-        return $this->db->update('pedido', $pedido, array('idPedido' => $id));
-    }
-    
-     public function excluirPedido($id) {
-         $this->db->delete('pedido', array('idPedido' => $id));
-         return $this->db->delete('pedido_item', array('idPedido' => $id));
-    }
-
 }

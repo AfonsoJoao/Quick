@@ -6,8 +6,6 @@ class ControllerCheckout extends CI_Controller {
         parent::__construct();
         $this->load->helper('funcoes');
         $this->load->library('CarrinhoCompras');
-        $this->load->library('session');
-        $this->load->Model('modelPedido');
     }
 
     public function cadClienteCheckout() {

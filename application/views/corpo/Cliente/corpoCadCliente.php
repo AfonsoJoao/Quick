@@ -3,22 +3,28 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
 
-<?php
-if (isset($situacao)) {
-    $st = $situacao;
-    ?>
-    <script> alert('<?php echo $st; ?>');</script>
-    <?php
-    unset($situacao);
-}
-?>
 
-    
-    <script type="text/javascript">
+<?php if (isset($mensagens)) { ?>
+    <div class="alert alert-danger text-center"> <?php echo $mensagens; ?>
+
+    </div>
+
+<?php } ?>
+
+
+<?php if (isset($situacao)) { ?>
+    <div class="alert alert-success text-center"><?php
+        echo $situacao;
+        unset($situacao);
+        ?></div>
+<?php } ?>
+
+
+<script type="text/javascript">
     $("#telefone").mask("(00) 00000-0000");
     $("#input_cpf").mask('000.000.000-00');
-    </script>
-    
+</script>
+
 
 <div class="w3_login">
     <?php if ($this->session->flashdata("success")) : ?>
@@ -38,7 +44,7 @@ if (isset($situacao)) {
                     <h2><i class="fa fa-user"></i> Cadastre-se</h2>
                 </div>
                 <div class="card-body">
-                    <?php echo form_open('ControllerCliente/gravarCliente'); ?>
+                    <?php echo form_open('ControllerCliente/validarCadastro'); ?>
                     <input type="hidden" name="acao" value="<?php
                     if (isset($cliente))
                         echo "alterar";
@@ -89,19 +95,20 @@ if (isset($situacao)) {
 
                     <div class="form-group">
                         <div class="text-left">CPF:</div>
-                        <input type="text" class="form-control margin-top-2" class="cpf" id="input_cpf" name="cpf" placeholder="CPF" required="" value="<?php
-                        if (isset($cliente))
-                            foreach ($cliente as $cli) {
-                                echo $cli->cpf;
-                            }
-                        ?>">
+                        <input type="text" class="form-control margin-top-2" class="cpf" 
+                               id="input_cpf" name="cpf"  placeholder="CPF" required="" value="<?php
+                               if (isset($cliente))
+                                   foreach ($cliente as $cli) {
+                                       echo $cli->cpf;
+                                   }
+                               ?>">
 
                     </div>
 
                     <div class="form-group">
                         <div class="text-left">Telefone:</div> 
                         <input type="text" class="form-control margin-top-2" 
-                        name="telefone" placeholder="Telefone" required="" id="telefone">
+                               name="telefone" placeholder="Telefone" required="" id="telefone">
 
                     </div>
 

@@ -87,15 +87,16 @@ if (isset($situacao)) {
         <br><br>
     </div>
     <div class="row">
-        &nbsp;&nbsp;&nbsp;&nbsp;<div class="col">
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="col">
             <a href="<?= base_url() ?>" title="Continuar Comprando" class="btn btn-secondary btn-lg">
                 <i class="fa fa-reply-all"></i> Continuar Comprando
             </a>
         </div>
-        <div class="col"  align="center">
-            <a href="<?= base_url('ControllerCarrinho/limpa_carrinho') ?>" title="Limpar Carrinho" class="btn btn-danger btn-lg"> Limpar Carrinho</a>
+        <div class="col" align="center">
+            <a href="<?= base_url('ControllerCarrinho/limpa_carrinho') ?>" title="Limpar Carrinho" class="btn btn-danger btn-lg"><i class="fas fa-trash"></i> Limpar Carrinho</a>
         </div>
-        <div class="col"  align="right">
+        <div class="col" align="right">
             <a href="<?= base_url('checkout') ?>" title="Finalizar compra" class="btn btn-success btn-lg">
                 <i class="fa fa-check"></i> Finalizar Compra
             </a>

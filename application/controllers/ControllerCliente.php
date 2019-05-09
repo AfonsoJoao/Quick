@@ -2,25 +2,12 @@
 
 class ControllerCliente extends CI_Controller {
 
-    public function cadcliente() {
+    public function cadcliente($s = null) {
         $this->load->view('estrutura/cabecalho');
         $this->load->view('estrutura/barraMenu');
-        $this->load->view('corpo/Cliente/corpoCadCliente');
+        $this->load->view('corpo/Cliente/corpoCadCliente', $s);
     }
 
-    public function generateSalt() {
-        $salt = '';
-        $alfabeto = 'abcdefghijklmnopqrstuvxwyzABCDEFGHIJKLMNOPQRSTUVXWYZ';
-        $numeros = '0123456789';
-
-        $str = $alfabeto . $numeros;
-        $qtde = strlen($str);
-
-        for ($i = 0; $i < 22; $i++) {
-            $salt .= $str[rand(0, $qtde - 1)];
-        }
-        return $salt;
-    }
 
     public function gravarCliente() {
         $this->load->Model('modelCliente', '', TRUE);
@@ -37,19 +24,19 @@ class ControllerCliente extends CI_Controller {
         $dados = $this->modelCliente->buscarEmail($email);
 
         if (isset($dados) && $this->input->post('acao') == "inserir") {
-            $msn['situacao'] = "O e-mail inserido não está disponível";
+            $msn['mensagens'] = "O e-mail inserido não está disponível";
         } else {
             if ($this->input->post('acao') == "inserir") {
                 if ($this->modelCliente->inserirCliente($cliente)) {
                     $msn['situacao'] = "Cadastro Realizado com Sucesso";
                 } else {
-                    $msn['situacao'] = "Erro na Realização do Cadastro";
+                    $msn['mensagens'] = "Erro na Realização do Cadastro";
                 }
             } else {
                 if ($this->modelCliente->alterarCliente($this->input->post('idCliente'), $cliente)) {
                     $msn['situacao'] = "Dados alterados com Sucesso";
                 } else {
-                    $msn['situacao'] = "Erro na Alteração dos Dados";
+                    $msn['mensagens'] = "Erro na Alteração dos Dados";
                 }
             }
         }
@@ -57,6 +44,23 @@ class ControllerCliente extends CI_Controller {
         $this->load->view('corpo/Cliente/corpoCadCliente', $msn);
         $this->load->view('estrutura/rodape');
     }
+    
+    
+    public function validarCadastro() {
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('nomeCliente', 'Nome', 'required|min_length[3]|max_length[50]', array('required' => 'O nome não pode ficar vazio'),
+        array('min_length[3]' => 'O nome não pode ter menos de 3 caracteres'),
+        array('max_length[50]' => 'O nome não pode ter mais que 10 caracteres'));
+        $this->form_validation->set_rules('cpf', 'CPF', 'required|validarCPF');
+        $this->form_validation->set_rules('telefone', 'Telefone', 'required|min_length[14]', array('min_length[14]' => 'O telefone não pode ter menos de 14 caracteres'), array('max_length[14]' => 'O telefone deve ter no máximo 14 caracteres'));
+        if ($this->form_validation->run() == FALSE) {
+            $erros = array('mensagens' => validation_errors());
+            $this->cadcliente($erros);
+        } else {
+            $this->gravarCliente();
+        }
+    }
+    
 
     public function listaCliente() { /** Nesta função eu só consigo exibir os dados da entidade */
         $this->load->Model('modelCliente', '', TRUE);

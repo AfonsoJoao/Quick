@@ -89,12 +89,12 @@ and open the template in the editor.
 
                                         <div class="form-group">
                                             <div class="text-left">E-mail:</div>
-                                            <input type="text" class="form-control margin-top-2" name="email" placeholder="E-mail" required=" ">    
+                                            <input type="text" class="form-control margin-top-2" name="email" placeholder="E-mail" required="">    
                                         </div>
 
                                         <div class="form-group">
                                             <div class="text-left">Senha:</div>
-                                            <input type="password" class="form-control margin-top-2" name="senha" placeholder="Senha" required=" ">
+                                            <input type="password" class="form-control margin-top-2" name="senha" placeholder="Senha" required="">
                                         </div>
 
                                         <input type="submit" class="btn btn-primary btn-lg" value="Entrar">
@@ -319,7 +319,7 @@ and open the template in the editor.
 
                         <label for="cep" class="margin-checkout">CEP:</label>
                         <div class="input-group">
-                            <input type="text" class="form-control input_cep" name="cep" id="cep" placeholder="CEP">
+                            <input type="text" class="form-control input_cep" name="cep" id="cep" placeholder="CEP" required="">
                          <!--   <span class="input-group-btn">
                                 <button class="btn btn-primary btn-calculo-frete-checkout" type="button">Calcular</button>
                             </span> -->
@@ -327,22 +327,22 @@ and open the template in the editor.
 
                         <div class="form-group">
                             <label for="endereco" class="margin-top-1">Endereço:</label> <!-- OBS: Salvar na tabela endereco no campo nome da rua -->
-                            <input type="text" class="form-control" name="endereco" id="rua" placeholder="Endereço">
+                            <input type="text" class="form-control" name="endereco" id="rua" placeholder="Endereço" required="">
                         </div>
 
                         <div class="form-group">
                             <label for="bairro">Bairro:</label> <!-- OBS: Salvar na tabela bairro -->
-                            <input type="text" class="form-control" name="bairro" id="bairro" placeholder="Bairro">
+                            <input type="text" class="form-control" name="bairro" id="bairro" placeholder="Bairro" required="">
                         </div>
 
                         <div class="form-group">
                             <label for="cidade">Cidade:</label> <!-- OBS: Salvar na tabela cidade -->
-                            <input type="text" class="form-control" name="cidade" id="cidade" placeholder="Cidade">
+                            <input type="text" class="form-control" name="cidade" id="cidade" placeholder="Cidade" required="">
                         </div>
 
                         <div class="form-group">
                             <label for="estado">Estado:</label> <!-- OBS: Salvar na tabela estado -->
-                            <input type="text" class="form-control" name="estado" id="uf" placeholder="Estado">
+                            <input type="text" class="form-control" name="estado" id="uf" placeholder="Estado" required="">
 
                         </div>
 
@@ -353,10 +353,8 @@ and open the template in the editor.
 
                         <div class="form-group">
                             <label for="numero">Número:</label> <!-- OBS: Salvar na tabela endereco -->
-                            <input type="text" class="form-control" name="numero" id="numero" placeholder="Número">
+                            <input type="text" class="form-control" name="numero" id="numero" placeholder="Número" required="">
                         </div>
-
-
 
                     </div>
 
@@ -364,7 +362,7 @@ and open the template in the editor.
                         <h2> <i class="fa fa-credit-card"></i> Pagamento</h2>
                         <div class="form-group margin-checkout">
                             <label for="forma_pagamento">Selecione a forma de pagamento:</label>
-                            <select name="forma_Envio" class="form-control select-forma-pagamento">
+                            <select name="forma_Envio" class="form-control select-forma-pagamento" required="">
                                 <option>Selecione</option>
                                 <option value="Cartão de Crédito">Cartão de Crédito</option>
                                 <option value="A Vista">A Vista</option>
@@ -374,7 +372,7 @@ and open the template in the editor.
                         <div class="pagamento-cartao d-none">
                             <div class="form-group margin-checkout">
                                 <label for="bandeiras">Selecione a bandeira do seu cartão de crédito:</label>
-                                <select name="bandeira_cartao" class="form-control">
+                                <select name="bandeira_cartao" class="form-control" required="">
                                     <option>Selecione</option>
                                     <option value="Visa">Visa</option>
                                     <option value="Mastercard">Mastercard</option>
