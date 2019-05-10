@@ -55,6 +55,15 @@
                 }
             }
         </script>
+
+        <script>
+
+            function cancelarPedido(id) {
+                if (confirm('Tem certeza que deseja cancelar este pedido?')) {
+                    location.href = "<?php echo base_url('ControllerPedido/cancelarPedido'); ?>" + "/" + id;
+                }
+            }
+        </script>
     </head>
 
     <body>
