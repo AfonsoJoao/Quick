@@ -2,22 +2,20 @@
 
 class ControllerBanner extends CI_Controller {
 
-     
     public function cadbanner() {
         $this->load->view('estrutura/menuPainel');
         $this->load->view('corpo/Banners/corpoCadBanner');
         $this->load->view('estrutura/rodapePainel');
     }
-    
+
     public function gravarBanner() {
         $this->load->Model('modelBanner', '', TRUE);
         $banner = array(
             'nomePromocao' => $this->input->post('nomePromocao'),
             'descricaoPromocao' => $this->input->post('descricaoPromocao'),
             'imagemBanner' => $this->input->post('imagemBanner'),
-            'status' => $this->input->post('status'),
-            'data' => $this->input->post('data')
-            );
+            'status' => $this->input->post('status')
+        );
         if ($this->input->post('acao') == "inserir") {
             if ($this->modelBanner->inserirBanner($banner)) {
                 $msn['situacao'] = "Registro gravado com sucesso";
@@ -31,11 +29,11 @@ class ControllerBanner extends CI_Controller {
                 $msn['situacao'] = "Erro na Alteração dos Dados";
             }
         }
-        
-        
+
+
 
         $this->load->view('estrutura/menuPainel');
-        $this->load->view('corpo/Banners/corpoCadBanner',$msn);
+        $this->load->view('corpo/Banners/corpoCadBanner', $msn);
         $this->load->view('estrutura/rodapePainel');
     }
 
@@ -46,6 +44,7 @@ class ControllerBanner extends CI_Controller {
         $this->load->view('corpo/Banners/bannersCadastrados', $dados);
         $this->load->view('estrutura/rodapePainel');
     }
+
     public function listaUnicoBanner() {
         $this->load->Model('modelBanner', '', TRUE);
         $dados['banner'] = $this->modelBanner->listaBanner($this->uri->segment(3));
@@ -59,4 +58,5 @@ class ControllerBanner extends CI_Controller {
         $this->modelBanner->excluirBanner($this->uri->segment(3));
         $this->listaBanner();
     }
+
 }

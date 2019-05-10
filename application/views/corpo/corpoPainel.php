@@ -32,18 +32,18 @@ and open the template in the editor.
 
                     <div class="row margin-botton-20">
                         <div class="col-md-12 text-right">
+                            <?php if (isset($_SESSION['administrador_logado'])) { ?>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-primary dropdown-toggle" 
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="far fa-file-alt"></i> Relatórios <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <a class="dropdown-item" href="<?= base_url('ControllerRelatorio/mensal') ?>" target="_blank">Vendas Diárias</a>
 
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-primary dropdown-toggle" 
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="far fa-file-alt"></i> Relatórios <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <a class="dropdown-item" href="<?= base_url('ControllerRelatorio/mensal') ?>" target="_blank">Vendas Diárias</a>
-
-                                </ul>
-                            </div>
-
+                                    </ul>
+                                </div>
+                            <?php } ?>
                         </div>
                     </div>
                 </div>
@@ -59,8 +59,6 @@ and open the template in the editor.
                                     <th>Valor Total</th>
                                     <th class="text-center">Status</th>
                                     <th class="text-right">Opções</th>
-                                   <!-- <th class="text-center">Editar</th> -->
-                                    <th class="text-center">Excluir</th>
                                 </tr>
                             </thead>
 
@@ -73,33 +71,50 @@ and open the template in the editor.
                                         <td><?= $p->idPedido ?> </td>
                                         <td><?= $p->nomeCliente ?></td>
                                         <td><?= formataMoedaReal($p->total_pedido, TRUE) ?></td>
-                                        <td class="text-center">
-                                            <?php
-                                            switch ($p->status) {
-                                                case 'Enviado':
-                                                    echo 'Enviado';
-                                                    break;
+                                        <td><?= $p->status ?></td>
+                                        <td class="text-left">
 
-                                                case 'Pagamento Confirmado':
-                                                    echo 'Pagamento Confirmado';
-                                                    break;
 
-                                                case 'Pedido Cancelado':
-                                                    echo 'Pedido Cancelado';
-                                                    break;
 
-                                                default:
-                                                    echo 'Aguardando Pagamento';
-                                                    break;
-                                            }
-                                            ?>
-
-                                        </td>
-                                        <td class="text-right">
-                                            <button type="button" title="Mudar Status" class="btn btn-primary
-                                                    btn-mudar-status-pedido" data-toggle="modal" data-id-pedido="<?= $p->idPedido ?>">
-                                                <i class="fas fa-edit"></i> Mudar Status 
+                                            <!-- Botão para acionar modal -->
+                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal<?php echo $p->idPedido; ?>">
+                                                Mudar status
                                             </button>
+
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="myModal<?php echo $p->idPedido; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">Mudar status do pedido</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="radio">
+                                                                <?php echo form_open('ControllerPedido/mudarStatus'); ?>
+                                                                <br>
+                                                                <select class="form-control" id="status" name="status">
+                                                                    <optgroup label="Status do pedido">
+                                                                        <option value="Análise/Empacotamento"> Análise/Empacotamento</option>
+                                                                        <option value="Saiu para entrega"> Saiu para entrega</option>
+                                                                        <option value="Finalizado"> Finalizado</option>
+                                                                        <option value="Cancelado"> Cancelado</option>
+                                                                </select>
+                                                                <br> <br>
+                                                            </div>
+                                                            <input type="hidden" name="idPedido" value="<?php echo $p->idPedido; ?>">
+
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                                            <input type="submit" class="btn btn-primary" value="Salvar status">
+                                                            <?php echo form_close(); ?>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
 
 
 
@@ -109,15 +124,9 @@ and open the template in the editor.
                                             </a>
 
                                         </td>
-                                       <!-- <td class="text-center"><a href="<?php // echo base_url("ControllerPedido/listaUnicoPedido/"
-                                        //. "$p->idPedido"); 
-                                            ?>"><img src="<?php // echo base_url('application/images/icones/edit-Icon.png');  ?>"></a></td> -->
-
-                                        <td class="text-center"><a href="javascript:func()" onclick="excluirPedido(<?php echo $p->idPedido; ?>,
-                                                            '<?php echo $p->idPedido; ?>')" class="btn btn-danger">Excluir</a></td>
                                     </tr>
 
-<?php } // Fim do foreach    ?>
+                                <?php } // Fim do foreach    ?>
 
 
 

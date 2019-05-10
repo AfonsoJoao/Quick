@@ -17,7 +17,6 @@ class ControllerProduto extends CI_Controller {
         $this->load->Model('modelProduto', '', TRUE);
         $produto = array(
             'nomeProduto' => $this->input->post('nomeProduto'),
-            'data' => $this->input->post('data'),
             'valorUnitario' => formatoDecimal($this->input->post('valorUnitario')),
             'descricaoProduto' => $this->input->post('descricaoProduto'),
             'peso' => $this->input->post('peso'),

@@ -119,7 +119,6 @@
                         }
                     ?>">
                     <br>
-                    <input type="hidden" class="form-control" name="data" value="<?php echo date_format(new DateTime(), 'Y/m/d'); ?>" >
 
                     Destacar produto como
                     <br> <br>

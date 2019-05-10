@@ -83,7 +83,6 @@
                         Foto do produto (400x400)*
                         <input class="form-control" type="file" required name="imagem" value="">
                         <br>
-                        <input type="hidden" class="form-control" name="data" value="<?php echo date_format(new DateTime(), 'Y/m/d'); ?>" >
 
                         <input type="hidden" name="disponibilidade" value="1">
                         Destacar produto como

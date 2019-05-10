@@ -47,7 +47,6 @@ class ModelPedido extends CI_Model {
     public function getItens() {
 
         return $this->db->get('pedido_item')->result();
-        
     }
 
     public function getItensPedido($id_Pedido = NULL) {
@@ -87,6 +86,21 @@ class ModelPedido extends CI_Model {
             return $resultado->result();
         }
         return;
+    }
+
+    public function alterarPedido($id, $pedido) {
+        return $this->db->update('pedido', $pedido, array('idPedido' => $id));
+    }
+
+    public function excluirPedido($id) {
+        $this->db->delete('pedido', array('idPedido' => $id));
+        return $this->db->delete('pedido_item', array('idPedido' => $id));
+    }
+
+    public function mudarStatus($id, $status) {
+        $this->db->set('status', $status);
+        $this->db->where('idPedido', $id);
+        return $this->db->update('pedido');
     }
 
 }

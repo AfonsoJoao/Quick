@@ -73,29 +73,19 @@ class ControllerPedido extends CI_Controller {
     }
 
     public function mudarstatus() {
+        $this->load->Model('modelPedido', '', TRUE);
+        $id = $this->input->post('idPedido');
+        $status = $this->input->post('status');
 
-        if ($this->input->post('input_status')) {
-            
-            $id_pedido = $this->input->post('input_id');
-            $pedido['status'] = $this->input->post('input_status');
-            $this->modelPedido->doUpdate($pedido, $id_pedido);
-            
-            $retorno['erro'] = 0;
-            $retorno['msg'] = 'Pedido Atualizado Com Sucesso.';
-            echo json_encode($retorno);
-            exit;
-            
-        } else {
-            $retorno['erro'] = 60;
-            $retorno['msg'] = 'O Campo Status é Obrigatório.';
-            echo json_encode($retorno);
-            exit;
-        }
+        $this->modelPedido->mudarStatus($id, $status);
+        $dados ['pedido'] = $this->modelPedido->getPedidos();
+        $this->load->view('estrutura/menuPainel');
+        $this->load->view('corpo/corpoPainel', $dados);
+        $this->load->view('estrutura/rodapePainel');
     }
-    
-    
-    public function imprimir($id_pedido=NULL){
-        
+
+    public function imprimir($id_pedido = NULL) {
+
         if (!$id_pedido) {
             echo 'Erro você deve informar um id válido.';
             exit;
@@ -107,16 +97,31 @@ class ControllerPedido extends CI_Controller {
             echo 'Erro não foi encontrado nenhum pedido com o id informado.';
             exit;
         }
-        
-        $ped ['titulo'] = 'Imprimir Pedido [ #'. $query->idPedido .' ]';
+
+        $ped ['titulo'] = 'Imprimir Pedido [ #' . $query->idPedido . ' ]';
         $ped['pedido'] = $query;
         $ped['item'] = $this->modelPedido->getItensPedido($query->idPedido);
-        
+
 
         $this->load->view('corpo/Pedido/imprimirPedido', $ped);
-        
+    }
+
+    public function listaUnicoPedido() { /** Nesta função eu consigo manipular os dados da entidade */
+        $this->load->Model('modelPedido', '', TRUE);
+        $dados['pedido'] = $this->modelPedido->listaPedido($this->uri->segment(3));/** O segment é um parametro ou seja são dados de uma entidade que irão ser manipulados a partir da url */
+        $this->load->view('estrutura/cabecalho');
+        $this->load->view('corpo/Pedido/editarPedido', $dados);
+        $this->load->view('estrutura/rodape');
+    }
+
+    public function excluirPedido() { /** Nesta função eu consigo acessar os dados do cliente atavés da model e manipular esses dados através da url utilizando o segment e neste caso irá excluir os dados   */
+        $this->load->Model('modelPedido', '', TRUE);
+        $this->modelPedido->excluirPedido($this->uri->segment(3));
+        $this->pedido();
+    }
+
+    public function editarStatus() {
         
     }
-    
 
 }
