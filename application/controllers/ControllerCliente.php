@@ -48,11 +48,11 @@ class ControllerCliente extends CI_Controller {
     
     public function validarCadastro() {
         $this->load->library('form_validation');
-        $this->form_validation->set_rules('nomeCliente', 'Nome', 'required|min_length[3]|max_length[50]', array('required' => 'O nome não pode ficar vazio'),
-        array('min_length[3]' => 'O nome não pode ter menos de 3 caracteres'),
-        array('max_length[50]' => 'O nome não pode ter mais que 10 caracteres'));
+        $this->form_validation->set_rules('nomeCliente', 'nome', 'required|min_length[14]|max_length[60]');
+        $this->form_validation->set_rules('email', 'E-mail', 'required|valid_email');
+        $this->form_validation->set_rules('senha', 'senha', 'required|min_length[7]|max_length[30]');      
         $this->form_validation->set_rules('cpf', 'CPF', 'required|validarCPF');
-        $this->form_validation->set_rules('telefone', 'Telefone', 'required|min_length[14]', array('min_length[14]' => 'O telefone não pode ter menos de 14 caracteres'), array('max_length[14]' => 'O telefone deve ter no máximo 14 caracteres'));
+        $this->form_validation->set_rules('telefone', 'telefone', 'required|min_length[14]'); // Usar a funcão de validacção regex_match do form_validation
         if ($this->form_validation->run() == FALSE) {
             $erros = array('mensagens' => validation_errors());
             $this->cadcliente($erros);
