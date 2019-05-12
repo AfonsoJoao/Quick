@@ -52,7 +52,7 @@ class ControllerCliente extends CI_Controller {
         $this->form_validation->set_rules('email', 'E-mail', 'required|valid_email');
         $this->form_validation->set_rules('senha', 'senha', 'required|min_length[7]|max_length[30]');      
         $this->form_validation->set_rules('cpf', 'CPF', 'required|validarCPF');
-        $this->form_validation->set_rules('telefone', 'telefone', 'required|min_length[14]'); // Usar a funcão de validacção regex_match do form_validation
+        $this->form_validation->set_rules('telefone', 'telefone', 'required|min_length[14]|trataNumero'); // Usar a funcão de validacção regex_match do form_validation
         if ($this->form_validation->run() == FALSE) {
             $erros = array('mensagens' => validation_errors());
             $this->cadcliente($erros);

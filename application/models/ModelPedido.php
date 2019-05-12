@@ -44,12 +44,12 @@ class ModelPedido extends CI_Model {
     //   return $this->db->get()->row();
     //Função que pega os itens do pedido tendo como base a pessoa que fez o pedido e que utiliza o id do pedido como referência.
 
-    public function getItens() {
+    public function getItens() { 
 
         return $this->db->get('pedido_item')->result();
     }
 
-    public function getItensPedido($id_Pedido = NULL) {
+    public function getItensPedido($id_Pedido = NULL) { 
 
         if ($id_Pedido) {
 
@@ -78,23 +78,6 @@ class ModelPedido extends CI_Model {
         if ($query->num_rows() > 0) {
             return $query->result();
         }
-    }
-
-    public function listaPedido($id) { // Está função captura lista de registros armazenados no banco para que possam ser manipulados.
-        $resultado = $this->db->get_where('pedido', array('idPedido' => $id));
-        if ($resultado->num_rows() > 0) {
-            return $resultado->result();
-        }
-        return;
-    }
-
-    public function alterarPedido($id, $pedido) {
-        return $this->db->update('pedido', $pedido, array('idPedido' => $id));
-    }
-
-    public function excluirPedido($id) {
-        $this->db->delete('pedido', array('idPedido' => $id));
-        return $this->db->delete('pedido_item', array('idPedido' => $id));
     }
 
     public function mudarStatus($id, $status) {

@@ -200,7 +200,7 @@ and open the template in the editor.
 
 
                         <input type="hidden" name="total" value="<?= $this->carrinhocompras->total() ?>">
-                        <input type="hidden" name="status" value="Aguardando Pagamento">
+                        <input type="hidden" name="status" value="Análise/Empacotamento">
 
                         </tbody>
                         <tfoot>

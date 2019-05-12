@@ -98,32 +98,5 @@ class ControllerCheckout extends CI_Controller {
         $this->checkout();
     }
 
-    public function atualizarPedido() {
-
-        $endereco ['idCliente'] = $this->input->post('idCliente');
-        $endereco['nomeCliente'] = $this->input->post('nomeCliente');
-        $endereco['telefone'] = $this->input->post('telefone');
-        $endereco ['cep'] = $this->input->post('cep');
-        $endereco ['endereco'] = $this->input->post('endereco');
-        $endereco ['numero'] = $this->input->post('numero');
-        $endereco ['complemento'] = $this->input->post('complemento');
-        $endereco ['bairro'] = $this->input->post('bairro');
-        $endereco ['cidade'] = $this->input->post('cidade');
-        $endereco ['estado'] = $this->input->post('estado');
-        $endereco ['forma_Envio'] = $this->input->post('forma_Envio');
-
-
-        if ($this->input->post('acao') == "alterar") {
-            if ($this->modelPedido->alterarPedido($this->input->post('idPedido'), $endereco)) {
-                $msn['situacao'] = "Dados alterados com Sucesso";
-            } else {
-                $msn['situacao'] = "Erro na Alteração dos Dados";
-            }
-
-            $this->load->view('estrutura/cabecalho');
-            $this->load->view('corpo/Pedido/editarPedido', $msn);
-            $this->load->view('estrutura/rodape');
-        }
-    }
 
 }

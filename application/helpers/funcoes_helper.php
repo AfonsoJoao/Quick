@@ -9,33 +9,6 @@ function formataMoedaReal($valor = NULL, $real = FALSE) { // Funcão responsavel
     }
 }
 
-
-function formatoDecimal($valor = NULL) {
-
-    $valor = str_replace('.', '', $valor); // A função str_replace retira todos os pontos e deixa em branco
-    $valor = str_replace(',', '.', $valor); // Depois ela retira todas as virgulas e adiciona o ponto ao valor.
-
-    return $valor;
-}
-
-function dataDiaDB(){
-    
-    date_default_timezone_get('America/Sao_paulo');
-    $formato = 'DATE_W3C';
-    $hora = time();
-    return standard_date($formato, $hora);
-}
-
-
-function dataDB() {
-
-    date_default_timezone_set('America/Sao_paulo');
-    $stringdedata = "XY-Xm-Xd";
-    $data = time();
-    $data = mdate($stringdedata, $data);
-    return $data;
-}
-
 function formataDataView($data=NULL){
     
     if ($data) {

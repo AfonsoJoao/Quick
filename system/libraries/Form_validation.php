@@ -1380,7 +1380,7 @@ class CI_Form_validation {
         $this->error_string = '';
         return $this;
     }
-    
+
     public function validarCPF($cpf = '') {
 
         $cpf = str_pad(preg_replace('/[^0-9]/', '', $cpf), 11, '0', STR_PAD_LEFT);
@@ -1399,6 +1399,64 @@ class CI_Form_validation {
                 }
             }
             return TRUE;
+        }
+    }
+
+    function trataNumero($tel) {
+        
+        $tel = str_replace("-", "", $tel);
+        $tel = str_replace("(", "", $tel);
+        $tel = str_replace(")", "", $tel);
+        $tel = str_replace("_", "", $tel);
+        $tel = str_replace(" ", "", $tel);
+        $tel = str_replace("+", "", $tel);
+        //---------------------
+        // Se nao tiver DDD e 9 digito
+        if (strlen($tel) == 8) {
+
+            $tel = '9' . $tel;
+        };
+
+        // Se nao tiver DDD
+        if (strlen($tel) == 9) {
+
+            $tel = '11' . $tel;
+        };
+
+        // Se tiver DDD mas nao tiver o 9 digito
+        if (strlen($tel) == 10) {
+
+            $inicio = substr($tel, 0, 2);
+            $fim = substr($tel, 2, 10);
+            $tel = $inicio . '9' . $fim;
+        };
+
+        //verificando se é celular
+        $celReal = array("9", "8", "7", "6", "5", "4");
+
+        // retirando espaços
+        $tel = trim($tel);
+
+        // Valida se esta com 55
+        $ddi = strripos($tel, '55');
+        $val_ddi = strlen($ddi);
+
+        if ($val_ddi != 1) {
+
+            $tel = '55' . $tel;
+        }
+
+        // Verifica se e celular mesmo
+        if (strlen($tel) == 13) {
+
+            $validaCel = substr($tel, 5, 1);
+            if (in_array($validaCel, $celReal)) {
+
+                return $tel;
+            } else {
+
+                return false;
+            }
         }
     }
 

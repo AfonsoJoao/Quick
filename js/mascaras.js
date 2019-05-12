@@ -7,10 +7,3 @@
 // $('.input_mes_ano').mask('00/0000');
 
 
-function ValidaTelefone(tel) {
-    exp = /\(\d{2}\)\ \d{1}\ \d{4}\-\d{4}/
-    if (!exp.test(tel.value))
-        alert('Numero de Telefone Invalido!');
-
-}
-
