@@ -90,11 +90,6 @@ class ControllerCarrinho extends CI_Controller {
     public function limpa_carrinho() {
         $this->carrinhocompras->limpa();
 
-        $json = ['erro' => 0,
-            'msg' => 'Carrinho Limpo!'
-        ];
-        echo json_encode($json);
-
         redirect('ControllerCarrinho/carrinho');
     }
 

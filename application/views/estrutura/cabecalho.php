@@ -164,57 +164,50 @@
                             <div class="col-lg-4 col-9 order-lg-3 order-2 text-lg-left text-right">
                                 <div class="wishlist_cart d-flex flex-row align-items-center justify-content-end">
 
-
                                     <!-- Cart -->
-                                    <div class="cart">
-                                        <div class="cart_container d-flex flex-row align-items-center justify-content-end">
-                                            <div class="cart_icon">
-                                                <img src="<?php echo base_url('application/images/icones/cart.png') ?>" alt="">
-                                                <div class="cart_count"><span class="carrinho-top-total-item">0</span></div>
-                                            </div>
-                                            <div class="cart_content">
-                                                <div class="dropdown">
-                                                    <div class="w3l_header_right">
-                                                        <ul>
-                                                            <li class="dropdown profile_details_drop">
-                                                                <a href="#" class="dropdown" data-toggle="dropdown" role="button" data-hover="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                                    <span class="caret">Carrinho</span></a>
 
-                                                                <ul class="dropdown-menu carrinho-compra">
+                                    <div data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
-                                                                    <div class="row body-carrinho-vazio">
-                                                                        <div class="col-xs-12 col-md-12 text-center">
-                                                                            Carrinho está vazio
-                                                                        </div>  
-                                                                    </div>
+                                        <div class="cart_count"><span class="carrinho-top-total-item">0</span></div>
+                                        <img src="<?php echo base_url('application/images/icones/cart.png') ?>" width="30" alt="">
 
-                                                                    <div class="row body-carrinho-top d-none">
-                                                                        <div class="col-xs-12 col-md-4" >
-                                                                            Itens: <span class="carrinho-top-total-item"></span>
-                                                                        </div>
-                                                                        <div class="col-xs-12 col-md-8 text-right" >
-                                                                            Total: <span class="carrinho-top-total-valor"></span>
-                                                                        </div>
-                                                                    </div>
-                                                                    <!-- Separador de submenus  -->
-                                                                    <div class="row margin-top-20 btns-carrinho-topo d-none">
 
-                                                                        <div class="col-xs-12 col-md-6">
-                                                                            <a href="<?= base_url('ControllerCarrinho/carrinho') ?>" title="Exibir Carrinho" class="btn btn-success btn-block">Exibir Carrinho</a>
-                                                                        </div>
-                                                                        <div class="col-xs-12 col-md-6"> <!-- O col-xs-6 coloca botÃµes um ao lado do outro  -->
-                                                                            <a href="#" class="btn btn-danger btn-block btn-limpar-carrinho">Limpar</a>
-                                                                        </div>
-                                                                    </div>
-                                                                </ul>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="cart_price"><span class="carrinho-top-total-valor d-none"></span></div>
-                                            </div>
-                                        </div>
                                     </div>
+
+                                    <ul>
+
+                                        <ul class="dropdown-menu carrinho-compra">
+
+                                            <div class="row body-carrinho-vazio">
+                                                <div class="col-xs-12 col-md-12 text-center">
+                                                    Carrinho está vazio
+                                                </div>  
+                                            </div>
+
+                                            <div class="row body-carrinho-top d-none">
+                                                <div class="col-xs-12 col-md-4" >
+                                                    Itens: <span class="carrinho-top-total-item"></span>
+                                                </div>
+                                                <div class="col-xs-12 col-md-8 text-right" >
+                                                    Total: <span class="carrinho-top-total-valor"></span>
+                                                </div>
+                                            </div>
+                                            <!-- Separador de submenus  -->
+                                            <div class="row margin-top-20 btns-carrinho-topo d-none">
+
+                                                <div class="col-xs-12 col-md-6">
+                                                    <a href="<?= base_url('ControllerCarrinho/carrinho') ?>" title="Exibir Carrinho" class="btn btn-success btn-block">Exibir Carrinho</a>
+                                                </div>
+                                                <div class="col-xs-12 col-md-6"> <!-- O col-xs-6 coloca botÃµes um ao lado do outro  -->
+                                                    <a href="#" class="btn btn-danger btn-block btn-limpar-carrinho">Limpar</a>
+                                                </div>
+                                            </div>
+                                        </ul>
+
+                                    </ul>
+
+
+
                                 </div>
                             </div>
                         </div>
