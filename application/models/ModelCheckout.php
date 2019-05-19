@@ -20,6 +20,10 @@ class ModelCheckout extends CI_Model {
         }
     }
 
+    public function insertcedulas($dados) {
+        return $this->db->insert('cedulas', $dados);
+    }
+
     /*  public function getCliente($id) { // Está função captura lista de registros armazenados no banco para que possam ser manipulados.
 
       public function addEndereco($dados = NULL){
@@ -29,8 +33,6 @@ class ModelCheckout extends CI_Model {
       }
       }
       } */
-
-    
 
     public function inserirpedidoitem($pedido) {
         $this->db->select('idPedido');

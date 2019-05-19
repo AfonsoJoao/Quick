@@ -363,7 +363,7 @@ and open the template in the editor.
                         <div class="form-group margin-checkout">
                             <label for="forma_pagamento">Selecione a forma de pagamento:</label>
                             <select name="forma_Envio" class="form-control select-forma-pagamento" required="">
-                                <option>Selecione</option>
+                                <option value="">Selecione</option>
                                 <option value="Cartão de Crédito">Cartão de Crédito</option>
                                 <option value="A Vista">A Vista</option>
                             </select>
@@ -372,8 +372,8 @@ and open the template in the editor.
                         <div class="pagamento-cartao d-none">
                             <div class="form-group margin-checkout">
                                 <label for="bandeiras">Selecione a bandeira do seu cartão de crédito:</label>
-                                <select name="bandeira_cartao" class="form-control" required="">
-                                    <option>Selecione</option>
+                                <select name="bandeira_cartao" class="form-control">
+                                    <option value="">Selecione</option>
                                     <option value="Visa">Visa</option>
                                     <option value="Mastercard">Mastercard</option>
                                     <option value="American Express">American Express</option>
@@ -383,18 +383,23 @@ and open the template in the editor.
                                     <option value="Sorocred">Sorocred</option>
                                 </select>
                             </div>
-
                         </div>
 
                         <div class="pagamento-avista d-none">
                             <div class="form-group margin-checkout">
-                                <label for="cedulas">Quais cedulas serão utilizadas no pagamento?</label><br>
-                                <input type="checkbox" name="cedulas" value="2,00"> R$ 2,00<br>
-                                <input type="checkbox" name="cedulas" value="5,00"> R$ 5,00<br>
-                                <input type="checkbox" name="cedulas" value="10,00"> R$ 10,00<br>
-                                <input type="checkbox" name="cedulas" value="20,00"> R$ 20,00<br>
-                                <input type="checkbox" name="cedulas" value="50,00"> R$ 50,00<br>
-                                <input type="checkbox" name="cedulas" value="100,00"> R$ 100,00<br>
+                                <label for="cedulas">Qual o valor das cedulas que serão utilizadas para efetuação do pagamento?</label><br>
+
+                                <input type="checkbox" name="cedulas[]" value="2,00"> R$ 2,00<br>
+
+                                <input type="checkbox" name="cedulas[]" value="5,00"> R$ 5,00 <br>  
+
+                                <input type="checkbox" name="cedulas[]" value="10,00"> R$ 10,00<br>
+
+                                <input type="checkbox" name="cedulas[]" value="20,00"> R$ 20,00<br>
+                                
+                                <input type="checkbox" name="cedulas[]" value="50,00"> R$ 50,00<br>
+
+                                <input type="checkbox" name="cedulas[]" value="100,00"> R$ 100,00<br>
                             </div>
                         </div>
 
@@ -454,8 +459,7 @@ and open the template in the editor.
 
 <script src="<?php echo base_url('plugins/Isotope/isotope.pkgd.min.js') ?>"></script>
 <script src="<?php echo base_url('plugins/jquery-ui-1.12.1.custom/jquery-ui.js') ?>"></script>
-<script src="<?php echo base_url('plugins/parallax-js-master/parallax.min.js') ?>"></script>
-<script src="<?php echo base_url('js/shop_custom.js') ?>"></script>
+<script src="<?php echo base_url('js/checkout.js') ?>"></script>
 
 <!--Fim da pagina do checkout com o cliente logado. -->
 

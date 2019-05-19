@@ -45,8 +45,8 @@ class ControllerCheckout extends CI_Controller {
     public function checkout() {
         $this->load->Model('modelCliente', '', TRUE);
         $car ['carrinho'] = $this->carrinhocompras->listarProdutos();
-        if(isset($_SESSION['usuario_logado'])){
-        $car ['cliente'] = $this->modelCliente->listaCliente();
+        if (isset($_SESSION['usuario_logado'])) {
+            $car ['cliente'] = $this->modelCliente->listaCliente();
         }
         $this->load->view('estrutura/cabecalho');
         $this->load->view('estrutura/barraMenu');
@@ -74,14 +74,18 @@ class ControllerCheckout extends CI_Controller {
         $endereco ['estado'] = $this->input->post('estado');
         $endereco ['forma_Envio'] = $this->input->post('forma_Envio');
         $endereco ['bandeira_cartao'] = $this->input->post('bandeira_cartao');
-      
-        $endereco ['cedulas'] = $this->input->post('cedulas');
-        
-        
-        
         $endereco['data_Pedido'] = date('Y-m-d');
         $id_item = $this->modelPedido->insertpedido($endereco);
 
+        if (isset($_REQUEST['cedulas'])) { // se existir valores no request
+            foreach ($_REQUEST ['cedulas'] as $dados) {
+
+                $dinheiro['valor'] = $dados;
+                $dinheiro['idCliente'] = $this->input->post('idCliente');
+                $this->modelCheckout->insertcedulas($dinheiro);
+                
+            }
+        }
 
         foreach ($_SESSION ['dados'] as $produto) {
 
@@ -97,6 +101,5 @@ class ControllerCheckout extends CI_Controller {
 
         $this->checkout();
     }
-
 
 }

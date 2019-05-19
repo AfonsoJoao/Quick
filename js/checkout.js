@@ -12,7 +12,7 @@ var Checkout = function () {
 
                     $('.pagamento-cartao').removeClass('d-none');
                     $('.pagamento-avista').addClass('d-none');
-                    $('.pagamento-cartao input').prop('disabled', false);
+                    $('.pagamento-cartao select').prop('disabled', false);
                     $('.pagamento-avista input').prop('disabled', true);
                     break;
                    
@@ -21,7 +21,7 @@ var Checkout = function () {
 
                     $('.pagamento-cartao').addClass('d-none');
                     $('.pagamento-avista').removeClass('d-none');
-                    $('.pagamento-cartao input').prop('disabled', true);
+                    $('.pagamento-cartao select').prop('disabled', true);
                     $('.pagamento-avista input').prop('disabled', false);
                     break;
             }
