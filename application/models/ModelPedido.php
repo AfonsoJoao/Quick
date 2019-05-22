@@ -44,7 +44,7 @@ class ModelPedido extends CI_Model {
     //   return $this->db->get()->row();
     //Função que pega os itens do pedido tendo como base a pessoa que fez o pedido e que utiliza o id do pedido como referência.
 
-    public function getItens() { 
+    public function getItens() { //Função que pega todos os itens do pedido
 
         return $this->db->get('pedido_item')->result();
     }
@@ -72,6 +72,15 @@ class ModelPedido extends CI_Model {
             $this->db->insert('pedido_item', $dados);
         }
     }
+    
+    public function getCedulas($dados = NULL){
+        if ($dados) {
+
+            $this->db->where('idPedido', $dados);
+            return $this->db->get('cedulas')->result();
+        }
+        
+    } 
 
     public function getCliente($email, $senha) {
         $query = $this->db->get_where('cliente', array('email' => $email, 'senha' => $senha));

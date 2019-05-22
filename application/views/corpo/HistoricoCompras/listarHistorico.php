@@ -1,4 +1,4 @@
-<title>Quick - Hist贸rico de compras</title>
+<title>Quick - Histórico de compras</title>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -13,7 +13,7 @@ and open the template in the editor.
     <body>
         <br>
         <div class="card-body">
-            <h2>Hist贸rico de Compras</h2>
+            <h2>Histórico de Compras</h2>
             <hr/><br>
             <div class="table-responsive">
                 <table class="table" id="dataTable" width="100%" cellspacing="0">

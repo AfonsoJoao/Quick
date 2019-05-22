@@ -1,6 +1,5 @@
 <html>
     <title>Quick - Editar informações da conta</title>
-    <script src="<?php echo base_url('js/mascaras.js'); ?>"></script>
     <?php
     if (isset($situacao)) {
         $st = $situacao;

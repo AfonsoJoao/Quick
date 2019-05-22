@@ -81,7 +81,7 @@ class ControllerCheckout extends CI_Controller {
             foreach ($_REQUEST ['cedulas'] as $dados) {
 
                 $dinheiro['valor'] = $dados;
-                $dinheiro['idCliente'] = $this->input->post('idCliente');
+                $dinheiro['idPedido'] = $id_item;
                 $this->modelCheckout->insertcedulas($dinheiro);
                 
             }

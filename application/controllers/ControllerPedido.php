@@ -101,6 +101,7 @@ class ControllerPedido extends CI_Controller {
         $ped ['titulo'] = 'Imprimir Pedido [ #' . $query->idPedido . ' ]';
         $ped['pedido'] = $query;
         $ped['item'] = $this->modelPedido->getItensPedido($query->idPedido);
+        $ped['cedulas'] = $this->modelPedido->getCedulas($query->idPedido);
 
 
         $this->load->view('corpo/Pedido/imprimirPedido', $ped);

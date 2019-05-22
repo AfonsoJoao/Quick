@@ -120,7 +120,7 @@ and open the template in the editor.
 
                                             <a href="<?= base_url('ControllerPedido/imprimir/' . $p->idPedido) ?>" target="_blank"
                                                title="Imprimir Pedido" class="btn btn-primary" > <!-- O comando target="_blank" serve para abrir uma página em uma nova aba do navegador   -->
-                                                <i class="fa fa-print"></i> Imprimir Pedido
+                                                Visualizar Pedido
                                             </a>
 
                                         </td>
