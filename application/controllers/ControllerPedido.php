@@ -107,8 +107,13 @@ class ControllerPedido extends CI_Controller {
         $this->load->view('corpo/Pedido/imprimirPedido', $ped);
     }
 
-    public function editarStatus() {
-        
+     function cancelarPedido() {
+        $this->load->Model('modelPedido', '', TRUE);
+        $this->modelPedido->cancelarPedido($this->uri->segment(3));
+        $this->load->Model('modelHistorico', '', TRUE);
+        $dados['historico'] = $this->modelHistorico->getHistorico();
+        $this->load->view('estrutura/cabecalho');
+        $this->load->view('corpo/HistoricoCompras/listarHistorico', $dados);
+        $this->load->view('estrutura/rodape');
     }
-
 }

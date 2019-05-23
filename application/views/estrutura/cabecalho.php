@@ -35,17 +35,6 @@
         <script type="text/javascript" src="<?php echo base_url('js/easing.js'); ?>"></script>
 
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js" type="text/javascript"></script>
-
-        <script type="text/javascript">
-            jQuery(document).ready(function ($) {
-                $(".scroll").click(function (event) {
-                    event.preventDefault();
-                    $('html,body').animate({scrollTop: $(this.hash).offset().top}, 1000);
-                });
-            });
-        </script>
-        <!-- start-smoth-scrolling -->
-
         <script>
 
             function excluirLista(id, nome) {
