@@ -24,7 +24,7 @@
                             <div class="form">
                             </div>
                             <div class="form">
-                                <?php echo form_open('ControllerBanner/gravarBanner'); ?>
+                                <?php  echo form_open_multipart('ControllerBanner/gravarBanner'); ?>
                                 <input type="hidden" name="acao" value="<?php
                                 if (isset($banner))
                                     echo "alterar";
@@ -32,14 +32,14 @@
                                     echo "inserir";
                                 ?>">
                                 <input type="hidden" name="idBanner" value="">
-                                Nome do banner:
-                                <input class="form-control" type="text" name="nomePromocao" required="" value="">
+                                Nome do banner*
+                                <input class="form-control" type="text" name="nomePromocao" required value="">
                                 <br>
-                                Descrição do banner:
+                                Descrição do banner*
                                 <div class="form-group">
                                     <textarea class="form-control" rows="5" name="descricaoPromocao" ></textarea>
                                 </div>
-                                Foto do banner:
+                                Foto do banner(1600x425)*
                                 <input class="form-control" type="file" required name="imagemBanner" value="">
                                 <br>
                                 <input type="hidden" class="form-control" name="data" value="" >

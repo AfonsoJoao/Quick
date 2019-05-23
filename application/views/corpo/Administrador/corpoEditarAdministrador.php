@@ -77,7 +77,7 @@
                         <input type="password" name="senha" class="form-control" placeholder="Senha" required="required" value="<?php
                         if (isset($administrador))
                             foreach ($administrador as $admin) {
-                                echo $admin->senha;
+                                echo base64_decode($admin->senha);
                             }
                         ?>">
                         <br>

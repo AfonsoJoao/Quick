@@ -317,7 +317,7 @@ and open the template in the editor.
                     <div class="col-sm">
                         <h2> <i class="fa fa-truck"></i> Envio</h2>
 
-                        <label for="cep" class="margin-checkout">CEP:</label>
+                        <label for="cep" class="margin-checkout">CEP*</label>
                         <div class="input-group">
                             <input type="text" class="form-control input_cep" name="cep" id="cep" placeholder="CEP" required="">
                          <!--   <span class="input-group-btn">
@@ -326,33 +326,33 @@ and open the template in the editor.
                         </div>
 
                         <div class="form-group">
-                            <label for="endereco" class="margin-top-1">Endereço:</label> <!-- OBS: Salvar na tabela endereco no campo nome da rua -->
+                            <label for="endereco" class="margin-top-1">Endereço*</label> <!-- OBS: Salvar na tabela endereco no campo nome da rua -->
                             <input type="text" class="form-control" name="endereco" id="rua" placeholder="Endereço" required="">
                         </div>
 
                         <div class="form-group">
-                            <label for="bairro">Bairro:</label> <!-- OBS: Salvar na tabela bairro -->
+                            <label for="bairro">Bairro*</label> <!-- OBS: Salvar na tabela bairro -->
                             <input type="text" class="form-control" name="bairro" id="bairro" placeholder="Bairro" required="">
                         </div>
 
                         <div class="form-group">
-                            <label for="cidade">Cidade:</label> <!-- OBS: Salvar na tabela cidade -->
+                            <label for="cidade">Cidade*</label> <!-- OBS: Salvar na tabela cidade -->
                             <input type="text" class="form-control" name="cidade" id="cidade" placeholder="Cidade" required="">
                         </div>
 
                         <div class="form-group">
-                            <label for="estado">Estado:</label> <!-- OBS: Salvar na tabela estado -->
+                            <label for="estado">Estado*</label> <!-- OBS: Salvar na tabela estado -->
                             <input type="text" class="form-control" name="estado" id="uf" placeholder="Estado" required="">
 
                         </div>
 
                         <div class="form-group">
-                            <label for="complemeto">Complemento:</label> <!-- OBS: Salvar na tabela endereco -->
+                            <label for="complemeto">Complemento*</label> <!-- OBS: Salvar na tabela endereco -->
                             <input type="text" class="form-control" name="complemento" id="complemento" placeholder="Complemento">
                         </div>
 
                         <div class="form-group">
-                            <label for="numero">Número:</label> <!-- OBS: Salvar na tabela endereco -->
+                            <label for="numero">Número*</label> <!-- OBS: Salvar na tabela endereco -->
                             <input type="text" class="form-control" name="numero" id="numero" placeholder="Número" required="">
                         </div>
 

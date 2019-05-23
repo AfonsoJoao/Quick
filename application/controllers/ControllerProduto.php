@@ -29,7 +29,6 @@ class ControllerProduto extends CI_Controller {
             'valorPromocao' => $this->input->post('valorPromocao'),
             'imagem' => $nomeImagem . '.png'
         );
-        $imagem = $_FILES['imagem'];
         $configuracao = array(
             'upload_path' => 'application/images',
             'allowed_types' => 'png|jpg|jpeg|gif',
@@ -88,12 +87,9 @@ class ControllerProduto extends CI_Controller {
     public function buscarProduto() {
         $this->load->Model('modelProduto', '', TRUE);
         $dados['produto'] = $this->modelProduto->listaProduto($this->uri->segment(3));
-        $this->load->model("modelBanner", '', TRUE);
-        $Z['banner'] = $this->modelBanner->listarBanner();
         $dados['listagem'] = $this->modelProduto->buscar($_POST);
         $this->load->view('estrutura/cabecalho');
         $this->load->view('estrutura/barraMenu');
-        $this->load->view('estrutura/banner', $Z);
         $this->load->view('corpo/Produto/corpoResultadosProdutos', $dados);
         $this->load->view('estrutura/rodape');
     }

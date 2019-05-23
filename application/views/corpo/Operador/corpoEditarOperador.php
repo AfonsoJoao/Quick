@@ -76,7 +76,7 @@
                         <input type="password" name="senha" class="form-control" placeholder="Senha" required="required"value="<?php
                         if (isset($operador))
                             foreach ($operador as $oper) {
-                                echo $oper->senha;
+                                echo base64_decode($oper->senha);
                             }
                         ?>">
                         <br>
