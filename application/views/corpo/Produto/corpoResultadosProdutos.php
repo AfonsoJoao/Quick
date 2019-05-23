@@ -56,7 +56,7 @@
                                                         <br>
                                                         <h3><a href="#" title="Adicionar produtos carrinho" 
                                                                class="btn btn-primary btn-block btn-add-produto-carrinho"
-                                                               data-id="<?= $listagem['idProduto'] ?>">&nbsp;<i class="fa fa-shopping-cart"></i><font size="3">&nbsp;&nbsp;Carrinho&nbsp;&nbsp; </font></a></h3>
+                                                               data-id="<?= $listagem['idProduto'] ?>">&nbsp;<i class="fa fa-shopping-cart"></i><font size="3">&nbsp;&nbsp;Adicionar&nbsp;&nbsp; </font></a></h3>
                                                         <ul class="product_marks">
                                                             <li class="product_mark product_discount">-25%</li>
                                                             <li class="product_mark product_new">new</li>

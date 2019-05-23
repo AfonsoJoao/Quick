@@ -24,7 +24,7 @@
                 <div class="form">
                 </div>
                 <div class="form">
-                    <?php echo form_open('ControllerProduto/gravarProduto'); ?>
+                    <?php echo form_open_multipart('ControllerProduto/gravarProduto'); ?>
                     <input type="hidden" name="acao" value="<?php
                     if (isset($produto))
                         echo "alterar";

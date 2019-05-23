@@ -82,7 +82,8 @@
                             </div>
 
                         </div>
-
+<div class="shop_bar clearfix">  
+                                </div>
                     </div>
                 </div>
             </div>

@@ -109,7 +109,7 @@ class ControllerCliente extends CI_Controller {
         $dados = $this->modelCliente->buscarEmail($email);
 
         $this->email->from("quicksupermercados.contato@gmail.com", 'Contato Quick supermercados');
-        $this->email->subject("Senha temporária");
+        $this->email->subject("Nova Senha");
         $this->email->to($email = $this->input->post('email'));
         $novasenha = substr(md5(time()), 0, 6);
         $nscriptografada = base64_encode($novasenha);

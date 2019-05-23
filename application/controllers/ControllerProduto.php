@@ -15,6 +15,8 @@ class ControllerProduto extends CI_Controller {
 
     public function gravarProduto() {
         $this->load->Model('modelProduto', '', TRUE);
+        $randon = substr(md5(time()), 0, 6);
+        $nomeImagem = str_replace(" ", "_", $this->input->post('nomeProduto')) . $randon;
         $produto = array(
             'nomeProduto' => $this->input->post('nomeProduto'),
             'valorUnitario' => formatoDecimal($this->input->post('valorUnitario')),
@@ -25,8 +27,18 @@ class ControllerProduto extends CI_Controller {
             'disponibilidade' => $this->input->post('disponibilidade'),
             'tipoDestaque' => $this->input->post('tipoDestaque'),
             'valorPromocao' => $this->input->post('valorPromocao'),
-            'imagem' => $this->input->post('imagem')
+            'imagem' => $nomeImagem . '.png'
         );
+        $imagem = $_FILES['imagem'];
+        $configuracao = array(
+            'upload_path' => 'application/images',
+            'allowed_types' => 'png|jpg|jpeg|gif',
+            'file_name' => $nomeImagem . '.png',
+            'max_size' => '2048'
+        );
+        $this->load->library('upload', $configuracao);
+        $this->upload->do_upload('imagem');
+
         if ($this->input->post('acao') == "inserir") {
             if ($this->modelProduto->inserirProduto($produto)) {
                 $msn['situacao'] = "Registro gravado com sucesso";
@@ -40,8 +52,6 @@ class ControllerProduto extends CI_Controller {
                 $msn['situacao'] = "Erro na Alteração dos Dados";
             }
         }
-
-
 
         $this->load->view('estrutura/menuPainel');
         $this->load->view('corpo/Produto/corpoCadProduto', $msn);

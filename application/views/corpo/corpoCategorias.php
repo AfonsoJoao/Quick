@@ -29,7 +29,7 @@
 
                             <div class="shop_content">
                                 <div class="shop_bar clearfix">
-                                    <div class="shop_product_count"><span>186</span> produtos encontrados</div>
+                                    
                                 </div>
 
                                 <div class="product_grid">
@@ -76,7 +76,8 @@
 
                                 </div>
                             </div>
-
+<div class="shop_bar clearfix">  
+                                </div>
                         </div>
                     </div>
                 </div>
