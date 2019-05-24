@@ -136,6 +136,20 @@
                         <i class="fas fa-fw fa-list"></i>
                         <span>Listar banners</span></a>
                 </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" target="_blank" href="http://quicksupermercados.com.br/testlink/login.php">
+                        <i class="fas fa-fw fa-list"></i>
+                        <span>Testlink</span></a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" target="_blank" href="<?php
+                    echo base_url('application/Documentos/Documentos Do Projeto Integrador III') ?>">
+                        <i class="fas fa-fw fa-list"></i>
+                        <span>Documentos</span></a>
+                </li>
+
                 <?php if (isset($_SESSION['administrador_logado'])) { ?>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo base_url('cadastroadministrador') ?>">
