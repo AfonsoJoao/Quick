@@ -33,7 +33,8 @@ class ControllerCarrinho extends CI_Controller {
             echo json_encode($json);
         }
     }
-
+    
+    //Função de limpar carrinho na home do sistema 
     public function limpa() {
 
         if ($this->input->post('limpar') == 'true') {
@@ -86,7 +87,8 @@ class ControllerCarrinho extends CI_Controller {
             echo json_encode($json);
         }
     }
-
+    
+    //Função que limpa o carrinho de compras na página que exibe os itens adicionados ao carrinho.
     public function limpa_carrinho() {
         $this->carrinhocompras->limpa();
 

@@ -7,9 +7,8 @@ class ModelCarrinho extends CI_Model {
             $this->db->select('
                 produto.idProduto,
                 produto.nomeProduto,
-                produto.valorUnitario,
-                produto.peso,
-                produto.imagem
+                produto.valorUnitario
+               
             ');
             $this->db->from('produto');
             $this->db->where(['produto.disponibilidade' => 1, 
@@ -20,15 +19,5 @@ class ModelCarrinho extends CI_Model {
         }
     }
 
-/*    public function salvarLista($dados = NULL) {
-        if ($dados != NULL) {
-            $this->db->insert('salvarlista', $dados);
-            return $this->db->insert_id();
-        }
-    }
-    public function salvarItemLista($dados = NULL) {
-        if ($dados != NULL) {
-            $this->db->insert('salvarlista_item', $dados);
-        }
-    }*/
+
 }

@@ -144,8 +144,8 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" target="_blank" href="<?php
-                    echo base_url('application/Documentos/Documentos Do Projeto Integrador III') ?>">
+                    <a class="nav-link" href="<?php
+                    echo base_url('Controller/documentos') ?>">
                         <i class="fas fa-fw fa-list"></i>
                         <span>Documentos</span></a>
                 </li>

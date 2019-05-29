@@ -26,7 +26,7 @@ class CarrinhoCompras {
             if ($qtd > 0) { // Se a quantidade de produtos for maior que zero
                 $_SESSION['carrinho'][$id] = $qtd; // exibe essa quantidade. 
             } else {
-                $this->apaga($id);
+                $this->apaga($id); //A função apagar é eexecutada
             }
         }
     }
@@ -58,7 +58,7 @@ class CarrinhoCompras {
             $retorno[$indice]['valor'] = $query->valorUnitario;
             $retorno[$indice]['qtd'] = $qtd;
             $retorno[$indice]['subtotal'] = number_format($qtd * $query->valorUnitario, 2, '.', '');
-            $retorno[$indice]['peso'] = $query->peso;
+           // $retorno[$indice]['peso'] = $query->peso;
 
             $indice++;
         }
@@ -77,7 +77,7 @@ class CarrinhoCompras {
     }
 
     //Total Peso Produtos
-    public function totalPeso() {
+   /* public function totalPeso() {
         $produto = $this->listarProdutos();
         $total = 0;
         
@@ -85,7 +85,7 @@ class CarrinhoCompras {
             $total += $linha['peso'];
         }
         return $total;
-    }
+    } */
 
     //Total de Item
     public function totalItem() {

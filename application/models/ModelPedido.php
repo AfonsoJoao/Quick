@@ -40,23 +40,9 @@ class ModelPedido extends CI_Model {
             return $this->db->get('pedido_item')->result();
         }
     }
-
-    //Função responável por salvar os dados do pedido e retornar o ultimo id inserido.
-    public function insertpedido($dados = NULL) {
-        if ($dados != NULL) {
-            $this->db->insert('pedido', $dados);
-            return $this->db->insert_id();
-        }
-    }
-
-    //Função responsável por salvar os itens do pedido.
-    public function insert_pedido_item($dados = NULL) {
-        if ($dados != NULL) {
-            $this->db->insert('pedido_item', $dados);
-        }
-    }
     
     public function getCedulas($dados = NULL){
+        
         if ($dados) {
 
             $this->db->where('idPedido', $dados);
@@ -64,13 +50,7 @@ class ModelPedido extends CI_Model {
         }
         
     } 
-
-    public function getCliente($email, $senha) {
-        $query = $this->db->get_where('cliente', array('email' => $email, 'senha' => $senha));
-        if ($query->num_rows() > 0) {
-            return $query->result();
-        }
-    }
+    
 
     public function mudarStatus($id, $status) {
         $this->db->set('status', $status);

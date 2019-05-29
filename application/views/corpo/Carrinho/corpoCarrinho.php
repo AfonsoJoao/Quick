@@ -37,7 +37,7 @@ if (isset($situacao)) {
                     <th class="text-right">Valor Unitário</th>
                     <th class="text-center">Quantidade</th>
                     <th class="text-right">Subtotal</th>
-                    <th></th>
+                    <th class="text-center">Remover</th>
                 </tr>
             </thead>
 
@@ -59,7 +59,7 @@ if (isset($situacao)) {
                         </td>
                         <td class="text-right"><?= formataMoedaReal($linha['subtotal'], TRUE) ?></td> <!-- OBS: Depois colocar no formato moeda real -->
                         <td class="text-center"><a href="#" title="Apagar Produto" class="btn-apagar-produto-carrinho" 
-                                                   data-id="<?= $linha['id'] ?>"><i class="fas fa-trash fa-2x"></i></a></td>
+                                                   data-id="<?= $linha['id'] ?>"><i class="fas fa-times"></i></a></td>
 
                     </tr>
                 <?php } // Fim da lista produtos carrinho ?>

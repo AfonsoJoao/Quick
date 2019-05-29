@@ -39,7 +39,7 @@ and open the template in the editor.
                                         <i class="far fa-file-alt"></i> Relatórios <span class="caret"></span>
                                     </button>
                                     <ul class="dropdown-menu">
-                                        <a class="dropdown-item" href="<?= base_url('ControllerRelatorio/mensal') ?>" target="_blank">Vendas Diárias</a>
+                                        <a class="dropdown-item" href="<?= base_url('ControllerRelatorio/mensal') ?>" target="_blank">Pedidos Diários</a>
 
                                     </ul>
                                 </div>
@@ -78,7 +78,7 @@ and open the template in the editor.
 
                                             <!-- Botão para acionar modal -->
                                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal<?php echo $p->idPedido; ?>">
-                                                Mudar status
+                                               <i class="far fa-edit"></i> Mudar status
                                             </button>
 
                                             <!-- Modal -->
@@ -120,7 +120,7 @@ and open the template in the editor.
 
                                             <a href="<?= base_url('ControllerPedido/imprimir/' . $p->idPedido) ?>" target="_blank"
                                                title="Imprimir Pedido" class="btn btn-primary" > <!-- O comando target="_blank" serve para abrir uma página em uma nova aba do navegador   -->
-                                                Visualizar Pedido
+                                              <i class="fas fa-eye"></i> Visualizar Pedido
                                             </a>
 
                                         </td>

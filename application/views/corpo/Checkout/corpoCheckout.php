@@ -84,28 +84,22 @@ and open the template in the editor.
                                         <h2>Faça login em sua conta</h2>
                                     </div>
                                     <div class="card-body">
+                                        
                                         <?php echo form_open('ControllerCheckout/autenticarCliente'); ?>
-
-
-                                        <div class="form-group">
-                                            <div class="text-left">E-mail:</div>
-                                            <input type="text" class="form-control margin-top-2" name="email" placeholder="E-mail" required="">    
+                                        <input type="text" class="form-control" name="email" placeholder="Email" required=" "><br>
+                                        <input type="password" class="form-control" name="senha" placeholder="Senha" required=" "><br>
+                                        <div class="col-sm-12" align="left">
+                                            <a href="<?php echo base_url('recuperarsenha/'); ?>">Esqueceu sua senha?</a>
                                         </div>
-
-                                        <div class="form-group">
-                                            <div class="text-left">Senha:</div>
-                                            <input type="password" class="form-control margin-top-2" name="senha" placeholder="Senha" required="">
-                                        </div>
-
-                                        <input type="submit" class="btn btn-primary btn-lg" value="Entrar">
-
-                                        <div class="text-left">
-                                            Não tem uma conta? <br>
-                                            <i class="fa fa-user"></i> <a href="<?php echo base_url('ControllerCheckout/cadClienteCheckout'); ?>"> Cadastre-se</a>
-                                        </div>
-
+                                        <center><div class="col-sm-4">
+                                                <input type="submit" class="btn btn-primary btn-block" value="Entrar">
+                                            </div></center>
+                                        ou <a href="<?php echo base_url('ControllerCheckout/cadClienteCheckout'); ?>">criar uma conta</a>
                                         <?php echo form_close(); ?>
+
                                     </div>
+                                    
+
                                 </div>
                             </div>
                         </div>
@@ -347,7 +341,7 @@ and open the template in the editor.
                         </div>
 
                         <div class="form-group">
-                            <label for="complemeto">Complemento*</label> <!-- OBS: Salvar na tabela endereco -->
+                            <label for="complemeto">Complemento</label> <!-- OBS: Salvar na tabela endereco -->
                             <input type="text" class="form-control" name="complemento" id="complemento" placeholder="Complemento">
                         </div>
 
@@ -396,7 +390,7 @@ and open the template in the editor.
                                 <input type="checkbox" name="cedulas[]" value="10,00"> R$ 10,00<br>
 
                                 <input type="checkbox" name="cedulas[]" value="20,00"> R$ 20,00<br>
-                                
+
                                 <input type="checkbox" name="cedulas[]" value="50,00"> R$ 50,00<br>
 
                                 <input type="checkbox" name="cedulas[]" value="100,00"> R$ 100,00<br>
@@ -404,7 +398,8 @@ and open the template in the editor.
                         </div>
 
                         <div class="col margin-top-40">
-                            <button type="submit" class="btn btn-success btn-lg">Enviar Pedido</button>
+                            <button type="submit" class="btn btn-success btn-lg"><i class="far fa-paper-plane"></i>
+                                Enviar Pedido</button>
 
                         </div>
                     </div>

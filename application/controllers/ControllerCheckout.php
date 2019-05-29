@@ -75,7 +75,7 @@ class ControllerCheckout extends CI_Controller {
         $endereco ['forma_Envio'] = $this->input->post('forma_Envio');
         $endereco ['bandeira_cartao'] = $this->input->post('bandeira_cartao');
         $endereco['data_Pedido'] = date('Y-m-d');
-        $id_item = $this->modelPedido->insertpedido($endereco);
+        $id_item = $this->modelCheckout->insertpedido($endereco);
 
         if (isset($_REQUEST['cedulas'])) { // se existir valores no request
             foreach ($_REQUEST ['cedulas'] as $dados) {
@@ -95,7 +95,7 @@ class ControllerCheckout extends CI_Controller {
             $pedido ['subtotal'] = $produto ['subtotal'];
             $pedido ['idPedido'] = $id_item;
 
-            $this->modelPedido->insert_pedido_item($pedido);
+            $this->modelCheckout->insert_pedido_item($pedido);
             $this->session->set_flashdata("success", "Pedido Realizado com Sucesso.");
         }
 

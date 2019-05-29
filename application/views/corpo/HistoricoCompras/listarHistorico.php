@@ -43,7 +43,7 @@ and open the template in the editor.
                                     <td class="text-center"><a href="<?= base_url('ControllerHistorico/getItensCompra/' .
                                 $hist->idPedido)
                                 ?>" target="_blank" title="Visualizar Compra" class="btn btn-primary"> <!-- O comando target="_blank" serve para abrir uma página em uma nova aba do navegador   -->
-                                            Visualizar Compra
+                                         Visualizar Compra
                                         </a>
                                     </td>
                                     <?php if ($hist->status == "Cancelado" || $hist->status == "Finalizado" || $hist->status == "Saiu para entrega") { ?>

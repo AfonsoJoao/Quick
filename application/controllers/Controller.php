@@ -20,5 +20,12 @@ class Controller extends CI_Controller {
         $this->load->view('corpo/corpo', $dados);
         $this->load->view('estrutura/rodape');
     }
+    
+    public function documentos() {
+        
+        $this->load->view('estrutura/menuPainel');     
+        $this->load->view('corpo/Documentos/documentos');
+        $this->load->view('estrutura/rodapePainel');
+    }
 
 }

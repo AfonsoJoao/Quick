@@ -22,6 +22,22 @@ class ModelCheckout extends CI_Model {
 
     public function insertcedulas($dados) {
         return $this->db->insert('cedulas', $dados);
+        
+    }
+
+    //Função responável por salvar os dados do pedido e retornar o ultimo id inserido.
+    public function insertpedido($dados = NULL) {
+        if ($dados != NULL) {
+            $this->db->insert('pedido', $dados);
+            return $this->db->insert_id();
+        }
+    }
+
+    //Função responsável por salvar os itens do pedido.
+    public function insert_pedido_item($dados = NULL) {
+        if ($dados != NULL) {
+            $this->db->insert('pedido_item', $dados);
+        }
     }
 
     /*  public function getCliente($id) { // Está função captura lista de registros armazenados no banco para que possam ser manipulados.
@@ -33,12 +49,4 @@ class ModelCheckout extends CI_Model {
       }
       }
       } */
-
-    public function inserirpedidoitem($pedido) {
-        $this->db->select('idPedido');
-        $this->db->from('pedido');
-        $this->db->where($id_pedido = 'idPedido');
-        return $this->db->insert('pedido_item', $id_pedido, $pedido)->result();
-    }
-
 }
