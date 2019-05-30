@@ -67,7 +67,7 @@
                         <input type="password" class="form-control" name="senha" placeholder="Senha" required=" " value="<?php
                         if (isset($cliente))
                             foreach ($cliente as $cli) {
-                                echo $cli->senha;
+                                echo base64_decode($cli->senha);
                             }
                         ?>"><br>                    
                         <p align="left"><font size="3">Telefone:</font></p>

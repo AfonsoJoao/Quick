@@ -31,22 +31,22 @@ and open the template in the editor.
                 </div>
             </div>
             <hr />
+            <center>
+                <a href="<?= base_url('application/Documentos/Documentos Do Projeto Integrador III v0.16 Atualizado.pdf') ?>"
+                   title="Documentos do sistema" class="btn btn-primary" > <!-- O comando target="_blank" serve para abrir uma página em uma nova aba do navegador   -->
+                    <i class="fas fa-file-pdf"></i> Documentos do Sistema
+                </a>
 
-            <a href="<?= base_url('application/Documentos/Documentos Do Projeto Integrador III') ?>"
-               title="Imprimir Pedido" class="btn btn-primary" > <!-- O comando target="_blank" serve para abrir uma página em uma nova aba do navegador   -->
-               <i class="fas fa-file-pdf"></i> Documento do Sistema
-            </a>
+                <a href="<?= base_url('application/Documentos/TestLink 1.9.14 (Padawan).pdf') ?>"
+                   title="Relatório de testes do testlink" class="btn btn-primary" > <!-- O comando target="_blank" serve para abrir uma página em uma nova aba do navegador   -->
+                    <i class="fas fa-file-pdf"></i> Relatório de testes do testlink
+                </a>
 
-            <a href="<?= base_url('Application/Documentos/Calendario de Provas') ?>"
-               title="Imprimir Pedido" class="btn btn-primary" > <!-- O comando target="_blank" serve para abrir uma página em uma nova aba do navegador   -->
-                <i class="fas fa-file-pdf"></i> Documentos de Teste
-            </a>
-
-            <a href="<?= base_url('Application/Documentos/Calendario de Provas') ?>"
-               title="Imprimir Pedido" class="btn btn-primary" > <!-- O comando target="_blank" serve para abrir uma página em uma nova aba do navegador   -->
-                <i class="fas fa-file-pdf"></i> Documento
-            </a>
-
+                <a href="<?= base_url('application/Documentos/Documento de Testes.pdf') ?>"
+                   title="Relatório de testes não funcionais" class="btn btn-primary" > <!-- O comando target="_blank" serve para abrir uma página em uma nova aba do navegador   -->
+                    <i class="fas fa-file-pdf"></i> Relatório de testes não funcionais
+                </a>
+            </center>
 
         </div><br>
 

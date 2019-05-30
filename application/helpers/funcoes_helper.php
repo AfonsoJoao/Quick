@@ -9,24 +9,26 @@ function formataMoedaReal($valor = NULL, $real = FALSE) { // Funcão responsavel
     }
 }
 
-function formataDataView($data=NULL){
-    
-    if ($data) {
-        
-        //Entrada
-        $data = explode('-', $data);
-        
-        //Saida
-        return $data[2] .'/'. $data[1] .'/'. $data[0];
-        
-    }
-    
+function formatoDecimal($valor = NULL) {
+    $valor = str_replace('.', '', $valor); // A função str_replace retira todos os pontos e deixa em branco
+    $valor = str_replace(',', '.', $valor); // Depois ela retira todas as virgulas e adiciona o ponto ao valor.
+    return $valor;
 }
 
-function formatatelefone($number){
-    $number="(".substr($number,2,2).") ".substr($number,4,-4)." - ".substr($number,-4);
+function formataDataView($data = NULL) {
+
+    if ($data) {
+
+        //Entrada
+        $data = explode('-', $data);
+
+        //Saida
+        return $data[2] . '/' . $data[1] . '/' . $data[0];
+    }
+}
+
+function formatatelefone($number) {
+    $number = "(" . substr($number, 2, 2) . ") " . substr($number, 4, -4) . " - " . substr($number, -4);
     // primeiro substr pega apenas o DDD e coloca dentro do (), segundo subtr pega os números do 3º até faltar 4, insere o hifem, e o ultimo pega apenas o 4 ultimos digitos
     return $number;
 }
-
-

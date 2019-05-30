@@ -37,6 +37,8 @@ class ControllerLogin extends CI_Controller {
 
     public function loginfeitoOperador() {
         $this->load->model("modelProduto", '', TRUE);
+        $this->load->model("modelPedido", '', TRUE);
+        $dados['pedido'] = $this->modelPedido->getPedidos();
         $dados['produto'] = $this->modelProduto->listarProduto();
         $this->load->view('estrutura/menuPainel');
         $this->load->view('corpo/corpoPainel', $dados);
@@ -53,6 +55,8 @@ class ControllerLogin extends CI_Controller {
 
     public function loginfeitoAdministrador() {
         $this->load->model("modelProduto", '', TRUE);
+        $this->load->model("modelPedido", '', TRUE);
+        $dados['pedido'] = $this->modelPedido->getPedidos();
         $dados['produto'] = $this->modelProduto->listarProduto();
         $this->load->view('estrutura/menuPainel');
         $this->load->view('corpo/corpoPainel', $dados);

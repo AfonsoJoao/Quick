@@ -13,6 +13,11 @@
  */
 class ControllerOperador extends CI_Controller {
 
+    public function __construct() {
+        parent::__construct();
+        $this->load->helper('funcoes');
+    }
+
     public function cadoperador() {
         $this->load->view('corpo/Operador/corpoCadOperador');
     }

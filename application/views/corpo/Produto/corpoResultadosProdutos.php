@@ -48,7 +48,7 @@
                                                         <div class="product_item">
                                                         <?php } ?>
                                                         <div class="product_border"></div>
-                                                        <div class="product_image d-flex flex-column align-items-center justify-content-center"><img src="<?php echo base_url('application/images/' . $listagem['imagem']) ?>" alt=""></div>
+                                                        <div class="product_image d-flex flex-column align-items-center justify-content-center"><img src="<?php echo base_url('application/images/' . $listagem['imagem']) ?>" width="120px" height="120px" alt=""></div>
                                                         <div class="product_content">
                                                             <div class="product_price"><?= formataMoedaReal($listagem['valorUnitario'], TRUE) ?></div>
                                                             <div class="product_name"><div><a href="#" tabindex="0"><?php echo $listagem['nomeProduto']; ?></a></div></div>
@@ -71,7 +71,8 @@
                                             }
                                         }
                                         ?>
-                                    <?php }
+                                    <?php
+                                    }
                                     if (!isset($listagem['idProduto'])) {
                                         ?>
                                         <br><br>

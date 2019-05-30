@@ -49,7 +49,7 @@
                     <input class="form-control" class="form-control input_moeda"  type="text" name="valorUnitario" required="" value="<?php
                     if (isset($produto))
                         foreach ($produto as $pro) {
-                            echo $pro->valorUnitario;
+                            echo str_replace(".", ",", $pro->valorUnitario);
                         }
                     ?>">
                     <br>

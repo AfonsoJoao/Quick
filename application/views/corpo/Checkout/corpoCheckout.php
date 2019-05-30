@@ -84,7 +84,7 @@ and open the template in the editor.
                                         <h2>Faça login em sua conta</h2>
                                     </div>
                                     <div class="card-body">
-                                        
+
                                         <?php echo form_open('ControllerCheckout/autenticarCliente'); ?>
                                         <input type="text" class="form-control" name="email" placeholder="Email" required=" "><br>
                                         <input type="password" class="form-control" name="senha" placeholder="Senha" required=" "><br>
@@ -98,7 +98,7 @@ and open the template in the editor.
                                         <?php echo form_close(); ?>
 
                                     </div>
-                                    
+
 
                                 </div>
                             </div>
@@ -357,7 +357,6 @@ and open the template in the editor.
                         <div class="form-group margin-checkout">
                             <label for="forma_pagamento">Selecione a forma de pagamento:</label>
                             <select name="forma_Envio" class="form-control select-forma-pagamento" required="">
-                                <option value="">Selecione</option>
                                 <option value="Cartão de Crédito">Cartão de Crédito</option>
                                 <option value="A Vista">A Vista</option>
                             </select>
@@ -367,7 +366,6 @@ and open the template in the editor.
                             <div class="form-group margin-checkout">
                                 <label for="bandeiras">Selecione a bandeira do seu cartão de crédito:</label>
                                 <select name="bandeira_cartao" class="form-control">
-                                    <option value="">Selecione</option>
                                     <option value="Visa">Visa</option>
                                     <option value="Mastercard">Mastercard</option>
                                     <option value="American Express">American Express</option>
